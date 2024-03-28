@@ -1,0 +1,124 @@
+#!/usr/bin/env sh
+REMOTE_BRANCH=main
+GH=${GH:-"gh"}
+
+function help {
+    echo "Usage: release VERSION [-f]"
+    echo
+    echo "VERSION should be the version to release, should not include the 'v' prefix"
+    echo
+    echo "FLAGS"
+    echo "  -f  Forces override of tag"
+    echo
+    echo "  Example: ./release 1.0.0-rc.2"
+    echo
+    exit 2
+}
+
+function die {
+    echo "[ERROR] $@"
+    echo
+    exit 1
+}
+
+if [ $# -lt 1 ]; then
+    help
+fi
+
+VERSION=$1
+FORCE_TAG=$2
+
+VERSION_TAG="v$VERSION"
+
+if [ -z "`which $GH`" ]; then
+    die "gh (github CLI) is required to produce a release. Install with brew using 'brew install gh'. Aborting."
+fi
+
+echo " > Verifying you are authenticated with the github CLI"
+$GH auth status > /dev/null || die "You are not authenticated with the github CLI. Please authenticate using '$GH auth login'."
+echo " > Logged in with github CLI"
+
+echo " > Is this a reasonable tag?"
+
+echo $VERSION_TAG | grep -q "^vv"
+if [ $? -eq 0 ]; then
+    die "This tag ($VERSION) is an incorrect format. You should remove the 'v' prefix."
+fi
+
+echo $VERSION_TAG | grep -q -E "^v\d+\.\d+\.\d+(-\w+(\.\d)?)?\$"
+if [ $? -ne 0 ]; then
+    die "This tag ($VERSION) is an incorrect format. It should be in 'v{MAJOR}.{MINOR}.{PATCH}(-{PRERELEASE_NAME}.{PRERELEASE_VERSION})' form."
+fi
+
+echo " > Is this version ($VERSION) unique?"
+git describe --exact-match "$VERSION_TAG" > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    if [ -z "$FORCE_TAG" ]; then
+        die "This tag ($VERSION) already exists. Aborting. Append '-f' to override"
+    else
+        echo " > NO, but force was specified."
+    fi
+else
+    echo " > Yes, tag is unique"
+fi
+
+git config --get user.signingkey > /dev/null || {
+    echo "[ERROR] No PGP found to sign tag. Aborting."
+    echo
+    echo "  Creating a release requires signing the tag for security purposes. This allows users to verify the git cloned tree is from a trusted source."
+    echo "  From a security perspective, it is not considered safe to trust the commits (including Author & Signed-off fields). It is easy for any"
+    echo "  intermediate between you and the end-users to modify the git repository."
+    echo
+    echo "  While not all users may choose to verify the PGP key for tagged releases. It is a good measure to ensure 'this is an official release'"
+    echo "  from the official maintainers."
+    echo
+    echo "  If you're creating your PGP key for the first time, use RSA with at least 4096 bits."
+    echo
+    echo "Related resources:"
+    echo " - Configuring your system for PGP: https://git-scm.com/book/tr/v2/Git-Tools-Signing-Your-Work"
+    echo " - Why: http://programmers.stackexchange.com/questions/212192/what-are-the-advantages-and-disadvantages-of-cryptographically-signing-commits-a"
+    echo
+    exit 2
+}
+echo " > Found PGP key for git"
+
+echo "-> Ensuring no differences to origin/$REMOTE_BRANCH"
+git fetch origin || die "Failed to fetch origin"
+git diff --quiet HEAD "origin/$REMOTE_BRANCH" || die "HEAD is not aligned to origin/$REMOTE_BRANCH. Cannot update version safely"
+
+RELEASE_NOTES="Version ${VERSION}. Open https://github.com/Quick/swift-fakes/releases/tag/$VERSION_TAG for full release notes."
+
+if [ -z "$FORCE_TAG" ]; then
+    echo "-> Tagging version"
+    git tag -s "$VERSION_TAG" -m "$RELEASE_NOTES" || die "Failed to tag version"
+    echo "-> Pushing tag to origin"
+    git push origin "$VERSION_TAG" || die "Failed to push tag '$VERSION_TAG' to origin"
+else
+    echo "-> Tagging version (force)"
+    git tag -s -f "$VERSION_TAG" -m "$RELEASE_NOTES" || die "Failed to tag version"
+    echo "-> Pushing tag to origin (force)"
+    git push origin "$VERSION_TAG" -f || die "Failed to push tag '$VERSION_TAG' to origin"
+fi
+
+# Check version tag to determine whether to mark the release as a prerelease version or not.
+echo $VERSION_TAG | grep -q -E "^v\d+\.\d+\.\d+\$"
+if [ $? -eq 0 ]; then
+    PRERELEASE_FLAGS=""
+else
+    PRERELEASE_FLAGS="-p"
+fi
+
+echo "-> Creating a github release using auto-generated notes."
+
+$GH release create -R Quick/Quick $VERSION_TAG --generate-notes $PRERELEASE_FLAGS
+
+echo
+echo "================ Finalizing the Release ================"
+echo
+echo " - Opening GitHub to allow for any edits to the release notes."
+echo "   - You should add a Highlights section at the top to call out any notable changes or fixes."
+echo "   - In particular, any breaking changes should be listed under Highlights."
+echo "   - Carthage archive frameworks will be automatically uploaded after the release is published."
+echo " - Announce!"
+
+open "https://github.com/Quick/Quick/releases/tag/$VERSION_TAG"
