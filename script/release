@@ -110,7 +110,7 @@ fi
 
 echo "-> Creating a github release using auto-generated notes."
 
-$GH release create -R Quick/Quick $VERSION_TAG --generate-notes $PRERELEASE_FLAGS
+$GH release create -R Quick/swift-fakes $VERSION_TAG --generate-notes $PRERELEASE_FLAGS
 
 echo
 echo "================ Finalizing the Release ================"
@@ -121,4 +121,4 @@ echo "   - In particular, any breaking changes should be listed under Highlights
 echo "   - Carthage archive frameworks will be automatically uploaded after the release is published."
 echo " - Announce!"
 
-open "https://github.com/Quick/Quick/releases/tag/$VERSION_TAG"
+open "https://github.com/Quick/swift-fakes/releases/tag/$VERSION_TAG"
