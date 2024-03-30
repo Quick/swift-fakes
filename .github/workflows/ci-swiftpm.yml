@@ -33,9 +33,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         if: ${{ needs.filter.outputs.should_skip != 'true' }}
-      - run: swift build -Xswiftc
+      - run: swift build
         if: ${{ needs.filter.outputs.should_skip != 'true' }}
-      - run: swift test -Xswiftc
+      - run: swift test
         if: ${{ needs.filter.outputs.should_skip != 'true' }}
 
   swiftpm_linux:
@@ -54,7 +54,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         if: ${{ needs.filter.outputs.should_skip != 'true' }}
-      - run: swift build -Xswiftc
+      - run: swift build
         if: ${{ needs.filter.outputs.should_skip != 'true' }}
-      - run: swift test -Xswiftc
+      - run: swift test
         if: ${{ needs.filter.outputs.should_skip != 'true' }}
