@@ -65,7 +65,7 @@ public enum Pendable<Value> {
     public func resolve(pendingFallback: Value, delay: TimeInterval = PendableDefaults.delay) async -> Value {
         switch self {
         case .pending:
-            try! await Task.sleep(nanoseconds: UInt64(1_000_000_000 * delay))
+            try! await Task.sleep(nanoseconds: UInt64(1_000_000_000 * delay)) // swiftlint:disable:this force_try
             return pendingFallback
         case .finished(let value):
             return value

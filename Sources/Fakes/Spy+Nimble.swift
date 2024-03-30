@@ -51,7 +51,8 @@ public func beCalled<Arguments, Returning>(_ matcher: Matcher<Arguments>) -> Mat
 /// `times` times, and it has been called at least once with arguments that match
 /// the matcher.
 ///
-/// For example, if your spy has been called a total of 4 times, and at least of those times matching whatever your matcher is, then `beCalled(..., times: 4)` will match.
+/// For example, if your spy has been called a total of 4 times, and at least of those times matching whatever
+/// your matcher is, then `beCalled(..., times: 4)` will match.
 /// However, `beCalled(..., times: 3)` will not match, because the matcher has been called 4 times.
 /// If you wish to check how much the spy has been called in total, use ``beCalled(times:)``.
 ///
@@ -118,7 +119,6 @@ public func mostRecentlyBeCalled<Arguments, Returning>(_ matcher: Matcher<Argume
         guard let lastCall = spy.calls.last else {
             return MatcherResult(status: .fail, message: message.appended(message: "but spy was never called."))
         }
-
 
         let matcherExpression = Expression(
             expression: { lastCall },
