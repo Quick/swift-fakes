@@ -12,7 +12,7 @@ import Nimble
 /// - Note: All matchers for a single call must pass in order for this matcher
 /// to pass. Specifying multiple matchers DOES NOT verify multiple calls.
 /// Passing in multiple matchers is a shorthand for `beCalled(satisfyAllOf(...))`.
-/// - SeeAlso: ``mostRecentlyBeCalled(_:)`` for when you want to check that
+/// - SeeAlso: ``mostRecentlyBeCalled(_:)-9i9t9`` for when you want to check that
 /// only the most recent call to the spy matches the matcher.
 public func beCalled<Arguments, Returning>(
     _ matchers: Matcher<Arguments>...
@@ -64,7 +64,6 @@ public func beCalled<Arguments, Returning>(
 /// For example, if your spy has been called a total of 4 times, and at least one of those times matching
 /// whatever your matcher is, then `beCalled(..., times: 4)` will match.
 /// However, `beCalled(..., times: 3)` will not match, because the matcher has been called 4 times.
-/// If you wish to check how much the spy has been called in total, use ``beCalled(times:)``.
 ///
 /// Alternatively, if your spy has been called a total of 4 times, and you pass in 0 matchers, then
 /// `beCalled(times: 4)` will match, regardless of what those calls are.
@@ -128,7 +127,7 @@ public func beCalled<Arguments, Returning>(
 /// A Nimble matcher for ``Spy`` that succeeds when any of the calls to the spy are equal to the given value.
 ///
 /// - parameter value: The expected value of any of the calls to the `Spy`.
-/// - SeeAlso: ``beCalled(_:)``
+/// - SeeAlso: ``beCalled(_:)-82qlg``
 public func beCalled<Arguments, Returning>(
     _ value: Arguments
 ) -> Matcher<Spy<Arguments, Returning>> where Arguments: Equatable {
@@ -148,7 +147,7 @@ public func beCalled<Arguments, Returning>(
 ///
 /// - parameter value: The expected value of any of the calls to the `Spy`.
 /// - parameter times: The expected amount of calls the Spy should have been called.
-/// - SeeAlso: ``beCalled(_:)``
+/// - SeeAlso: ``beCalled(_:times:)-6125c``
 public func beCalled<Arguments, Returning>(_ value: Arguments, times: Int) -> Matcher<Spy<Arguments, Returning>> where Arguments: Equatable {
     let rawMessage = "be called \(times) times, at least one of them is \(stringify(value))"
     return _beCalled(rawMessage: rawMessage) { validatorArgs in
@@ -173,8 +172,8 @@ public func beCalled<Arguments, Returning>(_ value: Arguments, times: Int) -> Ma
 /// A Nimble matcher for ``Spy`` that succeeds when the most recent call to the spy matches the given matchers.
 ///
 /// - Note: This matcher will fail if no matchers have been passed.
-/// - SeeAlso: ``beCalled(_:)`` for when you want to check if any of the calls to the spy match the matcher.
-/// - SeeAlso: ``mostRecentlyBeCalled(_:)`` as a shorthand when Arguments is equatable, and you want to check if it's equal to some value.
+/// - SeeAlso: ``beCalled(_:)-82qlg`` for when you want to check if any of the calls to the spy match the matcher.
+/// - SeeAlso: ``mostRecentlyBeCalled(_:)-91ves`` as a shorthand when Arguments is equatable, and you want to check if it's equal to some value.
 public func mostRecentlyBeCalled<Arguments, Returning>(_ matchers: Matcher<Arguments>...) -> Matcher<Spy<Arguments, Returning>> {
     let rawMessage = "most recently be called with \(matchers.count) matchers"
     return _mostRecentlyBeCalled(rawMessage: rawMessage) { validatorArgs in
@@ -207,8 +206,8 @@ public func mostRecentlyBeCalled<Arguments, Returning>(_ matchers: Matcher<Argum
 
 /// A Nimble matcher for ``Spy`` that succeeds when the most recent call to the spy is equal to the expected value.
 ///
-/// - SeeAlso: ``beCalled(_:)`` for when you want to check if any of the calls to the spy are equal to the expected value
-/// - SeeAlso: ``mostRecentlyBeCalled(_:)`` when you want to use a Matcher to check if the most recent call matches.
+/// - SeeAlso: ``beCalled(_:)-7sn1o`` for when you want to check if any of the calls to the spy are equal to the expected value
+/// - SeeAlso: ``mostRecentlyBeCalled(_:)-9i9t9`` when you want to use a Matcher to check if the most recent call matches.
 public func mostRecentlyBeCalled<Arguments, Returning>(
     _ value: Arguments
 ) -> Matcher<Spy<Arguments, Returning>> where Arguments: Equatable {

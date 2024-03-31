@@ -1,0 +1,160 @@
+@Tutorial(time: 20) {
+    @Intro(title: "The RecipeService object") {
+        Testing an object to download recipes and upload new ones.
+    }
+    
+    @Section(title: "Writing the synchronous Fake") {
+        @ContentAndMedia {
+            Suppose you are working on an application to view and write recipes.
+            
+            As part of this, there is a server component you need to interface with
+            in order to download recipes and upload new ones.
+        }
+        
+        @Steps {
+            @Step {
+                Let's first start with the `NetworkInterface` protocol.
+                
+                This is a protocol for a `URLSession`-like object that can make
+                various network requests.
+                                
+                @Code(name: "NetworkInterface", file: "NetworkInterface-01.swift")
+            }
+            
+            @Step {
+                Given this `NetworkInterface`, you might write `RecipeService`
+                like so:
+                
+                @Code(name: "RecipeService", file: "RecipeService-01.swift")
+            }
+            
+            @Step {
+                In writing the tests for your RecipeService class,
+                you could just use the real implementation of `NetworkInterface`. But now your
+                tests require you to have a reliable connection not just to the internet at
+                large, but also to the particular target server in order to work. If that server
+                ever goes down for maintenance, your tests will just fail. Additionally, using
+                a real version of `NetworkInterface` means you can only semi-reliably test the
+                happy paths. Good luck writing tests of any error cases.
+                
+                Given that, you decide to create a Fake and inject it (using
+                <doc:DependencyInjection>) to your Subject. You decide to come up with this
+                first attempt at `FakeNetworkInterface`.
+                
+                @Code(name: "FakeNetworkInterface", file: "FakeNetworkInterface-01.swift")
+            }
+            
+            @Step {
+                But this isn't very useful. For one, there's no way to control the result of
+                `get(from:)`. For another, there's no way to even check that your fake is even
+                used. This is where ``Spy`` comes in. Let's rewrite `FakeNetworkInterface` using
+                ``Spy``.
+                
+                @Code(name: "FakeNetworkInterface", file: "FakeNetworkInterface-02.swift")
+            }
+            
+            @Step {
+                This is the start of everything we need to write tests for
+                `RecipeService`, so let's do just that.
+                
+                @Code(name: "RecipeServiceTests", file: "RecipeServiceTests-01.swift")
+            }
+        }
+    }
+     
+    @Section(title: "Updating for Throwing") {
+        @ContentAndMedia {
+            Actual network calls can fail, and just crashing the app
+            just because the network fails is a bad experience at best. Luckily,
+            `Spy` can handle throwing calls. So let's update our code to handle
+            network errors.
+        }
+        
+        @Steps {
+            @Step {
+                First, let's start with updating `NetworkInterface`.
+                
+                @Code(name: "NetworkInterface", file: "NetworkInterface-02.swift")
+            }
+            
+            @Step {
+                With the updated `NetworkInterface`, we also have to update
+                `RecipeService` to handle these new errors. For our purposes,
+                let's just rethrow the errors and not do anything.
+                
+                @Code(name: "RecipeService", file: "RecipeService-02.swift")
+            }
+            
+            @Step {
+                Updating `NetworkInterface` also requires us to update
+                `FakeNetworkInterface`.
+                There are two ways we could do this: Use
+                `Spy<Arguments, Result<Success, Error>>`, or use the typealias
+                `ThrowingSpy<Arguments, Success, Error>`.
+                `ThrowingSpy` is less boilerplate, and therefore easier to
+                understand, so we'll go with that.
+                
+                @Code(name: "FakeNetworkInterface", file: "FakeNetworkInterface-03.swift")
+            }
+            
+            @Step {
+                Now that we can throw errors in test, we really should add tests
+                of what happens when `NetworkInterface` throws an error.  
+                This particular case is rather boring, but it is good to verify
+                that we're not crashing on errors. A downstream object might
+                take the error and present an alert with a retry option.
+                
+                @Code(name: "RecipeServiceTests", file: "RecipeServiceTests-02.swift")
+            }
+        }
+    }
+    
+    @Section(title: "Handling Asynchronous Calls") {
+        @ContentAndMedia {
+            In practice, it's also really bad practice to make synchronous
+            network calls. Doing so requires us to remember to call the
+            `NetworkInterface` from a background thread, or else risk blocking
+            the main thread. Which is, again, a poor experience at best, and
+            very likely to get you an `8BADF00D` crash. Better to make 
+            network calls asynchronous at the source - meaning at
+            `NetworkInterface`.
+        }
+        
+        @Steps {
+            @Step {
+                As with before, let's start with `NetworkInterface`, making use
+                of Swift Concurrency for this.
+                
+                @Code(name: "NetworkInterface", file: "NetworkInterface-03.swift")
+            }
+            
+            @Step {
+                With the again-updated `NetworkInterface`, we once again have
+                to update `RecipeService` to work with the asynchronous
+                `NetworkInterface`.
+                
+                @Code(name: "RecipeService", file: "RecipeService-03.swift")
+            }
+            
+            @Step {
+                And again, we turn our attention to `FakeNetworkInterface`.
+                We could update the Spies to be any of
+                `Spy<..., Pendable<Result<Success, Error>>`,
+                `Spy<..., ThrowingPendable<Success, Error>>`,
+                `PendableSpy<..., Result<Success, Error>>`, or
+                `ThrowingPendableSpy<..., Success, Error>`. As with before,
+                let's use the one that flattens the generics as much as
+                possible: `ThrowingPendableSpy`.
+                
+                @Code(name: "FakeNetworkInterface", file: "FakeNetworkInterface-04.swift")
+            }
+            
+            @Step {
+                Finally, we need to update the tests to work with all these
+                async calls.
+                
+                @Code(name: "RecipeServiceTests", file: "RecipeServiceTests-03.swift")
+            }
+        }
+    }
+}
