@@ -1,6 +1,10 @@
 import Foundation
 
-public final class DynamicPendable<Value: Sendable>: @unchecked Sendable {
+protocol ResolvableWithFallback {
+    func resolveWithFallback()
+}
+
+public final class DynamicPendable<Value: Sendable>: @unchecked Sendable, ResolvableWithFallback {
     private enum State: Sendable {
         case pending
         case finished(Value)
@@ -14,11 +18,7 @@ public final class DynamicPendable<Value: Sendable>: @unchecked Sendable {
     private let fallbackValue: Value
 
     deinit {
-        lock.lock()
-        if inProgressCalls.isEmpty == false {
-            self.resolve(with: fallbackValue)
-        }
-        lock.unlock()
+        resolveWithFallback()
     }
 
     public static func finished(_ value: Value) -> DynamicPendable<Value> {
@@ -54,6 +54,10 @@ public final class DynamicPendable<Value: Sendable>: @unchecked Sendable {
 
     public func call<Success, Failure: Error>() async throws -> Success where Value == Result<Success, Failure> {
         try await call().get()
+    }
+
+    public func resolveWithFallback() {
+        resolve(with: fallbackValue)
     }
 
     public func resolve(with value: Value) {

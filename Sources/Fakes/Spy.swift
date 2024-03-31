@@ -43,6 +43,10 @@ public final class Spy<Arguments, Returning> {
     /// - parameter value: The value to return when `callAsFunction()` is called.
     public func stub(_ value: Returning) {
         lock.lock()
+
+        if let resolvable = _stub as? ResolvableWithFallback {
+            resolvable.resolveWithFallback()
+        }
         _stub = value
         lock.unlock()
     }
@@ -67,6 +71,32 @@ extension Spy {
     /// Records that a call was made and returns the value stubbed in the initializer, or using one of the `stub()` methods.
     public func callAsFunction() -> Returning where Arguments == Void {
         return call(())
+    }
+}
+
+extension Spy {
+    // MARK: - Using DynamicPendable
+
+    public convenience init<Value>(fallbackValue value: Value) where Returning == DynamicPendable<Value> {
+        self.init(.init(fallbackValue: value))
+    }
+
+    public convenience init() where Returning == DynamicPendable<Void> {
+        self.init(.init())
+    }
+
+    public func resolveStub<Value>(with value: Value) where Returning == DynamicPendable<Value> {
+        lock.lock()
+        defer { lock.unlock() }
+        _stub.resolve(with: value)
+    }
+
+    public func callAsFunction<Value>(_ arguments: Arguments) async -> Value where Returning == DynamicPendable<Value> {
+        await call(arguments).call()
+    }
+
+    public func callAsFunction<Value>() async -> Value where Arguments == Void, Returning == DynamicPendable<Value> {
+        await call(()).call()
     }
 }
 

@@ -148,6 +148,80 @@ final class SpyTests: XCTestCase {
         subject.clearCalls()
         expect(subject.calls).to(beEmpty())
     }
+
+    func testDynamicPendable() async {
+        let subject = Spy<Void, DynamicPendable<Void>>()
+
+        let managedTask = ManagedTask<Void, Never> {
+            await subject()
+        }
+
+        await expect { await managedTask.isFinished }.toNever(beTrue())
+
+        subject.resolveStub(with: ())
+
+        await expect { await managedTask.isFinished }.toEventually(beTrue())
+    }
+
+    func testDynamicPendableDeinit() async {
+        let subject = Spy<Void, DynamicPendable<Void>>()
+
+        let managedTask = ManagedTask<Void, Never> {
+            await subject()
+        }
+
+        await expect { await managedTask.hasStarted }.toEventually(beTrue())
+
+        subject.stub(DynamicPendable())
+        subject.resolveStub(with: ())
+
+        await expect { await managedTask.isFinished }.toEventually(beTrue())
+    }
+}
+
+actor ManagedTask<Success, Failure: Error> {
+    var hasStarted = false
+    var isFinished = false
+
+    var _task: Task<Success, Failure>!
+
+    init(closure: @escaping () async throws -> Success) where Failure == Error {
+        _task = Task {
+            await self.recordStarted()
+            let result = try await closure()
+            await self.recordFinished()
+            return result
+        }
+    }
+
+    init(closure: @escaping () async -> Success) where Failure == Never {
+        _task = Task {
+            await self.recordStarted()
+            let result = await closure()
+            await self.recordFinished()
+            return result
+        }
+    }
+
+    private func recordStarted() {
+        self.hasStarted = true
+    }
+
+    private func recordFinished() {
+        self.isFinished = true
+    }
+
+    var result: Result<Success, Failure> {
+        get async {
+            await _task.result
+        }
+    }
+
+    var value: Success {
+        get async throws {
+            try await _task.value
+        }
+    }
 }
 
 enum TestError: Error {
