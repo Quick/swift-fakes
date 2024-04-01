@@ -91,33 +91,33 @@ final class SpyTests: XCTestCase {
     }
 
     func testPendable() async {
-        let subject = PendableSpy<Void, Int>()
+        let subject = PendableSpy<Void, Int>(pendingFallback: 1)
 
         await expect {
-            try await subject(pendingDelay: 0)
-        }.toEventually(throwError(PendableInProgressError()))
+            await subject(pendingDelay: 0)
+        }.toEventually(equal(1))
 
         subject.stub(finished: 4)
 
         await expect {
-            try await subject(pendingDelay: 0)
+            await subject(pendingDelay: 0)
         }.toEventually(equal(4))
     }
 
     func testPendableTakesNonVoidArguments() async throws {
         let subject = PendableSpy<Int, Void>(finished: ())
 
-        try await subject(3, pendingDelay: 0)
+        await subject(3, pendingDelay: 0)
 
         expect(subject.calls).to(equal([3]))
     }
 
     func testThrowingPendable() async {
-        let subject = ThrowingPendableSpy<Void, Int, TestError>()
+        let subject = ThrowingPendableSpy<Void, Int, TestError>(pendingSuccess: 0)
 
         await expect {
             try await subject(pendingDelay: 0)
-        }.toEventually(throwError(PendableInProgressError()))
+        }.toEventually(equal(0))
 
         subject.stub(success: 5)
 

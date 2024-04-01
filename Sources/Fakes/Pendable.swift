@@ -47,52 +47,45 @@ public final class PendableDefaults: @unchecked Sendable {
 /// Using a Static value for Pendable enables us to essentially cheat that.
 public enum Pendable<Value> {
     /// an in-progress call state
-    case pending
+    ///
+    /// The associated value is a fallback value.
+    case pending(fallback: Value)
 
     /// a finished call state
     case finished(Value)
 
-    public func resolve(delay: TimeInterval = PendableDefaults.delay) async throws -> Value {
+    public func resolve(
+        delay: TimeInterval = PendableDefaults.delay
+    ) async -> Value {
         switch self {
-        case .pending:
-            try await Task.sleep(nanoseconds: UInt64(1_000_000_000 * delay))
-            throw PendableInProgressError()
+        case .pending(let fallback):
+            _ = try? await Task.sleep(
+                nanoseconds: UInt64(1_000_000_000 * delay)
+            )
+            return fallback
         case .finished(let value):
             return value
         }
     }
 
-    public func resolve(pendingFallback: Value, delay: TimeInterval = PendableDefaults.delay) async -> Value {
+    public func resolve<Success, Failure: Error>(
+        delay: TimeInterval = PendableDefaults.delay
+    ) async throws -> Success where Value == Result<Success, Failure> {
         switch self {
-        case .pending:
-            try! await Task.sleep(nanoseconds: UInt64(1_000_000_000 * delay)) // swiftlint:disable:this force_try
-            return pendingFallback
-        case .finished(let value):
-            return value
-        }
-    }
-
-    public func resolve<Success, Failure: Error>(delay: TimeInterval = PendableDefaults.delay) async throws -> Success where Value == Result<Success, Failure> {
-        switch self {
-        case .pending:
-            try await Task.sleep(nanoseconds: UInt64(1_000_000_000 * delay))
-            throw PendableInProgressError()
+        case .pending(let fallback):
+            _ = try? await Task.sleep(
+                nanoseconds: UInt64(1_000_000_000 * delay)
+            )
+            return try fallback.get()
         case .finished(let value):
             return try value.get()
         }
     }
 }
 
-public typealias ThrowingPendable<Success, Failure: Error> = Pendable<Result<Success, Failure>>
-
-public struct PendableInProgressError: Error, CustomNSError, Sendable {
-    public var errorUserInfo: [String: Any] {
-        // Required to prevent Xcode from reporting that we threw an error.
-        // The default assertionHandlers will report this to XCode for us.
-        ["XCTestErrorUserInfoKeyShouldIgnore": true]
-    }
-
-    public init() {}
-}
+public typealias ThrowingPendable<
+    Success,
+    Failure: Error
+> = Pendable<Result<Success, Failure>>
 
 extension Pendable: Sendable where Value: Sendable {}
