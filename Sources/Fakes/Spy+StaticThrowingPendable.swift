@@ -57,7 +57,7 @@ extension Spy {
 
 extension Spy {
     // Returning == ThrowingPendable
-    /// Records the arguments and handles the result according to ``Pendable.call(delay:)``.
+    /// Records the arguments and handles the result according to ``Pendable/resolve(delay:)-1bb25``.
     /// This call then throws or returns the success, according to `Result.get`.
     ///
     /// - parameter arguments: The arguments to record.
@@ -70,7 +70,7 @@ extension Spy {
         return try await call(arguments).resolve(delay: pendingDelay)
     }
 
-    /// Records that a call was made and handles the result according to ``Pendable.call(delay:)``.
+    /// Records that a call was made and handles the result according to ``Pendable/resolve(delay:)-1bb25``.
     /// This call then throws or returns the success, according to `Result.get`.
     ///
     /// - parameter pendingDelay: The amount of seconds to delay if the `Pendable` is .pending before

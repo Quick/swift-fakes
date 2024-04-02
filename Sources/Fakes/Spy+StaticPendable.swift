@@ -44,7 +44,7 @@ extension Spy {
 }
 
 extension Spy {
-    /// Records the arguments and handles the result according to ``Pendable.call(delay:)``.
+    /// Records the arguments and handles the result according to ``Pendable/resolve(delay:)-hvhg``.
     ///
     /// - parameter arguments: The arguments to record.
     /// - parameter pendingDelay: The amount of seconds to delay if the `Pendable` is .pending before
@@ -59,7 +59,7 @@ extension Spy {
         return await call(arguments).resolve(delay: pendingDelay)
     }
 
-    /// Records that a call was made and handles the result according to ``Pendable.call(delay:)``.
+    /// Records that a call was made and handles the result according to ``Pendable/resolve(delay:)-hvhg``.
     ///
     /// - parameter pendingDelay: The amount of seconds to delay if the `Pendable` is .pending before
     /// returning the `pendingFallback`. If the `Pendable` is .finished, then this value is ignored.

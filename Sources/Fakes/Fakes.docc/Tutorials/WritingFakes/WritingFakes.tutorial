@@ -1,0 +1,10 @@
+@Tutorials(name: "Writing Fakes") {
+    @Intro(title: "Creating a Fake") {
+        A tutorial showing you how to create and use a Fake, within the context
+        of testing network calls.
+    }
+    
+    @Chapter(name: "Creating and Testing RecipeService") {
+        @TutorialReference(tutorial: "doc:RecipeService")
+    }
+}
