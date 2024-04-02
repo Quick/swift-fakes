@@ -1,0 +1,1515 @@
+{
+  "abstract" : [
+    {
+      "text" : "Nimble Matchers to make asserting on ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " significantly nicer.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/Fakes\/documentation\/Fakes"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/NimbleIntegration"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "Fakes"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Nimble Integration"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Contents",
+          "level" : 2,
+          "text" : "Contents",
+          "type" : "heading"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/beCalled(_:)-82qlg",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " without any arguments matches if the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Spy",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " has been",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "called at least once. This is especially useful for verifying there are no",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "interactions with the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Spy",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", by using ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "expect(spy).toNot(beCalled())",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/beCalled(_:times:)-6125c",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " without any matcher arguments, matches if the",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Spy",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " has been called exactly the amount of times specified in the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "times",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "argument. For example, ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "expect(spy).to(beCalled(times: 3))",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " will pass if the",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Spy",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " has been called with any arguments exactly 3 times.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/beCalled(_:)-82qlg",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " matcher with any non-zero amount of matchers will",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "match if at least one of the calls to the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Spy",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " matches all of the passed-in",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "matchers. That is, ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "expect(spy).to(beCalled(equal(1), equal(2)))",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " will never",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "pass, because no single call to the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Spy",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " can pass both ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "equal(1)",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " and",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "equal(2)",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/beCalled(_:times:)-6125c",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " matcher with a non-zero matcher arguments",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "is effectively the same as ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "satisfyAllOf(beCalled(times:), beCalled(...))",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ". That",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "is, it matches if the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Spy",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " has been called exactly ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "times",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " times, and at least",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "one of the calls to the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Spy",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " matches all of the passed-in matchers.",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "For example:",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "code" : [
+            "let spy = Spy<Int, Void>()",
+            "spy(1)",
+            "spy(2)",
+            "",
+            "expect(spy).to(beCalled(equal(1), times: 2))"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "will match because the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Spy",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " has been called twice, and at least one of those",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "calls is equal to 1.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/mostRecentlyBeCalled(_:)-9i9t9",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " matcher will match if the last recorded",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "call to the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Spy",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " matches all of the passed in matchers. Unlike the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "beCalled",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "matchers, ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/mostRecentlyBeCalled(_:)-9i9t9",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " will unconditionally fail if you",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "don’t pass in any matchers.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "For all of variants of ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "beCalled",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " and ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "mostRecentlyBeCalled",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ": If the",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Arguments",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " to the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Spy",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " conforms to ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Equatable",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", you can directly pass in a",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "value of the same type to ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "beCalled",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " or ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "mostRecentlyBeCalled",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ". For example,",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "if you have a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Spy<Int, ...>",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", you can use ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "beCalled(123)",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " in place of",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "beCalled(equal(123))",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ". See ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/beCalled(_:)-7sn1o",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ",",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/beCalled(_:times:)-9320x",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ", and ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/mostRecentlyBeCalled(_:)-91ves",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "If your ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Spy",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " takes multiple ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Arguments",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " - that is, the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Arguments",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " generic is a",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "Tuple -, then you can make use of Nimble’s built-in",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "https:\/\/quick.github.io\/Nimble\/documentation\/nimble\/map(_:_:)-6ykjm",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "to easily verify a call to the matcher. For example:",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Tip",
+          "style" : "tip",
+          "type" : "aside"
+        },
+        {
+          "code" : [
+            "let spy = Spy<(arg1: Double, arg2: String), Void>()",
+            "",
+            "spy((1337.001, \"hello world\"))",
+            "",
+            "expect(spy).to(beCalled(",
+            "    map(\\.arg1, beCloseTo(1337, within: 0.01)),",
+            "    map(\\.arg2, beginWith(\"hello\"))",
+            "))"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "If you want to check that a Spy is not ever called as part of code",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "running on a background thread, use ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "expect(spy).toNever(beCalled())",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/fakes\/nimbleintegration"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://Fakes/documentation/Fakes": {
+  "abstract" : [
+    {
+      "inlineContent" : [
+        {
+          "text" : "Swift Fakes",
+          "type" : "text"
+        }
+      ],
+      "type" : "strong"
+    },
+    {
+      "text" : " is an open source collection of Test Doubles for Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Fakes",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes"
+},
+"doc://Fakes/documentation/Fakes/Spy": {
+  "abstract" : [
+    {
+      "text" : "A Spy is a test double for recording calls to methods, and returning stubbed results.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Spy"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Spy"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Spy",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy"
+},
+"doc://Fakes/documentation/Fakes/beCalled(_:)-7sn1o": {
+  "abstract" : [
+    {
+      "text" : "A Nimble matcher for ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " that succeeds when any of the calls to the spy are equal to the given value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "beCalled"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Returning"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6Nimble7MatcherV",
+      "text" : "Matcher"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Fakes3SpyC",
+      "text" : "Spy"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Returning"
+    },
+    {
+      "kind" : "text",
+      "text" : ">>"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/beCalled(_:)-7sn1o",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "beCalled(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/becalled(_:)-7sn1o"
+},
+"doc://Fakes/documentation/Fakes/beCalled(_:)-82qlg": {
+  "abstract" : [
+    {
+      "text" : "A Nimble matcher for ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " that succeeds when any of the calls to the spy matches the given matchers.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "beCalled"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Returning"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6Nimble7MatcherV",
+      "text" : "Matcher"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ">...) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6Nimble7MatcherV",
+      "text" : "Matcher"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Fakes3SpyC",
+      "text" : "Spy"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Returning"
+    },
+    {
+      "kind" : "text",
+      "text" : ">>"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/beCalled(_:)-82qlg",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "beCalled(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/becalled(_:)-82qlg"
+},
+"doc://Fakes/documentation/Fakes/beCalled(_:times:)-6125c": {
+  "abstract" : [
+    {
+      "text" : "A nimble matcher for ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " that succeeds when the spy has been called",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "code" : "times",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " times, and it has been called at least once with arguments that match",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "the matcher.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "beCalled"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Returning"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6Nimble7MatcherV",
+      "text" : "Matcher"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ">..., "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "times"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6Nimble7MatcherV",
+      "text" : "Matcher"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Fakes3SpyC",
+      "text" : "Spy"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Returning"
+    },
+    {
+      "kind" : "text",
+      "text" : ">>"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/beCalled(_:times:)-6125c",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "beCalled(_:times:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/becalled(_:times:)-6125c"
+},
+"doc://Fakes/documentation/Fakes/beCalled(_:times:)-9320x": {
+  "abstract" : [
+    {
+      "text" : "A Nimble matcher for ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " that succeeds when the spy has been called ",
+      "type" : "text"
+    },
+    {
+      "code" : "times",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " times,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "and at least one of those calls is equal to the given value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "beCalled"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Returning"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "times"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6Nimble7MatcherV",
+      "text" : "Matcher"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Fakes3SpyC",
+      "text" : "Spy"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Returning"
+    },
+    {
+      "kind" : "text",
+      "text" : ">>"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/beCalled(_:times:)-9320x",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "beCalled(_:times:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/becalled(_:times:)-9320x"
+},
+"doc://Fakes/documentation/Fakes/mostRecentlyBeCalled(_:)-91ves": {
+  "abstract" : [
+    {
+      "text" : "A Nimble matcher for ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " that succeeds when the most recent call to the spy is equal to the expected value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "mostRecentlyBeCalled"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Returning"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6Nimble7MatcherV",
+      "text" : "Matcher"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Fakes3SpyC",
+      "text" : "Spy"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Returning"
+    },
+    {
+      "kind" : "text",
+      "text" : ">>"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/mostRecentlyBeCalled(_:)-91ves",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "mostRecentlyBeCalled(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/mostrecentlybecalled(_:)-91ves"
+},
+"doc://Fakes/documentation/Fakes/mostRecentlyBeCalled(_:)-9i9t9": {
+  "abstract" : [
+    {
+      "text" : "A Nimble matcher for ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " that succeeds when the most recent call to the spy matches the given matchers.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "mostRecentlyBeCalled"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Returning"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6Nimble7MatcherV",
+      "text" : "Matcher"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ">...) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:6Nimble7MatcherV",
+      "text" : "Matcher"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Fakes3SpyC",
+      "text" : "Spy"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Returning"
+    },
+    {
+      "kind" : "text",
+      "text" : ">>"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/mostRecentlyBeCalled(_:)-9i9t9",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "mostRecentlyBeCalled(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/mostrecentlybecalled(_:)-9i9t9"
+},
+"https://quick.github.io/Nimble/documentation/nimble/map(_:_:)-6ykjm": {
+  "identifier" : "https:\/\/quick.github.io\/Nimble\/documentation\/nimble\/map(_:_:)-6ykjm",
+  "title" : "map matcher",
+  "titleInlineContent" : [
+    {
+      "code" : "map",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " matcher",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/quick.github.io\/Nimble\/documentation\/nimble\/map(_:_:)-6ykjm"
+}
+}
+}

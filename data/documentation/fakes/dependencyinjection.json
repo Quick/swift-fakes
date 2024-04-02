@@ -1,0 +1,1968 @@
+{
+  "abstract" : [
+    {
+      "text" : "Providing dependencies instead of reaching out to them.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/Fakes\/documentation\/Fakes"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/DependencyInjection"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "Fakes"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Dependency Injection"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Contents",
+          "level" : 2,
+          "text" : "Contents",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Dependency Injection",
+                  "type" : "text"
+                }
+              ],
+              "type" : "strong"
+            },
+            {
+              "text" : " means to provide the dependencies for an object, instead",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "of the object ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "a priori",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " knowing how to either reach them, or how to make them",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "itself. Dependency injection is a fundamental design pattern for enabling and",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "improving not just testability of an object, but also the reliability of the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "entire system.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "An object can have 2 types of dependencies: Implicit and Explicit. Explicit",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "dependencies are anything passed in or otherwise given to the object. Implicit",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "dependencies, thus, are anything the object itself knows how to call or make.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Even putting aside testability, implicit dependencies inherently make your",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "system’s dependency graph harder to read. That said, not all implicit",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "dependencies are bad; it would be absurd to inject the ",
+              "type" : "text"
+            },
+            {
+              "code" : "+",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " operator just for",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "testability.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Testing-greetingForTimeOfDay",
+          "level" : 2,
+          "text" : "Testing greetingForTimeOfDay()",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For example, consider a function that uses the current time in order to greet",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the user with one of either “Good morning”, “Good afternoon”, or “Good evening”.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Without using dependency injection, you might write the code as:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func greetingForTimeOfDay() -> String {",
+            "    let hour = Calendar.current.component(.hour, from: Date())",
+            "    switch hour {",
+            "    case 0..<12: return \"Good morning\"",
+            "    case 12..<18: return \"Good afternoon\"",
+            "    default: return \"Good evening\"",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Which, sure, works, but is impossible to reliably test. The result of",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "greetingForTimeOfDay",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", by definition, depends on the current time of",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "day. Which means that you have three choices for testing this as-written:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Don’t test it.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Write a weaker test, just checking that the output is one of the three choices:",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "That is: ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "XCTAssert([\"Good morning\", \"Good afternoon\", \"Good evening\"].contains(greetingForTimeOfDay()))",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "This is not only harder to read, but you’re bundling up the three behaviors of",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "greetingForTimeOfDay",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " and making the tests less clear than asserting on the",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "exact output.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Add logic to your tests, wherein you basically end up re-implementing",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "greetingForTimeOfDay",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " in your tests.",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "That is, writing your test like:",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "orderedList"
+        },
+        {
+          "code" : [
+            "func testGreetingForTimeOfDay() {",
+            "    let greeting = greetingForCurrentTimeOfDay()",
+            "",
+            "    let hour = Calendar.current.component(.hour, from: Date())",
+            "    switch hour {",
+            "    case 0..<12: XCTAssertEqual(greeting, \"Good morning\")",
+            "    case 12..<18: XCTAssertEqual(greeting, \"Good afternoon\")",
+            "    default: XCTAssertEqual(greeting, \"Good evening\")",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This option increases coupling, which is not what we want. The more the test",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "knows about the internals of its subject, the more tightly coupled, the less",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "valuable, and the harder to maintain that test will be.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Additionally, in this option, we end up creating a tautology, which is a",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "particularly useless test, as it basically ends up boiling down to “the code",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "works because it works”. The most you can say about a tautology is that at least",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "it doesn’t blow up. There are better ways to express that desire, such as using",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "one of ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/quick\/nimble\/",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/quick.github.io\/Nimble\/documentation\/nimble\/swiftassertions",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/quick.github.io\/Nimble\/documentation\/nimble\/swifterrors\/",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "or ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/quick.github.io\/Nimble\/documentation\/nimble\/exceptions",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "matchers.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "A Tautological Test is a test that is a mirror of the production code.",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "In this example, this is fairly easy to identify, but they can get quite tricky",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "as we introduce fakes. See ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "https:\/\/www.fabiopereira.me\/blog\/2010\/05\/27\/ttdd-tautological-test-driven-development-anti-pattern\/",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Neither of these three options are examples of strong, reliable, easy-to-read",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "tests. Instead, to be able to write better tests, we must improve the testability",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "of ",
+              "type" : "text"
+            },
+            {
+              "code" : "greetingForTimeOfDay",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " by injecting the dependencies.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "code" : "greetingForTimeOfDay",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " has 2 implicit dependencies: The ",
+              "type" : "text"
+            },
+            {
+              "code" : "Calendar",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " object,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and the current ",
+              "type" : "text"
+            },
+            {
+              "code" : "Date",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". In this particular case, we could inject either one and",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "be able to massively improve the testability of the function. For the sake of",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "teaching, let’s cover both.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Injecting-a-DateProvider",
+          "level" : 3,
+          "text" : "Injecting a DateProvider",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "First, let’s look at injecting a way to get the current ",
+              "type" : "text"
+            },
+            {
+              "code" : "Date",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", instead of",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "making a new ",
+              "type" : "text"
+            },
+            {
+              "code" : "Date",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " object that Foundation helpfully assigns to the current",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "Date",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". We could do this in one of three ways:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Directly pass in a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Date",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " object.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Inject a protocol that has a single method which returns a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Date",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " object.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Inject a closure that returns a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Date",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " object.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "orderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The first is just kicking the issue of getting the date up the stack, and thus",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "not something we should do.",
+              "type" : "text"
+            },
+            {
+              "text" : "\n",
+              "type" : "text"
+            },
+            {
+              "text" : "The second option is a case of the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/martinfowler.com\/bliki\/HumbleObject.html",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " pattern, and",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "is an excellent way to handle this.",
+              "type" : "text"
+            },
+            {
+              "text" : "\n",
+              "type" : "text"
+            },
+            {
+              "text" : "Option 3 is only really suitable for very simple cases, and arguably not even",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "in that case. You should know it’s an option, but for the sake of consistency,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "you should prefer creating a protocol.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "With that in mind, let’s introduce ",
+              "type" : "text"
+            },
+            {
+              "code" : "DateProvider",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", a single-method protocol,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "which is only responsible for providing a date. Alongside it, for production",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "use, is the ",
+              "type" : "text"
+            },
+            {
+              "code" : "CurrentDateProvider",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "protocol DateProvider {",
+            "    func provide() -> Date",
+            "}",
+            "",
+            "struct CurrentDateProvider: DateProvider {",
+            "    func provide() -> Date { Date() }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "If you haven’t watched the amazing WWDC 2015 talk, ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "https:\/\/www.youtube.com\/watch?v=p3zo4ptMBiQ",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : ", be sure to",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "take the time to do so!",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Tip",
+          "style" : "tip",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Now, we can refactor our ",
+              "type" : "text"
+            },
+            {
+              "code" : "greetingForTimeOfDay",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " function to take in the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "DateProvider",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func greetingForTimeOfDay(dateProvider: DateProvider) -> String {",
+            "    let hour = Calendar.current.component(.hour, from: dateProvider.provide())",
+            "    switch hour {",
+            "    case 0..<12: return \"Good morning\"",
+            "    case 12..<18: return \"Good afternoon\"",
+            "    default: return \"Good evening\"",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Next, we have to create a ",
+              "type" : "text"
+            },
+            {
+              "code" : "FakeDateProvider",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", which uses a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Spy<Void, Date>",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "record arguments to ",
+              "type" : "text"
+            },
+            {
+              "code" : "provide()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", and return a pre-stubbed (that is, pre-set),",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "date:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "final class FakeDateProvider: DateProvider {",
+            "    let provideSpy = Spy<Void, Date>(Date(timeIntervalSince1970: 0))",
+            "    func provide() {",
+            "        provideSpy()",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Now we have all the components necessary to write our our tests for the 3",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "potential states. Like so:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "final class GreetingForTimeOfDayTests: XCTestCase {",
+            "    var dateProvider: FakeDateProvider!",
+            "    override func setUp() {",
+            "        super.setUp()",
+            "        dateProvider = FakeDateProvider()",
+            "    }",
+            "",
+            "    func testMorning() {",
+            "        \/\/ Arrange",
+            "        dateProvider.provideSpy.stub(Date(timeIntervalSince1970: 3600)) \/\/ Jan 1st, 1970 at ~1 am.",
+            "",
+            "        \/\/ Act",
+            "        let greeting = greetingForTimeOfDay(dateProvider: dateProvider)",
+            "",
+            "        \/\/ Assert",
+            "        XCTAssertEqual(greeting, \"Good morning\")",
+            "    }",
+            "",
+            "    func testAfternoon() {",
+            "        \/\/ Arrange",
+            "        dateProvider.provideSpy.stub(Date(timeIntervalSince1970: 3600 * 12)) \/\/ Jan 1st, 1970 at ~noon am.",
+            "",
+            "        \/\/ Act",
+            "        let greeting = greetingForTimeOfDay(dateProvider: dateProvider)",
+            "",
+            "        \/\/ Assert",
+            "        XCTAssertEqual(greeting, \"Good afternoon\")",
+            "    }",
+            "",
+            "    func testEvening() {",
+            "        \/\/ Arrange",
+            "        dateProvider.provideSpy.stub(Date(timeIntervalSince1970: 3600 * 18)) \/\/ Jan 1st, 1970 at ~6 pm.",
+            "",
+            "        \/\/ Act",
+            "        let greeting = greetingForTimeOfDay(dateProvider: dateProvider)",
+            "",
+            "        \/\/ Assert",
+            "        XCTAssertEqual(greeting, \"Good evening\")",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Annoyed at the setup and act repitition? Check out",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "https:\/\/github.com\/Quick\/Quick\/",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : "! It provides a simple DSL enabling",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "powerful test simplifications.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This is significantly easier to understand the three behaviors that",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "greetingForTimeOfDay",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " has. However, it still requires us to carefully construct",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the Date objects that are then passed into the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Calendar",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". So, let’s look at",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "injecting the ",
+              "type" : "text"
+            },
+            {
+              "code" : "Calendar",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Injecting-Calendar",
+          "level" : 3,
+          "text" : "Injecting `Calendar`",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Like with providing ",
+              "type" : "text"
+            },
+            {
+              "code" : "Date",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", we have 3 options for injecting the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "component(_:from:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " method. However, this case is definitely complex enough",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "that there’s really only one approach: wrapping ",
+              "type" : "text"
+            },
+            {
+              "code" : "component(_:from:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " in a",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "protocol.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Let’s do this by creating a protocol to wrap ",
+              "type" : "text"
+            },
+            {
+              "code" : "Calendar",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". For this case, we only",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "need a single method in that protocol, but you can imagine this protocol might",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "grow with time (or not, as per the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Interface_segregation_principle",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ").",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "protocol CalendarProtocol {",
+            "    func component(",
+            "        _ component: Calendar.Component,",
+            "        from date: Date",
+            "    ) -> Int",
+            "}",
+            "",
+            "extension Calendar: CalendarProtocol {}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Because ",
+              "type" : "text"
+            },
+            {
+              "code" : "component(_:from:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is already an existing method on ",
+              "type" : "text"
+            },
+            {
+              "code" : "Calendar",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "conforming ",
+              "type" : "text"
+            },
+            {
+              "code" : "Calendar",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to ",
+              "type" : "text"
+            },
+            {
+              "code" : "CalendarProtocol",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " requires no additional methods.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Next, we have to inject our ",
+              "type" : "text"
+            },
+            {
+              "code" : "CalendarProtocol",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " into ",
+              "type" : "text"
+            },
+            {
+              "code" : "greetingForTimeOfDay",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func greetingForTimeOfDay(calendar: CalendarProtocol, dateProvider: DateProvider) -> String {",
+            "    let hour = calendar.component(.hour, from: dateProvider())",
+            "    switch hour {",
+            "    case 0..<12: return \"Good morning\"",
+            "    case 12..<18: return \"Good afternoon\"",
+            "    default: return \"Good evening\"",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Which, again, is a fairly straightforward thing to do.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Now, let’s create a Fake implementation of ",
+              "type" : "text"
+            },
+            {
+              "code" : "CalendarProtocol",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". For more details",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "on creating fakes, please check out the tutorial ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/Fakes\/tutorials\/WritingFakes",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "final class FakeCalendar: CalendarProtocol {",
+            "    let componentSpy = Spy<(component: Calendar.Component, date: Date), Int>(0)",
+            "    func component(",
+            "        _ component: Calendar.Component,",
+            "        from date: Date",
+            "    ) -> Int {",
+            "        componentSpy((component, date))",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Finally, we can update our tests to use ",
+              "type" : "text"
+            },
+            {
+              "code" : "FakeCalendar",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "final class GreetingForTimeOfDayTests: XCTestCase {",
+            "    var dateProvider: FakeDateProvider!",
+            "    var calendar: FakeCalendar!",
+            "    override func setUp() {",
+            "        super.setUp()",
+            "        dateProvider = FakeDateProvider()",
+            "        calendar = FakeCalendar()",
+            "    }",
+            "",
+            "    func testMorning() {",
+            "        \/\/ Arrange",
+            "        calendar.componentsSpy.stub(0)",
+            "",
+            "        \/\/ Act",
+            "        let greeting = greetingForTimeOfDay(",
+            "            calendar: calendar,",
+            "            dateProvider: dateProvider",
+            "        )",
+            "",
+            "        \/\/ Assert",
+            "        XCTAssertEqual(greeting, \"Good morning\")",
+            "    }",
+            "",
+            "    func testAfternoon() {",
+            "        \/\/ Arrange",
+            "        calendar.componentsSpy.stub(12)",
+            "",
+            "        \/\/ Act",
+            "        let greeting = greetingForTimeOfDay(",
+            "            calendar: calendar,",
+            "            dateProvider: dateProvider",
+            "        )",
+            "",
+            "        \/\/ Assert",
+            "        XCTAssertEqual(greeting, \"Good afternoon\")",
+            "    }",
+            "",
+            "    func testEvening() {",
+            "        \/\/ Arrange",
+            "        calendar.componentsSpy.stub(18)",
+            "",
+            "        \/\/ Act",
+            "        let greeting = greetingForTimeOfDay(",
+            "            calendar: calendar,",
+            "            dateProvider: dateProvider",
+            "        )",
+            "",
+            "        \/\/ Assert",
+            "        XCTAssertEqual(greeting, \"Good evening\")",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This is significantly easier to read. By injecting our ",
+              "type" : "text"
+            },
+            {
+              "code" : "FakeCalendar",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", we were",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "able to make ",
+              "type" : "text"
+            },
+            {
+              "code" : "greetingForTimeOfDay",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " significantly easier to test, as well as",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "drastically improving the readability and reliability of the tests.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "You might notice that these tests never verified that ",
+              "type" : "text"
+            },
+            {
+              "code" : "FakeCalendar",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " or",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "dateProvider",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " were called. That’s because it’s entirely unnecessary to do so in",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "this case. Generally, you only need to verify those as either part of",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "scaffolding tests (tests which are only necessary while writing out the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "component), or when they have some kind of side effect in addition to their",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "return value. For example, making a network call by definition has side",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "effects (in addition to returning the data\/throwing an error). So you would want",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to verify that the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " for the network call has recorded a call.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Dependency-Injection-for-Types",
+          "level" : 3,
+          "text" : "Dependency Injection for Types",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "If ",
+              "type" : "text"
+            },
+            {
+              "code" : "greetingForTimeOfDay",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " were wrapped in a type, you should inject",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "CalendarProtocol",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "DateProvider",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " as arguments to the types initializer.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "That way, callers of ",
+              "type" : "text"
+            },
+            {
+              "code" : "greetingForTimeOfDay",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " only need the wrapping type, and not",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the ",
+              "type" : "text"
+            },
+            {
+              "code" : "CalendarProtocol",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "DateProvider",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". Like so:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "struct Greeter {",
+            "    let calendar: CalendarProtocol",
+            "    let dateProvider: DateProvider",
+            "",
+            "    \/\/ This would normally be auto-generated, but is included here for",
+            "    \/\/ illustrative purposes.",
+            "    init(calendar: CalendarProtocol, dateProvider: DateProvider) {",
+            "        self.calendar = calendar",
+            "        self.dateProvider = dateProvider",
+            "    }",
+            "",
+            "    func greetingForTimeOfDay() -> String {",
+            "        let hour = calendar.component(.hour, from: dateProvider())",
+            "        switch hour {",
+            "        case 0..<12: return \"Good morning\"",
+            "        case 12..<18: return \"Good afternoon\"",
+            "        default: return \"Good evening\"",
+            "        }",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "By the way, did you notice the other three potential issues here? That’s",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "right, different people and cultures might define morning, afternoon, and",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "evening differently.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/fakes\/dependencyinjection"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://Fakes/documentation/Fakes": {
+  "abstract" : [
+    {
+      "inlineContent" : [
+        {
+          "text" : "Swift Fakes",
+          "type" : "text"
+        }
+      ],
+      "type" : "strong"
+    },
+    {
+      "text" : " is an open source collection of Test Doubles for Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Fakes",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes"
+},
+"doc://Fakes/documentation/Fakes/Spy": {
+  "abstract" : [
+    {
+      "text" : "A Spy is a test double for recording calls to methods, and returning stubbed results.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Spy"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Spy"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Spy",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy"
+},
+"doc://Fakes/tutorials/WritingFakes": {
+  "abstract" : [
+    {
+      "text" : "A tutorial showing you how to create and use a Fake, within the context",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "of testing network calls.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/tutorials\/WritingFakes",
+  "kind" : "overview",
+  "role" : "overview",
+  "title" : "Creating a Fake",
+  "type" : "topic",
+  "url" : "\/tutorials\/writingfakes"
+},
+"https://en.wikipedia.org/wiki/Interface_segregation_principle": {
+  "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Interface_segregation_principle",
+  "title" : "Interface Segregation Principle",
+  "titleInlineContent" : [
+    {
+      "text" : "Interface Segregation Principle",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/en.wikipedia.org\/wiki\/Interface_segregation_principle"
+},
+"https://github.com/Quick/Quick/": {
+  "identifier" : "https:\/\/github.com\/Quick\/Quick\/",
+  "title" : "Quick",
+  "titleInlineContent" : [
+    {
+      "text" : "Quick",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/Quick\/Quick\/"
+},
+"https://github.com/quick/nimble/": {
+  "identifier" : "https:\/\/github.com\/quick\/nimble\/",
+  "title" : "Nimble’s",
+  "titleInlineContent" : [
+    {
+      "text" : "Nimble’s",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/quick\/nimble\/"
+},
+"https://martinfowler.com/bliki/HumbleObject.html": {
+  "identifier" : "https:\/\/martinfowler.com\/bliki\/HumbleObject.html",
+  "title" : "Humble Object",
+  "titleInlineContent" : [
+    {
+      "text" : "Humble Object",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/martinfowler.com\/bliki\/HumbleObject.html"
+},
+"https://quick.github.io/Nimble/documentation/nimble/exceptions": {
+  "identifier" : "https:\/\/quick.github.io\/Nimble\/documentation\/nimble\/exceptions",
+  "title" : "exception-checking",
+  "titleInlineContent" : [
+    {
+      "text" : "exception-checking",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/quick.github.io\/Nimble\/documentation\/nimble\/exceptions"
+},
+"https://quick.github.io/Nimble/documentation/nimble/swiftassertions": {
+  "identifier" : "https:\/\/quick.github.io\/Nimble\/documentation\/nimble\/swiftassertions",
+  "title" : "assertion-checking",
+  "titleInlineContent" : [
+    {
+      "text" : "assertion-checking",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/quick.github.io\/Nimble\/documentation\/nimble\/swiftassertions"
+},
+"https://quick.github.io/Nimble/documentation/nimble/swifterrors/": {
+  "identifier" : "https:\/\/quick.github.io\/Nimble\/documentation\/nimble\/swifterrors\/",
+  "title" : "error-checking",
+  "titleInlineContent" : [
+    {
+      "text" : "error-checking",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/quick.github.io\/Nimble\/documentation\/nimble\/swifterrors\/"
+},
+"https://www.fabiopereira.me/blog/2010/05/27/ttdd-tautological-test-driven-development-anti-pattern/": {
+  "identifier" : "https:\/\/www.fabiopereira.me\/blog\/2010\/05\/27\/ttdd-tautological-test-driven-development-anti-pattern\/",
+  "title" : "this post from Fabio Pereira",
+  "titleInlineContent" : [
+    {
+      "text" : "this post from Fabio Pereira",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/www.fabiopereira.me\/blog\/2010\/05\/27\/ttdd-tautological-test-driven-development-anti-pattern\/"
+},
+"https://www.youtube.com/watch?v=p3zo4ptMBiQ": {
+  "identifier" : "https:\/\/www.youtube.com\/watch?v=p3zo4ptMBiQ",
+  "title" : "Protocol Oriented Programming in Swift",
+  "titleInlineContent" : [
+    {
+      "text" : "Protocol Oriented",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Programming in Swift",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/www.youtube.com\/watch?v=p3zo4ptMBiQ"
+}
+}
+}

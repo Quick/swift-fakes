@@ -1,0 +1,1699 @@
+{
+  "hierarchy" : {
+    "modules" : [
+      {
+        "projects" : [
+          {
+            "reference" : "doc:\/\/Fakes\/tutorials\/Fakes\/RecipeService",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/Fakes\/tutorials\/Fakes\/RecipeService#Writing-the-synchronous-Fake"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/Fakes\/tutorials\/Fakes\/RecipeService#Updating-for-Throwing"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/Fakes\/tutorials\/Fakes\/RecipeService#Handling-Asynchronous-Calls"
+              }
+            ]
+          }
+        ],
+        "reference" : "doc:\/\/Fakes\/tutorials\/WritingFakes\/Creating-and-Testing-RecipeService"
+      }
+    ],
+    "paths" : [
+      [
+        "doc:\/\/Fakes\/tutorials\/WritingFakes",
+        "doc:\/\/Fakes\/tutorials\/WritingFakes\/$volume",
+        "doc:\/\/Fakes\/tutorials\/WritingFakes\/Creating-and-Testing-RecipeService"
+      ]
+    ],
+    "reference" : "doc:\/\/Fakes\/tutorials\/WritingFakes"
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/Fakes\/tutorials\/Fakes\/RecipeService"
+  },
+  "kind" : "project",
+  "metadata" : {
+    "category" : "Writing Fakes",
+    "categoryPathComponent" : "WritingFakes",
+    "role" : "project",
+    "title" : "The RecipeService object"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+    {
+      "chapter" : "Creating and Testing RecipeService",
+      "content" : [
+        {
+          "inlineContent" : [
+            {
+              "text" : "Testing an object to download recipes and upload new ones.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "estimatedTimeInMinutes" : 20,
+      "kind" : "hero",
+      "title" : "The RecipeService object"
+    },
+    {
+      "kind" : "tasks",
+      "tasks" : [
+        {
+          "anchor" : "Writing-the-synchronous-Fake",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Suppose you are working on an application to view and write recipes.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "As part of this, there is a server component you need to interface with",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "in order to download recipes and upload new ones.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "This is a protocol for a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "URLSession",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : "-like object that can make",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "various network requests.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "NetworkInterface-01.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Let’s first start with the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "NetworkInterface",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " protocol.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "RecipeService-01.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Given this ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "NetworkInterface",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", you might write ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "RecipeService",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "like so:",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Given that, you decide to create a Fake and inject it (using",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/DependencyInjection",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ") to your Subject. You decide to come up with this",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "first attempt at ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "FakeNetworkInterface",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "FakeNetworkInterface-01.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "In writing the tests for your RecipeService class,",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "you could just use the real implementation of ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "NetworkInterface",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ". But now your",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "tests require you to have a reliable connection not just to the internet at",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "large, but also to the particular target server in order to work. If that server",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "ever goes down for maintenance, your tests will just fail. Additionally, using",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "a real version of ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "NetworkInterface",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " means you can only semi-reliably test the",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "happy paths. Good luck writing tests of any error cases.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "FakeNetworkInterface-02.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "But this isn’t very useful. For one, there’s no way to control the result of",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "get(from:)",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ". For another, there’s no way to even check that your fake is even",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "used. This is where ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : " comes in. Let’s rewrite ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "FakeNetworkInterface",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " using",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "RecipeServiceTests-01.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "This is the start of everything we need to write tests for",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "RecipeService",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", so let’s do just that.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Writing the synchronous Fake"
+        },
+        {
+          "anchor" : "Updating-for-Throwing",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Actual network calls can fail, and just crashing the app",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "just because the network fails is a bad experience at best. Luckily,",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Spy",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " can handle throwing calls. So let’s update our code to handle",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "network errors.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+
+              ],
+              "code" : "NetworkInterface-02.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "First, let’s start with updating ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "NetworkInterface",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "RecipeService-02.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "With the updated ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "NetworkInterface",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", we also have to update",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "RecipeService",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " to handle these new errors. For our purposes,",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "let’s just rethrow the errors and not do anything.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "FakeNetworkInterface-03.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Updating ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "NetworkInterface",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " also requires us to update",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "FakeNetworkInterface",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "There are two ways we could do this: Use",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Spy<Arguments, Result<Success, Error>>",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", or use the typealias",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ThrowingSpy<Arguments, Success, Error>",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ThrowingSpy",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " is less boilerplate, and therefore easier to",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "understand, so we’ll go with that.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "RecipeServiceTests-02.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Now that we can throw errors in test, we really should add tests",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "of what happens when ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "NetworkInterface",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " throws an error.",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "\n",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "This particular case is rather boring, but it is good to verify",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "that we’re not crashing on errors. A downstream object might",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "take the error and present an alert with a retry option.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Updating for Throwing"
+        },
+        {
+          "anchor" : "Handling-Asynchronous-Calls",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "In practice, it’s also really bad practice to make synchronous",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "network calls. Doing so requires us to remember to call the",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "NetworkInterface",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " from a background thread, or else risk blocking",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "the main thread. Which is, again, a poor experience at best, and",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "very likely to get you an ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "8BADF00D",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " crash. Better to make",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "network calls asynchronous at the source - meaning at",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "NetworkInterface",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+
+              ],
+              "code" : "NetworkInterface-03.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "As with before, let’s start with ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "NetworkInterface",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", making use",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "of Swift Concurrency for this.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "RecipeService-03.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "With the again-updated ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "NetworkInterface",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", we once again have",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "to update ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "RecipeService",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " to work with the asynchronous",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "NetworkInterface",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "FakeNetworkInterface-04.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "And again, we turn our attention to ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "FakeNetworkInterface",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "We could update the Spies to be any of",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Spy<..., Pendable<Result<Success, Error>>",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ",",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Spy<..., ThrowingPendable<Success, Error>>",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ",",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "PendableSpy<..., Result<Success, Error>>",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ", or",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ThrowingPendableSpy<..., Success, Error>",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ". As with before,",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "let’s use the one that flattens the generics as much as",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "possible: ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ThrowingPendableSpy",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "RecipeServiceTests-03.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Finally, we need to update the tests to work with all these",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "async calls.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Handling Asynchronous Calls"
+        }
+      ]
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/tutorials\/fakes\/recipeservice"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"FakeNetworkInterface-01.swift": {
+  "content" : [
+    "final class FakeNetworkInterface: NetworkInterface {",
+    "    func get(from url: URL) -> Data {",
+    "        Data()",
+    "    }",
+    "",
+    "    func post(data: Data, to url: URL) {}",
+    "}"
+  ],
+  "fileName" : "FakeNetworkInterface",
+  "fileType" : "",
+  "highlights" : [
+
+  ],
+  "identifier" : "FakeNetworkInterface-01.swift",
+  "syntax" : "",
+  "type" : "file"
+},
+"FakeNetworkInterface-02.swift": {
+  "content" : [
+    "final class FakeNetworkInterface: NetworkInterface {",
+    "    \/\/ by convention, the name of a spy is the first part of the method name,",
+    "    \/\/ followed by Spy.",
+    "    let getSpy = Spy<URL, Data>(Data()) \/\/ Spies that do not return Void or",
+    "    \/\/ Pendable must be initialized with a default value.",
+    "    func get(from url: URL) -> Data {",
+    "        getSpy(url)",
+    "    }",
+    "",
+    "    let postSpy = Spy<(data: Data, url: URL), Void>() \/\/ The first type for",
+    "    \/\/ a Spy is either a tuple of the arguments to the method, or the singular",
+    "    \/\/ argument to the method. When you use a tuple, it is most helpful to",
+    "    \/\/ create a named tuple. We will see more when we write the test.",
+    "    func post(data: Data, to url: URL) {",
+    "        postSpy((data, url)) \/\/ Swift allows us to pass an unnamed tuple in",
+    "        \/\/ place of a named tuple with the same types.",
+    "    }",
+    "}"
+  ],
+  "fileName" : "FakeNetworkInterface",
+  "fileType" : "",
+  "highlights" : [
+    {
+      "line" : 2
+    },
+    {
+      "line" : 3
+    },
+    {
+      "line" : 4
+    },
+    {
+      "line" : 5
+    },
+    {
+      "line" : 7
+    },
+    {
+      "line" : 10
+    },
+    {
+      "line" : 11
+    },
+    {
+      "line" : 12
+    },
+    {
+      "line" : 13
+    },
+    {
+      "line" : 14
+    },
+    {
+      "line" : 15
+    },
+    {
+      "line" : 16
+    },
+    {
+      "line" : 17
+    }
+  ],
+  "identifier" : "FakeNetworkInterface-02.swift",
+  "syntax" : "",
+  "type" : "file"
+},
+"FakeNetworkInterface-03.swift": {
+  "content" : [
+    "final class FakeNetworkInterface: NetworkInterface {",
+    "    \/\/ a `ThrowingSpy` is just a typealias for `Spy<..., Result<..., ...>>`.",
+    "    \/\/ Thus, it is still used exactly same way that `Spy` is.",
+    "    let getSpy = ThrowingSpy<URL, Data, Error>(Data())",
+    "    func get(from url: URL) throws -> Data {",
+    "        try getSpy(url) \/\/ This now uses the overload of `callAsFunction` to one",
+    "        \/\/ that can either return `Success` (in this case, `Data`) or throw an error",
+    "    }",
+    "",
+    "    let postSpy = ThrowingSpy<(data: Data, url: URL), Void, Error>()",
+    "    func post(data: Data, to url: URL) throws {",
+    "        return try postSpy((data, url)) \/\/ the return statement here is necessary",
+    "        \/\/ to force swift to use the correct form of Spy's `callAsFunction`.",
+    "    }",
+    "}"
+  ],
+  "fileName" : "FakeNetworkInterface",
+  "fileType" : "",
+  "highlights" : [
+
+  ],
+  "identifier" : "FakeNetworkInterface-03.swift",
+  "syntax" : "",
+  "type" : "file"
+},
+"FakeNetworkInterface-04.swift": {
+  "content" : [
+    "final class FakeNetworkInterface: NetworkInterface {",
+    "    \/\/ a `ThrowingPendableSpy` is just a typealias for `Spy<..., ThrowingPendable<..., ...>>`.",
+    "    \/\/ Thus, it is still used exactly same way that `Spy` is.",
+    "    let getSpy = ThrowingPendableSpy<URL, Data, Error>() \/\/ PendableSpy and",
+    "    \/\/ ThrowingPendableSpy default to stub with `.pending`.",
+    "    func get(from url: URL) throws -> Data {",
+    "        try await getSpy(url)",
+    "    }",
+    "",
+    "    let postSpy = ThrowingPendableSpy<(data: Data, url: URL), Void, Error>()",
+    "    func post(data: Data, to url: URL) throws {",
+    "        try await postSpy((data, url))",
+    "    }",
+    "}"
+  ],
+  "fileName" : "FakeNetworkInterface",
+  "fileType" : "",
+  "highlights" : [
+
+  ],
+  "identifier" : "FakeNetworkInterface-04.swift",
+  "syntax" : "",
+  "type" : "file"
+},
+"NetworkInterface-01.swift": {
+  "content" : [
+    "protocol NetworkInterface {",
+    "    func get(from url: URL) -> Data",
+    "    func post(data: Data, to url: URL)",
+    "}"
+  ],
+  "fileName" : "NetworkInterface",
+  "fileType" : "",
+  "highlights" : [
+
+  ],
+  "identifier" : "NetworkInterface-01.swift",
+  "syntax" : "",
+  "type" : "file"
+},
+"NetworkInterface-02.swift": {
+  "content" : [
+    "protocol NetworkInterface {",
+    "    func get(from url: URL) throws -> Data",
+    "    func post(data: Data, to url: URL) throws",
+    "}"
+  ],
+  "fileName" : "NetworkInterface",
+  "fileType" : "",
+  "highlights" : [
+
+  ],
+  "identifier" : "NetworkInterface-02.swift",
+  "syntax" : "",
+  "type" : "file"
+},
+"NetworkInterface-03.swift": {
+  "content" : [
+    "protocol NetworkInterface {",
+    "    func get(from url: URL) async throws -> Data",
+    "    func post(data: Data, to url: URL) async throws",
+    "}"
+  ],
+  "fileName" : "NetworkInterface",
+  "fileType" : "",
+  "highlights" : [
+
+  ],
+  "identifier" : "NetworkInterface-03.swift",
+  "syntax" : "",
+  "type" : "file"
+},
+"RecipeService-01.swift": {
+  "content" : [
+    "import Foundation",
+    "",
+    "struct Recipe: Equatable, Codable {",
+    "    \/\/ ...",
+    "}",
+    "",
+    "struct RecipeService {",
+    "    let networkInterface: NetworkInterface",
+    "",
+    "    func recipes() throws -> [Recipe] {",
+    "        let url = URL(string: \"https:\/\/example.com\/recipes\")!",
+    "        let data = networkInterface.get(from: url)",
+    "        return try JSONDecoder().decode([Recipe].self, from: data)",
+    "    }",
+    "",
+    "    func store(recipe: Recipe) throws {",
+    "        let url = URL(string: \"https:\/\/example.com\/recipes\/store\")!",
+    "        let data = try JSONEncoder().encode(recipe)",
+    "        networkInterface.post(data: data, to: url)",
+    "    }",
+    "}"
+  ],
+  "fileName" : "RecipeService",
+  "fileType" : "",
+  "highlights" : [
+
+  ],
+  "identifier" : "RecipeService-01.swift",
+  "syntax" : "",
+  "type" : "file"
+},
+"RecipeService-02.swift": {
+  "content" : [
+    "import Foundation",
+    "",
+    "struct Recipe: Equatable, Codable {",
+    "    \/\/ ...",
+    "}",
+    "",
+    "struct RecipeService {",
+    "    let networkInterface: NetworkInterface",
+    "",
+    "    func recipes() throws -> [Recipe] {",
+    "        let url = URL(string: \"https:\/\/example.com\/recipes\")!",
+    "        let data = try networkInterface.get(from: url)",
+    "        return try JSONDecoder().decode([Recipe].self, from: data)",
+    "    }",
+    "",
+    "    func store(recipe: Recipe) throws {",
+    "        let url = URL(string: \"https:\/\/example.com\/recipes\/store\")!",
+    "        let data = try JSONEncoder().encode(recipe)",
+    "        try networkInterface.post(data: data, to: url)",
+    "    }",
+    "}"
+  ],
+  "fileName" : "RecipeService",
+  "fileType" : "",
+  "highlights" : [
+
+  ],
+  "identifier" : "RecipeService-02.swift",
+  "syntax" : "",
+  "type" : "file"
+},
+"RecipeService-03.swift": {
+  "content" : [
+    "import Foundation",
+    "",
+    "struct Recipe: Equatable, Codable {",
+    "    \/\/ ...",
+    "}",
+    "",
+    "struct RecipeService {",
+    "    let networkInterface: NetworkInterface",
+    "",
+    "    func recipes() async throws -> [Recipe] {",
+    "        let url = URL(string: \"https:\/\/example.com\/recipes\")!",
+    "        let data = try await networkInterface.get(from: url)",
+    "        return try JSONDecoder().decode([Recipe].self, from: data)",
+    "    }",
+    "",
+    "    func store(recipe: Recipe) async throws {",
+    "        let url = URL(string: \"https:\/\/example.com\/recipes\/store\")!",
+    "        let data = try JSONEncoder().encode(recipe)",
+    "        try await networkInterface.post(data: data, to: url)",
+    "    }",
+    "}"
+  ],
+  "fileName" : "RecipeService",
+  "fileType" : "",
+  "highlights" : [
+
+  ],
+  "identifier" : "RecipeService-03.swift",
+  "syntax" : "",
+  "type" : "file"
+},
+"RecipeServiceTests-01.swift": {
+  "content" : [
+    "import XCTest",
+    "",
+    "final class RecipeServiceTests: XCTestCase {",
+    "    var networkInterface: FakeNetworkInterface!",
+    "    var subject: RecipeService!",
+    "",
+    "    override func setUp() {",
+    "        super.setUp()",
+    "",
+    "        networkInterface = FakeNetworkInterface()",
+    "        subject = RecipeService(networkInterface: networkInterface)",
+    "    }",
+    "",
+    "    func testFetchRecipes() throws {",
+    "        \/\/ Arrange step",
+    "        \/\/ First, we stub the networkInterface with some data that",
+    "        \/\/ converts to an array of recipes. Because we are using a real",
+    "        \/\/ JSONDecoder in RecipeService, we must provide data that can be",
+    "        \/\/ converted to [Recipe].",
+    "        \/\/ Whatever you do, DO NOT start with an Array of Recipe, and convert",
+    "        \/\/ it to Data using `JSONEncoder`. That creates a tautology, and doesn't",
+    "        \/\/ actually check that your Recipe data can convert to actual Recipes.",
+    "        \/\/ If we update Recipe and forget to update the fixture, we want the",
+    "        \/\/ test to fail in order to let us know we either need to update the",
+    "        \/\/ fixture, or that we made a breaking change.",
+    "        networkInterface.getSpy.stub(recipesArrayAsData)",
+    "",
+    "        \/\/ Act step",
+    "        let recipes = try subject.recipes()",
+    "",
+    "        \/\/ Assert step",
+    "        XCTAssertEqual(",
+    "            recipes,",
+    "            [...]",
+    "        ) \/\/ verify that we retrieved and decoded the expected recipes.",
+    "        XCTAssertEqual(",
+    "            networkInterface.getSpy.calls,",
+    "            [URL(string: \"https:\/\/example.com\/recipes\")!]",
+    "        ) \/\/ Verify that we actually made the call to networkInterface.get(from:)",
+    "    }",
+    "",
+    "    func testStoreRecipe() throws {",
+    "        \/\/ Arrange step",
+    "        \/\/ Because NetworkInterface.post returns Void, we don't need",
+    "        \/\/ to stub anything.",
+    "        let recipe = Recipe(...)",
+    "",
+    "        \/\/ Act step",
+    "        try subject.store(recipe: recipe)",
+    "",
+    "        \/\/ Assert Step",
+    "        XCTAssertEqual(",
+    "            networkInterface.postSpy.calls.count,",
+    "            1",
+    "        ) \/\/ Verify that only one call to post was made.",
+    "        XCTAssertEqual(",
+    "            networkInterface.postSpy.calls.last?.data,",
+    "            expectedRecipeData",
+    "        ) \/\/ Verify that the Recipe was converted to Data correctly. As with",
+    "        \/\/ `testFetchRecipes`, we want to have an actual fixture we can compare",
+    "        \/\/ with, and not just use JSONEncoder().encode(recipe). Again, if we",
+    "        \/\/ did so, that would create a tautology, and doesn't actually check",
+    "        \/\/ that we converted to Data correctly.",
+    "        XCTAssertEqual(",
+    "            networkInterface.postSpy.calls.last?.url,",
+    "            URL(string: \"https:\/\/example.com\/recipes\/store\")!",
+    "        )",
+    "    }",
+    "}"
+  ],
+  "fileName" : "RecipeServiceTests",
+  "fileType" : "",
+  "highlights" : [
+
+  ],
+  "identifier" : "RecipeServiceTests-01.swift",
+  "syntax" : "",
+  "type" : "file"
+},
+"RecipeServiceTests-02.swift": {
+  "content" : [
+    "import XCTest",
+    "",
+    "final class RecipeServiceTests: XCTestCase {",
+    "    var networkInterface: FakeNetworkInterface!",
+    "    var subject: RecipeService!",
+    "",
+    "    override func setUp() {",
+    "        super.setUp()",
+    "",
+    "        networkInterface = FakeNetworkInterface()",
+    "        subject = RecipeService(networkInterface: networkInterface)",
+    "    }",
+    "",
+    "    func testFetchRecipes() throws {",
+    "        \/\/ Arrange step",
+    "        networkInterface.getSpy.stub(success: recipesArrayAsData) \/\/ when using",
+    "        \/\/ `ThrowingSpy`, to set the Success stub, use the `stub(success:)`",
+    "        \/\/ overload. You could also use `stub(.success(...))` to do the same",
+    "        \/\/ thing, though.",
+    "",
+    "        \/\/ Act step",
+    "        let recipes = try subject.recipes()",
+    "",
+    "        XCTAssertEqual(recipes, [...])",
+    "        XCTAssertEqual(",
+    "            networkInterface.getSpy.calls,",
+    "            [URL(string: \"https:\/\/example.com\/recipes\")!]",
+    "        )",
+    "    }",
+    "",
+    "    func testFetchRecipesRethrowsErrors() {",
+    "        \/\/ Arrange step",
+    "        let expectedError = TestError()",
+    "        networkInterface.getSpy.stub(failure: expectedError)",
+    "",
+    "        \/\/ Act step",
+    "        let result = Result { try subject.recipes() }",
+    "",
+    "        \/\/ Assert step",
+    "        switch result {",
+    "        case .success:",
+    "            XCTFail(\"Expected `recipes` to throw an error, but succeeded.\")",
+    "        case .failure(let failure):",
+    "            XCTAssertEqual(failure as TestError, expectedError) \/\/ because",
+    "            \/\/ we are specifically testing that the error from",
+    "            \/\/ `NetworkInterface.get` is rethrown, we should specifically",
+    "            \/\/ test that the thrown error is the same error we stubbed",
+    "            \/\/ networkInterface with.",
+    "        }",
+    "    }",
+    "",
+    "    func testStoreRecipe() throws {",
+    "        \/\/ Act step",
+    "        try subject.store(recipe: Recipe(...))",
+    "",
+    "        \/\/ Assert Step",
+    "        XCTAssertEqual(networkInterface.postSpy.calls.count, 1)",
+    "        XCTAssertEqual(",
+    "            networkInterface.postSpy.calls.last?.data,",
+    "            expectedRecipeData",
+    "        )",
+    "        XCTAssertEqual(",
+    "            networkInterface.postSpy.calls.last?.url,",
+    "            URL(string: \"https:\/\/example.com\/recipes\/store\")!",
+    "        )",
+    "    }",
+    "",
+    "    func testStoreRecipeRethrowsErrors() {",
+    "        \/\/ (You get the idea from `testFetchRecipesRethrowsErrors`)",
+    "    }",
+    "}"
+  ],
+  "fileName" : "RecipeServiceTests",
+  "fileType" : "",
+  "highlights" : [
+
+  ],
+  "identifier" : "RecipeServiceTests-02.swift",
+  "syntax" : "",
+  "type" : "file"
+},
+"RecipeServiceTests-03.swift": {
+  "content" : [
+    "import XCTest",
+    "",
+    "final class RecipeServiceTests: XCTestCase {",
+    "    var networkInterface: FakeNetworkInterface!",
+    "    var subject: RecipeService!",
+    "",
+    "    override func setUp() {",
+    "        super.setUp()",
+    "",
+    "        networkInterface = FakeNetworkInterface()",
+    "        subject = RecipeService(networkInterface: networkInterface)",
+    "    }",
+    "",
+    "    func testFetchRecipes() async throws {",
+    "        \/\/ Arrange step",
+    "        networkInterface.getSpy.stub(success: recipesArrayAsData)",
+    "        \/\/ `ThrowingPendableSpy` basically has the same interface as",
+    "        \/\/ `ThrowingSpy`.",
+    "",
+    "        \/\/ Act step",
+    "        let recipes = try await subject.recipes()",
+    "",
+    "        XCTAssertEqual(recipes, [...])",
+    "        XCTAssertEqual(",
+    "            networkInterface.getSpy.calls,",
+    "            [URL(string: \"https:\/\/example.com\/recipes\")!]",
+    "        )",
+    "    }",
+    "",
+    "    func testFetchRecipesRethrowsErrors() async throws {",
+    "        \/\/ ...",
+    "    }",
+    "",
+    "    func testStoreRecipe() async throws {",
+    "        \/\/ Arrange step",
+    "        networkInterface.postSpy.stub(success: ()) \/\/ if we don't restub",
+    "        \/\/ `postSpy`, then we will end up blocking the test and throwing a",
+    "        \/\/ `PendableInProgressError`.",
+    "",
+    "        \/\/ Act step",
+    "        try await subject.store(recipe: Recipe(...))",
+    "",
+    "        \/\/ Assert Step",
+    "        XCTAssertEqual(networkInterface.postSpy.calls.count, 1)",
+    "        XCTAssertEqual(",
+    "            networkInterface.postSpy.calls.last?.data,",
+    "            expectedRecipeData",
+    "        )",
+    "        XCTAssertEqual(",
+    "            networkInterface.postSpy.calls.last?.url,",
+    "            URL(string: \"https:\/\/example.com\/recipes\/store\")!",
+    "        )",
+    "    }",
+    "",
+    "    func testStoreRecipeRethrowsErrors() async throws {",
+    "        \/\/ ...",
+    "    }",
+    "}"
+  ],
+  "fileName" : "RecipeServiceTests",
+  "fileType" : "",
+  "highlights" : [
+
+  ],
+  "identifier" : "RecipeServiceTests-03.swift",
+  "syntax" : "",
+  "type" : "file"
+},
+"doc://Fakes/documentation/Fakes/DependencyInjection": {
+  "abstract" : [
+    {
+      "text" : "Providing dependencies instead of reaching out to them.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/DependencyInjection",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Dependency Injection",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/dependencyinjection"
+},
+"doc://Fakes/documentation/Fakes/Spy": {
+  "abstract" : [
+    {
+      "text" : "A Spy is a test double for recording calls to methods, and returning stubbed results.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Spy"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Spy"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Spy",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy"
+},
+"doc://Fakes/tutorials/Fakes/RecipeService": {
+  "abstract" : [
+    {
+      "text" : "Testing an object to download recipes and upload new ones.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "20min",
+  "identifier" : "doc:\/\/Fakes\/tutorials\/Fakes\/RecipeService",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "The RecipeService object",
+  "type" : "topic",
+  "url" : "\/tutorials\/fakes\/recipeservice"
+},
+"doc://Fakes/tutorials/Fakes/RecipeService#Handling-Asynchronous-Calls": {
+  "abstract" : [
+    {
+      "text" : "Testing an object to download recipes and upload new ones.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/tutorials\/Fakes\/RecipeService#Handling-Asynchronous-Calls",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Handling Asynchronous Calls",
+  "type" : "section",
+  "url" : "\/tutorials\/fakes\/recipeservice#Handling-Asynchronous-Calls"
+},
+"doc://Fakes/tutorials/Fakes/RecipeService#Updating-for-Throwing": {
+  "abstract" : [
+    {
+      "text" : "Testing an object to download recipes and upload new ones.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/tutorials\/Fakes\/RecipeService#Updating-for-Throwing",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Updating for Throwing",
+  "type" : "section",
+  "url" : "\/tutorials\/fakes\/recipeservice#Updating-for-Throwing"
+},
+"doc://Fakes/tutorials/Fakes/RecipeService#Writing-the-synchronous-Fake": {
+  "abstract" : [
+    {
+      "text" : "Testing an object to download recipes and upload new ones.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/tutorials\/Fakes\/RecipeService#Writing-the-synchronous-Fake",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Writing the synchronous Fake",
+  "type" : "section",
+  "url" : "\/tutorials\/fakes\/recipeservice#Writing-the-synchronous-Fake"
+},
+"doc://Fakes/tutorials/WritingFakes": {
+  "abstract" : [
+    {
+      "text" : "A tutorial showing you how to create and use a Fake, within the context",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "of testing network calls.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/tutorials\/WritingFakes",
+  "kind" : "overview",
+  "role" : "overview",
+  "title" : "Creating a Fake",
+  "type" : "topic",
+  "url" : "\/tutorials\/writingfakes"
+},
+"doc://Fakes/tutorials/WritingFakes/Creating-and-Testing-RecipeService": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/Fakes\/tutorials\/WritingFakes\/Creating-and-Testing-RecipeService",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Creating and Testing RecipeService",
+  "type" : "topic",
+  "url" : "\/tutorials\/writingfakes\/creating-and-testing-recipeservice"
+}
+}
+}

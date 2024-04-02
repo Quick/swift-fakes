@@ -1,0 +1,133 @@
+{
+  "hierarchy" : {
+    "paths" : [
+
+    ],
+    "reference" : "doc:\/\/Fakes\/tutorials\/WritingFakes"
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/Fakes\/tutorials\/WritingFakes"
+  },
+  "kind" : "overview",
+  "metadata" : {
+    "category" : "Writing Fakes",
+    "categoryPathComponent" : "WritingFakes",
+    "estimatedTime" : "20min",
+    "role" : "overview",
+    "title" : "Creating a Fake"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+    {
+      "action" : {
+        "identifier" : "doc:\/\/Fakes\/tutorials\/Fakes\/RecipeService",
+        "isActive" : true,
+        "overridingTitle" : "Get started",
+        "overridingTitleInlineContent" : [
+          {
+            "text" : "Get started",
+            "type" : "text"
+          }
+        ],
+        "type" : "reference"
+      },
+      "content" : [
+        {
+          "inlineContent" : [
+            {
+              "text" : "A tutorial showing you how to create and use a Fake, within the context",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "of testing network calls.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "hero",
+      "title" : "Creating a Fake"
+    },
+    {
+      "chapters" : [
+        {
+          "content" : [
+
+          ],
+          "name" : "Creating and Testing RecipeService",
+          "tutorials" : [
+            "doc:\/\/Fakes\/tutorials\/Fakes\/RecipeService"
+          ]
+        }
+      ],
+      "content" : [
+
+      ],
+      "image" : null,
+      "kind" : "volume",
+      "name" : null
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/tutorials\/writingfakes"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://Fakes/tutorials/Fakes/RecipeService": {
+  "abstract" : [
+    {
+      "text" : "Testing an object to download recipes and upload new ones.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "20min",
+  "identifier" : "doc:\/\/Fakes\/tutorials\/Fakes\/RecipeService",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "The RecipeService object",
+  "type" : "topic",
+  "url" : "\/tutorials\/fakes\/recipeservice"
+},
+"doc://Fakes/tutorials/WritingFakes": {
+  "abstract" : [
+    {
+      "text" : "A tutorial showing you how to create and use a Fake, within the context",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "of testing network calls.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/tutorials\/WritingFakes",
+  "kind" : "overview",
+  "role" : "overview",
+  "title" : "Creating a Fake",
+  "type" : "topic",
+  "url" : "\/tutorials\/writingfakes"
+}
+}
+}

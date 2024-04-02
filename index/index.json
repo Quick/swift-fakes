@@ -1,0 +1,397 @@
+{
+  "interfaceLanguages" : {
+    "swift" : [
+      {
+        "children" : [
+          {
+            "title" : "Creating and Testing RecipeService",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/tutorials\/fakes\/recipeservice",
+            "title" : "The RecipeService object",
+            "type" : "project"
+          }
+        ],
+        "path" : "\/tutorials\/writingfakes",
+        "title" : "Creating a Fake",
+        "type" : "overview"
+      },
+      {
+        "children" : [
+          {
+            "title" : "Articles",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/fakes\/dependencyinjection",
+            "title" : "Dependency Injection",
+            "type" : "article"
+          },
+          {
+            "path" : "\/documentation\/fakes\/nimbleintegration",
+            "title" : "Nimble Integration",
+            "type" : "article"
+          },
+          {
+            "title" : "Classes",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fakes\/pendabledefaults\/init()",
+                "title" : "init()",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fakes\/pendabledefaults\/delay-swift.property",
+                "title" : "var delay: TimeInterval",
+                "type" : "property"
+              },
+              {
+                "title" : "Type Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fakes\/pendabledefaults\/delay-swift.type.property",
+                "title" : "static var delay: TimeInterval",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/fakes\/pendabledefaults\/shared",
+                "title" : "static let shared: PendableDefaults",
+                "type" : "property"
+              }
+            ],
+            "path" : "\/documentation\/fakes\/pendabledefaults",
+            "title" : "PendableDefaults",
+            "type" : "class"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/init()-3nayo",
+                "title" : "convenience init()",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/init()-5sj5u",
+                "title" : "convenience init<Failure>()",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/init()-67dju",
+                "title" : "convenience init<Failure>()",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/init()-9jaml",
+                "title" : "convenience init()",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/init(_:)",
+                "title" : "init(Returning)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/init(failure:)-3fdug",
+                "title" : "convenience init<Success, Failure>(failure: Failure)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/init(failure:)-8mp3u",
+                "title" : "convenience init<Success, Failure>(failure: Failure)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/init(finished:)",
+                "title" : "convenience init<Value>(finished: Value)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/init(pendingfailure:)",
+                "title" : "convenience init<Success, Failure>(pendingFailure: Failure)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/init(pendingfallback:)",
+                "title" : "convenience init<Value>(pendingFallback: Value)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/init(pendingsuccess:)",
+                "title" : "convenience init<Success, Failure>(pendingSuccess: Success)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/init(success:)-77rd4",
+                "title" : "convenience init<Success, Failure>(success: Success)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/init(success:)-m7m8",
+                "title" : "convenience init<Success, Failure>(success: Success)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/calls",
+                "title" : "var calls: [Arguments]",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/callasfunction()-4u31k",
+                "title" : "func callAsFunction() -> Returning",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/callasfunction()-kn0o",
+                "title" : "func callAsFunction<Success, Failure>() throws -> Success",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/callasfunction(_:)-5bfrl",
+                "title" : "func callAsFunction(Arguments) -> Returning",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/callasfunction(_:)-9r3zi",
+                "title" : "func callAsFunction<Success, Failure>(Arguments) throws -> Success",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/callasfunction(_:pendingdelay:)-17v1h",
+                "title" : "func callAsFunction<Value>(Arguments, pendingDelay: TimeInterval) async -> Value",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/callasfunction(_:pendingdelay:)-5o8zc",
+                "title" : "func callAsFunction<Success, Failure>(Arguments, pendingDelay: TimeInterval) async throws -> Success",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/callasfunction(pendingdelay:)-52uom",
+                "title" : "func callAsFunction<Success, Failure>(pendingDelay: TimeInterval) async throws -> Success",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/callasfunction(pendingdelay:)-7qw29",
+                "title" : "func callAsFunction<Value>(pendingDelay: TimeInterval) async -> Value",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/stub()",
+                "title" : "func stub<Failure>()",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/stub(_:)",
+                "title" : "func stub(Returning)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/stub(failure:)-1xoml",
+                "title" : "func stub<Success, Failure>(failure: Failure)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/stub(failure:)-ziqj",
+                "title" : "func stub<Success, Failure>(failure: Failure)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/stub(finished:)",
+                "title" : "func stub<Value>(finished: Value)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/stub(pendingfailure:)",
+                "title" : "func stub<Success, Failure>(pendingFailure: Failure)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/stub(pendingfallback:)",
+                "title" : "func stub<Value>(pendingFallback: Value)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/stub(pendingsuccess:)",
+                "title" : "func stub<Success, Failure>(pendingSuccess: Success)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/stub(success:)-4kjng",
+                "title" : "func stub<Success, Failure>(success: Success)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/stub(success:)-4ll6u",
+                "title" : "func stub<Success, Failure>(success: Success)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/stubfinished()",
+                "title" : "func stubFinished()",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/stubpending()",
+                "title" : "func stubPending()",
+                "type" : "method"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/fakes\/spy\/debugdescription",
+                    "title" : "var debugDescription: String",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/fakes\/spy\/customdebugstringconvertible-implementations",
+                "title" : "CustomDebugStringConvertible Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/fakes\/spy",
+            "title" : "Spy",
+            "type" : "class"
+          },
+          {
+            "title" : "Functions",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/fakes\/becalled(_:)-7sn1o",
+            "title" : "func beCalled<Arguments, Returning>(Arguments) -> Matcher<Spy<Arguments, Returning>>",
+            "type" : "func"
+          },
+          {
+            "path" : "\/documentation\/fakes\/becalled(_:)-82qlg",
+            "title" : "func beCalled<Arguments, Returning>(Matcher<Arguments>...) -> Matcher<Spy<Arguments, Returning>>",
+            "type" : "func"
+          },
+          {
+            "path" : "\/documentation\/fakes\/becalled(_:times:)-6125c",
+            "title" : "func beCalled<Arguments, Returning>(Matcher<Arguments>..., times: Int) -> Matcher<Spy<Arguments, Returning>>",
+            "type" : "func"
+          },
+          {
+            "path" : "\/documentation\/fakes\/becalled(_:times:)-9320x",
+            "title" : "func beCalled<Arguments, Returning>(Arguments, times: Int) -> Matcher<Spy<Arguments, Returning>>",
+            "type" : "func"
+          },
+          {
+            "path" : "\/documentation\/fakes\/mostrecentlybecalled(_:)-91ves",
+            "title" : "func mostRecentlyBeCalled<Arguments, Returning>(Arguments) -> Matcher<Spy<Arguments, Returning>>",
+            "type" : "func"
+          },
+          {
+            "path" : "\/documentation\/fakes\/mostrecentlybecalled(_:)-9i9t9",
+            "title" : "func mostRecentlyBeCalled<Arguments, Returning>(Matcher<Arguments>...) -> Matcher<Spy<Arguments, Returning>>",
+            "type" : "func"
+          },
+          {
+            "title" : "Type Aliases",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/fakes\/pendablespy",
+            "title" : "PendableSpy",
+            "type" : "typealias"
+          },
+          {
+            "path" : "\/documentation\/fakes\/throwingpendable",
+            "title" : "ThrowingPendable",
+            "type" : "typealias"
+          },
+          {
+            "path" : "\/documentation\/fakes\/throwingpendablespy",
+            "title" : "ThrowingPendableSpy",
+            "type" : "typealias"
+          },
+          {
+            "path" : "\/documentation\/fakes\/throwingspy",
+            "title" : "ThrowingSpy",
+            "type" : "typealias"
+          },
+          {
+            "title" : "Enumerations",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Enumeration Cases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fakes\/pendable\/finished(_:)",
+                "title" : "case finished(Value)",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/fakes\/pendable\/pending(fallback:)",
+                "title" : "case pending(fallback: Value)",
+                "type" : "case"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fakes\/pendable\/resolve(delay:)-1bb25",
+                "title" : "func resolve<Success, Failure>(delay: TimeInterval) async throws -> Success",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/pendable\/resolve(delay:)-hvhg",
+                "title" : "func resolve(delay: TimeInterval) async -> Value",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/fakes\/pendable",
+            "title" : "Pendable",
+            "type" : "enum"
+          }
+        ],
+        "path" : "\/documentation\/fakes",
+        "title" : "Fakes",
+        "type" : "module"
+      }
+    ]
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 1,
+    "patch" : 1
+  }
+}
