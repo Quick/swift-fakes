@@ -1,0 +1,1395 @@
+{
+  "abstract" : [
+    {
+      "text" : "When testing a method that calls a callback, how do you verify that the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "callback actually works?",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/Fakes\/documentation\/Fakes"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/VerifyingCallbacks"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "Fakes"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "Verifying Callbacks and Faking DispatchQueue"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Contents",
+          "level" : 2,
+          "text" : "Contents",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Let’s say we’re testing a method that uses a callback as part of its behavior.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "How would we verify that the callback actually gets called?",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To examine that, let’s look at a function that does some expensive computation.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This function uses ",
+              "type" : "text"
+            },
+            {
+              "code" : "DispatchQueue",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to do that computation on a background",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "thread. To let the caller know that the work has finished, this function takes",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "in a completion handler in the form of a callback.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Let’s say that method looks something like this:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func expensiveComputation(completionHandler: @escaping (Int) -> Void) {",
+            "    DispatchQueue.global().async {",
+            "        \/\/ ... do some work, to compute a value",
+            "        let value: Int = 1337 \/\/ for the sake of example.",
+            "        completionHandler(value)",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In that case, we could pass a closure that calls a ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " with the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "completion handler’s arguments:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "final class ExpensiveComputationTests: XCTestCase {",
+            "    func testCallsTheCompletionHandler() {",
+            "        let completionHandler = Spy<Int, Void>()",
+            "",
+            "        let expectation = self.expectation(",
+            "            description: \"expensiveComputation completion handler\"",
+            "        )",
+            "",
+            "        expensiveComputation {",
+            "            completionHandler.callAsFunction($0)",
+            "            expectation.fulfill()",
+            "        }",
+            "",
+            "        self.waitForExpectations(timeout: 1)",
+            "",
+            "        XCTAssertEqual(completionHandler.calls, [1])",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This has a lot of boilerplate. Setting up an ",
+              "type" : "text"
+            },
+            {
+              "code" : "Expectation",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", fulfilling it,",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "and waiting for it to be called is exactly the kind of situation that",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/quick.github.io\/Nimble\/documentation\/nimble\/pollingexpectations",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "were created to handle.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Let’s refactor the test using Polling Expectations:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "final class ExpensiveComputationTests: XCTestCase {",
+            "    func testCallsTheCallback() {",
+            "        let completionHandler = Spy<Int, Void>()",
+            "",
+            "        expensiveComputation(completionHandler: completionHandler.callAsFunction)",
+            "",
+            "        expect(completionHandler).toEventually(beCalled(1337))",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Writing-Fakes-that-use-Callbacks",
+          "level" : 3,
+          "text" : "Writing Fakes that use Callbacks",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Of course, even better than waiting for the completion handler to eventually be",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "called, is being able to control when it’s called.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "This section assumes you’re familiar with writing fakes and injecting",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "them to the subject using Dependency Injection. See ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/DependencyInjection",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "for a refresher.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Because ",
+              "type" : "text"
+            },
+            {
+              "code" : "DispatchQueue",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is an open class, we could write a subclass that",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "overrides its public API and does the right thing. That’s doable, but",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/developer.apple.com\/documentation\/dispatch\/dispatchqueue",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "has a very large public API, and our subclass would have to implement all of that",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "plus keep up with any changes Apple makes in the future to avoid accidentally",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "calling into the base DispatchQueue class.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Instead, whenever possible, you should favor composition over inheritance.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Which, for this case, means we’ll write a protocol to wrap ",
+              "type" : "text"
+            },
+            {
+              "code" : "DispatchQueue",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "We’re only calling ",
+              "type" : "text"
+            },
+            {
+              "code" : "async",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " with the default arguments, so our protocol can",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "be a single method that takes the ",
+              "type" : "text"
+            },
+            {
+              "code" : "execute",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " argument:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "protocol DispatchQueueProtocol {",
+            "    func async(execute work: @escaping @Sendable () -> Void)",
+            "}",
+            "",
+            "extension DispatchQueue: DispatchQueueProtocol {",
+            "    func async(execute work: @escaping @Sendable () -> Void) {",
+            "        self.async(group: nil, execute: work)",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Our ",
+              "type" : "text"
+            },
+            {
+              "code" : "DispatchQueueProtocol",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is only using one of the arguments to DispatchQueue’s ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/developer.apple.com\/documentation\/dispatch\/dispatchqueue\/2016098-async",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ",",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "so the protocol wrapping ",
+              "type" : "text"
+            },
+            {
+              "code" : "DispatchQueue",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " only really needs the ",
+              "type" : "text"
+            },
+            {
+              "code" : "execute",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "argument. Because default arguments don’t really play well with protocols, we",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "need to manually implement ",
+              "type" : "text"
+            },
+            {
+              "code" : "async(execute:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", and also specify one of the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "default arguments to prevent recursively calling ",
+              "type" : "text"
+            },
+            {
+              "code" : "async(execute:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Now, we can inject our ",
+              "type" : "text"
+            },
+            {
+              "code" : "DispatchQueueProtocol",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func expensiveComputation(dispatchQueue: DispatchQueueProtocol, completionHandler: @escaping (Int) -> Void) {",
+            "    dispatchQueue.async {",
+            "        \/\/ ... do some work, to compute a value",
+            "        let value: Int = 1337 \/\/ for the sake of example.",
+            "        completionHandler(value)",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "and then turn our attention to to implementing ",
+              "type" : "text"
+            },
+            {
+              "code" : "FakeDispatchQueue",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Following the example from ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/DependencyInjection",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", we will implement",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "FakeDispatchQueue",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " using only ",
+              "type" : "text"
+            },
+            {
+              "code" : "Spy",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "final class FakeDispatchQueue: DispatchQueueProtocol {",
+            "    let asyncSpy = Spy<@Sendable () -> Void, Void>()",
+            "    func async(execute work: @escaping @Sendable () -> Void) {",
+            "        asyncSpy(work)",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This will work similarly to when we used a Spy as the completion handler to",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "expensiveComputation(completionHandler:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " earlier.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Now we use ",
+              "type" : "text"
+            },
+            {
+              "code" : "FakeDispatchQueue",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " in our tests for ",
+              "type" : "text"
+            },
+            {
+              "code" : "expensiveComputation",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "final class ExpensiveComputationTests: XCTestCase {",
+            "    func testCallsTheCallback() throws {",
+            "        let dispatchQueue = FakeDispatchQueue()",
+            "        let completionHandler = Spy<Int, Void>()",
+            "",
+            "        expensiveComputation(",
+            "            dispatchQueue: dispatchQueue,",
+            "            completionHandler: completionHandler.callAsFunction",
+            "        )",
+            "",
+            "        try require(dispatchQueue.asyncSpy).to(beCalled())",
+            "",
+            "        dispatchQueue.asyncSpy.calls.last?() \/\/ call the recorded completion handler.",
+            "",
+            "        expect(completionHandler).to(beCalled(1337))",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This has quite a bit more boilerplate than simply using",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "expect(completionHandler).toEventually(beCalled(...))",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ". However, the benefit of",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "this boilerplate is that this test runs significantly faster. We no longer have",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to wait for the system to decide to run the closure that calls the completion",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "handler, which results in a small reduction in test runtime.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Additionally, we can also control when this closure is run, which allows us",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "to verify any other behavior that might be happening before the code is",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "run in the background, or while code is run in the background.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Improving-FakeDispatchQueue",
+          "level" : 3,
+          "text" : "Improving FakeDispatchQueue",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The current implementation of ",
+              "type" : "text"
+            },
+            {
+              "code" : "FakeDispatchQueue",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " still leaves a lot to be",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "desired. Yes, it works, but it’s clunky. Having to first require that ",
+              "type" : "text"
+            },
+            {
+              "code" : "async",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "was called, then call the last call recorded is a lot of typing. Being able to",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "control when closures run is great, but having to go through ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " makes it",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "really easy to either run the same closure twice, or not run one that should",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "have run.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To address this, we’ll flesh out ",
+              "type" : "text"
+            },
+            {
+              "code" : "FakeDispatchQueue",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "some more, adding some logic to record closures, call them at a later time, or",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "run the closure when ",
+              "type" : "text"
+            },
+            {
+              "code" : "async(execute:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is called.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "import Foundation",
+            "",
+            "final class FakeDispatchQueue: DispatchQueueProtocol, @unchecked Sendable {",
+            "    private let lock = NSRecursiveLock()",
+            "    private var calls = [@Sendable () -> Void]()",
+            "",
+            "    func pendingTaskCount() -> Int {",
+            "        lock.withLock { calls.count }",
+            "    }",
+            "",
+            "    func runNextTask() {",
+            "        lock.withLock {",
+            "            guard !calls.isEmpty else { return }",
+            "            calls.removeFirst()()",
+            "        }",
+            "    }",
+            "",
+            "    func async(execute work: @escaping @Sendable () -> Void) {",
+            "        lock.withLock {",
+            "            guard _runSynchronously == false else {",
+            "                return work()",
+            "            }",
+            "            calls.append(work)",
+            "        }",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Before we can use this new ",
+              "type" : "text"
+            },
+            {
+              "code" : "FakeDispatchQueue",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", it’s very important to realize",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "that, because it now has logic in it, we have to ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/blog.rachelbrindle.com\/2023\/06\/25\/testing-test-helpers\/",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Otherwise, we have no idea if a test failure is caused by something",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "in the production code, or something in ",
+              "type" : "text"
+            },
+            {
+              "code" : "FakeDispatchQueue",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Some tests that verify thet entire API for ",
+              "type" : "text"
+            },
+            {
+              "code" : "FakeDispatchQueue",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " look like this:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "final class FakeDispatchQueueTests: XCTestCase {",
+            "    func testRunNextTaskWithoutPendingTasksDoesntBlowUp() {",
+            "        let subject = FakeDispatchQueue()",
+            "",
+            "        expect { subject.runNextTask() }.toNot(throwAssertion())",
+            "    }",
+            "",
+            "    func testRunNextTaskWithPendingTasksCallsTheCallback() {",
+            "        let subject = FakeDispatchQueue()",
+            "        let spy = Spy<Void, Void>()",
+            "",
+            "        subject.async { spy.call() }",
+            "",
+            "        expect(spy).toNot(beCalled())",
+            "",
+            "        subject.runNextTask()",
+            "",
+            "        expect(spy).to(beCalled())",
+            "    }",
+            "",
+            "    func testPendingTaskCountReturnsNumberOfUnRunTasks() {",
+            "        let subject = FakeDispatchQueue()",
+            "        let spy = Spy<Void, Void>()",
+            "",
+            "        expect(subject.pendingTaskCount).to(equal(0))",
+            "",
+            "        subject.async { spy.call() }",
+            "",
+            "        expect(subject.pendingTaskCount).to(equal(1))",
+            "",
+            "        subject.async { spy.call() }",
+            "",
+            "        expect(subject.pendingTaskCount).to(equal(2))",
+            "",
+            "        subject.runNextTask()",
+            "",
+            "        expect(subject.pendingTaskCount).to(equal(1))",
+            "",
+            "        subject.runNextTask()",
+            "",
+            "        expect(subject.pendingTaskCount).to(equal(0))",
+            "    }",
+            "",
+            "    func testPendingTasksAreRunInTheOrderReceived() {",
+            "        let subject = FakeDispatchQueue()",
+            "        let spy = Spy<Int, Void>()",
+            "",
+            "        subject.async { spy.call(1) }",
+            "        subject.async { spy.call(2) }",
+            "",
+            "        subject.runNextTask()",
+            "        subject.runNextTask()",
+            "",
+            "        expect(subject.calls).to(equal([1, 2]))",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Any code that has logic in it must have tests driving out that logic.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Important",
+          "style" : "important",
+          "type" : "aside"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "These tests do the basic of ensuring that tasks are queued up properly, and",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "are actually ran in a queue. They make sure that we can correctly assert on",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the number of queued up tasks. And, most importantly, they ensure that if",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "we try to run a task when there aren’t any to run, the tests don’t crash.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Now, with ",
+              "type" : "text"
+            },
+            {
+              "code" : "FakeDispatchQueue",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " implemented and tested, we can use it in",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "ExpensiveComputationTests",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ":",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "final class ExpensiveComputationTests: XCTestCase {",
+            "    func testCallsTheCallback() {",
+            "        let dispatchQueue = FakeDispatchQueue()",
+            "        let completionHandler = Spy<Int, Void>()",
+            "",
+            "        expensiveComputation(",
+            "            dispatchQueue: dispatchQueue,",
+            "            completionHandler: completionHandler.callAsFunction",
+            "        )",
+            "",
+            "        expect(dispatchQueue.pendingTaskCount).to(equal(1))",
+            "",
+            "        dispatchQueue.runNextTask()",
+            "",
+            "        expect(completionHandler).to(beCalled(1337))",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Which isn’t that much different, but it’s now significantly easier to understand",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "what’s actually going on. ",
+              "type" : "text"
+            },
+            {
+              "code" : "runNextTask()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is so much easier to read than",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "asyncSpy.calls.last?()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", and it has way fewer sharp edges to cut yourself on.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Conclusion",
+          "level" : 3,
+          "text" : "Conclusion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "In this article, we discussed verifying callbacks as well as designing and",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "testing code using ",
+              "type" : "text"
+            },
+            {
+              "code" : "DispatchQueue",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to run code asynchronously. Verify callbacks",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "by injecting a ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", and do whatever you can to control when dispatched code",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "actually runs.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Swift Concurrency (async\/await) brings its own challenges, which will be",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "addressed in a separate article.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/fakes\/verifyingcallbacks"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://Fakes/documentation/Fakes": {
+  "abstract" : [
+    {
+      "inlineContent" : [
+        {
+          "text" : "Swift Fakes",
+          "type" : "text"
+        }
+      ],
+      "type" : "strong"
+    },
+    {
+      "text" : " is an open source collection of Test Doubles for Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Fakes",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes"
+},
+"doc://Fakes/documentation/Fakes/DependencyInjection": {
+  "abstract" : [
+    {
+      "text" : "Providing dependencies instead of reaching out to them.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/DependencyInjection",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Dependency Injection",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/dependencyinjection"
+},
+"doc://Fakes/documentation/Fakes/Spy": {
+  "abstract" : [
+    {
+      "text" : "A Spy is a test double for recording calls to methods, and returning stubbed results.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Spy"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Spy"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Spy",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy"
+},
+"https://blog.rachelbrindle.com/2023/06/25/testing-test-helpers/": {
+  "identifier" : "https:\/\/blog.rachelbrindle.com\/2023\/06\/25\/testing-test-helpers\/",
+  "title" : "write tests for that logic",
+  "titleInlineContent" : [
+    {
+      "text" : "write tests for that logic",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/blog.rachelbrindle.com\/2023\/06\/25\/testing-test-helpers\/"
+},
+"https://developer.apple.com/documentation/dispatch/dispatchqueue": {
+  "identifier" : "https:\/\/developer.apple.com\/documentation\/dispatch\/dispatchqueue",
+  "title" : "DispatchQueue",
+  "titleInlineContent" : [
+    {
+      "code" : "DispatchQueue",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.apple.com\/documentation\/dispatch\/dispatchqueue"
+},
+"https://developer.apple.com/documentation/dispatch/dispatchqueue/2016098-async": {
+  "identifier" : "https:\/\/developer.apple.com\/documentation\/dispatch\/dispatchqueue\/2016098-async",
+  "title" : "async(group:qos:flags:execute:)",
+  "titleInlineContent" : [
+    {
+      "code" : "async(group:qos:flags:execute:)",
+      "type" : "codeVoice"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/developer.apple.com\/documentation\/dispatch\/dispatchqueue\/2016098-async"
+},
+"https://quick.github.io/Nimble/documentation/nimble/pollingexpectations": {
+  "identifier" : "https:\/\/quick.github.io\/Nimble\/documentation\/nimble\/pollingexpectations",
+  "title" : "Nimble’s Polling Expectations",
+  "titleInlineContent" : [
+    {
+      "text" : "Nimble’s Polling Expectations",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/quick.github.io\/Nimble\/documentation\/nimble\/pollingexpectations"
+}
+}
+}

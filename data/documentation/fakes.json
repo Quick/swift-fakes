@@ -211,7 +211,8 @@
       "generated" : true,
       "identifiers" : [
         "doc:\/\/Fakes\/documentation\/Fakes\/DependencyInjection",
-        "doc:\/\/Fakes\/documentation\/Fakes\/NimbleIntegration"
+        "doc:\/\/Fakes\/documentation\/Fakes\/NimbleIntegration",
+        "doc:\/\/Fakes\/documentation\/Fakes\/VerifyingCallbacks"
       ],
       "title" : "Articles"
     },
@@ -548,6 +549,28 @@
   "title" : "ThrowingSpy",
   "type" : "topic",
   "url" : "\/documentation\/fakes\/throwingspy"
+},
+"doc://Fakes/documentation/Fakes/VerifyingCallbacks": {
+  "abstract" : [
+    {
+      "text" : "When testing a method that calls a callback, how do you verify that the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "callback actually works?",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/VerifyingCallbacks",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Verifying Callbacks and Faking DispatchQueue",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/verifyingcallbacks"
 },
 "doc://Fakes/documentation/Fakes/beCalled(_:)-7sn1o": {
   "abstract" : [

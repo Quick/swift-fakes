@@ -34,6 +34,11 @@
             "type" : "article"
           },
           {
+            "path" : "\/documentation\/fakes\/verifyingcallbacks",
+            "title" : "Verifying Callbacks and Faking DispatchQueue",
+            "type" : "article"
+          },
+          {
             "title" : "Classes",
             "type" : "groupMarker"
           },
