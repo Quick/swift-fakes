@@ -138,6 +138,16 @@ final class SpyTests: XCTestCase {
 
         expect(subject.calls).to(equal([8]))
     }
+
+    func testClearCalls() {
+        let subject = Spy<Int, Void>()
+
+        subject(1)
+        subject(2)
+
+        subject.clearCalls()
+        expect(subject.calls).to(beEmpty())
+    }
 }
 
 enum TestError: Error {
