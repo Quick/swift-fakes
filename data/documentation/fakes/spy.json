@@ -188,6 +188,7 @@
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(_:pendingDelay:)-5o8zc",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(pendingDelay:)-52uom",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(pendingDelay:)-7qw29",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/clearCalls()",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub()",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(_:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(failure:)-1xoml",
@@ -1085,6 +1086,38 @@
   "title" : "calls",
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/calls"
+},
+"doc://Fakes/documentation/Fakes/Spy/clearCalls()": {
+  "abstract" : [
+    {
+      "text" : "Clear out existing call records.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "clearCalls"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/clearCalls()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "clearCalls()",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/clearcalls()"
 },
 "doc://Fakes/documentation/Fakes/Spy/init()-3nayo": {
   "abstract" : [

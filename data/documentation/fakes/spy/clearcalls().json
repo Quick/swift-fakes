@@ -1,0 +1,224 @@
+{
+  "abstract" : [
+    {
+      "text" : "Clear out existing call records.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/Fakes\/documentation\/Fakes",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/clearCalls()"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:5Fakes3SpyC10clearCallsyyF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "clearCalls"
+      },
+      {
+        "kind" : "text",
+        "text" : "()"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Fakes"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "clearCalls()"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "Linux"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "clearCalls"
+            },
+            {
+              "kind" : "text",
+              "text" : "()"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This removes all previously recorded calls from the spy. It does not otherwise",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "mutate the spy.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/fakes\/spy\/clearcalls()"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://Fakes/documentation/Fakes": {
+  "abstract" : [
+    {
+      "inlineContent" : [
+        {
+          "text" : "Swift Fakes",
+          "type" : "text"
+        }
+      ],
+      "type" : "strong"
+    },
+    {
+      "text" : " is an open source collection of Test Doubles for Swift",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Fakes",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes"
+},
+"doc://Fakes/documentation/Fakes/Spy": {
+  "abstract" : [
+    {
+      "text" : "A Spy is a test double for recording calls to methods, and returning stubbed results.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Spy"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Spy"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Spy",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy"
+},
+"doc://Fakes/documentation/Fakes/Spy/clearCalls()": {
+  "abstract" : [
+    {
+      "text" : "Clear out existing call records.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "clearCalls"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/clearCalls()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "clearCalls()",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/clearcalls()"
+}
+}
+}

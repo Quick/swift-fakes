@@ -206,6 +206,11 @@
                 "type" : "method"
               },
               {
+                "path" : "\/documentation\/fakes\/spy\/clearcalls()",
+                "title" : "func clearCalls()",
+                "type" : "method"
+              },
+              {
                 "path" : "\/documentation\/fakes\/spy\/stub()",
                 "title" : "func stub<Failure>()",
                 "type" : "method"
