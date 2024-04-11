@@ -27,6 +27,16 @@ public final class Spy<Arguments, Returning> {
         self.init(())
     }
 
+    /// Clear out existing call records.
+    ///
+    /// This removes all previously recorded calls from the spy. It does not otherwise
+    /// mutate the spy.
+    public func clearCalls() {
+        lock.lock()
+        _calls = []
+        lock.unlock()
+    }
+
     // MARK: Stubbing
     /// Update the Spy's stub to return the given value.
     ///
