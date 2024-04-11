@@ -23,11 +23,13 @@ let package = Package(
             dependencies: ["Nimble"],
             resources: [
                 .copy("PrivacyInfo.xcprivacy")
-            ]
+            ],
+            swiftSettings: [.enableExperimentalFeature("StrictConcurrency")]
         ),
         .testTarget(
             name: "FakesTests",
-            dependencies: ["Fakes", "Nimble"]
+            dependencies: ["Fakes", "Nimble"],
+            swiftSettings: [.enableExperimentalFeature("StrictConcurrency")]
         ),
     ]
 )
