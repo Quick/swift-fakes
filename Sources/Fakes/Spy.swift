@@ -78,11 +78,11 @@ extension Spy {
     // MARK: - Using DynamicPendable
 
     public convenience init<Value>(fallbackValue value: Value) where Returning == DynamicPendable<Value> {
-        self.init(.init(fallbackValue: value))
+        self.init(.pending(fallback: value))
     }
 
     public convenience init() where Returning == DynamicPendable<Void> {
-        self.init(.init())
+        self.init(.pending())
     }
 
     public func resolveStub<Value>(with value: Value) where Returning == DynamicPendable<Value> {

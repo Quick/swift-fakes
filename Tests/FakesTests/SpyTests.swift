@@ -152,7 +152,7 @@ final class SpyTests: XCTestCase {
     func testDynamicPendable() async {
         let subject = Spy<Void, DynamicPendable<Void>>()
 
-        let managedTask = ManagedTask<Void, Never> {
+        let managedTask = await ManagedTask<Void, Never>.running {
             await subject()
         }
 
@@ -166,13 +166,13 @@ final class SpyTests: XCTestCase {
     func testDynamicPendableDeinit() async {
         let subject = Spy<Void, DynamicPendable<Void>>()
 
-        let managedTask = ManagedTask<Void, Never> {
+        let managedTask = await ManagedTask<Void, Never>.running {
             await subject()
         }
 
         await expect { await managedTask.hasStarted }.toEventually(beTrue())
 
-        subject.stub(DynamicPendable())
+        subject.stub(DynamicPendable.pending())
         subject.resolveStub(with: ())
 
         await expect { await managedTask.isFinished }.toEventually(beTrue())
@@ -185,20 +185,38 @@ actor ManagedTask<Success, Failure: Error> {
 
     var _task: Task<Success, Failure>!
 
-    init(closure: @escaping () async throws -> Success) where Failure == Error {
+    static func running(closure: @escaping () async throws -> Success) async -> ManagedTask where Failure == Error {
+        let task = ManagedTask()
+
+        await task.run(closure: closure)
+
+        return task
+    }
+
+    static func running(closure: @escaping () async -> Success) async -> ManagedTask where Failure == Never {
+        let task = ManagedTask()
+
+        await task.run(closure: closure)
+
+        return task
+    }
+
+    private init() {}
+
+    private func run(closure: @escaping () async throws -> Success) where Failure == Error {
         _task = Task {
-            await self.recordStarted()
+            self.recordStarted()
             let result = try await closure()
-            await self.recordFinished()
+            self.recordFinished()
             return result
         }
     }
 
-    init(closure: @escaping () async -> Success) where Failure == Never {
+    private func run(closure: @escaping () async -> Success) where Failure == Never {
         _task = Task {
-            await self.recordStarted()
+            self.recordStarted()
             let result = await closure()
-            await self.recordFinished()
+            self.recordFinished()
             return result
         }
     }
