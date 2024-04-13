@@ -2,7 +2,7 @@ import Fakes
 import Nimble
 import XCTest
 
-final class DynamicPendableTests: XCTestCase {
+final class PendableTests: XCTestCase {
     func testSingleCall() async throws {
         let subject = Pendable<Int>.pending(fallback: 0)
 
