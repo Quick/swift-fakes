@@ -156,19 +156,20 @@
   "topicSections" : [
     {
       "identifiers" : [
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-1ubn6",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-3nayo",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-5261",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-5sj5u",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-67dju",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-9jaml",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-7qiku",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(_:)",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(failure:)-2ukew",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(failure:)-3fdug",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(failure:)-8mp3u",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(finished:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(pendingFailure:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(pendingFallback:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(pendingSuccess:)",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(success:)-77rd4",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(success:)-m7m8"
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(success:)-152xf",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(success:)-77rd4"
       ],
       "title" : "Initializers"
     },
@@ -184,23 +185,28 @@
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction()-kn0o",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(_:)-5bfrl",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(_:)-9r3zi",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(_:pendingDelay:)-17v1h",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(_:pendingDelay:)-5o8zc",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(pendingDelay:)-52uom",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(pendingDelay:)-7qw29",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(_:fallbackDelay:)-7tk8j",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(_:fallbackDelay:)-7z4dh",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(fallbackDelay:)-6a8i9",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(fallbackDelay:)-vtvc",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/clearCalls()",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/resolveStub()",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/resolveStub(failure:)",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/resolveStub(success:)",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/resolveStub(with:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub()",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(_:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(failure:)-1xoml",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(failure:)-ziqj",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(failure:)-6hm74",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(finished:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(pendingFailure:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(pendingFallback:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(pendingSuccess:)",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(success:)-4kjng",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(success:)-3l3ax",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(success:)-4ll6u",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubFinished()",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubPending()"
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubPending()-1vapx",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubPending()-7ahk8"
       ],
       "title" : "Instance Methods"
     },
@@ -249,92 +255,21 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes"
 },
-"doc://Fakes/documentation/Fakes/Pendable/resolve(delay:)-1bb25": {
+"doc://Fakes/documentation/Fakes/Pendable/call(fallbackDelay:)": {
   "abstract" : [
-
-  ],
-  "fragments" : [
     {
-      "kind" : "keyword",
-      "text" : "func"
+      "text" : "Gets the value for the ",
+      "type" : "text"
     },
     {
-      "kind" : "text",
-      "text" : " "
+      "code" : "Pendable",
+      "type" : "codeVoice"
     },
     {
-      "kind" : "identifier",
-      "text" : "resolve"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "Success"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "Failure"
-    },
-    {
-      "kind" : "text",
-      "text" : ">("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "delay"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation12TimeIntervala",
-      "text" : "TimeInterval"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "async"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Success"
+      "text" : ", possibly waiting until it’s resolved.",
+      "type" : "text"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolve(delay:)-1bb25",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "resolve(delay:)",
-  "type" : "topic",
-  "url" : "\/documentation\/fakes\/pendable\/resolve(delay:)-1bb25"
-},
-"doc://Fakes/documentation/Fakes/Pendable/resolve(delay:)-hvhg": {
-  "abstract" : [
-
-  ],
   "fragments" : [
     {
       "kind" : "keyword",
@@ -346,7 +281,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "resolve"
+      "text" : "call"
     },
     {
       "kind" : "text",
@@ -354,7 +289,7 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "delay"
+      "text" : "fallbackDelay"
     },
     {
       "kind" : "text",
@@ -382,12 +317,12 @@
       "text" : "Value"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolve(delay:)-hvhg",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/call(fallbackDelay:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "resolve(delay:)",
+  "title" : "call(fallbackDelay:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/pendable\/resolve(delay:)-hvhg"
+  "url" : "\/documentation\/fakes\/pendable\/call(fallbackdelay:)"
 },
 "doc://Fakes/documentation/Fakes/Spy": {
   "abstract" : [
@@ -658,100 +593,14 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/callasfunction(_:)-9r3zi"
 },
-"doc://Fakes/documentation/Fakes/Spy/callAsFunction(_:pendingDelay:)-17v1h": {
+"doc://Fakes/documentation/Fakes/Spy/callAsFunction(_:fallbackDelay:)-7tk8j": {
   "abstract" : [
     {
       "text" : "Records the arguments and handles the result according to ",
       "type" : "text"
     },
     {
-      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolve(delay:)-hvhg",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : ".",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "callAsFunction"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "Value"
-    },
-    {
-      "kind" : "text",
-      "text" : ">("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Arguments"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "pendingDelay"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation12TimeIntervala",
-      "text" : "TimeInterval"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "async"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Value"
-    }
-  ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(_:pendingDelay:)-17v1h",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "callAsFunction(_:pendingDelay:)",
-  "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/callasfunction(_:pendingdelay:)-17v1h"
-},
-"doc://Fakes/documentation/Fakes/Spy/callAsFunction(_:pendingDelay:)-5o8zc": {
-  "abstract" : [
-    {
-      "text" : "Records the arguments and handles the result according to ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolve(delay:)-1bb25",
+      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/call(fallbackDelay:)",
       "isActive" : true,
       "type" : "reference"
     },
@@ -819,7 +668,7 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "pendingDelay"
+      "text" : "fallbackDelay"
     },
     {
       "kind" : "text",
@@ -855,21 +704,107 @@
       "text" : "Success"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(_:pendingDelay:)-5o8zc",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(_:fallbackDelay:)-7tk8j",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "callAsFunction(_:pendingDelay:)",
+  "title" : "callAsFunction(_:fallbackDelay:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/callasfunction(_:pendingdelay:)-5o8zc"
+  "url" : "\/documentation\/fakes\/spy\/callasfunction(_:fallbackdelay:)-7tk8j"
 },
-"doc://Fakes/documentation/Fakes/Spy/callAsFunction(pendingDelay:)-52uom": {
+"doc://Fakes/documentation/Fakes/Spy/callAsFunction(_:fallbackDelay:)-7z4dh": {
+  "abstract" : [
+    {
+      "text" : "Records the arguments and handles the result according to ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/call(fallbackDelay:)",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "callAsFunction"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "fallbackDelay"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation12TimeIntervala",
+      "text" : "TimeInterval"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(_:fallbackDelay:)-7z4dh",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "callAsFunction(_:fallbackDelay:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/callasfunction(_:fallbackdelay:)-7z4dh"
+},
+"doc://Fakes/documentation/Fakes/Spy/callAsFunction(fallbackDelay:)-6a8i9": {
   "abstract" : [
     {
       "text" : "Records that a call was made and handles the result according to ",
       "type" : "text"
     },
     {
-      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolve(delay:)-1bb25",
+      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/call(fallbackDelay:)",
       "isActive" : true,
       "type" : "reference"
     },
@@ -929,7 +864,7 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "pendingDelay"
+      "text" : "fallbackDelay"
     },
     {
       "kind" : "text",
@@ -965,21 +900,21 @@
       "text" : "Success"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(pendingDelay:)-52uom",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(fallbackDelay:)-6a8i9",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "callAsFunction(pendingDelay:)",
+  "title" : "callAsFunction(fallbackDelay:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/callasfunction(pendingdelay:)-52uom"
+  "url" : "\/documentation\/fakes\/spy\/callasfunction(fallbackdelay:)-6a8i9"
 },
-"doc://Fakes/documentation/Fakes/Spy/callAsFunction(pendingDelay:)-7qw29": {
+"doc://Fakes/documentation/Fakes/Spy/callAsFunction(fallbackDelay:)-vtvc": {
   "abstract" : [
     {
       "text" : "Records that a call was made and handles the result according to ",
       "type" : "text"
     },
     {
-      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolve(delay:)-hvhg",
+      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/call(fallbackDelay:)",
       "isActive" : true,
       "type" : "reference"
     },
@@ -1015,7 +950,7 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "pendingDelay"
+      "text" : "fallbackDelay"
     },
     {
       "kind" : "text",
@@ -1043,12 +978,12 @@
       "text" : "Value"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(pendingDelay:)-7qw29",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(fallbackDelay:)-vtvc",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "callAsFunction(pendingDelay:)",
+  "title" : "callAsFunction(fallbackDelay:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/callasfunction(pendingdelay:)-7qw29"
+  "url" : "\/documentation\/fakes\/spy\/callasfunction(fallbackdelay:)-vtvc"
 },
 "doc://Fakes/documentation/Fakes/Spy/calls": {
   "abstract" : [
@@ -1119,6 +1054,46 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/clearcalls()"
 },
+"doc://Fakes/documentation/Fakes/Spy/init()-1ubn6": {
+  "abstract" : [
+    {
+      "text" : "Create a Spy that returns nil",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "convenience"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Wrapped"
+    },
+    {
+      "kind" : "text",
+      "text" : ">()"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-1ubn6",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init()",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/init()-1ubn6"
+},
 "doc://Fakes/documentation/Fakes/Spy/init()-3nayo": {
   "abstract" : [
     {
@@ -1150,6 +1125,38 @@
   "title" : "init()",
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/init()-3nayo"
+},
+"doc://Fakes/documentation/Fakes/Spy/init()-5261": {
+  "abstract" : [
+    {
+      "text" : "Create a pendable Spy that is pre-stubbed to return return a a pending that will block for a bit before returning Void.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "convenience"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-5261",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init()",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/init()-5261"
 },
 "doc://Fakes/documentation/Fakes/Spy/init()-5sj5u": {
   "abstract" : [
@@ -1191,7 +1198,7 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/init()-5sj5u"
 },
-"doc://Fakes/documentation/Fakes/Spy/init()-67dju": {
+"doc://Fakes/documentation/Fakes/Spy/init()-7qiku": {
   "abstract" : [
     {
       "text" : "Create a throwing pendable Spy that is pre-stubbed to return a pending that will block for a bit before returning Void.",
@@ -1224,44 +1231,12 @@
       "text" : ">()"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-67dju",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-7qiku",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "init()",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/init()-67dju"
-},
-"doc://Fakes/documentation/Fakes/Spy/init()-9jaml": {
-  "abstract" : [
-    {
-      "text" : "Create a pendable Spy that is pre-stubbed to return return a a pending that will block for a bit before returning Void.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "convenience"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "init"
-    },
-    {
-      "kind" : "text",
-      "text" : "()"
-    }
-  ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-9jaml",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "init()",
-  "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/init()-9jaml"
+  "url" : "\/documentation\/fakes\/spy\/init()-7qiku"
 },
 "doc://Fakes/documentation/Fakes/Spy/init(_:)": {
   "abstract" : [
@@ -1294,6 +1269,70 @@
   "title" : "init(_:)",
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/init(_:)"
+},
+"doc://Fakes/documentation/Fakes/Spy/init(failure:)-2ukew": {
+  "abstract" : [
+    {
+      "text" : "Create a throwing pendable Spy that is pre-stubbed to throw the given error.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "convenience"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Failure"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "failure"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Failure"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(failure:)-2ukew",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(failure:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/init(failure:)-2ukew"
 },
 "doc://Fakes/documentation/Fakes/Spy/init(failure:)-3fdug": {
   "abstract" : [
@@ -1358,70 +1397,6 @@
   "title" : "init(failure:)",
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/init(failure:)-3fdug"
-},
-"doc://Fakes/documentation/Fakes/Spy/init(failure:)-8mp3u": {
-  "abstract" : [
-    {
-      "text" : "Create a throwing pendable Spy that is pre-stubbed to throw the given error.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "convenience"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "init"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "Success"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "Failure"
-    },
-    {
-      "kind" : "text",
-      "text" : ">("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "failure"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Failure"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
-    }
-  ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(failure:)-8mp3u",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "init(failure:)",
-  "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/init(failure:)-8mp3u"
 },
 "doc://Fakes/documentation/Fakes/Spy/init(finished:)": {
   "abstract" : [
@@ -1663,6 +1638,70 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/init(pendingsuccess:)"
 },
+"doc://Fakes/documentation/Fakes/Spy/init(success:)-152xf": {
+  "abstract" : [
+    {
+      "text" : "Create a throwing pendable Spy that is pre-stubbed to return a finished & successful value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "convenience"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Failure"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "success"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(success:)-152xf",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(success:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/init(success:)-152xf"
+},
 "doc://Fakes/documentation/Fakes/Spy/init(success:)-77rd4": {
   "abstract" : [
     {
@@ -1727,17 +1766,17 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/init(success:)-77rd4"
 },
-"doc://Fakes/documentation/Fakes/Spy/init(success:)-m7m8": {
+"doc://Fakes/documentation/Fakes/Spy/resolveStub()": {
   "abstract" : [
     {
-      "text" : "Create a throwing pendable Spy that is pre-stubbed to return a finished & successful value.",
+      "text" : "Resolve the pendable Spy’s stub with Void",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "convenience"
+      "text" : "func"
     },
     {
       "kind" : "text",
@@ -1745,7 +1784,103 @@
     },
     {
       "kind" : "identifier",
-      "text" : "init"
+      "text" : "resolveStub"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/resolveStub()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "resolveStub()",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/resolvestub()"
+},
+"doc://Fakes/documentation/Fakes/Spy/resolveStub(failure:)": {
+  "abstract" : [
+    {
+      "text" : "Resolve the pendable spy’s stub with the given error",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "resolveStub"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Failure"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "failure"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Failure"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/resolveStub(failure:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "resolveStub(failure:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/resolvestub(failure:)"
+},
+"doc://Fakes/documentation/Fakes/Spy/resolveStub(success:)": {
+  "abstract" : [
+    {
+      "text" : "Resolve the pendable Spy’s stub with the success value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "resolveStub"
     },
     {
       "kind" : "text",
@@ -1784,12 +1919,65 @@
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(success:)-m7m8",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/resolveStub(success:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "init(success:)",
+  "title" : "resolveStub(success:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/init(success:)-m7m8"
+  "url" : "\/documentation\/fakes\/spy\/resolvestub(success:)"
+},
+"doc://Fakes/documentation/Fakes/Spy/resolveStub(with:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "resolveStub"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "with"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/resolveStub(with:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "resolveStub(with:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/resolvestub(with:)"
 },
 "doc://Fakes/documentation/Fakes/Spy/stub()": {
   "abstract" : [
@@ -1935,7 +2123,7 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/stub(failure:)-1xoml"
 },
-"doc://Fakes/documentation/Fakes/Spy/stub(failure:)-ziqj": {
+"doc://Fakes/documentation/Fakes/Spy/stub(failure:)-6hm74": {
   "abstract" : [
     {
       "text" : "Update the throwing pendable Spy’s stub to throw the given error.",
@@ -1992,12 +2180,12 @@
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(failure:)-ziqj",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(failure:)-6hm74",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "stub(failure:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/stub(failure:)-ziqj"
+  "url" : "\/documentation\/fakes\/spy\/stub(failure:)-6hm74"
 },
 "doc://Fakes/documentation/Fakes/Spy/stub(finished:)": {
   "abstract" : [
@@ -2239,7 +2427,7 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/stub(pendingsuccess:)"
 },
-"doc://Fakes/documentation/Fakes/Spy/stub(success:)-4kjng": {
+"doc://Fakes/documentation/Fakes/Spy/stub(success:)-3l3ax": {
   "abstract" : [
     {
       "text" : "Update the throwing pendable Spy’s stub to be successful, with the given value.",
@@ -2296,12 +2484,12 @@
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(success:)-4kjng",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(success:)-3l3ax",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "stub(success:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/stub(success:)-4kjng"
+  "url" : "\/documentation\/fakes\/spy\/stub(success:)-3l3ax"
 },
 "doc://Fakes/documentation/Fakes/Spy/stub(success:)-4ll6u": {
   "abstract" : [
@@ -2399,7 +2587,47 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/stubfinished()"
 },
-"doc://Fakes/documentation/Fakes/Spy/stubPending()": {
+"doc://Fakes/documentation/Fakes/Spy/stubPending()-1vapx": {
+  "abstract" : [
+    {
+      "text" : "Update the pendable Spy’s stub to be in a pending state.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "stubPending"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Wrapped"
+    },
+    {
+      "kind" : "text",
+      "text" : ">()"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubPending()-1vapx",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "stubPending()",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/stubpending()-1vapx"
+},
+"doc://Fakes/documentation/Fakes/Spy/stubPending()-7ahk8": {
   "abstract" : [
     {
       "text" : "Update the pendable Spy’s stub to be in a pending state.",
@@ -2424,12 +2652,12 @@
       "text" : "()"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubPending()",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubPending()-7ahk8",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "stubPending()",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/stubpending()"
+  "url" : "\/documentation\/fakes\/spy\/stubpending()-7ahk8"
 },
 "doc://Fakes/s28CustomDebugStringConvertibleP": {
   "identifier" : "doc:\/\/Fakes\/s28CustomDebugStringConvertibleP",

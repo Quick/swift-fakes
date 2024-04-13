@@ -1,7 +1,15 @@
 {
   "abstract" : [
     {
-      "text" : "Create a pendable Spy that is pre-stubbed to return a finished value.",
+      "text" : "Resolves the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Pendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with the given value.",
       "type" : "text"
     }
   ],
@@ -9,22 +17,21 @@
     "paths" : [
       [
         "doc:\/\/Fakes\/documentation\/Fakes",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy"
+        "doc:\/\/Fakes\/documentation\/Fakes\/Pendable"
       ]
     ]
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(finished:)"
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolve(with:)"
   },
   "kind" : "symbol",
   "metadata" : {
-    "extendedModule" : "Fakes",
-    "externalID" : "s:5Fakes3SpyC8finishedACyxAA8PendableCyqd__GGqd___tcAGRs_s8SendableRd__lufc",
+    "externalID" : "s:5Fakes8PendableC7resolve4withyx_tF",
     "fragments" : [
       {
         "kind" : "keyword",
-        "text" : "convenience"
+        "text" : "func"
       },
       {
         "kind" : "text",
@@ -32,23 +39,15 @@
       },
       {
         "kind" : "identifier",
-        "text" : "init"
+        "text" : "resolve"
       },
       {
         "kind" : "text",
-        "text" : "<"
-      },
-      {
-        "kind" : "genericParameter",
-        "text" : "Value"
-      },
-      {
-        "kind" : "text",
-        "text" : ">("
+        "text" : "("
       },
       {
         "kind" : "externalParam",
-        "text" : "finished"
+        "text" : "with"
       },
       {
         "kind" : "text",
@@ -69,9 +68,9 @@
       }
     ],
     "role" : "symbol",
-    "roleHeading" : "Initializer",
-    "symbolKind" : "init",
-    "title" : "init(finished:)"
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "resolve(with:)"
   },
   "primaryContentSections" : [
     {
@@ -86,31 +85,31 @@
           "tokens" : [
             {
               "kind" : "keyword",
-              "text" : "convenience"
+              "text" : "func"
             },
             {
               "kind" : "text",
               "text" : " "
             },
             {
-              "kind" : "keyword",
-              "text" : "init"
+              "kind" : "identifier",
+              "text" : "resolve"
             },
             {
               "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "genericParameter",
-              "text" : "Value"
-            },
-            {
-              "kind" : "text",
-              "text" : ">("
+              "text" : "("
             },
             {
               "kind" : "externalParam",
-              "text" : "finished"
+              "text" : "with"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "value"
             },
             {
               "kind" : "text",
@@ -122,59 +121,32 @@
             },
             {
               "kind" : "text",
-              "text" : ") "
-            },
-            {
-              "kind" : "keyword",
-              "text" : "where"
-            },
-            {
-              "kind" : "text",
-              "text" : " "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Returning"
-            },
-            {
-              "kind" : "text",
-              "text" : " == "
-            },
-            {
-              "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:5Fakes8PendableC",
-              "text" : "Pendable"
-            },
-            {
-              "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Value"
-            },
-            {
-              "kind" : "text",
-              "text" : ">, "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Value"
-            },
-            {
-              "kind" : "text",
-              "text" : " : "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:s8SendableP",
-              "text" : "Sendable"
+              "text" : ")"
             }
           ]
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Even if the pendable is already resolves, this resets the resolved value to the given value.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -188,7 +160,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/fakes\/spy\/init(finished:)"
+        "\/documentation\/fakes\/pendable\/resolve(with:)"
       ],
       "traits" : [
         {
@@ -256,17 +228,25 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/pendable"
 },
-"doc://Fakes/documentation/Fakes/Spy": {
+"doc://Fakes/documentation/Fakes/Pendable/resolve(with:)": {
   "abstract" : [
     {
-      "text" : "A Spy is a test double for recording calls to methods, and returning stubbed results.",
+      "text" : "Resolves the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Pendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with the given value.",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "class"
+      "text" : "func"
     },
     {
       "kind" : "text",
@@ -274,57 +254,15 @@
     },
     {
       "kind" : "identifier",
-      "text" : "Spy"
-    }
-  ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Spy"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Spy",
-  "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy"
-},
-"doc://Fakes/documentation/Fakes/Spy/init(finished:)": {
-  "abstract" : [
-    {
-      "text" : "Create a pendable Spy that is pre-stubbed to return a finished value.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "convenience"
+      "text" : "resolve"
     },
     {
       "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "init"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "Value"
-    },
-    {
-      "kind" : "text",
-      "text" : ">("
+      "text" : "("
     },
     {
       "kind" : "externalParam",
-      "text" : "finished"
+      "text" : "with"
     },
     {
       "kind" : "text",
@@ -339,12 +277,12 @@
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(finished:)",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolve(with:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "init(finished:)",
+  "title" : "resolve(with:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/init(finished:)"
+  "url" : "\/documentation\/fakes\/pendable\/resolve(with:)"
 }
 }
 }

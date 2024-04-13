@@ -8,11 +8,11 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingPendable"
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingDynamicPendable"
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:5Fakes16ThrowingPendablea",
+    "externalID" : "s:5Fakes23ThrowingDynamicPendablea",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -24,7 +24,7 @@
       },
       {
         "kind" : "identifier",
-        "text" : "ThrowingPendable"
+        "text" : "ThrowingDynamicPendable"
       }
     ],
     "modules" : [
@@ -35,13 +35,13 @@
     "navigatorTitle" : [
       {
         "kind" : "identifier",
-        "text" : "ThrowingPendable"
+        "text" : "ThrowingDynamicPendable"
       }
     ],
     "role" : "symbol",
     "roleHeading" : "Type Alias",
     "symbolKind" : "typealias",
-    "title" : "ThrowingPendable"
+    "title" : "ThrowingDynamicPendable"
   },
   "primaryContentSections" : [
     {
@@ -64,7 +64,7 @@
             },
             {
               "kind" : "identifier",
-              "text" : "ThrowingPendable"
+              "text" : "ThrowingDynamicPendable"
             },
             {
               "kind" : "text",
@@ -89,7 +89,7 @@
             {
               "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:5Fakes8PendableO",
+              "preciseIdentifier" : "s:5Fakes8PendableC",
               "text" : "Pendable"
             },
             {
@@ -159,7 +159,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/fakes\/throwingpendable"
+        "\/documentation\/fakes\/throwingdynamicpendable"
       ],
       "traits" : [
         {
@@ -196,14 +196,14 @@
 "doc://Fakes/documentation/Fakes/Pendable": {
   "abstract" : [
     {
-      "text" : "Pendable represents the 2 states that an asynchronous call can be in",
+      "text" : "Pendable is a safe way to represent the 2 states that an asynchronous call can be in",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "enum"
+      "text" : "class"
     },
     {
       "kind" : "text",
@@ -227,7 +227,7 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/pendable"
 },
-"doc://Fakes/documentation/Fakes/ThrowingPendable": {
+"doc://Fakes/documentation/Fakes/ThrowingDynamicPendable": {
   "abstract" : [
 
   ],
@@ -242,21 +242,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "ThrowingPendable"
+      "text" : "ThrowingDynamicPendable"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingPendable",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingDynamicPendable",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "ThrowingPendable"
+      "text" : "ThrowingDynamicPendable"
     }
   ],
   "role" : "symbol",
-  "title" : "ThrowingPendable",
+  "title" : "ThrowingDynamicPendable",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/throwingpendable"
+  "url" : "\/documentation\/fakes\/throwingdynamicpendable"
 }
 }
 }

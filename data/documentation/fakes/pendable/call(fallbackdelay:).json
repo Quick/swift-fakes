@@ -1,7 +1,15 @@
 {
   "abstract" : [
     {
-      "text" : "Create a pendable Spy that is pre-stubbed to return a finished value.",
+      "text" : "Gets the value for the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Pendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", possibly waiting until it’s resolved.",
       "type" : "text"
     }
   ],
@@ -9,22 +17,21 @@
     "paths" : [
       [
         "doc:\/\/Fakes\/documentation\/Fakes",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy"
+        "doc:\/\/Fakes\/documentation\/Fakes\/Pendable"
       ]
     ]
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(finished:)"
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/call(fallbackDelay:)"
   },
   "kind" : "symbol",
   "metadata" : {
-    "extendedModule" : "Fakes",
-    "externalID" : "s:5Fakes3SpyC8finishedACyxAA8PendableCyqd__GGqd___tcAGRs_s8SendableRd__lufc",
+    "externalID" : "s:5Fakes8PendableC4call13fallbackDelayxSd_tYaF",
     "fragments" : [
       {
         "kind" : "keyword",
-        "text" : "convenience"
+        "text" : "func"
       },
       {
         "kind" : "text",
@@ -32,23 +39,15 @@
       },
       {
         "kind" : "identifier",
-        "text" : "init"
+        "text" : "call"
       },
       {
         "kind" : "text",
-        "text" : "<"
-      },
-      {
-        "kind" : "genericParameter",
-        "text" : "Value"
-      },
-      {
-        "kind" : "text",
-        "text" : ">("
+        "text" : "("
       },
       {
         "kind" : "externalParam",
-        "text" : "finished"
+        "text" : "fallbackDelay"
       },
       {
         "kind" : "text",
@@ -56,11 +55,24 @@
       },
       {
         "kind" : "typeIdentifier",
-        "text" : "Value"
+        "preciseIdentifier" : "s:10Foundation12TimeIntervala",
+        "text" : "TimeInterval"
       },
       {
         "kind" : "text",
-        "text" : ")"
+        "text" : ") "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "async"
+      },
+      {
+        "kind" : "text",
+        "text" : " -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "text" : "Value"
       }
     ],
     "modules" : [
@@ -69,9 +81,9 @@
       }
     ],
     "role" : "symbol",
-    "roleHeading" : "Initializer",
-    "symbolKind" : "init",
-    "title" : "init(finished:)"
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "call(fallbackDelay:)"
   },
   "primaryContentSections" : [
     {
@@ -86,31 +98,23 @@
           "tokens" : [
             {
               "kind" : "keyword",
-              "text" : "convenience"
+              "text" : "func"
             },
             {
               "kind" : "text",
               "text" : " "
             },
             {
-              "kind" : "keyword",
-              "text" : "init"
+              "kind" : "identifier",
+              "text" : "call"
             },
             {
               "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "genericParameter",
-              "text" : "Value"
-            },
-            {
-              "kind" : "text",
-              "text" : ">("
+              "text" : "("
             },
             {
               "kind" : "externalParam",
-              "text" : "finished"
+              "text" : "fallbackDelay"
             },
             {
               "kind" : "text",
@@ -118,63 +122,64 @@
             },
             {
               "kind" : "typeIdentifier",
-              "text" : "Value"
+              "preciseIdentifier" : "s:10Foundation12TimeIntervala",
+              "text" : "TimeInterval"
             },
             {
               "kind" : "text",
-              "text" : ") "
+              "text" : " = PendableDefaults.delay) "
             },
             {
               "kind" : "keyword",
-              "text" : "where"
+              "text" : "async"
             },
             {
               "kind" : "text",
-              "text" : " "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Returning"
-            },
-            {
-              "kind" : "text",
-              "text" : " == "
-            },
-            {
-              "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:5Fakes8PendableC",
-              "text" : "Pendable"
-            },
-            {
-              "kind" : "text",
-              "text" : "<"
+              "text" : " -> "
             },
             {
               "kind" : "typeIdentifier",
               "text" : "Value"
-            },
-            {
-              "kind" : "text",
-              "text" : ">, "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Value"
-            },
-            {
-              "kind" : "text",
-              "text" : " : "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:s8SendableP",
-              "text" : "Sendable"
             }
           ]
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The amount of time (in seconds) to wait until the call returns",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "the fallback value. This is only used when the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Pendable",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " is in a pending state.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "fallbackDelay"
+        }
+      ]
     }
   ],
   "schemaVersion" : {
@@ -188,7 +193,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/fakes\/spy\/init(finished:)"
+        "\/documentation\/fakes\/pendable\/call(fallbackdelay:)"
       ],
       "traits" : [
         {
@@ -256,17 +261,25 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/pendable"
 },
-"doc://Fakes/documentation/Fakes/Spy": {
+"doc://Fakes/documentation/Fakes/Pendable/call(fallbackDelay:)": {
   "abstract" : [
     {
-      "text" : "A Spy is a test double for recording calls to methods, and returning stubbed results.",
+      "text" : "Gets the value for the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Pendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", possibly waiting until it’s resolved.",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "class"
+      "text" : "func"
     },
     {
       "kind" : "text",
@@ -274,57 +287,15 @@
     },
     {
       "kind" : "identifier",
-      "text" : "Spy"
-    }
-  ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Spy"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Spy",
-  "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy"
-},
-"doc://Fakes/documentation/Fakes/Spy/init(finished:)": {
-  "abstract" : [
-    {
-      "text" : "Create a pendable Spy that is pre-stubbed to return a finished value.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "convenience"
+      "text" : "call"
     },
     {
       "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "init"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "Value"
-    },
-    {
-      "kind" : "text",
-      "text" : ">("
+      "text" : "("
     },
     {
       "kind" : "externalParam",
-      "text" : "finished"
+      "text" : "fallbackDelay"
     },
     {
       "kind" : "text",
@@ -332,19 +303,32 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Value"
+      "preciseIdentifier" : "s:10Foundation12TimeIntervala",
+      "text" : "TimeInterval"
     },
     {
       "kind" : "text",
-      "text" : ")"
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(finished:)",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/call(fallbackDelay:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "init(finished:)",
+  "title" : "call(fallbackDelay:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/init(finished:)"
+  "url" : "\/documentation\/fakes\/pendable\/call(fallbackdelay:)"
 }
 }
 }

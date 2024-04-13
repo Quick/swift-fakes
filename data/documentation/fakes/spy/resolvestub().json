@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Create a pendable Spy that is pre-stubbed to return return a a pending that will block for a bit before returning Void.",
+      "text" : "Resolve the pendable Spy’s stub with Void",
       "type" : "text"
     }
   ],
@@ -15,16 +15,16 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-9jaml"
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/resolveStub()"
   },
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "Fakes",
-    "externalID" : "s:5Fakes3SpyCACyxAA8PendableOyytGGycAFRs_rlufc",
+    "externalID" : "s:5Fakes3SpyC11resolveStubyyAA8PendableCyytGRs_rlF",
     "fragments" : [
       {
         "kind" : "keyword",
-        "text" : "convenience"
+        "text" : "func"
       },
       {
         "kind" : "text",
@@ -32,7 +32,7 @@
       },
       {
         "kind" : "identifier",
-        "text" : "init"
+        "text" : "resolveStub"
       },
       {
         "kind" : "text",
@@ -45,9 +45,9 @@
       }
     ],
     "role" : "symbol",
-    "roleHeading" : "Initializer",
-    "symbolKind" : "init",
-    "title" : "init()"
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "resolveStub()"
   },
   "primaryContentSections" : [
     {
@@ -62,15 +62,15 @@
           "tokens" : [
             {
               "kind" : "keyword",
-              "text" : "convenience"
+              "text" : "func"
             },
             {
               "kind" : "text",
               "text" : " "
             },
             {
-              "kind" : "keyword",
-              "text" : "init"
+              "kind" : "identifier",
+              "text" : "resolveStub"
             },
             {
               "kind" : "text",
@@ -95,7 +95,7 @@
             {
               "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:5Fakes8PendableO",
+              "preciseIdentifier" : "s:5Fakes8PendableC",
               "text" : "Pendable"
             },
             {
@@ -119,7 +119,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/fakes\/spy\/init()-9jaml"
+        "\/documentation\/fakes\/spy\/resolvestub()"
       ],
       "traits" : [
         {
@@ -156,14 +156,14 @@
 "doc://Fakes/documentation/Fakes/Pendable": {
   "abstract" : [
     {
-      "text" : "Pendable represents the 2 states that an asynchronous call can be in",
+      "text" : "Pendable is a safe way to represent the 2 states that an asynchronous call can be in",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "enum"
+      "text" : "class"
     },
     {
       "kind" : "text",
@@ -221,17 +221,17 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy"
 },
-"doc://Fakes/documentation/Fakes/Spy/init()-9jaml": {
+"doc://Fakes/documentation/Fakes/Spy/resolveStub()": {
   "abstract" : [
     {
-      "text" : "Create a pendable Spy that is pre-stubbed to return return a a pending that will block for a bit before returning Void.",
+      "text" : "Resolve the pendable Spy’s stub with Void",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "convenience"
+      "text" : "func"
     },
     {
       "kind" : "text",
@@ -239,19 +239,19 @@
     },
     {
       "kind" : "identifier",
-      "text" : "init"
+      "text" : "resolveStub"
     },
     {
       "kind" : "text",
       "text" : "()"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-9jaml",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/resolveStub()",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "init()",
+  "title" : "resolveStub()",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/init()-9jaml"
+  "url" : "\/documentation\/fakes\/spy\/resolvestub()"
 }
 }
 }

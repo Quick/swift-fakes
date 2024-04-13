@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Create a pendable Spy that is pre-stubbed to return a finished value.",
+      "text" : "Resolve the pendable Spy’s stub with the success value.",
       "type" : "text"
     }
   ],
@@ -15,16 +15,16 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(finished:)"
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/resolveStub(success:)"
   },
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "Fakes",
-    "externalID" : "s:5Fakes3SpyC8finishedACyxAA8PendableCyqd__GGqd___tcAGRs_s8SendableRd__lufc",
+    "externalID" : "s:5Fakes3SpyC11resolveStub7successyqd___tAA8PendableCys6ResultOyqd__qd_0_GGRs_s8SendableRd__s5ErrorRd_0_r0_lF",
     "fragments" : [
       {
         "kind" : "keyword",
-        "text" : "convenience"
+        "text" : "func"
       },
       {
         "kind" : "text",
@@ -32,7 +32,7 @@
       },
       {
         "kind" : "identifier",
-        "text" : "init"
+        "text" : "resolveStub"
       },
       {
         "kind" : "text",
@@ -40,7 +40,15 @@
       },
       {
         "kind" : "genericParameter",
-        "text" : "Value"
+        "text" : "Success"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "genericParameter",
+        "text" : "Failure"
       },
       {
         "kind" : "text",
@@ -48,7 +56,7 @@
       },
       {
         "kind" : "externalParam",
-        "text" : "finished"
+        "text" : "success"
       },
       {
         "kind" : "text",
@@ -56,7 +64,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "text" : "Value"
+        "text" : "Success"
       },
       {
         "kind" : "text",
@@ -69,9 +77,9 @@
       }
     ],
     "role" : "symbol",
-    "roleHeading" : "Initializer",
-    "symbolKind" : "init",
-    "title" : "init(finished:)"
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "resolveStub(success:)"
   },
   "primaryContentSections" : [
     {
@@ -86,15 +94,15 @@
           "tokens" : [
             {
               "kind" : "keyword",
-              "text" : "convenience"
+              "text" : "func"
             },
             {
               "kind" : "text",
               "text" : " "
             },
             {
-              "kind" : "keyword",
-              "text" : "init"
+              "kind" : "identifier",
+              "text" : "resolveStub"
             },
             {
               "kind" : "text",
@@ -102,7 +110,15 @@
             },
             {
               "kind" : "genericParameter",
-              "text" : "Value"
+              "text" : "Success"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "genericParameter",
+              "text" : "Failure"
             },
             {
               "kind" : "text",
@@ -110,7 +126,7 @@
             },
             {
               "kind" : "externalParam",
-              "text" : "finished"
+              "text" : "success"
             },
             {
               "kind" : "text",
@@ -118,7 +134,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "text" : "Value"
+              "text" : "Success"
             },
             {
               "kind" : "text",
@@ -152,15 +168,32 @@
             },
             {
               "kind" : "typeIdentifier",
-              "text" : "Value"
+              "preciseIdentifier" : "s:s6ResultO",
+              "text" : "Result"
             },
             {
               "kind" : "text",
-              "text" : ">, "
+              "text" : "<"
             },
             {
               "kind" : "typeIdentifier",
-              "text" : "Value"
+              "text" : "Success"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Failure"
+            },
+            {
+              "kind" : "text",
+              "text" : ">>, "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Success"
             },
             {
               "kind" : "text",
@@ -170,6 +203,23 @@
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:s8SendableP",
               "text" : "Sendable"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Failure"
+            },
+            {
+              "kind" : "text",
+              "text" : " : "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s5ErrorP",
+              "text" : "Error"
             }
           ]
         }
@@ -188,7 +238,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/fakes\/spy\/init(finished:)"
+        "\/documentation\/fakes\/spy\/resolvestub(success:)"
       ],
       "traits" : [
         {
@@ -290,17 +340,17 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy"
 },
-"doc://Fakes/documentation/Fakes/Spy/init(finished:)": {
+"doc://Fakes/documentation/Fakes/Spy/resolveStub(success:)": {
   "abstract" : [
     {
-      "text" : "Create a pendable Spy that is pre-stubbed to return a finished value.",
+      "text" : "Resolve the pendable Spy’s stub with the success value.",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "convenience"
+      "text" : "func"
     },
     {
       "kind" : "text",
@@ -308,7 +358,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "init"
+      "text" : "resolveStub"
     },
     {
       "kind" : "text",
@@ -316,7 +366,15 @@
     },
     {
       "kind" : "genericParameter",
-      "text" : "Value"
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Failure"
     },
     {
       "kind" : "text",
@@ -324,7 +382,7 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "finished"
+      "text" : "success"
     },
     {
       "kind" : "text",
@@ -332,19 +390,19 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Value"
+      "text" : "Success"
     },
     {
       "kind" : "text",
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(finished:)",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/resolveStub(success:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "init(finished:)",
+  "title" : "resolveStub(success:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/init(finished:)"
+  "url" : "\/documentation\/fakes\/spy\/resolvestub(success:)"
 }
 }
 }

@@ -218,6 +218,7 @@
     },
     {
       "identifiers" : [
+        "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
         "doc:\/\/Fakes\/documentation\/Fakes\/PendableDefaults",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy"
       ],
@@ -237,17 +238,11 @@
     {
       "identifiers" : [
         "doc:\/\/Fakes\/documentation\/Fakes\/PendableSpy",
-        "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingPendable",
+        "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingDynamicPendable",
         "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingPendableSpy",
         "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingSpy"
       ],
       "title" : "Type Aliases"
-    },
-    {
-      "identifiers" : [
-        "doc:\/\/Fakes\/documentation\/Fakes\/Pendable"
-      ],
-      "title" : "Enumerations"
     }
   ],
   "variants" : [
@@ -327,14 +322,14 @@
 "doc://Fakes/documentation/Fakes/Pendable": {
   "abstract" : [
     {
-      "text" : "Pendable represents the 2 states that an asynchronous call can be in",
+      "text" : "Pendable is a safe way to represent the 2 states that an asynchronous call can be in",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "enum"
+      "text" : "class"
     },
     {
       "kind" : "text",
@@ -457,7 +452,7 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy"
 },
-"doc://Fakes/documentation/Fakes/ThrowingPendable": {
+"doc://Fakes/documentation/Fakes/ThrowingDynamicPendable": {
   "abstract" : [
 
   ],
@@ -472,21 +467,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "ThrowingPendable"
+      "text" : "ThrowingDynamicPendable"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingPendable",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingDynamicPendable",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "ThrowingPendable"
+      "text" : "ThrowingDynamicPendable"
     }
   ],
   "role" : "symbol",
-  "title" : "ThrowingPendable",
+  "title" : "ThrowingDynamicPendable",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/throwingpendable"
+  "url" : "\/documentation\/fakes\/throwingdynamicpendable"
 },
 "doc://Fakes/documentation/Fakes/ThrowingPendableSpy": {
   "abstract" : [

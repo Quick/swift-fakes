@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Create a pendable Spy that is pre-stubbed to return a finished value.",
+      "text" : "Create a throwing pendable Spy that is pre-stubbed to throw the given error.",
       "type" : "text"
     }
   ],
@@ -15,12 +15,12 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(finished:)"
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(failure:)-2ukew"
   },
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "Fakes",
-    "externalID" : "s:5Fakes3SpyC8finishedACyxAA8PendableCyqd__GGqd___tcAGRs_s8SendableRd__lufc",
+    "externalID" : "s:5Fakes3SpyC7failureACyxAA8PendableCys6ResultOyqd__qd_0_GGGqd_0__tcAJRs_s8SendableRd__s5ErrorRd_0_r0_lufc",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -40,7 +40,15 @@
       },
       {
         "kind" : "genericParameter",
-        "text" : "Value"
+        "text" : "Success"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "genericParameter",
+        "text" : "Failure"
       },
       {
         "kind" : "text",
@@ -48,7 +56,7 @@
       },
       {
         "kind" : "externalParam",
-        "text" : "finished"
+        "text" : "failure"
       },
       {
         "kind" : "text",
@@ -56,7 +64,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "text" : "Value"
+        "text" : "Failure"
       },
       {
         "kind" : "text",
@@ -71,7 +79,7 @@
     "role" : "symbol",
     "roleHeading" : "Initializer",
     "symbolKind" : "init",
-    "title" : "init(finished:)"
+    "title" : "init(failure:)"
   },
   "primaryContentSections" : [
     {
@@ -102,7 +110,15 @@
             },
             {
               "kind" : "genericParameter",
-              "text" : "Value"
+              "text" : "Success"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "genericParameter",
+              "text" : "Failure"
             },
             {
               "kind" : "text",
@@ -110,7 +126,7 @@
             },
             {
               "kind" : "externalParam",
-              "text" : "finished"
+              "text" : "failure"
             },
             {
               "kind" : "text",
@@ -118,7 +134,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "text" : "Value"
+              "text" : "Failure"
             },
             {
               "kind" : "text",
@@ -152,15 +168,32 @@
             },
             {
               "kind" : "typeIdentifier",
-              "text" : "Value"
+              "preciseIdentifier" : "s:s6ResultO",
+              "text" : "Result"
             },
             {
               "kind" : "text",
-              "text" : ">, "
+              "text" : "<"
             },
             {
               "kind" : "typeIdentifier",
-              "text" : "Value"
+              "text" : "Success"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Failure"
+            },
+            {
+              "kind" : "text",
+              "text" : ">>, "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Success"
             },
             {
               "kind" : "text",
@@ -170,6 +203,23 @@
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:s8SendableP",
               "text" : "Sendable"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Failure"
+            },
+            {
+              "kind" : "text",
+              "text" : " : "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s5ErrorP",
+              "text" : "Error"
             }
           ]
         }
@@ -188,7 +238,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/fakes\/spy\/init(finished:)"
+        "\/documentation\/fakes\/spy\/init(failure:)-2ukew"
       ],
       "traits" : [
         {
@@ -290,10 +340,10 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy"
 },
-"doc://Fakes/documentation/Fakes/Spy/init(finished:)": {
+"doc://Fakes/documentation/Fakes/Spy/init(failure:)-2ukew": {
   "abstract" : [
     {
-      "text" : "Create a pendable Spy that is pre-stubbed to return a finished value.",
+      "text" : "Create a throwing pendable Spy that is pre-stubbed to throw the given error.",
       "type" : "text"
     }
   ],
@@ -316,7 +366,15 @@
     },
     {
       "kind" : "genericParameter",
-      "text" : "Value"
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Failure"
     },
     {
       "kind" : "text",
@@ -324,7 +382,7 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "finished"
+      "text" : "failure"
     },
     {
       "kind" : "text",
@@ -332,19 +390,19 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Value"
+      "text" : "Failure"
     },
     {
       "kind" : "text",
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(finished:)",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(failure:)-2ukew",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "init(finished:)",
+  "title" : "init(failure:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/init(finished:)"
+  "url" : "\/documentation\/fakes\/spy\/init(failure:)-2ukew"
 }
 }
 }

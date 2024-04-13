@@ -1,4 +1,18 @@
 {
+  "abstract" : [
+    {
+      "text" : "Initializes a new ",
+      "type" : "text"
+    },
+    {
+      "code" : "Pendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", in a pending state, with the given fallback value.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -9,23 +23,15 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolve(delay:)-hvhg"
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/init(fallbackValue:)"
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:5Fakes8PendableO7resolve5delayxSd_tYaF",
+    "externalID" : "s:5Fakes8PendableC13fallbackValueACyxGx_tcfc",
     "fragments" : [
       {
-        "kind" : "keyword",
-        "text" : "func"
-      },
-      {
-        "kind" : "text",
-        "text" : " "
-      },
-      {
         "kind" : "identifier",
-        "text" : "resolve"
+        "text" : "init"
       },
       {
         "kind" : "text",
@@ -33,7 +39,7 @@
       },
       {
         "kind" : "externalParam",
-        "text" : "delay"
+        "text" : "fallbackValue"
       },
       {
         "kind" : "text",
@@ -41,24 +47,11 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10Foundation12TimeIntervala",
-        "text" : "TimeInterval"
-      },
-      {
-        "kind" : "text",
-        "text" : ") "
-      },
-      {
-        "kind" : "keyword",
-        "text" : "async"
-      },
-      {
-        "kind" : "text",
-        "text" : " -> "
-      },
-      {
-        "kind" : "typeIdentifier",
         "text" : "Value"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
       }
     ],
     "modules" : [
@@ -67,9 +60,9 @@
       }
     ],
     "role" : "symbol",
-    "roleHeading" : "Instance Method",
-    "symbolKind" : "method",
-    "title" : "resolve(delay:)"
+    "roleHeading" : "Initializer",
+    "symbolKind" : "init",
+    "title" : "init(fallbackValue:)"
   },
   "primaryContentSections" : [
     {
@@ -84,15 +77,7 @@
           "tokens" : [
             {
               "kind" : "keyword",
-              "text" : "func"
-            },
-            {
-              "kind" : "text",
-              "text" : " "
-            },
-            {
-              "kind" : "identifier",
-              "text" : "resolve"
+              "text" : "init"
             },
             {
               "kind" : "text",
@@ -100,7 +85,7 @@
             },
             {
               "kind" : "externalParam",
-              "text" : "delay"
+              "text" : "fallbackValue"
             },
             {
               "kind" : "text",
@@ -108,24 +93,11 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10Foundation12TimeIntervala",
-              "text" : "TimeInterval"
-            },
-            {
-              "kind" : "text",
-              "text" : " = PendableDefaults.delay) "
-            },
-            {
-              "kind" : "keyword",
-              "text" : "async"
-            },
-            {
-              "kind" : "text",
-              "text" : " -> "
-            },
-            {
-              "kind" : "typeIdentifier",
               "text" : "Value"
+            },
+            {
+              "kind" : "text",
+              "text" : ")"
             }
           ]
         }
@@ -144,7 +116,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/fakes\/pendable\/resolve(delay:)-hvhg"
+        "\/documentation\/fakes\/pendable\/init(fallbackvalue:)"
       ],
       "traits" : [
         {
@@ -181,14 +153,14 @@
 "doc://Fakes/documentation/Fakes/Pendable": {
   "abstract" : [
     {
-      "text" : "Pendable represents the 2 states that an asynchronous call can be in",
+      "text" : "Pendable is a safe way to represent the 2 states that an asynchronous call can be in",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "enum"
+      "text" : "class"
     },
     {
       "kind" : "text",
@@ -212,22 +184,25 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/pendable"
 },
-"doc://Fakes/documentation/Fakes/Pendable/resolve(delay:)-hvhg": {
+"doc://Fakes/documentation/Fakes/Pendable/init(fallbackValue:)": {
   "abstract" : [
-
+    {
+      "text" : "Initializes a new ",
+      "type" : "text"
+    },
+    {
+      "code" : "Pendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", in a pending state, with the given fallback value.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
       "kind" : "identifier",
-      "text" : "resolve"
+      "text" : "init"
     },
     {
       "kind" : "text",
@@ -235,7 +210,7 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "delay"
+      "text" : "fallbackValue"
     },
     {
       "kind" : "text",
@@ -243,32 +218,19 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation12TimeIntervala",
-      "text" : "TimeInterval"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "async"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
       "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolve(delay:)-hvhg",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/init(fallbackValue:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "resolve(delay:)",
+  "title" : "init(fallbackValue:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/pendable\/resolve(delay:)-hvhg"
+  "url" : "\/documentation\/fakes\/pendable\/init(fallbackvalue:)"
 }
 }
 }

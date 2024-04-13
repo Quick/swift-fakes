@@ -1,32 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Records that a call was made and handles the result according to ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolve(delay:)-1bb25",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : ".",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "This call then throws or returns the success, according to ",
-      "type" : "text"
-    },
-    {
-      "code" : "Result.get",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Update the throwing pendable Spy’s stub to be successful, with the given value.",
       "type" : "text"
     }
   ],
@@ -40,12 +15,12 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(pendingDelay:)-52uom"
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(success:)-3l3ax"
   },
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "Fakes",
-    "externalID" : "s:5Fakes3SpyC14callAsFunction12pendingDelayqd__Sd_tYaKytRszAA8PendableOys6ResultOyqd__qd_0_GGRs_s5ErrorRd_0_r0_lF",
+    "externalID" : "s:5Fakes3SpyC4stub7successyqd___tAA8PendableCys6ResultOyqd__qd_0_GGRs_s8SendableRd__s5ErrorRd_0_r0_lF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -57,7 +32,7 @@
       },
       {
         "kind" : "identifier",
-        "text" : "callAsFunction"
+        "text" : "stub"
       },
       {
         "kind" : "text",
@@ -81,7 +56,7 @@
       },
       {
         "kind" : "externalParam",
-        "text" : "pendingDelay"
+        "text" : "success"
       },
       {
         "kind" : "text",
@@ -89,32 +64,11 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10Foundation12TimeIntervala",
-        "text" : "TimeInterval"
-      },
-      {
-        "kind" : "text",
-        "text" : ") "
-      },
-      {
-        "kind" : "keyword",
-        "text" : "async"
-      },
-      {
-        "kind" : "text",
-        "text" : " "
-      },
-      {
-        "kind" : "keyword",
-        "text" : "throws"
-      },
-      {
-        "kind" : "text",
-        "text" : " -> "
-      },
-      {
-        "kind" : "typeIdentifier",
         "text" : "Success"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
       }
     ],
     "modules" : [
@@ -125,7 +79,7 @@
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
-    "title" : "callAsFunction(pendingDelay:)"
+    "title" : "stub(success:)"
   },
   "primaryContentSections" : [
     {
@@ -148,7 +102,7 @@
             },
             {
               "kind" : "identifier",
-              "text" : "callAsFunction"
+              "text" : "stub"
             },
             {
               "kind" : "text",
@@ -172,7 +126,7 @@
             },
             {
               "kind" : "externalParam",
-              "text" : "pendingDelay"
+              "text" : "success"
             },
             {
               "kind" : "text",
@@ -180,36 +134,11 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10Foundation12TimeIntervala",
-              "text" : "TimeInterval"
-            },
-            {
-              "kind" : "text",
-              "text" : " = PendableDefaults.delay) "
-            },
-            {
-              "kind" : "keyword",
-              "text" : "async"
-            },
-            {
-              "kind" : "text",
-              "text" : " "
-            },
-            {
-              "kind" : "keyword",
-              "text" : "throws"
-            },
-            {
-              "kind" : "text",
-              "text" : " -> "
-            },
-            {
-              "kind" : "typeIdentifier",
               "text" : "Success"
             },
             {
               "kind" : "text",
-              "text" : " "
+              "text" : ") "
             },
             {
               "kind" : "keyword",
@@ -218,14 +147,6 @@
             {
               "kind" : "text",
               "text" : " "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Arguments"
-            },
-            {
-              "kind" : "text",
-              "text" : " == (), "
             },
             {
               "kind" : "typeIdentifier",
@@ -238,7 +159,7 @@
             {
               "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:5Fakes8PendableO",
+              "preciseIdentifier" : "s:5Fakes8PendableC",
               "text" : "Pendable"
             },
             {
@@ -272,6 +193,23 @@
             },
             {
               "kind" : "typeIdentifier",
+              "text" : "Success"
+            },
+            {
+              "kind" : "text",
+              "text" : " : "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s8SendableP",
+              "text" : "Sendable"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "typeIdentifier",
               "text" : "Failure"
             },
             {
@@ -296,46 +234,22 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "The amount of seconds to delay if the ",
+                  "text" : "The value to return when ",
                   "type" : "text"
                 },
                 {
-                  "code" : "Pendable",
+                  "code" : "callAsFunction",
                   "type" : "codeVoice"
                 },
                 {
-                  "text" : " is .pending before",
-                  "type" : "text"
-                },
-                {
-                  "text" : " ",
-                  "type" : "text"
-                },
-                {
-                  "text" : "throwing a ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "PendableInProgressError",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : ". If the ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "Pendable",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : " is .finished, then this value is ignored.",
+                  "text" : " is called.",
                   "type" : "text"
                 }
               ],
               "type" : "paragraph"
             }
           ],
-          "name" : "pendingDelay"
+          "name" : "success"
         }
       ]
     }
@@ -351,7 +265,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/fakes\/spy\/callasfunction(pendingdelay:)-52uom"
+        "\/documentation\/fakes\/spy\/stub(success:)-3l3ax"
       ],
       "traits" : [
         {
@@ -388,14 +302,14 @@
 "doc://Fakes/documentation/Fakes/Pendable": {
   "abstract" : [
     {
-      "text" : "Pendable represents the 2 states that an asynchronous call can be in",
+      "text" : "Pendable is a safe way to represent the 2 states that an asynchronous call can be in",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "enum"
+      "text" : "class"
     },
     {
       "kind" : "text",
@@ -418,88 +332,6 @@
   "title" : "Pendable",
   "type" : "topic",
   "url" : "\/documentation\/fakes\/pendable"
-},
-"doc://Fakes/documentation/Fakes/Pendable/resolve(delay:)-1bb25": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "resolve"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "Success"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "Failure"
-    },
-    {
-      "kind" : "text",
-      "text" : ">("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "delay"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation12TimeIntervala",
-      "text" : "TimeInterval"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "async"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Success"
-    }
-  ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolve(delay:)-1bb25",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "resolve(delay:)",
-  "type" : "topic",
-  "url" : "\/documentation\/fakes\/pendable\/resolve(delay:)-1bb25"
 },
 "doc://Fakes/documentation/Fakes/Spy": {
   "abstract" : [
@@ -535,35 +367,10 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy"
 },
-"doc://Fakes/documentation/Fakes/Spy/callAsFunction(pendingDelay:)-52uom": {
+"doc://Fakes/documentation/Fakes/Spy/stub(success:)-3l3ax": {
   "abstract" : [
     {
-      "text" : "Records that a call was made and handles the result according to ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolve(delay:)-1bb25",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : ".",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "This call then throws or returns the success, according to ",
-      "type" : "text"
-    },
-    {
-      "code" : "Result.get",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Update the throwing pendable Spy’s stub to be successful, with the given value.",
       "type" : "text"
     }
   ],
@@ -578,7 +385,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "callAsFunction"
+      "text" : "stub"
     },
     {
       "kind" : "text",
@@ -602,7 +409,7 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "pendingDelay"
+      "text" : "success"
     },
     {
       "kind" : "text",
@@ -610,40 +417,19 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation12TimeIntervala",
-      "text" : "TimeInterval"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "async"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
       "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(pendingDelay:)-52uom",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(success:)-3l3ax",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "callAsFunction(pendingDelay:)",
+  "title" : "stub(success:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/callasfunction(pendingdelay:)-52uom"
+  "url" : "\/documentation\/fakes\/spy\/stub(success:)-3l3ax"
 }
 }
 }

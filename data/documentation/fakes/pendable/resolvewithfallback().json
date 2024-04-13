@@ -1,7 +1,15 @@
 {
   "abstract" : [
     {
-      "text" : "Update the pendable Spy’s stub to be in a pending state.",
+      "text" : "Resolves the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Pendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with the fallback value.",
       "type" : "text"
     }
   ],
@@ -9,18 +17,17 @@
     "paths" : [
       [
         "doc:\/\/Fakes\/documentation\/Fakes",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy"
+        "doc:\/\/Fakes\/documentation\/Fakes\/Pendable"
       ]
     ]
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubPending()"
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolveWithFallback()"
   },
   "kind" : "symbol",
   "metadata" : {
-    "extendedModule" : "Fakes",
-    "externalID" : "s:5Fakes3SpyC11stubPendingyyAA8PendableOyytGRs_rlF",
+    "externalID" : "s:5Fakes8PendableC19resolveWithFallbackyyF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -32,7 +39,7 @@
       },
       {
         "kind" : "identifier",
-        "text" : "stubPending"
+        "text" : "resolveWithFallback"
       },
       {
         "kind" : "text",
@@ -47,7 +54,7 @@
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
-    "title" : "stubPending()"
+    "title" : "resolveWithFallback()"
   },
   "primaryContentSections" : [
     {
@@ -70,42 +77,72 @@
             },
             {
               "kind" : "identifier",
-              "text" : "stubPending"
+              "text" : "resolveWithFallback"
             },
             {
               "kind" : "text",
-              "text" : "() "
-            },
-            {
-              "kind" : "keyword",
-              "text" : "where"
-            },
-            {
-              "kind" : "text",
-              "text" : " "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Returning"
-            },
-            {
-              "kind" : "text",
-              "text" : " == "
-            },
-            {
-              "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:5Fakes8PendableO",
-              "text" : "Pendable"
-            },
-            {
-              "kind" : "text",
-              "text" : "<()>"
+              "text" : "()"
             }
           ]
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "This no-ops if the pendable is already in a resolved state.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "This is called for when you re-stub a ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Spy",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " in ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(_:)",
+                  "isActive" : true,
+                  "type" : "reference"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -119,7 +156,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/fakes\/spy\/stubpending()"
+        "\/documentation\/fakes\/pendable\/resolvewithfallback()"
       ],
       "traits" : [
         {
@@ -156,14 +193,14 @@
 "doc://Fakes/documentation/Fakes/Pendable": {
   "abstract" : [
     {
-      "text" : "Pendable represents the 2 states that an asynchronous call can be in",
+      "text" : "Pendable is a safe way to represent the 2 states that an asynchronous call can be in",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "enum"
+      "text" : "class"
     },
     {
       "kind" : "text",
@@ -187,44 +224,18 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/pendable"
 },
-"doc://Fakes/documentation/Fakes/Spy": {
+"doc://Fakes/documentation/Fakes/Pendable/resolveWithFallback()": {
   "abstract" : [
     {
-      "text" : "A Spy is a test double for recording calls to methods, and returning stubbed results.",
+      "text" : "Resolves the ",
       "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "class"
     },
     {
-      "kind" : "text",
-      "text" : " "
+      "code" : "Pendable",
+      "type" : "codeVoice"
     },
     {
-      "kind" : "identifier",
-      "text" : "Spy"
-    }
-  ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Spy"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Spy",
-  "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy"
-},
-"doc://Fakes/documentation/Fakes/Spy/stubPending()": {
-  "abstract" : [
-    {
-      "text" : "Update the pendable Spy’s stub to be in a pending state.",
+      "text" : " with the fallback value.",
       "type" : "text"
     }
   ],
@@ -239,19 +250,59 @@
     },
     {
       "kind" : "identifier",
-      "text" : "stubPending"
+      "text" : "resolveWithFallback"
     },
     {
       "kind" : "text",
       "text" : "()"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubPending()",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolveWithFallback()",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "stubPending()",
+  "title" : "resolveWithFallback()",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/stubpending()"
+  "url" : "\/documentation\/fakes\/pendable\/resolvewithfallback()"
+},
+"doc://Fakes/documentation/Fakes/Spy/stub(_:)": {
+  "abstract" : [
+    {
+      "text" : "Update the Spy’s stub to return the given value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "stub"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Returning"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "stub(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/stub(_:)"
 }
 }
 }

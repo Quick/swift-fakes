@@ -1,7 +1,23 @@
 {
   "abstract" : [
     {
-      "text" : "Update the pendable Spy’s stub to be in a pending state.",
+      "text" : "Resolves any outstanding calls to the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Pendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with the current value,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "and resets it back into the pending state.",
       "type" : "text"
     }
   ],
@@ -9,18 +25,17 @@
     "paths" : [
       [
         "doc:\/\/Fakes\/documentation\/Fakes",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy"
+        "doc:\/\/Fakes\/documentation\/Fakes\/Pendable"
       ]
     ]
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubFinished()"
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/reset()"
   },
   "kind" : "symbol",
   "metadata" : {
-    "extendedModule" : "Fakes",
-    "externalID" : "s:5Fakes3SpyC12stubFinishedyyAA8PendableCyytGRs_rlF",
+    "externalID" : "s:5Fakes8PendableC5resetyyF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -32,7 +47,7 @@
       },
       {
         "kind" : "identifier",
-        "text" : "stubFinished"
+        "text" : "reset"
       },
       {
         "kind" : "text",
@@ -47,7 +62,7 @@
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
-    "title" : "stubFinished()"
+    "title" : "reset()"
   },
   "primaryContentSections" : [
     {
@@ -70,37 +85,11 @@
             },
             {
               "kind" : "identifier",
-              "text" : "stubFinished"
+              "text" : "reset"
             },
             {
               "kind" : "text",
-              "text" : "() "
-            },
-            {
-              "kind" : "keyword",
-              "text" : "where"
-            },
-            {
-              "kind" : "text",
-              "text" : " "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Returning"
-            },
-            {
-              "kind" : "text",
-              "text" : " == "
-            },
-            {
-              "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:5Fakes8PendableC",
-              "text" : "Pendable"
-            },
-            {
-              "kind" : "text",
-              "text" : "<()>"
+              "text" : "()"
             }
           ]
         }
@@ -119,7 +108,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/fakes\/spy\/stubfinished()"
+        "\/documentation\/fakes\/pendable\/reset()"
       ],
       "traits" : [
         {
@@ -187,44 +176,26 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/pendable"
 },
-"doc://Fakes/documentation/Fakes/Spy": {
+"doc://Fakes/documentation/Fakes/Pendable/reset()": {
   "abstract" : [
     {
-      "text" : "A Spy is a test double for recording calls to methods, and returning stubbed results.",
+      "text" : "Resolves any outstanding calls to the ",
       "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "class"
     },
     {
-      "kind" : "text",
-      "text" : " "
+      "code" : "Pendable",
+      "type" : "codeVoice"
     },
     {
-      "kind" : "identifier",
-      "text" : "Spy"
-    }
-  ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
-  "kind" : "symbol",
-  "navigatorTitle" : [
+      "text" : " with the current value,",
+      "type" : "text"
+    },
     {
-      "kind" : "identifier",
-      "text" : "Spy"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Spy",
-  "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy"
-},
-"doc://Fakes/documentation/Fakes/Spy/stubFinished()": {
-  "abstract" : [
+      "text" : " ",
+      "type" : "text"
+    },
     {
-      "text" : "Update the pendable Spy’s stub to be in a pending state.",
+      "text" : "and resets it back into the pending state.",
       "type" : "text"
     }
   ],
@@ -239,19 +210,19 @@
     },
     {
       "kind" : "identifier",
-      "text" : "stubFinished"
+      "text" : "reset"
     },
     {
       "kind" : "text",
       "text" : "()"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubFinished()",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/reset()",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "stubFinished()",
+  "title" : "reset()",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/stubfinished()"
+  "url" : "\/documentation\/fakes\/pendable\/reset()"
 }
 }
 }

@@ -5,7 +5,7 @@
       "type" : "text"
     },
     {
-      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolve(delay:)-hvhg",
+      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/call(fallbackDelay:)",
       "isActive" : true,
       "type" : "reference"
     },
@@ -24,12 +24,12 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(pendingDelay:)-7qw29"
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(fallbackDelay:)-vtvc"
   },
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "Fakes",
-    "externalID" : "s:5Fakes3SpyC14callAsFunction12pendingDelayqd__Sd_tYaytRszAA8PendableOyqd__GRs_lF",
+    "externalID" : "s:5Fakes3SpyC14callAsFunction13fallbackDelayqd__Sd_tYaytRszAA8PendableCyqd__GRs_s8SendableRd__lF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -57,7 +57,7 @@
       },
       {
         "kind" : "externalParam",
-        "text" : "pendingDelay"
+        "text" : "fallbackDelay"
       },
       {
         "kind" : "text",
@@ -93,7 +93,7 @@
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
-    "title" : "callAsFunction(pendingDelay:)"
+    "title" : "callAsFunction(fallbackDelay:)"
   },
   "primaryContentSections" : [
     {
@@ -132,7 +132,7 @@
             },
             {
               "kind" : "externalParam",
-              "text" : "pendingDelay"
+              "text" : "fallbackDelay"
             },
             {
               "kind" : "text",
@@ -190,7 +190,7 @@
             {
               "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:5Fakes8PendableO",
+              "preciseIdentifier" : "s:5Fakes8PendableC",
               "text" : "Pendable"
             },
             {
@@ -203,7 +203,20 @@
             },
             {
               "kind" : "text",
-              "text" : ">"
+              "text" : ">, "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Value"
+            },
+            {
+              "kind" : "text",
+              "text" : " : "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s8SendableP",
+              "text" : "Sendable"
             }
           ]
         }
@@ -226,7 +239,7 @@
                   "type" : "codeVoice"
                 },
                 {
-                  "text" : " is .pending before",
+                  "text" : " is pending before",
                   "type" : "text"
                 },
                 {
@@ -234,15 +247,7 @@
                   "type" : "text"
                 },
                 {
-                  "text" : "returning the ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "pendingFallback",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : ". If the ",
+                  "text" : "returning its fallback value. If the ",
                   "type" : "text"
                 },
                 {
@@ -250,61 +255,16 @@
                   "type" : "codeVoice"
                 },
                 {
-                  "text" : " is .finished, then this value is ignored.",
+                  "text" : " is finished, then this value is ignored.",
                   "type" : "text"
                 }
               ],
               "type" : "paragraph"
             }
           ],
-          "name" : "pendingDelay"
+          "name" : "fallbackDelay"
         }
       ]
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "discussion",
-          "level" : 2,
-          "text" : "Discussion",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "Because of how ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : " currently works, you must provide a fallback option for when the Pendable is pending.",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "Alternatively, you can use the throwing version of ",
-              "type" : "text"
-            },
-            {
-              "code" : "callAsFunction",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ", which will thorw an error instead of returning the fallback.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -318,7 +278,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/fakes\/spy\/callasfunction(pendingdelay:)-7qw29"
+        "\/documentation\/fakes\/spy\/callasfunction(fallbackdelay:)-vtvc"
       ],
       "traits" : [
         {
@@ -355,14 +315,14 @@
 "doc://Fakes/documentation/Fakes/Pendable": {
   "abstract" : [
     {
-      "text" : "Pendable represents the 2 states that an asynchronous call can be in",
+      "text" : "Pendable is a safe way to represent the 2 states that an asynchronous call can be in",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "enum"
+      "text" : "class"
     },
     {
       "kind" : "text",
@@ -386,9 +346,20 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/pendable"
 },
-"doc://Fakes/documentation/Fakes/Pendable/resolve(delay:)-hvhg": {
+"doc://Fakes/documentation/Fakes/Pendable/call(fallbackDelay:)": {
   "abstract" : [
-
+    {
+      "text" : "Gets the value for the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Pendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", possibly waiting until it’s resolved.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -401,7 +372,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "resolve"
+      "text" : "call"
     },
     {
       "kind" : "text",
@@ -409,7 +380,7 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "delay"
+      "text" : "fallbackDelay"
     },
     {
       "kind" : "text",
@@ -437,12 +408,12 @@
       "text" : "Value"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolve(delay:)-hvhg",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/call(fallbackDelay:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "resolve(delay:)",
+  "title" : "call(fallbackDelay:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/pendable\/resolve(delay:)-hvhg"
+  "url" : "\/documentation\/fakes\/pendable\/call(fallbackdelay:)"
 },
 "doc://Fakes/documentation/Fakes/Spy": {
   "abstract" : [
@@ -478,14 +449,14 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy"
 },
-"doc://Fakes/documentation/Fakes/Spy/callAsFunction(pendingDelay:)-7qw29": {
+"doc://Fakes/documentation/Fakes/Spy/callAsFunction(fallbackDelay:)-vtvc": {
   "abstract" : [
     {
       "text" : "Records that a call was made and handles the result according to ",
       "type" : "text"
     },
     {
-      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolve(delay:)-hvhg",
+      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/call(fallbackDelay:)",
       "isActive" : true,
       "type" : "reference"
     },
@@ -521,7 +492,7 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "pendingDelay"
+      "text" : "fallbackDelay"
     },
     {
       "kind" : "text",
@@ -549,12 +520,12 @@
       "text" : "Value"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(pendingDelay:)-7qw29",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(fallbackDelay:)-vtvc",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "callAsFunction(pendingDelay:)",
+  "title" : "callAsFunction(fallbackDelay:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/callasfunction(pendingdelay:)-7qw29"
+  "url" : "\/documentation\/fakes\/spy\/callasfunction(fallbackdelay:)-vtvc"
 }
 }
 }

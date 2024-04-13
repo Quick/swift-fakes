@@ -232,7 +232,34 @@
 },
 "doc://Fakes/documentation/Fakes/PendableDefaults/delay-swift.type.property": {
   "abstract" : [
-
+    {
+      "text" : "The amount of time to delay before resolving a pending Pendable with the fallback value.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "By default this is 2 seconds. Conveniently, just long enough to be twice Nimble’s default polling timeout.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "In general, you should keep this set to some number greater than Nimble’s default polling timeout,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "in order to allow polling matchers to work correctly.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

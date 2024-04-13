@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Create a throwing pendable Spy that is pre-stubbed to throw the given error.",
+      "text" : "Create a pendable Spy that is pre-stubbed to return return a a pending that will block for a bit before returning Void.",
       "type" : "text"
     }
   ],
@@ -15,12 +15,12 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(failure:)-8mp3u"
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-5261"
   },
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "Fakes",
-    "externalID" : "s:5Fakes3SpyC7failureACyxAA8PendableOys6ResultOyqd__qd_0_GGGqd_0__tcAJRs_s5ErrorRd_0_r0_lufc",
+    "externalID" : "s:5Fakes3SpyCACyxAA8PendableCyytGGycAFRs_rlufc",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -36,39 +36,7 @@
       },
       {
         "kind" : "text",
-        "text" : "<"
-      },
-      {
-        "kind" : "genericParameter",
-        "text" : "Success"
-      },
-      {
-        "kind" : "text",
-        "text" : ", "
-      },
-      {
-        "kind" : "genericParameter",
-        "text" : "Failure"
-      },
-      {
-        "kind" : "text",
-        "text" : ">("
-      },
-      {
-        "kind" : "externalParam",
-        "text" : "failure"
-      },
-      {
-        "kind" : "text",
-        "text" : ": "
-      },
-      {
-        "kind" : "typeIdentifier",
-        "text" : "Failure"
-      },
-      {
-        "kind" : "text",
-        "text" : ")"
+        "text" : "()"
       }
     ],
     "modules" : [
@@ -79,7 +47,7 @@
     "role" : "symbol",
     "roleHeading" : "Initializer",
     "symbolKind" : "init",
-    "title" : "init(failure:)"
+    "title" : "init()"
   },
   "primaryContentSections" : [
     {
@@ -106,39 +74,7 @@
             },
             {
               "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "genericParameter",
-              "text" : "Success"
-            },
-            {
-              "kind" : "text",
-              "text" : ", "
-            },
-            {
-              "kind" : "genericParameter",
-              "text" : "Failure"
-            },
-            {
-              "kind" : "text",
-              "text" : ">("
-            },
-            {
-              "kind" : "externalParam",
-              "text" : "failure"
-            },
-            {
-              "kind" : "text",
-              "text" : ": "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Failure"
-            },
-            {
-              "kind" : "text",
-              "text" : ") "
+              "text" : "() "
             },
             {
               "kind" : "keyword",
@@ -159,50 +95,12 @@
             {
               "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:5Fakes8PendableO",
+              "preciseIdentifier" : "s:5Fakes8PendableC",
               "text" : "Pendable"
             },
             {
               "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:s6ResultO",
-              "text" : "Result"
-            },
-            {
-              "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Success"
-            },
-            {
-              "kind" : "text",
-              "text" : ", "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Failure"
-            },
-            {
-              "kind" : "text",
-              "text" : ">>, "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Failure"
-            },
-            {
-              "kind" : "text",
-              "text" : " : "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:s5ErrorP",
-              "text" : "Error"
+              "text" : "<()>"
             }
           ]
         }
@@ -221,7 +119,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/fakes\/spy\/init(failure:)-8mp3u"
+        "\/documentation\/fakes\/spy\/init()-5261"
       ],
       "traits" : [
         {
@@ -258,14 +156,14 @@
 "doc://Fakes/documentation/Fakes/Pendable": {
   "abstract" : [
     {
-      "text" : "Pendable represents the 2 states that an asynchronous call can be in",
+      "text" : "Pendable is a safe way to represent the 2 states that an asynchronous call can be in",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "enum"
+      "text" : "class"
     },
     {
       "kind" : "text",
@@ -323,10 +221,10 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy"
 },
-"doc://Fakes/documentation/Fakes/Spy/init(failure:)-8mp3u": {
+"doc://Fakes/documentation/Fakes/Spy/init()-5261": {
   "abstract" : [
     {
-      "text" : "Create a throwing pendable Spy that is pre-stubbed to throw the given error.",
+      "text" : "Create a pendable Spy that is pre-stubbed to return return a a pending that will block for a bit before returning Void.",
       "type" : "text"
     }
   ],
@@ -345,47 +243,15 @@
     },
     {
       "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "Success"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "Failure"
-    },
-    {
-      "kind" : "text",
-      "text" : ">("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "failure"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Failure"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
+      "text" : "()"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(failure:)-8mp3u",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-5261",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "init(failure:)",
+  "title" : "init()",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/init(failure:)-8mp3u"
+  "url" : "\/documentation\/fakes\/spy\/init()-5261"
 }
 }
 }

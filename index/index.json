@@ -49,6 +49,80 @@
                 "type" : "groupMarker"
               },
               {
+                "path" : "\/documentation\/fakes\/pendable\/init(fallbackvalue:)",
+                "title" : "init(fallbackValue: Value)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fakes\/pendable\/call(fallbackdelay:)",
+                "title" : "func call(fallbackDelay: TimeInterval) async -> Value",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/pendable\/call(resolvedelay:)",
+                "title" : "func call<Success, Failure>(resolveDelay: TimeInterval) async throws -> Success",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/pendable\/reset()",
+                "title" : "func reset()",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/pendable\/resolve(with:)",
+                "title" : "func resolve(with: Value)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/pendable\/resolvewithfallback()",
+                "title" : "func resolveWithFallback()",
+                "type" : "method"
+              },
+              {
+                "title" : "Type Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fakes\/pendable\/finished()",
+                "title" : "static func finished() -> Pendable<Value>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/pendable\/finished(_:)",
+                "title" : "static func finished(Value) -> Pendable<Value>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/pendable\/pending()-1auk9",
+                "title" : "static func pending<Wrapped>() -> Pendable<Value>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/pendable\/pending()-r0sx",
+                "title" : "static func pending() -> Pendable<Value>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/pendable\/pending(fallback:)",
+                "title" : "static func pending(fallback: Value) -> Pendable<Value>",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/fakes\/pendable",
+            "title" : "Pendable",
+            "type" : "class"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
                 "path" : "\/documentation\/fakes\/pendabledefaults\/init()",
                 "title" : "init()",
                 "type" : "init"
@@ -88,7 +162,17 @@
                 "type" : "groupMarker"
               },
               {
+                "path" : "\/documentation\/fakes\/spy\/init()-1ubn6",
+                "title" : "convenience init<Wrapped>()",
+                "type" : "init"
+              },
+              {
                 "path" : "\/documentation\/fakes\/spy\/init()-3nayo",
+                "title" : "convenience init()",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/init()-5261",
                 "title" : "convenience init()",
                 "type" : "init"
               },
@@ -98,13 +182,8 @@
                 "type" : "init"
               },
               {
-                "path" : "\/documentation\/fakes\/spy\/init()-67dju",
+                "path" : "\/documentation\/fakes\/spy\/init()-7qiku",
                 "title" : "convenience init<Failure>()",
-                "type" : "init"
-              },
-              {
-                "path" : "\/documentation\/fakes\/spy\/init()-9jaml",
-                "title" : "convenience init()",
                 "type" : "init"
               },
               {
@@ -113,12 +192,12 @@
                 "type" : "init"
               },
               {
-                "path" : "\/documentation\/fakes\/spy\/init(failure:)-3fdug",
+                "path" : "\/documentation\/fakes\/spy\/init(failure:)-2ukew",
                 "title" : "convenience init<Success, Failure>(failure: Failure)",
                 "type" : "init"
               },
               {
-                "path" : "\/documentation\/fakes\/spy\/init(failure:)-8mp3u",
+                "path" : "\/documentation\/fakes\/spy\/init(failure:)-3fdug",
                 "title" : "convenience init<Success, Failure>(failure: Failure)",
                 "type" : "init"
               },
@@ -143,12 +222,12 @@
                 "type" : "init"
               },
               {
-                "path" : "\/documentation\/fakes\/spy\/init(success:)-77rd4",
+                "path" : "\/documentation\/fakes\/spy\/init(success:)-152xf",
                 "title" : "convenience init<Success, Failure>(success: Success)",
                 "type" : "init"
               },
               {
-                "path" : "\/documentation\/fakes\/spy\/init(success:)-m7m8",
+                "path" : "\/documentation\/fakes\/spy\/init(success:)-77rd4",
                 "title" : "convenience init<Success, Failure>(success: Success)",
                 "type" : "init"
               },
@@ -186,28 +265,48 @@
                 "type" : "method"
               },
               {
-                "path" : "\/documentation\/fakes\/spy\/callasfunction(_:pendingdelay:)-17v1h",
-                "title" : "func callAsFunction<Value>(Arguments, pendingDelay: TimeInterval) async -> Value",
+                "path" : "\/documentation\/fakes\/spy\/callasfunction(_:fallbackdelay:)-7tk8j",
+                "title" : "func callAsFunction<Success, Failure>(Arguments, fallbackDelay: TimeInterval) async throws -> Success",
                 "type" : "method"
               },
               {
-                "path" : "\/documentation\/fakes\/spy\/callasfunction(_:pendingdelay:)-5o8zc",
-                "title" : "func callAsFunction<Success, Failure>(Arguments, pendingDelay: TimeInterval) async throws -> Success",
+                "path" : "\/documentation\/fakes\/spy\/callasfunction(_:fallbackdelay:)-7z4dh",
+                "title" : "func callAsFunction<Value>(Arguments, fallbackDelay: TimeInterval) async -> Value",
                 "type" : "method"
               },
               {
-                "path" : "\/documentation\/fakes\/spy\/callasfunction(pendingdelay:)-52uom",
-                "title" : "func callAsFunction<Success, Failure>(pendingDelay: TimeInterval) async throws -> Success",
+                "path" : "\/documentation\/fakes\/spy\/callasfunction(fallbackdelay:)-6a8i9",
+                "title" : "func callAsFunction<Success, Failure>(fallbackDelay: TimeInterval) async throws -> Success",
                 "type" : "method"
               },
               {
-                "path" : "\/documentation\/fakes\/spy\/callasfunction(pendingdelay:)-7qw29",
-                "title" : "func callAsFunction<Value>(pendingDelay: TimeInterval) async -> Value",
+                "path" : "\/documentation\/fakes\/spy\/callasfunction(fallbackdelay:)-vtvc",
+                "title" : "func callAsFunction<Value>(fallbackDelay: TimeInterval) async -> Value",
                 "type" : "method"
               },
               {
                 "path" : "\/documentation\/fakes\/spy\/clearcalls()",
                 "title" : "func clearCalls()",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/resolvestub()",
+                "title" : "func resolveStub()",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/resolvestub(failure:)",
+                "title" : "func resolveStub<Success, Failure>(failure: Failure)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/resolvestub(success:)",
+                "title" : "func resolveStub<Success, Failure>(success: Success)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/resolvestub(with:)",
+                "title" : "func resolveStub<Value>(with: Value)",
                 "type" : "method"
               },
               {
@@ -226,7 +325,7 @@
                 "type" : "method"
               },
               {
-                "path" : "\/documentation\/fakes\/spy\/stub(failure:)-ziqj",
+                "path" : "\/documentation\/fakes\/spy\/stub(failure:)-6hm74",
                 "title" : "func stub<Success, Failure>(failure: Failure)",
                 "type" : "method"
               },
@@ -251,7 +350,7 @@
                 "type" : "method"
               },
               {
-                "path" : "\/documentation\/fakes\/spy\/stub(success:)-4kjng",
+                "path" : "\/documentation\/fakes\/spy\/stub(success:)-3l3ax",
                 "title" : "func stub<Success, Failure>(success: Success)",
                 "type" : "method"
               },
@@ -266,7 +365,12 @@
                 "type" : "method"
               },
               {
-                "path" : "\/documentation\/fakes\/spy\/stubpending()",
+                "path" : "\/documentation\/fakes\/spy\/stubpending()-1vapx",
+                "title" : "func stubPending<Wrapped>()",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/stubpending()-7ahk8",
                 "title" : "func stubPending()",
                 "type" : "method"
               },
@@ -339,8 +443,8 @@
             "type" : "typealias"
           },
           {
-            "path" : "\/documentation\/fakes\/throwingpendable",
-            "title" : "ThrowingPendable",
+            "path" : "\/documentation\/fakes\/throwingdynamicpendable",
+            "title" : "ThrowingDynamicPendable",
             "type" : "typealias"
           },
           {
@@ -352,45 +456,6 @@
             "path" : "\/documentation\/fakes\/throwingspy",
             "title" : "ThrowingSpy",
             "type" : "typealias"
-          },
-          {
-            "title" : "Enumerations",
-            "type" : "groupMarker"
-          },
-          {
-            "children" : [
-              {
-                "title" : "Enumeration Cases",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/fakes\/pendable\/finished(_:)",
-                "title" : "case finished(Value)",
-                "type" : "case"
-              },
-              {
-                "path" : "\/documentation\/fakes\/pendable\/pending(fallback:)",
-                "title" : "case pending(fallback: Value)",
-                "type" : "case"
-              },
-              {
-                "title" : "Instance Methods",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/fakes\/pendable\/resolve(delay:)-1bb25",
-                "title" : "func resolve<Success, Failure>(delay: TimeInterval) async throws -> Success",
-                "type" : "method"
-              },
-              {
-                "path" : "\/documentation\/fakes\/pendable\/resolve(delay:)-hvhg",
-                "title" : "func resolve(delay: TimeInterval) async -> Value",
-                "type" : "method"
-              }
-            ],
-            "path" : "\/documentation\/fakes\/pendable",
-            "title" : "Pendable",
-            "type" : "enum"
           }
         ],
         "path" : "\/documentation\/fakes",

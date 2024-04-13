@@ -1,7 +1,15 @@
 {
   "abstract" : [
     {
-      "text" : "Create a pendable Spy that is pre-stubbed to return a finished value.",
+      "text" : "Creates a new pending ",
+      "type" : "text"
+    },
+    {
+      "code" : "Pendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with a fallback value of Void.",
       "type" : "text"
     }
   ],
@@ -9,22 +17,62 @@
     "paths" : [
       [
         "doc:\/\/Fakes\/documentation\/Fakes",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy"
+        "doc:\/\/Fakes\/documentation\/Fakes\/Pendable"
       ]
     ]
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(finished:)"
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/pending()-r0sx"
   },
   "kind" : "symbol",
   "metadata" : {
+    "conformance" : {
+      "availabilityPrefix" : [
+        {
+          "text" : "Available when",
+          "type" : "text"
+        }
+      ],
+      "conformancePrefix" : [
+        {
+          "text" : "Conforms when",
+          "type" : "text"
+        }
+      ],
+      "constraints" : [
+        {
+          "code" : "Value",
+          "type" : "codeVoice"
+        },
+        {
+          "text" : " conforms to ",
+          "type" : "text"
+        },
+        {
+          "code" : "Sendable",
+          "type" : "codeVoice"
+        },
+        {
+          "text" : ".",
+          "type" : "text"
+        }
+      ]
+    },
     "extendedModule" : "Fakes",
-    "externalID" : "s:5Fakes3SpyC8finishedACyxAA8PendableCyqd__GGqd___tcAGRs_s8SendableRd__lufc",
+    "externalID" : "s:5Fakes8PendableC7pendingACyytGyytRszrlFZ",
     "fragments" : [
       {
         "kind" : "keyword",
-        "text" : "convenience"
+        "text" : "static"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "func"
       },
       {
         "kind" : "text",
@@ -32,27 +80,20 @@
       },
       {
         "kind" : "identifier",
-        "text" : "init"
+        "text" : "pending"
+      },
+      {
+        "kind" : "text",
+        "text" : "() -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:5Fakes8PendableC",
+        "text" : "Pendable"
       },
       {
         "kind" : "text",
         "text" : "<"
-      },
-      {
-        "kind" : "genericParameter",
-        "text" : "Value"
-      },
-      {
-        "kind" : "text",
-        "text" : ">("
-      },
-      {
-        "kind" : "externalParam",
-        "text" : "finished"
-      },
-      {
-        "kind" : "text",
-        "text" : ": "
       },
       {
         "kind" : "typeIdentifier",
@@ -60,7 +101,7 @@
       },
       {
         "kind" : "text",
-        "text" : ")"
+        "text" : ">"
       }
     ],
     "modules" : [
@@ -69,9 +110,9 @@
       }
     ],
     "role" : "symbol",
-    "roleHeading" : "Initializer",
-    "symbolKind" : "init",
-    "title" : "init(finished:)"
+    "roleHeading" : "Type Method",
+    "symbolKind" : "method",
+    "title" : "pending()"
   },
   "primaryContentSections" : [
     {
@@ -86,7 +127,7 @@
           "tokens" : [
             {
               "kind" : "keyword",
-              "text" : "convenience"
+              "text" : "static"
             },
             {
               "kind" : "text",
@@ -94,51 +135,19 @@
             },
             {
               "kind" : "keyword",
-              "text" : "init"
-            },
-            {
-              "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "genericParameter",
-              "text" : "Value"
-            },
-            {
-              "kind" : "text",
-              "text" : ">("
-            },
-            {
-              "kind" : "externalParam",
-              "text" : "finished"
-            },
-            {
-              "kind" : "text",
-              "text" : ": "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Value"
-            },
-            {
-              "kind" : "text",
-              "text" : ") "
-            },
-            {
-              "kind" : "keyword",
-              "text" : "where"
+              "text" : "func"
             },
             {
               "kind" : "text",
               "text" : " "
             },
             {
-              "kind" : "typeIdentifier",
-              "text" : "Returning"
+              "kind" : "identifier",
+              "text" : "pending"
             },
             {
               "kind" : "text",
-              "text" : " == "
+              "text" : "() -> "
             },
             {
               "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
@@ -156,7 +165,15 @@
             },
             {
               "kind" : "text",
-              "text" : ">, "
+              "text" : "> "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "where"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
             },
             {
               "kind" : "typeIdentifier",
@@ -164,12 +181,7 @@
             },
             {
               "kind" : "text",
-              "text" : " : "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:s8SendableP",
-              "text" : "Sendable"
+              "text" : " == ()"
             }
           ]
         }
@@ -188,7 +200,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/fakes\/spy\/init(finished:)"
+        "\/documentation\/fakes\/pendable\/pending()-r0sx"
       ],
       "traits" : [
         {
@@ -256,17 +268,65 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/pendable"
 },
-"doc://Fakes/documentation/Fakes/Spy": {
+"doc://Fakes/documentation/Fakes/Pendable/pending()-r0sx": {
   "abstract" : [
     {
-      "text" : "A Spy is a test double for recording calls to methods, and returning stubbed results.",
+      "text" : "Creates a new pending ",
+      "type" : "text"
+    },
+    {
+      "code" : "Pendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with a fallback value of Void.",
       "type" : "text"
     }
   ],
+  "conformance" : {
+    "availabilityPrefix" : [
+      {
+        "text" : "Available when",
+        "type" : "text"
+      }
+    ],
+    "conformancePrefix" : [
+      {
+        "text" : "Conforms when",
+        "type" : "text"
+      }
+    ],
+    "constraints" : [
+      {
+        "code" : "Value",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : " conforms to ",
+        "type" : "text"
+      },
+      {
+        "code" : "Sendable",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : ".",
+        "type" : "text"
+      }
+    ]
+  },
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "class"
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
     },
     {
       "kind" : "text",
@@ -274,61 +334,20 @@
     },
     {
       "kind" : "identifier",
-      "text" : "Spy"
-    }
-  ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Spy"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Spy",
-  "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy"
-},
-"doc://Fakes/documentation/Fakes/Spy/init(finished:)": {
-  "abstract" : [
-    {
-      "text" : "Create a pendable Spy that is pre-stubbed to return a finished value.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "convenience"
+      "text" : "pending"
     },
     {
       "kind" : "text",
-      "text" : " "
+      "text" : "() -> "
     },
     {
-      "kind" : "identifier",
-      "text" : "init"
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Fakes8PendableC",
+      "text" : "Pendable"
     },
     {
       "kind" : "text",
       "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "Value"
-    },
-    {
-      "kind" : "text",
-      "text" : ">("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "finished"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
     },
     {
       "kind" : "typeIdentifier",
@@ -336,15 +355,15 @@
     },
     {
       "kind" : "text",
-      "text" : ")"
+      "text" : ">"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(finished:)",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/pending()-r0sx",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "init(finished:)",
+  "title" : "pending()",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/init(finished:)"
+  "url" : "\/documentation\/fakes\/pendable\/pending()-r0sx"
 }
 }
 }

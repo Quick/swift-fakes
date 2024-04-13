@@ -20,7 +20,7 @@
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "Fakes",
-    "externalID" : "s:5Fakes3SpyC4stub8finishedyqd___tAA8PendableOyqd__GRs_lF",
+    "externalID" : "s:5Fakes3SpyC4stub8finishedyqd___tAA8PendableCyqd__GRs_s8SendableRd__lF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -143,7 +143,7 @@
             {
               "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:5Fakes8PendableO",
+              "preciseIdentifier" : "s:5Fakes8PendableC",
               "text" : "Pendable"
             },
             {
@@ -156,7 +156,20 @@
             },
             {
               "kind" : "text",
-              "text" : ">"
+              "text" : ">, "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Value"
+            },
+            {
+              "kind" : "text",
+              "text" : " : "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s8SendableP",
+              "text" : "Sendable"
             }
           ]
         }
@@ -239,14 +252,14 @@
 "doc://Fakes/documentation/Fakes/Pendable": {
   "abstract" : [
     {
-      "text" : "Pendable represents the 2 states that an asynchronous call can be in",
+      "text" : "Pendable is a safe way to represent the 2 states that an asynchronous call can be in",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "enum"
+      "text" : "class"
     },
     {
       "kind" : "text",

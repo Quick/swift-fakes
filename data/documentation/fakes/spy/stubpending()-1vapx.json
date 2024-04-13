@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Create a pendable Spy that is pre-stubbed to return a finished value.",
+      "text" : "Update the pendable Spy’s stub to be in a pending state.",
       "type" : "text"
     }
   ],
@@ -15,16 +15,16 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(finished:)"
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubPending()-1vapx"
   },
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "Fakes",
-    "externalID" : "s:5Fakes3SpyC8finishedACyxAA8PendableCyqd__GGqd___tcAGRs_s8SendableRd__lufc",
+    "externalID" : "s:5Fakes3SpyC11stubPendingyyAA8PendableCyqd__SgGRs_s8SendableRd__lF",
     "fragments" : [
       {
         "kind" : "keyword",
-        "text" : "convenience"
+        "text" : "func"
       },
       {
         "kind" : "text",
@@ -32,7 +32,7 @@
       },
       {
         "kind" : "identifier",
-        "text" : "init"
+        "text" : "stubPending"
       },
       {
         "kind" : "text",
@@ -40,27 +40,11 @@
       },
       {
         "kind" : "genericParameter",
-        "text" : "Value"
+        "text" : "Wrapped"
       },
       {
         "kind" : "text",
-        "text" : ">("
-      },
-      {
-        "kind" : "externalParam",
-        "text" : "finished"
-      },
-      {
-        "kind" : "text",
-        "text" : ": "
-      },
-      {
-        "kind" : "typeIdentifier",
-        "text" : "Value"
-      },
-      {
-        "kind" : "text",
-        "text" : ")"
+        "text" : ">()"
       }
     ],
     "modules" : [
@@ -69,9 +53,9 @@
       }
     ],
     "role" : "symbol",
-    "roleHeading" : "Initializer",
-    "symbolKind" : "init",
-    "title" : "init(finished:)"
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "stubPending()"
   },
   "primaryContentSections" : [
     {
@@ -86,15 +70,15 @@
           "tokens" : [
             {
               "kind" : "keyword",
-              "text" : "convenience"
+              "text" : "func"
             },
             {
               "kind" : "text",
               "text" : " "
             },
             {
-              "kind" : "keyword",
-              "text" : "init"
+              "kind" : "identifier",
+              "text" : "stubPending"
             },
             {
               "kind" : "text",
@@ -102,27 +86,11 @@
             },
             {
               "kind" : "genericParameter",
-              "text" : "Value"
+              "text" : "Wrapped"
             },
             {
               "kind" : "text",
-              "text" : ">("
-            },
-            {
-              "kind" : "externalParam",
-              "text" : "finished"
-            },
-            {
-              "kind" : "text",
-              "text" : ": "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Value"
-            },
-            {
-              "kind" : "text",
-              "text" : ") "
+              "text" : ">() "
             },
             {
               "kind" : "keyword",
@@ -152,15 +120,15 @@
             },
             {
               "kind" : "typeIdentifier",
-              "text" : "Value"
+              "text" : "Wrapped"
             },
             {
               "kind" : "text",
-              "text" : ">, "
+              "text" : "?>, "
             },
             {
               "kind" : "typeIdentifier",
-              "text" : "Value"
+              "text" : "Wrapped"
             },
             {
               "kind" : "text",
@@ -188,7 +156,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/fakes\/spy\/init(finished:)"
+        "\/documentation\/fakes\/spy\/stubpending()-1vapx"
       ],
       "traits" : [
         {
@@ -290,17 +258,17 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy"
 },
-"doc://Fakes/documentation/Fakes/Spy/init(finished:)": {
+"doc://Fakes/documentation/Fakes/Spy/stubPending()-1vapx": {
   "abstract" : [
     {
-      "text" : "Create a pendable Spy that is pre-stubbed to return a finished value.",
+      "text" : "Update the pendable Spy’s stub to be in a pending state.",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "convenience"
+      "text" : "func"
     },
     {
       "kind" : "text",
@@ -308,7 +276,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "init"
+      "text" : "stubPending"
     },
     {
       "kind" : "text",
@@ -316,35 +284,19 @@
     },
     {
       "kind" : "genericParameter",
-      "text" : "Value"
+      "text" : "Wrapped"
     },
     {
       "kind" : "text",
-      "text" : ">("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "finished"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Value"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
+      "text" : ">()"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(finished:)",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubPending()-1vapx",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "init(finished:)",
+  "title" : "stubPending()",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/init(finished:)"
+  "url" : "\/documentation\/fakes\/spy\/stubpending()-1vapx"
 }
 }
 }

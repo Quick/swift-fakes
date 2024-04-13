@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Pendable represents the 2 states that an asynchronous call can be in",
+      "text" : "Pendable is a safe way to represent the 2 states that an asynchronous call can be in",
       "type" : "text"
     }
   ],
@@ -18,11 +18,11 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:5Fakes8PendableO",
+    "externalID" : "s:5Fakes8PendableC",
     "fragments" : [
       {
         "kind" : "keyword",
-        "text" : "enum"
+        "text" : "class"
       },
       {
         "kind" : "text",
@@ -45,8 +45,8 @@
       }
     ],
     "role" : "symbol",
-    "roleHeading" : "Enumeration",
-    "symbolKind" : "enum",
+    "roleHeading" : "Class",
+    "symbolKind" : "class",
     "title" : "Pendable"
   },
   "primaryContentSections" : [
@@ -62,7 +62,15 @@
           "tokens" : [
             {
               "kind" : "keyword",
-              "text" : "enum"
+              "text" : "final"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "class"
             },
             {
               "kind" : "text",
@@ -82,7 +90,28 @@
             },
             {
               "kind" : "text",
-              "text" : ">"
+              "text" : "> "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "where"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Value"
+            },
+            {
+              "kind" : "text",
+              "text" : " : "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s8SendableP",
+              "text" : "Sendable"
             }
           ]
         }
@@ -108,7 +137,7 @@
                       "type" : "codeVoice"
                     },
                     {
-                      "text" : ", the state while waiting for some asynchronous call to finish",
+                      "text" : ", the state while waiting for the call to finish.",
                       "type" : "text"
                     }
                   ],
@@ -125,7 +154,7 @@
                       "type" : "codeVoice"
                     },
                     {
-                      "text" : ", the state once an asynchronous call has finished.",
+                      "text" : ", the state once the call has finished.",
                       "type" : "text"
                     }
                   ],
@@ -139,15 +168,7 @@
         {
           "inlineContent" : [
             {
-              "text" : "Oftentimes, async calls also throw. For that, use the ",
-              "type" : "text"
-            },
-            {
-              "code" : "ThrowingPendable",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " type.",
+              "text" : "Pendable allows you to finish a pending call after it’s been made. This makes Pendable behave very",
               "type" : "text"
             },
             {
@@ -155,31 +176,11 @@
               "type" : "text"
             },
             {
-              "code" : "ThrowingPendable",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " is a typealias for when ",
+              "text" : "similarly to something like Combine’s ",
               "type" : "text"
             },
             {
-              "code" : "Value",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " is",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "a ",
-              "type" : "text"
-            },
-            {
-              "code" : "Result<Success, Failure>",
+              "code" : "Future",
               "type" : "codeVoice"
             },
             {
@@ -190,45 +191,84 @@
           "type" : "paragraph"
         },
         {
-          "inlineContent" : [
+          "content" : [
             {
-              "text" : "Pendable is a static value, there is no way to dynamically resolve a Pendable.",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "This is because to allow you to resolve the call whenever you want is",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "the equivalent of forcing Swift Concurrency to wait until some other function returns.",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "Which is possible, but incredibly tricky and very prone to deadlocks.",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "Using a Static value for Pendable enables us to essentially cheat that.",
-              "type" : "text"
+              "inlineContent" : [
+                {
+                  "text" : "The reason you must provide a fallback value is to prevent deadlock when used in test.",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "Unlike something like Combine’s ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Future",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ", it is very often the case that you will write",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "tests which end while the call is in the pending state. If you do this too much, then your",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "entire test suite will deadlock, as Swift Concurrency works under the assumption that",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "blocked tasks of work will always eventually be unblocked. To help prevent this, pending calls",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "are always resolved with the fallback after a given delay. You can also manually force this",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "by calling the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Pendable\\resolveWithFallback()",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " method.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
             }
           ],
-          "type" : "paragraph"
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
         }
       ],
       "kind" : "content"
@@ -255,17 +295,29 @@
   "topicSections" : [
     {
       "identifiers" : [
-        "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/finished(_:)",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/pending(fallback:)"
+        "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/init(fallbackValue:)"
       ],
-      "title" : "Enumeration Cases"
+      "title" : "Initializers"
     },
     {
       "identifiers" : [
-        "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolve(delay:)-1bb25",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolve(delay:)-hvhg"
+        "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/call(fallbackDelay:)",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/call(resolveDelay:)",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/reset()",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolve(with:)",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolveWithFallback()"
       ],
       "title" : "Instance Methods"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/finished()",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/finished(_:)",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/pending()-1auk9",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/pending()-r0sx",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/pending(fallback:)"
+      ],
+      "title" : "Type Methods"
     }
   ],
   "variants" : [
@@ -308,14 +360,14 @@
 "doc://Fakes/documentation/Fakes/Pendable": {
   "abstract" : [
     {
-      "text" : "Pendable represents the 2 states that an asynchronous call can be in",
+      "text" : "Pendable is a safe way to represent the 2 states that an asynchronous call can be in",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "enum"
+      "text" : "class"
     },
     {
       "kind" : "text",
@@ -339,97 +391,20 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/pendable"
 },
-"doc://Fakes/documentation/Fakes/Pendable/finished(_:)": {
+"doc://Fakes/documentation/Fakes/Pendable/call(fallbackDelay:)": {
   "abstract" : [
     {
-      "text" : "a finished call state",
+      "text" : "Gets the value for the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Pendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", possibly waiting until it’s resolved.",
       "type" : "text"
     }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "case"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "finished"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Value"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
-    }
-  ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/finished(_:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "Pendable.finished(_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/fakes\/pendable\/finished(_:)"
-},
-"doc://Fakes/documentation/Fakes/Pendable/pending(fallback:)": {
-  "abstract" : [
-    {
-      "text" : "an in-progress call state",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "case"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "pending"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "fallback"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Value"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
-    }
-  ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/pending(fallback:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "Pendable.pending(fallback:)",
-  "type" : "topic",
-  "url" : "\/documentation\/fakes\/pendable\/pending(fallback:)"
-},
-"doc://Fakes/documentation/Fakes/Pendable/resolve(delay:)-1bb25": {
-  "abstract" : [
-
   ],
   "fragments" : [
     {
@@ -442,7 +417,108 @@
     },
     {
       "kind" : "identifier",
-      "text" : "resolve"
+      "text" : "call"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "fallbackDelay"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation12TimeIntervala",
+      "text" : "TimeInterval"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/call(fallbackDelay:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "call(fallbackDelay:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/pendable\/call(fallbackdelay:)"
+},
+"doc://Fakes/documentation/Fakes/Pendable/call(resolveDelay:)": {
+  "abstract" : [
+    {
+      "text" : "Gets or throws value for the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Pendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", possibly waiting until it’s resolved.",
+      "type" : "text"
+    }
+  ],
+  "conformance" : {
+    "availabilityPrefix" : [
+      {
+        "text" : "Available when",
+        "type" : "text"
+      }
+    ],
+    "conformancePrefix" : [
+      {
+        "text" : "Conforms when",
+        "type" : "text"
+      }
+    ],
+    "constraints" : [
+      {
+        "code" : "Value",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : " conforms to ",
+        "type" : "text"
+      },
+      {
+        "code" : "Sendable",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : ".",
+        "type" : "text"
+      }
+    ]
+  },
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "call"
     },
     {
       "kind" : "text",
@@ -466,7 +542,7 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "delay"
+      "text" : "resolveDelay"
     },
     {
       "kind" : "text",
@@ -502,16 +578,640 @@
       "text" : "Success"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolve(delay:)-1bb25",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/call(resolveDelay:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "resolve(delay:)",
+  "title" : "call(resolveDelay:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/pendable\/resolve(delay:)-1bb25"
+  "url" : "\/documentation\/fakes\/pendable\/call(resolvedelay:)"
 },
-"doc://Fakes/documentation/Fakes/Pendable/resolve(delay:)-hvhg": {
+"doc://Fakes/documentation/Fakes/Pendable/finished()": {
   "abstract" : [
-
+    {
+      "text" : "Creates a new finished ",
+      "type" : "text"
+    },
+    {
+      "code" : "Pendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " pre-resolved  with Void.",
+      "type" : "text"
+    }
+  ],
+  "conformance" : {
+    "availabilityPrefix" : [
+      {
+        "text" : "Available when",
+        "type" : "text"
+      }
+    ],
+    "conformancePrefix" : [
+      {
+        "text" : "Conforms when",
+        "type" : "text"
+      }
+    ],
+    "constraints" : [
+      {
+        "code" : "Value",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : " conforms to ",
+        "type" : "text"
+      },
+      {
+        "code" : "Sendable",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : ".",
+        "type" : "text"
+      }
+    ]
+  },
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "finished"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Fakes8PendableC",
+      "text" : "Pendable"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/finished()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "finished()",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/pendable\/finished()"
+},
+"doc://Fakes/documentation/Fakes/Pendable/finished(_:)": {
+  "abstract" : [
+    {
+      "text" : "Creates a new finished ",
+      "type" : "text"
+    },
+    {
+      "code" : "Pendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " pre-resolved with the given value.",
+      "type" : "text"
+    }
+  ],
+  "conformance" : {
+    "availabilityPrefix" : [
+      {
+        "text" : "Available when",
+        "type" : "text"
+      }
+    ],
+    "conformancePrefix" : [
+      {
+        "text" : "Conforms when",
+        "type" : "text"
+      }
+    ],
+    "constraints" : [
+      {
+        "code" : "Value",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : " conforms to ",
+        "type" : "text"
+      },
+      {
+        "code" : "Sendable",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : ".",
+        "type" : "text"
+      }
+    ]
+  },
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "finished"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Fakes8PendableC",
+      "text" : "Pendable"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/finished(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "finished(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/pendable\/finished(_:)"
+},
+"doc://Fakes/documentation/Fakes/Pendable/init(fallbackValue:)": {
+  "abstract" : [
+    {
+      "text" : "Initializes a new ",
+      "type" : "text"
+    },
+    {
+      "code" : "Pendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", in a pending state, with the given fallback value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "fallbackValue"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/init(fallbackValue:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(fallbackValue:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/pendable\/init(fallbackvalue:)"
+},
+"doc://Fakes/documentation/Fakes/Pendable/pending()-1auk9": {
+  "abstract" : [
+    {
+      "text" : "Creates a new pending ",
+      "type" : "text"
+    },
+    {
+      "code" : "Pendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with a fallback value of nil.",
+      "type" : "text"
+    }
+  ],
+  "conformance" : {
+    "availabilityPrefix" : [
+      {
+        "text" : "Available when",
+        "type" : "text"
+      }
+    ],
+    "conformancePrefix" : [
+      {
+        "text" : "Conforms when",
+        "type" : "text"
+      }
+    ],
+    "constraints" : [
+      {
+        "code" : "Value",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : " conforms to ",
+        "type" : "text"
+      },
+      {
+        "code" : "Sendable",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : ".",
+        "type" : "text"
+      }
+    ]
+  },
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "pending"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Wrapped"
+    },
+    {
+      "kind" : "text",
+      "text" : ">() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Fakes8PendableC",
+      "text" : "Pendable"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/pending()-1auk9",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "pending()",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/pendable\/pending()-1auk9"
+},
+"doc://Fakes/documentation/Fakes/Pendable/pending()-r0sx": {
+  "abstract" : [
+    {
+      "text" : "Creates a new pending ",
+      "type" : "text"
+    },
+    {
+      "code" : "Pendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with a fallback value of Void.",
+      "type" : "text"
+    }
+  ],
+  "conformance" : {
+    "availabilityPrefix" : [
+      {
+        "text" : "Available when",
+        "type" : "text"
+      }
+    ],
+    "conformancePrefix" : [
+      {
+        "text" : "Conforms when",
+        "type" : "text"
+      }
+    ],
+    "constraints" : [
+      {
+        "code" : "Value",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : " conforms to ",
+        "type" : "text"
+      },
+      {
+        "code" : "Sendable",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : ".",
+        "type" : "text"
+      }
+    ]
+  },
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "pending"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Fakes8PendableC",
+      "text" : "Pendable"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/pending()-r0sx",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "pending()",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/pendable\/pending()-r0sx"
+},
+"doc://Fakes/documentation/Fakes/Pendable/pending(fallback:)": {
+  "abstract" : [
+    {
+      "text" : "Creates a new pending ",
+      "type" : "text"
+    },
+    {
+      "code" : "Pendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with the given fallback value.",
+      "type" : "text"
+    }
+  ],
+  "conformance" : {
+    "availabilityPrefix" : [
+      {
+        "text" : "Available when",
+        "type" : "text"
+      }
+    ],
+    "conformancePrefix" : [
+      {
+        "text" : "Conforms when",
+        "type" : "text"
+      }
+    ],
+    "constraints" : [
+      {
+        "code" : "Value",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : " conforms to ",
+        "type" : "text"
+      },
+      {
+        "code" : "Sendable",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : ".",
+        "type" : "text"
+      }
+    ]
+  },
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "pending"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "fallback"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Fakes8PendableC",
+      "text" : "Pendable"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/pending(fallback:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "pending(fallback:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/pendable\/pending(fallback:)"
+},
+"doc://Fakes/documentation/Fakes/Pendable/reset()": {
+  "abstract" : [
+    {
+      "text" : "Resolves any outstanding calls to the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Pendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with the current value,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "and resets it back into the pending state.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "reset"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/reset()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "reset()",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/pendable\/reset()"
+},
+"doc://Fakes/documentation/Fakes/Pendable/resolve(with:)": {
+  "abstract" : [
+    {
+      "text" : "Resolves the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Pendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with the given value.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -532,7 +1232,7 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "delay"
+      "text" : "with"
     },
     {
       "kind" : "text",
@@ -540,32 +1240,59 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10Foundation12TimeIntervala",
-      "text" : "TimeInterval"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "async"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
       "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolve(delay:)-hvhg",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolve(with:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "resolve(delay:)",
+  "title" : "resolve(with:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/pendable\/resolve(delay:)-hvhg"
+  "url" : "\/documentation\/fakes\/pendable\/resolve(with:)"
+},
+"doc://Fakes/documentation/Fakes/Pendable/resolveWithFallback()": {
+  "abstract" : [
+    {
+      "text" : "Resolves the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Pendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with the fallback value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "resolveWithFallback"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolveWithFallback()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "resolveWithFallback()",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/pendable\/resolvewithfallback()"
 },
 "doc://Fakes/s8SendableP": {
   "identifier" : "doc:\/\/Fakes\/s8SendableP",

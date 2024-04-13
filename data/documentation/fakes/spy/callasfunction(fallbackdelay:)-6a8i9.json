@@ -1,19 +1,51 @@
 {
+  "abstract" : [
+    {
+      "text" : "Records that a call was made and handles the result according to ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/call(fallbackDelay:)",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "This call then throws or returns the success, according to ",
+      "type" : "text"
+    },
+    {
+      "code" : "Result.get",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
         "doc:\/\/Fakes\/documentation\/Fakes",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Pendable"
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy"
       ]
     ]
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolve(delay:)-1bb25"
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(fallbackDelay:)-6a8i9"
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:5Fakes8PendableO7resolve5delayqd__Sd_tYaKs6ResultOyqd__qd_0_GRszs5ErrorRd_0_r0_lF",
+    "extendedModule" : "Fakes",
+    "externalID" : "s:5Fakes3SpyC14callAsFunction13fallbackDelayqd__Sd_tYaKytRszAA8PendableCys6ResultOyqd__qd_0_GGRs_s8SendableRd__s5ErrorRd_0_r0_lF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -25,7 +57,7 @@
       },
       {
         "kind" : "identifier",
-        "text" : "resolve"
+        "text" : "callAsFunction"
       },
       {
         "kind" : "text",
@@ -49,7 +81,7 @@
       },
       {
         "kind" : "externalParam",
-        "text" : "delay"
+        "text" : "fallbackDelay"
       },
       {
         "kind" : "text",
@@ -93,7 +125,7 @@
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
-    "title" : "resolve(delay:)"
+    "title" : "callAsFunction(fallbackDelay:)"
   },
   "primaryContentSections" : [
     {
@@ -116,7 +148,7 @@
             },
             {
               "kind" : "identifier",
-              "text" : "resolve"
+              "text" : "callAsFunction"
             },
             {
               "kind" : "text",
@@ -140,7 +172,7 @@
             },
             {
               "kind" : "externalParam",
-              "text" : "delay"
+              "text" : "fallbackDelay"
             },
             {
               "kind" : "text",
@@ -189,11 +221,29 @@
             },
             {
               "kind" : "typeIdentifier",
-              "text" : "Value"
+              "text" : "Arguments"
+            },
+            {
+              "kind" : "text",
+              "text" : " == (), "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Returning"
             },
             {
               "kind" : "text",
               "text" : " == "
+            },
+            {
+              "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:5Fakes8PendableC",
+              "text" : "Pendable"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
             },
             {
               "kind" : "typeIdentifier",
@@ -218,7 +268,24 @@
             },
             {
               "kind" : "text",
-              "text" : ">, "
+              "text" : ">>, "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Success"
+            },
+            {
+              "kind" : "text",
+              "text" : " : "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s8SendableP",
+              "text" : "Sendable"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
             },
             {
               "kind" : "typeIdentifier",
@@ -237,6 +304,57 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The amount of seconds to delay if the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Pendable",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " is .pending before",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "throwing a ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "PendableInProgressError",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : ". If the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "Pendable",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " is .finished, then this value is ignored.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "pendingDelay"
+        }
+      ]
     }
   ],
   "schemaVersion" : {
@@ -250,7 +368,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/fakes\/pendable\/resolve(delay:)-1bb25"
+        "\/documentation\/fakes\/spy\/callasfunction(fallbackdelay:)-6a8i9"
       ],
       "traits" : [
         {
@@ -287,14 +405,14 @@
 "doc://Fakes/documentation/Fakes/Pendable": {
   "abstract" : [
     {
-      "text" : "Pendable represents the 2 states that an asynchronous call can be in",
+      "text" : "Pendable is a safe way to represent the 2 states that an asynchronous call can be in",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "enum"
+      "text" : "class"
     },
     {
       "kind" : "text",
@@ -318,9 +436,20 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/pendable"
 },
-"doc://Fakes/documentation/Fakes/Pendable/resolve(delay:)-1bb25": {
+"doc://Fakes/documentation/Fakes/Pendable/call(fallbackDelay:)": {
   "abstract" : [
-
+    {
+      "text" : "Gets the value for the ",
+      "type" : "text"
+    },
+    {
+      "code" : "Pendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", possibly waiting until it’s resolved.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -333,7 +462,127 @@
     },
     {
       "kind" : "identifier",
-      "text" : "resolve"
+      "text" : "call"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "fallbackDelay"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation12TimeIntervala",
+      "text" : "TimeInterval"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/call(fallbackDelay:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "call(fallbackDelay:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/pendable\/call(fallbackdelay:)"
+},
+"doc://Fakes/documentation/Fakes/Spy": {
+  "abstract" : [
+    {
+      "text" : "A Spy is a test double for recording calls to methods, and returning stubbed results.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Spy"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Spy"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Spy",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy"
+},
+"doc://Fakes/documentation/Fakes/Spy/callAsFunction(fallbackDelay:)-6a8i9": {
+  "abstract" : [
+    {
+      "text" : "Records that a call was made and handles the result according to ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/call(fallbackDelay:)",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "This call then throws or returns the success, according to ",
+      "type" : "text"
+    },
+    {
+      "code" : "Result.get",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "callAsFunction"
     },
     {
       "kind" : "text",
@@ -357,7 +606,7 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "delay"
+      "text" : "fallbackDelay"
     },
     {
       "kind" : "text",
@@ -393,12 +642,12 @@
       "text" : "Success"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/resolve(delay:)-1bb25",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(fallbackDelay:)-6a8i9",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "resolve(delay:)",
+  "title" : "callAsFunction(fallbackDelay:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/pendable\/resolve(delay:)-1bb25"
+  "url" : "\/documentation\/fakes\/spy\/callasfunction(fallbackdelay:)-6a8i9"
 }
 }
 }

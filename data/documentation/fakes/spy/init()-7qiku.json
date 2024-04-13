@@ -15,12 +15,12 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-67dju"
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-7qiku"
   },
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "Fakes",
-    "externalID" : "s:5Fakes3SpyCACyxAA8PendableOys6ResultOyytqd__GGGycAIRs_s5ErrorRd__lufc",
+    "externalID" : "s:5Fakes3SpyCACyxAA8PendableCys6ResultOyytqd__GGGycAIRs_s5ErrorRd__lufc",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -111,7 +111,7 @@
             {
               "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:5Fakes8PendableO",
+              "preciseIdentifier" : "s:5Fakes8PendableC",
               "text" : "Pendable"
             },
             {
@@ -165,7 +165,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/fakes\/spy\/init()-67dju"
+        "\/documentation\/fakes\/spy\/init()-7qiku"
       ],
       "traits" : [
         {
@@ -202,14 +202,14 @@
 "doc://Fakes/documentation/Fakes/Pendable": {
   "abstract" : [
     {
-      "text" : "Pendable represents the 2 states that an asynchronous call can be in",
+      "text" : "Pendable is a safe way to represent the 2 states that an asynchronous call can be in",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "enum"
+      "text" : "class"
     },
     {
       "kind" : "text",
@@ -267,7 +267,7 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy"
 },
-"doc://Fakes/documentation/Fakes/Spy/init()-67dju": {
+"doc://Fakes/documentation/Fakes/Spy/init()-7qiku": {
   "abstract" : [
     {
       "text" : "Create a throwing pendable Spy that is pre-stubbed to return a pending that will block for a bit before returning Void.",
@@ -300,12 +300,12 @@
       "text" : ">()"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-67dju",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-7qiku",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "init()",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/init()-67dju"
+  "url" : "\/documentation\/fakes\/spy\/init()-7qiku"
 }
 }
 }

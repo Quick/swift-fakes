@@ -1,10 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "Update the throwing pendable Spy’s stub to throw the given error.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -15,12 +9,12 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(failure:)-ziqj"
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/resolveStub(with:)"
   },
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "Fakes",
-    "externalID" : "s:5Fakes3SpyC4stub7failureyqd_0__tAA8PendableOys6ResultOyqd__qd_0_GGRs_s5ErrorRd_0_r0_lF",
+    "externalID" : "s:5Fakes3SpyC11resolveStub4withyqd___tAA8PendableCyqd__GRs_s8SendableRd__lF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -32,7 +26,7 @@
       },
       {
         "kind" : "identifier",
-        "text" : "stub"
+        "text" : "resolveStub"
       },
       {
         "kind" : "text",
@@ -40,15 +34,7 @@
       },
       {
         "kind" : "genericParameter",
-        "text" : "Success"
-      },
-      {
-        "kind" : "text",
-        "text" : ", "
-      },
-      {
-        "kind" : "genericParameter",
-        "text" : "Failure"
+        "text" : "Value"
       },
       {
         "kind" : "text",
@@ -56,7 +42,7 @@
       },
       {
         "kind" : "externalParam",
-        "text" : "failure"
+        "text" : "with"
       },
       {
         "kind" : "text",
@@ -64,7 +50,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "text" : "Failure"
+        "text" : "Value"
       },
       {
         "kind" : "text",
@@ -79,7 +65,7 @@
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
-    "title" : "stub(failure:)"
+    "title" : "resolveStub(with:)"
   },
   "primaryContentSections" : [
     {
@@ -102,7 +88,7 @@
             },
             {
               "kind" : "identifier",
-              "text" : "stub"
+              "text" : "resolveStub"
             },
             {
               "kind" : "text",
@@ -110,15 +96,7 @@
             },
             {
               "kind" : "genericParameter",
-              "text" : "Success"
-            },
-            {
-              "kind" : "text",
-              "text" : ", "
-            },
-            {
-              "kind" : "genericParameter",
-              "text" : "Failure"
+              "text" : "Value"
             },
             {
               "kind" : "text",
@@ -126,7 +104,15 @@
             },
             {
               "kind" : "externalParam",
-              "text" : "failure"
+              "text" : "with"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "value"
             },
             {
               "kind" : "text",
@@ -134,7 +120,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "text" : "Failure"
+              "text" : "Value"
             },
             {
               "kind" : "text",
@@ -159,7 +145,7 @@
             {
               "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:5Fakes8PendableO",
+              "preciseIdentifier" : "s:5Fakes8PendableC",
               "text" : "Pendable"
             },
             {
@@ -168,32 +154,15 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:s6ResultO",
-              "text" : "Result"
+              "text" : "Value"
             },
             {
               "kind" : "text",
-              "text" : "<"
+              "text" : ">, "
             },
             {
               "kind" : "typeIdentifier",
-              "text" : "Success"
-            },
-            {
-              "kind" : "text",
-              "text" : ", "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Failure"
-            },
-            {
-              "kind" : "text",
-              "text" : ">>, "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Failure"
+              "text" : "Value"
             },
             {
               "kind" : "text",
@@ -201,40 +170,13 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:s5ErrorP",
-              "text" : "Error"
+              "preciseIdentifier" : "s:s8SendableP",
+              "text" : "Sendable"
             }
           ]
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "kind" : "parameters",
-      "parameters" : [
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "The error to throw when ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "callAsFunction",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : " is called.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "failure"
-        }
-      ]
     }
   ],
   "schemaVersion" : {
@@ -248,7 +190,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/fakes\/spy\/stub(failure:)-ziqj"
+        "\/documentation\/fakes\/spy\/resolvestub(with:)"
       ],
       "traits" : [
         {
@@ -285,14 +227,14 @@
 "doc://Fakes/documentation/Fakes/Pendable": {
   "abstract" : [
     {
-      "text" : "Pendable represents the 2 states that an asynchronous call can be in",
+      "text" : "Pendable is a safe way to represent the 2 states that an asynchronous call can be in",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "enum"
+      "text" : "class"
     },
     {
       "kind" : "text",
@@ -350,12 +292,9 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy"
 },
-"doc://Fakes/documentation/Fakes/Spy/stub(failure:)-ziqj": {
+"doc://Fakes/documentation/Fakes/Spy/resolveStub(with:)": {
   "abstract" : [
-    {
-      "text" : "Update the throwing pendable Spy’s stub to throw the given error.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -368,7 +307,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "stub"
+      "text" : "resolveStub"
     },
     {
       "kind" : "text",
@@ -376,15 +315,7 @@
     },
     {
       "kind" : "genericParameter",
-      "text" : "Success"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "Failure"
+      "text" : "Value"
     },
     {
       "kind" : "text",
@@ -392,7 +323,7 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "failure"
+      "text" : "with"
     },
     {
       "kind" : "text",
@@ -400,19 +331,19 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Failure"
+      "text" : "Value"
     },
     {
       "kind" : "text",
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(failure:)-ziqj",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/resolveStub(with:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "stub(failure:)",
+  "title" : "resolveStub(with:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/stub(failure:)-ziqj"
+  "url" : "\/documentation\/fakes\/spy\/resolvestub(with:)"
 }
 }
 }

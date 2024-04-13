@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Create a pendable Spy that is pre-stubbed to return a finished value.",
+      "text" : "Create a Spy that returns nil",
       "type" : "text"
     }
   ],
@@ -15,12 +15,11 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(finished:)"
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-1ubn6"
   },
   "kind" : "symbol",
   "metadata" : {
-    "extendedModule" : "Fakes",
-    "externalID" : "s:5Fakes3SpyC8finishedACyxAA8PendableCyqd__GGqd___tcAGRs_s8SendableRd__lufc",
+    "externalID" : "s:5Fakes3SpyCACyxqd__SgGycADRs_lufc",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -40,27 +39,11 @@
       },
       {
         "kind" : "genericParameter",
-        "text" : "Value"
+        "text" : "Wrapped"
       },
       {
         "kind" : "text",
-        "text" : ">("
-      },
-      {
-        "kind" : "externalParam",
-        "text" : "finished"
-      },
-      {
-        "kind" : "text",
-        "text" : ": "
-      },
-      {
-        "kind" : "typeIdentifier",
-        "text" : "Value"
-      },
-      {
-        "kind" : "text",
-        "text" : ")"
+        "text" : ">()"
       }
     ],
     "modules" : [
@@ -71,7 +54,7 @@
     "role" : "symbol",
     "roleHeading" : "Initializer",
     "symbolKind" : "init",
-    "title" : "init(finished:)"
+    "title" : "init()"
   },
   "primaryContentSections" : [
     {
@@ -102,27 +85,11 @@
             },
             {
               "kind" : "genericParameter",
-              "text" : "Value"
+              "text" : "Wrapped"
             },
             {
               "kind" : "text",
-              "text" : ">("
-            },
-            {
-              "kind" : "externalParam",
-              "text" : "finished"
-            },
-            {
-              "kind" : "text",
-              "text" : ": "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Value"
-            },
-            {
-              "kind" : "text",
-              "text" : ") "
+              "text" : ">() "
             },
             {
               "kind" : "keyword",
@@ -141,35 +108,12 @@
               "text" : " == "
             },
             {
-              "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:5Fakes8PendableC",
-              "text" : "Pendable"
+              "text" : "Wrapped"
             },
             {
               "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Value"
-            },
-            {
-              "kind" : "text",
-              "text" : ">, "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Value"
-            },
-            {
-              "kind" : "text",
-              "text" : " : "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:s8SendableP",
-              "text" : "Sendable"
+              "text" : "?"
             }
           ]
         }
@@ -188,7 +132,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/fakes\/spy\/init(finished:)"
+        "\/documentation\/fakes\/spy\/init()-1ubn6"
       ],
       "traits" : [
         {
@@ -221,40 +165,6 @@
   "title" : "Fakes",
   "type" : "topic",
   "url" : "\/documentation\/fakes"
-},
-"doc://Fakes/documentation/Fakes/Pendable": {
-  "abstract" : [
-    {
-      "text" : "Pendable is a safe way to represent the 2 states that an asynchronous call can be in",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "class"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Pendable"
-    }
-  ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Pendable"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Pendable",
-  "type" : "topic",
-  "url" : "\/documentation\/fakes\/pendable"
 },
 "doc://Fakes/documentation/Fakes/Spy": {
   "abstract" : [
@@ -290,10 +200,10 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy"
 },
-"doc://Fakes/documentation/Fakes/Spy/init(finished:)": {
+"doc://Fakes/documentation/Fakes/Spy/init()-1ubn6": {
   "abstract" : [
     {
-      "text" : "Create a pendable Spy that is pre-stubbed to return a finished value.",
+      "text" : "Create a Spy that returns nil",
       "type" : "text"
     }
   ],
@@ -316,35 +226,19 @@
     },
     {
       "kind" : "genericParameter",
-      "text" : "Value"
+      "text" : "Wrapped"
     },
     {
       "kind" : "text",
-      "text" : ">("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "finished"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Value"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
+      "text" : ">()"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(finished:)",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-1ubn6",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "init(finished:)",
+  "title" : "init()",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/init(finished:)"
+  "url" : "\/documentation\/fakes\/spy\/init()-1ubn6"
 }
 }
 }

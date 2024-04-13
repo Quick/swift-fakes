@@ -1,7 +1,15 @@
 {
   "abstract" : [
     {
-      "text" : "a finished call state",
+      "text" : "Creates a new finished ",
+      "type" : "text"
+    },
+    {
+      "code" : "Pendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " pre-resolved with the given value.",
       "type" : "text"
     }
   ],
@@ -19,11 +27,52 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:5Fakes8PendableO8finishedyACyxGxcAEmlF",
+    "conformance" : {
+      "availabilityPrefix" : [
+        {
+          "text" : "Available when",
+          "type" : "text"
+        }
+      ],
+      "conformancePrefix" : [
+        {
+          "text" : "Conforms when",
+          "type" : "text"
+        }
+      ],
+      "constraints" : [
+        {
+          "code" : "Value",
+          "type" : "codeVoice"
+        },
+        {
+          "text" : " conforms to ",
+          "type" : "text"
+        },
+        {
+          "code" : "Sendable",
+          "type" : "codeVoice"
+        },
+        {
+          "text" : ".",
+          "type" : "text"
+        }
+      ]
+    },
+    "extendedModule" : "Fakes",
+    "externalID" : "s:5Fakes8PendableC8finishedyACyxGxFZ",
     "fragments" : [
       {
         "kind" : "keyword",
-        "text" : "case"
+        "text" : "static"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "func"
       },
       {
         "kind" : "text",
@@ -43,7 +92,24 @@
       },
       {
         "kind" : "text",
-        "text" : ")"
+        "text" : ") -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:5Fakes8PendableC",
+        "text" : "Pendable"
+      },
+      {
+        "kind" : "text",
+        "text" : "<"
+      },
+      {
+        "kind" : "typeIdentifier",
+        "text" : "Value"
+      },
+      {
+        "kind" : "text",
+        "text" : ">"
       }
     ],
     "modules" : [
@@ -52,9 +118,9 @@
       }
     ],
     "role" : "symbol",
-    "roleHeading" : "Case",
-    "symbolKind" : "case",
-    "title" : "Pendable.finished(_:)"
+    "roleHeading" : "Type Method",
+    "symbolKind" : "method",
+    "title" : "finished(_:)"
   },
   "primaryContentSections" : [
     {
@@ -69,7 +135,15 @@
           "tokens" : [
             {
               "kind" : "keyword",
-              "text" : "case"
+              "text" : "static"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "func"
             },
             {
               "kind" : "text",
@@ -84,12 +158,46 @@
               "text" : "("
             },
             {
+              "kind" : "externalParam",
+              "text" : "_"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "value"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
               "kind" : "typeIdentifier",
               "text" : "Value"
             },
             {
               "kind" : "text",
-              "text" : ")"
+              "text" : ") -> "
+            },
+            {
+              "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:5Fakes8PendableC",
+              "text" : "Pendable"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Value"
+            },
+            {
+              "kind" : "text",
+              "text" : ">"
             }
           ]
         }
@@ -145,14 +253,14 @@
 "doc://Fakes/documentation/Fakes/Pendable": {
   "abstract" : [
     {
-      "text" : "Pendable represents the 2 states that an asynchronous call can be in",
+      "text" : "Pendable is a safe way to represent the 2 states that an asynchronous call can be in",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "enum"
+      "text" : "class"
     },
     {
       "kind" : "text",
@@ -179,14 +287,62 @@
 "doc://Fakes/documentation/Fakes/Pendable/finished(_:)": {
   "abstract" : [
     {
-      "text" : "a finished call state",
+      "text" : "Creates a new finished ",
+      "type" : "text"
+    },
+    {
+      "code" : "Pendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " pre-resolved with the given value.",
       "type" : "text"
     }
   ],
+  "conformance" : {
+    "availabilityPrefix" : [
+      {
+        "text" : "Available when",
+        "type" : "text"
+      }
+    ],
+    "conformancePrefix" : [
+      {
+        "text" : "Conforms when",
+        "type" : "text"
+      }
+    ],
+    "constraints" : [
+      {
+        "code" : "Value",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : " conforms to ",
+        "type" : "text"
+      },
+      {
+        "code" : "Sendable",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : ".",
+        "type" : "text"
+      }
+    ]
+  },
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "case"
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
     },
     {
       "kind" : "text",
@@ -206,13 +362,30 @@
     },
     {
       "kind" : "text",
-      "text" : ")"
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Fakes8PendableC",
+      "text" : "Pendable"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
     }
   ],
   "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/finished(_:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "Pendable.finished(_:)",
+  "title" : "finished(_:)",
   "type" : "topic",
   "url" : "\/documentation\/fakes\/pendable\/finished(_:)"
 }
