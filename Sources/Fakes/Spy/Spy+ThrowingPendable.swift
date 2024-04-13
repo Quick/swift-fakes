@@ -81,4 +81,3 @@ extension Spy {
         return try await call(()).call(fallbackDelay: fallbackDelay).get()
     }
 }
-

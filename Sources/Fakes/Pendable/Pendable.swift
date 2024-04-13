@@ -138,7 +138,9 @@ extension Pendable {
     ///
     /// - parameter resolveDelay: The amount of time (in seconds) to wait until the call returns
     /// the fallback value. This is only  used when the `Pendable` is in a pending state.
-    public func call<Success, Failure: Error>(resolveDelay: TimeInterval = PendableDefaults.delay) async throws -> Success where Value == Result<Success, Failure> {
+    public func call<Success, Failure: Error>(
+        resolveDelay: TimeInterval = PendableDefaults.delay
+    ) async throws -> Success where Value == Result<Success, Failure> {
         try await call(fallbackDelay: resolveDelay).get()
     }
 }
@@ -170,6 +172,7 @@ extension Pendable {
 
     /// Creates a new pending `Pendable` with a fallback value of nil.
     public static func pending<Wrapped>() -> Pendable<Value> where Value == Optional<Wrapped> {
+        // swiftlint:disable:previous syntactic_sugar
         return Pendable(fallbackValue: nil)
     }
 }

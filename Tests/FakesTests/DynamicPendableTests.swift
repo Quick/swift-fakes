@@ -3,12 +3,12 @@ import Nimble
 import XCTest
 
 final class DynamicPendableTests: XCTestCase {
-    func testSingleCall() async {
+    func testSingleCall() async throws {
         let subject = Pendable<Int>.pending(fallback: 0)
 
         async let result = subject.call()
 
-        try! await Task.sleep(nanoseconds: UInt64(0.01 * 1_000_000_000))
+        try await Task.sleep(nanoseconds: UInt64(0.01 * 1_000_000_000))
 
         subject.resolve(with: 2)
 
@@ -16,7 +16,7 @@ final class DynamicPendableTests: XCTestCase {
         expect(value).to(equal(2))
     }
 
-    func testMultipleCalls() async {
+    func testMultipleCalls() async throws {
         let subject = Pendable<Int>.pending(fallback: 0)
 
         async let result = withTaskGroup(of: Int.self, returning: [Int].self) { taskGroup in
@@ -31,7 +31,7 @@ final class DynamicPendableTests: XCTestCase {
             return results
         }
 
-        try! await Task.sleep(nanoseconds: UInt64(0.1 * 1_000_000_000))
+        try await Task.sleep(nanoseconds: UInt64(0.1 * 1_000_000_000))
 
         subject.resolve(with: 3)
 

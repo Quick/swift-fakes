@@ -29,6 +29,7 @@ public final class Spy<Arguments, Returning> {
 
     /// Create a Spy that returns nil
     public convenience init<Wrapped>() where Returning == Optional<Wrapped> {
+        // swiftlint:disable:previous syntactic_sugar
         self.init(nil)
     }
 

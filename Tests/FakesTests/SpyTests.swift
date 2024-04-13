@@ -183,7 +183,7 @@ actor ManagedTask<Success: Sendable, Failure: Error> {
     var hasStarted = false
     var isFinished = false
 
-    var _task: Task<Success, Failure>!
+    var task: Task<Success, Failure>!
 
     static func running(closure: @escaping @Sendable () async throws -> Success) async -> ManagedTask where Failure == Error {
         let task = ManagedTask()
@@ -204,7 +204,7 @@ actor ManagedTask<Success: Sendable, Failure: Error> {
     private init() {}
 
     private func run(closure: @escaping @Sendable () async throws -> Success) where Failure == Error {
-        _task = Task {
+        task = Task {
             self.recordStarted()
             let result = try await closure()
             self.recordFinished()
@@ -213,7 +213,7 @@ actor ManagedTask<Success: Sendable, Failure: Error> {
     }
 
     private func run(closure: @escaping @Sendable () async -> Success) where Failure == Never {
-        _task = Task {
+        task = Task {
             self.recordStarted()
             let result = await closure()
             self.recordFinished()
@@ -231,13 +231,13 @@ actor ManagedTask<Success: Sendable, Failure: Error> {
 
     var result: Result<Success, Failure> {
         get async {
-            await _task.result
+            await task.result
         }
     }
 
     var value: Success {
         get async throws {
-            try await _task.value
+            try await task.value
         }
     }
 }

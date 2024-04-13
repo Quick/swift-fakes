@@ -32,6 +32,7 @@ extension Spy {
 
     /// Update the pendable Spy's stub to be in a pending state.
     public func stubPending<Wrapped>() where Returning == Pendable<Optional<Wrapped>> {
+        // swiftlint:disable:previous syntactic_sugar
         self.stub(.pending(fallback: nil))
     }
 
