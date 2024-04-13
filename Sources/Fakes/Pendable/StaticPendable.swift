@@ -45,7 +45,7 @@ public final class PendableDefaults: @unchecked Sendable {
 /// the equivalent of forcing Swift Concurrency to wait until some other function returns.
 /// Which is possible, but incredibly tricky and very prone to deadlocks.
 /// Using a Static value for Pendable enables us to essentially cheat that.
-public enum Pendable<Value> {
+public enum StaticPendable<Value> {
     /// an in-progress call state
     ///
     /// The associated value is a fallback value.
@@ -83,9 +83,9 @@ public enum Pendable<Value> {
     }
 }
 
-public typealias ThrowingPendable<
+public typealias ThrowingStaticPendable<
     Success,
     Failure: Error
-> = Pendable<Result<Success, Failure>>
+> = StaticPendable<Result<Success, Failure>>
 
-extension Pendable: Sendable where Value: Sendable {}
+extension StaticPendable: Sendable where Value: Sendable {}

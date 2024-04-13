@@ -45,7 +45,7 @@ final class DynamicPendableTests: XCTestCase {
         let expectation = self.expectation(description: "Autoresolves after the given delay")
 
         let task = Task<Void, Never> {
-            _ = await subject.call(resolveDelay: 0.1)
+            _ = await subject.call(fallbackDelay: 0.1)
             expectation.fulfill()
         }
 

@@ -27,6 +27,11 @@ public final class Spy<Arguments, Returning> {
         self.init(())
     }
 
+    /// Create a Spy that returns nil
+    public convenience init<Wrapped>() where Returning == Optional<Wrapped> {
+        self.init(nil)
+    }
+
     /// Clear out existing call records.
     ///
     /// This removes all previously recorded calls from the spy. It does not otherwise
@@ -75,28 +80,10 @@ extension Spy {
 }
 
 extension Spy {
-    // MARK: - Using DynamicPendable
-
-    public convenience init<Value>(fallbackValue value: Value) where Returning == DynamicPendable<Value> {
-        self.init(.pending(fallback: value))
-    }
-
-    public convenience init() where Returning == DynamicPendable<Void> {
-        self.init(.pending())
-    }
-
     public func resolveStub<Value>(with value: Value) where Returning == DynamicPendable<Value> {
         lock.lock()
         defer { lock.unlock() }
         _stub.resolve(with: value)
-    }
-
-    public func callAsFunction<Value>(_ arguments: Arguments) async -> Value where Returning == DynamicPendable<Value> {
-        await call(arguments).call()
-    }
-
-    public func callAsFunction<Value>() async -> Value where Arguments == Void, Returning == DynamicPendable<Value> {
-        await call(()).call()
     }
 }
 

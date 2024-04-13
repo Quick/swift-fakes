@@ -94,20 +94,20 @@ final class SpyTests: XCTestCase {
         let subject = PendableSpy<Void, Int>(pendingFallback: 1)
 
         await expect {
-            await subject(pendingDelay: 0)
+            await subject(fallbackDelay: 0)
         }.toEventually(equal(1))
 
         subject.stub(finished: 4)
 
         await expect {
-            await subject(pendingDelay: 0)
+            await subject(fallbackDelay: 0)
         }.toEventually(equal(4))
     }
 
     func testPendableTakesNonVoidArguments() async throws {
         let subject = PendableSpy<Int, Void>(finished: ())
 
-        await subject(3, pendingDelay: 0)
+        await subject(3, fallbackDelay: 0)
 
         expect(subject.calls).to(equal([3]))
     }
@@ -116,25 +116,25 @@ final class SpyTests: XCTestCase {
         let subject = ThrowingPendableSpy<Void, Int, TestError>(pendingSuccess: 0)
 
         await expect {
-            try await subject(pendingDelay: 0)
+            try await subject(fallbackDelay: 0)
         }.toEventually(equal(0))
 
         subject.stub(success: 5)
 
         await expect {
-            try await subject(pendingDelay: 0)
+            try await subject(fallbackDelay: 0)
         }.toEventually(equal(5))
 
         subject.stub(failure: TestError.uhOh)
         await expect {
-            try await subject(pendingDelay: 0)
+            try await subject(fallbackDelay: 0)
         }.toEventually(throwError(TestError.uhOh))
     }
 
     func testThrowingPendableTakesNonVoidArguments() async throws {
         let subject = ThrowingPendableSpy<Int, Void, TestError>(success: ())
 
-        try await subject(8, pendingDelay: 0)
+        try await subject(8, fallbackDelay: 0)
 
         expect(subject.calls).to(equal([8]))
     }
@@ -179,13 +179,13 @@ final class SpyTests: XCTestCase {
     }
 }
 
-actor ManagedTask<Success, Failure: Error> {
+actor ManagedTask<Success: Sendable, Failure: Error> {
     var hasStarted = false
     var isFinished = false
 
     var _task: Task<Success, Failure>!
 
-    static func running(closure: @escaping () async throws -> Success) async -> ManagedTask where Failure == Error {
+    static func running(closure: @escaping @Sendable () async throws -> Success) async -> ManagedTask where Failure == Error {
         let task = ManagedTask()
 
         await task.run(closure: closure)
@@ -193,7 +193,7 @@ actor ManagedTask<Success, Failure: Error> {
         return task
     }
 
-    static func running(closure: @escaping () async -> Success) async -> ManagedTask where Failure == Never {
+    static func running(closure: @escaping @Sendable () async -> Success) async -> ManagedTask where Failure == Never {
         let task = ManagedTask()
 
         await task.run(closure: closure)
@@ -203,7 +203,7 @@ actor ManagedTask<Success, Failure: Error> {
 
     private init() {}
 
-    private func run(closure: @escaping () async throws -> Success) where Failure == Error {
+    private func run(closure: @escaping @Sendable () async throws -> Success) where Failure == Error {
         _task = Task {
             self.recordStarted()
             let result = try await closure()
@@ -212,7 +212,7 @@ actor ManagedTask<Success, Failure: Error> {
         }
     }
 
-    private func run(closure: @escaping () async -> Success) where Failure == Never {
+    private func run(closure: @escaping @Sendable () async -> Success) where Failure == Never {
         _task = Task {
             self.recordStarted()
             let result = await closure()

@@ -53,12 +53,12 @@ public final class DynamicPendable<Value: Sendable>: @unchecked Sendable, Resolv
 
     /// Gets the value for the `DynamicPendable`, possibly waiting until it's resolved.
     ///
-    /// - parameter resolveDelay: The amount of time (in seconds) to wait until the call returns
+    /// - parameter fallbackDelay: The amount of time (in seconds) to wait until the call returns
     /// the fallback value. This is only really used when the `DynamicPendable` is in a pending state.
-    public func call(resolveDelay: TimeInterval = PendableDefaults.delay) async -> Value {
+    public func call(fallbackDelay: TimeInterval = PendableDefaults.delay) async -> Value {
         return await withTaskGroup(of: Value.self) { taskGroup in
             taskGroup.addTask { await self.handleCall() }
-            taskGroup.addTask { await self.resolveAfterDelay(resolveDelay) }
+            taskGroup.addTask { await self.resolveAfterDelay(fallbackDelay) }
 
             guard let value = await taskGroup.next() else {
                 fatalError("There were no tasks in the task group. This should not ever happen.")
@@ -131,13 +131,15 @@ public final class DynamicPendable<Value: Sendable>: @unchecked Sendable, Resolv
     }
 }
 
+public typealias ThrowingDynamicPendable<Success, Failure: Error> = DynamicPendable<Result<Success, Failure>>
+
 extension DynamicPendable {
     /// Gets or throws value for the `DynamicPendable`, possibly waiting until it's resolved.
     ///
     /// - parameter resolveDelay: The amount of time (in seconds) to wait until the call returns
     /// the fallback value. This is only really used when the `DynamicPendable` is in a pending state.
     public func call<Success, Failure: Error>(resolveDelay: TimeInterval = PendableDefaults.delay) async throws -> Success where Value == Result<Success, Failure> {
-        try await call(resolveDelay: resolveDelay).get()
+        try await call(fallbackDelay: resolveDelay).get()
     }
 }
 
@@ -152,11 +154,6 @@ extension DynamicPendable {
     /// Creates a new finished `DynamicPendable` pre-resolved  with Void.
     public static func finished() -> DynamicPendable where Value == Void {
         return DynamicPendable.finished(())
-    }
-
-    /// Creates a new finished `DynamicPendable` pre-resolved  with nil.
-    public static func finished<Wrapped>() -> DynamicPendable<Value> where Value == Optional<Wrapped> {
-        return DynamicPendable.finished(nil)
     }
 }
 
