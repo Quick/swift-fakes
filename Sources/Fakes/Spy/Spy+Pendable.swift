@@ -20,6 +20,13 @@ extension Spy {
 }
 
 extension Spy {
+    /// Resolve the pendable Spy's stub with Void
+    public func resolveStub() where Returning == Pendable<Void> {
+        self.resolveStub(with: ())
+    }
+}
+
+extension Spy {
     /// Update the pendable Spy's stub to be in a pending state.
     public func stub<Value>(pendingFallback: Value) where Returning == Pendable<Value> {
         self.stub(.pending(fallback: pendingFallback))
@@ -28,6 +35,12 @@ extension Spy {
     /// Update the pendable Spy's stub to be in a pending state.
     public func stubPending() where Returning == Pendable<Void> {
         self.stub(.pending(fallback: ()))
+    }
+
+    /// Update the pendable Spy's stub to be in a pending state.
+    public func stubPending<Wrapped>() where Returning == Pendable<Optional<Wrapped>> {
+        // swiftlint:disable:previous syntactic_sugar
+        self.stub(.pending(fallback: nil))
     }
 
     /// Update the pendable Spy's stub to return the given value.
@@ -44,31 +57,25 @@ extension Spy {
 }
 
 extension Spy {
-    /// Records the arguments and handles the result according to ``Pendable/resolve(delay:)-hvhg``.
+    /// Records the arguments and handles the result according to ``Pendable/call(fallbackDelay:)``.
     ///
     /// - parameter arguments: The arguments to record.
-    /// - parameter pendingDelay: The amount of seconds to delay if the `Pendable` is .pending before
-    /// returning the `pendingFallback`. If the `Pendable` is .finished, then this value is ignored.
-    ///
-    /// Because of how ``Pendable`` currently works, you must provide a fallback option for when the Pendable is pending.
-    /// Alternatively, you can use the throwing version of `callAsFunction`, which will thorw an error instead of returning the fallback.
+    /// - parameter fallbackDelay: The amount of seconds to delay if the `Pendable` is pending before
+    /// returning its fallback value. If the `Pendable` is finished, then this value is ignored.
     public func callAsFunction<Value>(
         _ arguments: Arguments,
-        pendingDelay: TimeInterval = PendableDefaults.delay
+        fallbackDelay: TimeInterval = PendableDefaults.delay
     ) async -> Value where Returning == Pendable<Value> {
-        return await call(arguments).resolve(delay: pendingDelay)
+        return await call(arguments).call(fallbackDelay: fallbackDelay)
     }
 
-    /// Records that a call was made and handles the result according to ``Pendable/resolve(delay:)-hvhg``.
+    /// Records that a call was made and handles the result according to ``Pendable/call(fallbackDelay:)``.
     ///
-    /// - parameter pendingDelay: The amount of seconds to delay if the `Pendable` is .pending before
-    /// returning the `pendingFallback`. If the `Pendable` is .finished, then this value is ignored.
-    ///
-    /// Because of how ``Pendable`` currently works, you must provide a fallback option for when the Pendable is pending.
-    /// Alternatively, you can use the throwing version of `callAsFunction`, which will thorw an error instead of returning the fallback.
+    /// - parameter fallbackDelay: The amount of seconds to delay if the `Pendable` is pending before
+    /// returning its fallback value. If the `Pendable` is finished, then this value is ignored.
     public func callAsFunction<Value>(
-        pendingDelay: TimeInterval = PendableDefaults.delay
+        fallbackDelay: TimeInterval = PendableDefaults.delay
     ) async -> Value where Arguments == Void, Returning == Pendable<Value> {
-        return await call(()).resolve(delay: pendingDelay)
+        return await call(()).call(fallbackDelay: fallbackDelay)
     }
 }

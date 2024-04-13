@@ -27,6 +27,12 @@ public final class Spy<Arguments, Returning> {
         self.init(())
     }
 
+    /// Create a Spy that returns nil
+    public convenience init<Wrapped>() where Returning == Optional<Wrapped> {
+        // swiftlint:disable:previous syntactic_sugar
+        self.init(nil)
+    }
+
     /// Clear out existing call records.
     ///
     /// This removes all previously recorded calls from the spy. It does not otherwise
@@ -43,6 +49,10 @@ public final class Spy<Arguments, Returning> {
     /// - parameter value: The value to return when `callAsFunction()` is called.
     public func stub(_ value: Returning) {
         lock.lock()
+
+        if let resolvable = _stub as? ResolvableWithFallback {
+            resolvable.resolveWithFallback()
+        }
         _stub = value
         lock.unlock()
     }
@@ -67,6 +77,14 @@ extension Spy {
     /// Records that a call was made and returns the value stubbed in the initializer, or using one of the `stub()` methods.
     public func callAsFunction() -> Returning where Arguments == Void {
         return call(())
+    }
+}
+
+extension Spy {
+    public func resolveStub<Value>(with value: Value) where Returning == Pendable<Value> {
+        lock.lock()
+        defer { lock.unlock() }
+        _stub.resolve(with: value)
     }
 }
 
