@@ -42,14 +42,11 @@ final class PendableTests: XCTestCase {
     func testAutoresolve() async {
         let subject = Pendable<Int>.pending(fallback: 3)
 
-        let expectation = self.expectation(description: "Autoresolves after the given delay")
-
-        let task = Task<Void, Never> {
-            _ = await subject.call(fallbackDelay: 0.1)
-            expectation.fulfill()
+        await waitUntil(timeout: .milliseconds(500)) { done in
+            Task<Void, Never> {
+                _ = await subject.call(fallbackDelay: 0.1)
+                done()
+            }
         }
-
-        await self.fulfillment(of: [expectation], timeout: 1)
-        task.cancel()
     }
 }
