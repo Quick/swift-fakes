@@ -30,6 +30,18 @@ extension Spy {
 }
 
 extension Spy {
+    /// Resolve the pendable Spy's stub with the success value.
+    public func resolveStub<Success: Sendable, Failure: Error>(success: Success) where Returning == ThrowingDynamicPendable<Success, Failure> {
+        self.resolveStub(with: .success(success))
+    }
+
+    /// Resolve the pendable spy's stub with the given error
+    public func resolveStub<Success: Sendable, Failure: Error>(failure: Failure) where Returning == ThrowingDynamicPendable<Success, Failure> {
+        self.resolveStub(with: .failure(failure))
+    }
+}
+
+extension Spy {
     /// Update the pendable Spy's stub to be in a pending state.
     public func stub<Success: Sendable, Failure: Error>(pendingSuccess: Success) where Returning == ThrowingDynamicPendable<Success, Failure> {
         self.stub(.pending(fallback: .success(pendingSuccess)))

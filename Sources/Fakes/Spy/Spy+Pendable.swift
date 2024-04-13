@@ -20,6 +20,13 @@ extension Spy {
 }
 
 extension Spy {
+    /// Resolve the pendable Spy's stub with Void
+    public func resolveStub() where Returning == Pendable<Void> {
+        self.resolveStub(with: ())
+    }
+}
+
+extension Spy {
     /// Update the pendable Spy's stub to be in a pending state.
     public func stub<Value>(pendingFallback: Value) where Returning == Pendable<Value> {
         self.stub(.pending(fallback: pendingFallback))
