@@ -80,7 +80,7 @@ extension Spy {
 }
 
 extension Spy {
-    public func resolveStub<Value>(with value: Value) where Returning == DynamicPendable<Value> {
+    public func resolveStub<Value>(with value: Value) where Returning == Pendable<Value> {
         lock.lock()
         defer { lock.unlock() }
         _stub.resolve(with: value)

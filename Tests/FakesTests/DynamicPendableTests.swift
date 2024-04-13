@@ -4,7 +4,7 @@ import XCTest
 
 final class DynamicPendableTests: XCTestCase {
     func testSingleCall() async {
-        let subject = DynamicPendable<Int>.pending(fallback: 0)
+        let subject = Pendable<Int>.pending(fallback: 0)
 
         async let result = subject.call()
 
@@ -17,7 +17,7 @@ final class DynamicPendableTests: XCTestCase {
     }
 
     func testMultipleCalls() async {
-        let subject = DynamicPendable<Int>.pending(fallback: 0)
+        let subject = Pendable<Int>.pending(fallback: 0)
 
         async let result = withTaskGroup(of: Int.self, returning: [Int].self) { taskGroup in
             for _ in 0..<100 {
@@ -40,7 +40,7 @@ final class DynamicPendableTests: XCTestCase {
     }
 
     func testAutoresolve() async {
-        let subject = DynamicPendable<Int>.pending(fallback: 3)
+        let subject = Pendable<Int>.pending(fallback: 3)
 
         let expectation = self.expectation(description: "Autoresolves after the given delay")
 

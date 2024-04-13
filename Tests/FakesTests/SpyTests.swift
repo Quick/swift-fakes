@@ -150,7 +150,7 @@ final class SpyTests: XCTestCase {
     }
 
     func testDynamicPendable() async {
-        let subject = Spy<Void, DynamicPendable<Void>>()
+        let subject = Spy<Void, Pendable<Void>>()
 
         let managedTask = await ManagedTask<Void, Never>.running {
             await subject()
@@ -164,7 +164,7 @@ final class SpyTests: XCTestCase {
     }
 
     func testDynamicPendableDeinit() async {
-        let subject = Spy<Void, DynamicPendable<Void>>()
+        let subject = Spy<Void, Pendable<Void>>()
 
         let managedTask = await ManagedTask<Void, Never>.running {
             await subject()
@@ -172,7 +172,7 @@ final class SpyTests: XCTestCase {
 
         await expect { await managedTask.hasStarted }.toEventually(beTrue())
 
-        subject.stub(DynamicPendable.pending())
+        subject.stub(Pendable.pending())
         subject.resolveStub(with: ())
 
         await expect { await managedTask.isFinished }.toEventually(beTrue())
