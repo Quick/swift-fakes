@@ -1,6 +1,9 @@
 import Foundation
 
-protocol ResolvableWithFallback {
+/// A way to type-erase Pendable, specifically just for resolving with the fallback.
+///
+/// This is meant to be used by ```Spy``` as part of changing the stub in order to quickly resolve pending calls.
+public protocol ResolvableWithFallback {
     func resolveWithFallback()
 }
 
@@ -131,7 +134,10 @@ public final class Pendable<Value: Sendable>: @unchecked Sendable, ResolvableWit
     }
 }
 
+@available(*, deprecated, renamed: "ThrowingPendable")
 public typealias ThrowingDynamicPendable<Success, Failure: Error> = Pendable<Result<Success, Failure>>
+
+public typealias ThrowingPendable<Success, Failure: Error> = Pendable<Result<Success, Failure>>
 
 extension Pendable {
     /// Gets or throws value for the `Pendable`, possibly waiting until it's resolved.
@@ -162,17 +168,25 @@ extension Pendable {
 extension Pendable {
     /// Creates a new pending `Pendable` with the given fallback value.
     public static func pending(fallback: Value) -> Pendable<Value> {
-        return Pendable(fallbackValue: fallback)
+        Pendable(fallbackValue: fallback)
     }
 
     /// Creates a new pending `Pendable` with a fallback value of Void.
     public static func pending() -> Pendable<Value> where Value == Void {
-        return Pendable(fallbackValue: ())
+        Pendable(fallbackValue: ())
     }
 
     /// Creates a new pending `Pendable` with a fallback value of nil.
     public static func pending<Wrapped>() -> Pendable<Value> where Value == Optional<Wrapped> {
         // swiftlint:disable:previous syntactic_sugar
-        return Pendable(fallbackValue: nil)
+        Pendable(fallbackValue: nil)
+    }
+
+    /// Creatse a new pending `Pendable` with a fallback value of an error.
+    public static func pending<Success>() -> Pendable<Value> where Value == Result<Success, Error> {
+        Pendable(fallbackValue: Result<Success, Error>.failure(PendableDefaultError()))
     }
 }
+
+/// An error that can be used as a default error for ``Pendable`` when returning a `Result<..., Error>`.
+public struct PendableDefaultError: Error, Sendable {}
