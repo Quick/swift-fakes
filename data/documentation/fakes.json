@@ -226,6 +226,18 @@
     },
     {
       "identifiers" : [
+        "doc:\/\/Fakes\/documentation\/Fakes\/ResolvableWithFallback"
+      ],
+      "title" : "Protocols"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/Fakes\/documentation\/Fakes\/PendableDefaultError"
+      ],
+      "title" : "Structures"
+    },
+    {
+      "identifiers" : [
         "doc:\/\/Fakes\/documentation\/Fakes\/beCalled(_:)-7sn1o",
         "doc:\/\/Fakes\/documentation\/Fakes\/beCalled(_:)-82qlg",
         "doc:\/\/Fakes\/documentation\/Fakes\/beCalled(_:times:)-6125c",
@@ -239,6 +251,7 @@
       "identifiers" : [
         "doc:\/\/Fakes\/documentation\/Fakes\/PendableSpy",
         "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingDynamicPendable",
+        "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingPendable",
         "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingPendableSpy",
         "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingSpy"
       ],
@@ -353,6 +366,57 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/pendable"
 },
+"doc://Fakes/documentation/Fakes/PendableDefaultError": {
+  "abstract" : [
+    {
+      "text" : "An error that can be used as a default error for ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " when returning a ",
+      "type" : "text"
+    },
+    {
+      "code" : "Result<..., Error>",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PendableDefaultError"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/PendableDefaultError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PendableDefaultError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PendableDefaultError",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/pendabledefaulterror"
+},
 "doc://Fakes/documentation/Fakes/PendableDefaults": {
   "abstract" : [
     {
@@ -418,6 +482,40 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/pendablespy"
 },
+"doc://Fakes/documentation/Fakes/ResolvableWithFallback": {
+  "abstract" : [
+    {
+      "text" : "A way to type-erase Pendable, specifically just for resolving with the fallback.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ResolvableWithFallback"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/ResolvableWithFallback",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ResolvableWithFallback"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ResolvableWithFallback",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/resolvablewithfallback"
+},
 "doc://Fakes/documentation/Fakes/Spy": {
   "abstract" : [
     {
@@ -456,6 +554,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -482,6 +581,37 @@
   "title" : "ThrowingDynamicPendable",
   "type" : "topic",
   "url" : "\/documentation\/fakes\/throwingdynamicpendable"
+},
+"doc://Fakes/documentation/Fakes/ThrowingPendable": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ThrowingPendable"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingPendable",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ThrowingPendable"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ThrowingPendable",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/throwingpendable"
 },
 "doc://Fakes/documentation/Fakes/ThrowingPendableSpy": {
   "abstract" : [

@@ -277,6 +277,7 @@
   "relationshipsSections" : [
     {
       "identifiers" : [
+        "doc:\/\/Fakes\/documentation\/Fakes\/ResolvableWithFallback",
         "doc:\/\/Fakes\/s8SendableP"
       ],
       "kind" : "relationships",
@@ -314,6 +315,7 @@
         "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/finished()",
         "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/finished(_:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/pending()-1auk9",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/pending()-4kz6d",
         "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/pending()-r0sx",
         "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/pending(fallback:)"
       ],
@@ -940,6 +942,111 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/pendable\/pending()-1auk9"
 },
+"doc://Fakes/documentation/Fakes/Pendable/pending()-4kz6d": {
+  "abstract" : [
+    {
+      "text" : "Creatse a new pending ",
+      "type" : "text"
+    },
+    {
+      "code" : "Pendable",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " with a fallback value of an error.",
+      "type" : "text"
+    }
+  ],
+  "conformance" : {
+    "availabilityPrefix" : [
+      {
+        "text" : "Available when",
+        "type" : "text"
+      }
+    ],
+    "conformancePrefix" : [
+      {
+        "text" : "Conforms when",
+        "type" : "text"
+      }
+    ],
+    "constraints" : [
+      {
+        "code" : "Value",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : " conforms to ",
+        "type" : "text"
+      },
+      {
+        "code" : "Sendable",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : ".",
+        "type" : "text"
+      }
+    ]
+  },
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "pending"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ">() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Fakes8PendableC",
+      "text" : "Pendable"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/pending()-4kz6d",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "pending()",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/pendable\/pending()-4kz6d"
+},
 "doc://Fakes/documentation/Fakes/Pendable/pending()-r0sx": {
   "abstract" : [
     {
@@ -1293,6 +1400,40 @@
   "title" : "resolveWithFallback()",
   "type" : "topic",
   "url" : "\/documentation\/fakes\/pendable\/resolvewithfallback()"
+},
+"doc://Fakes/documentation/Fakes/ResolvableWithFallback": {
+  "abstract" : [
+    {
+      "text" : "A way to type-erase Pendable, specifically just for resolving with the fallback.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ResolvableWithFallback"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/ResolvableWithFallback",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ResolvableWithFallback"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ResolvableWithFallback",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/resolvablewithfallback"
 },
 "doc://Fakes/s8SendableP": {
   "identifier" : "doc:\/\/Fakes\/s8SendableP",

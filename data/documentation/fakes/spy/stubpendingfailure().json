@@ -1,22 +1,30 @@
 {
+  "abstract" : [
+    {
+      "text" : "Update the pendable Spy’s stub to be in a pending state with a default failure value.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/Fakes\/documentation\/Fakes"
+        "doc:\/\/Fakes\/documentation\/Fakes",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy"
       ]
     ]
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingPendableSpy"
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubPendingFailure()"
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:5Fakes19ThrowingPendableSpya",
+    "extendedModule" : "Fakes",
+    "externalID" : "s:5Fakes3SpyC18stubPendingFailureyyAA8PendableCys6ResultOyqd__s5Error_pGGRs_s8SendableRd__lF",
     "fragments" : [
       {
         "kind" : "keyword",
-        "text" : "typealias"
+        "text" : "func"
       },
       {
         "kind" : "text",
@@ -24,7 +32,19 @@
       },
       {
         "kind" : "identifier",
-        "text" : "ThrowingPendableSpy"
+        "text" : "stubPendingFailure"
+      },
+      {
+        "kind" : "text",
+        "text" : "<"
+      },
+      {
+        "kind" : "genericParameter",
+        "text" : "Success"
+      },
+      {
+        "kind" : "text",
+        "text" : ">()"
       }
     ],
     "modules" : [
@@ -32,16 +52,10 @@
         "name" : "Fakes"
       }
     ],
-    "navigatorTitle" : [
-      {
-        "kind" : "identifier",
-        "text" : "ThrowingPendableSpy"
-      }
-    ],
     "role" : "symbol",
-    "roleHeading" : "Type Alias",
-    "symbolKind" : "typealias",
-    "title" : "ThrowingPendableSpy"
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "stubPendingFailure()"
   },
   "primaryContentSections" : [
     {
@@ -56,7 +70,7 @@
           "tokens" : [
             {
               "kind" : "keyword",
-              "text" : "typealias"
+              "text" : "func"
             },
             {
               "kind" : "text",
@@ -64,19 +78,11 @@
             },
             {
               "kind" : "identifier",
-              "text" : "ThrowingPendableSpy"
+              "text" : "stubPendingFailure"
             },
             {
               "kind" : "text",
               "text" : "<"
-            },
-            {
-              "kind" : "genericParameter",
-              "text" : "Arguments"
-            },
-            {
-              "kind" : "text",
-              "text" : ", "
             },
             {
               "kind" : "genericParameter",
@@ -84,59 +90,7 @@
             },
             {
               "kind" : "text",
-              "text" : ", "
-            },
-            {
-              "kind" : "genericParameter",
-              "text" : "Failure"
-            },
-            {
-              "kind" : "text",
-              "text" : "> = "
-            },
-            {
-              "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:5Fakes3SpyC",
-              "text" : "Spy"
-            },
-            {
-              "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Arguments"
-            },
-            {
-              "kind" : "text",
-              "text" : ", "
-            },
-            {
-              "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingPendable",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:5Fakes16ThrowingPendablea",
-              "text" : "ThrowingPendable"
-            },
-            {
-              "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Success"
-            },
-            {
-              "kind" : "text",
-              "text" : ", "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Failure"
-            },
-            {
-              "kind" : "text",
-              "text" : ">> "
+              "text" : ">() "
             },
             {
               "kind" : "keyword",
@@ -148,7 +102,51 @@
             },
             {
               "kind" : "typeIdentifier",
-              "text" : "Failure"
+              "text" : "Returning"
+            },
+            {
+              "kind" : "text",
+              "text" : " == "
+            },
+            {
+              "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:5Fakes8PendableC",
+              "text" : "Pendable"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s6ResultO",
+              "text" : "Result"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Success"
+            },
+            {
+              "kind" : "text",
+              "text" : ", any "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s5ErrorP",
+              "text" : "Error"
+            },
+            {
+              "kind" : "text",
+              "text" : ">>, "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Success"
             },
             {
               "kind" : "text",
@@ -156,8 +154,8 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:s5ErrorP",
-              "text" : "Error"
+              "preciseIdentifier" : "s:s8SendableP",
+              "text" : "Sendable"
             }
           ]
         }
@@ -176,7 +174,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/fakes\/throwingpendablespy"
+        "\/documentation\/fakes\/spy\/stubpendingfailure()"
       ],
       "traits" : [
         {
@@ -209,6 +207,40 @@
   "title" : "Fakes",
   "type" : "topic",
   "url" : "\/documentation\/fakes"
+},
+"doc://Fakes/documentation/Fakes/Pendable": {
+  "abstract" : [
+    {
+      "text" : "Pendable is a safe way to represent the 2 states that an asynchronous call can be in",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Pendable"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Pendable"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Pendable",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/pendable"
 },
 "doc://Fakes/documentation/Fakes/Spy": {
   "abstract" : [
@@ -244,14 +276,17 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy"
 },
-"doc://Fakes/documentation/Fakes/ThrowingPendable": {
+"doc://Fakes/documentation/Fakes/Spy/stubPendingFailure()": {
   "abstract" : [
-
+    {
+      "text" : "Update the pendable Spy’s stub to be in a pending state with a default failure value.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "typealias"
+      "text" : "func"
     },
     {
       "kind" : "text",
@@ -259,52 +294,27 @@
     },
     {
       "kind" : "identifier",
-      "text" : "ThrowingPendable"
-    }
-  ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingPendable",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "ThrowingPendable"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "ThrowingPendable",
-  "type" : "topic",
-  "url" : "\/documentation\/fakes\/throwingpendable"
-},
-"doc://Fakes/documentation/Fakes/ThrowingPendableSpy": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "typealias"
+      "text" : "stubPendingFailure"
     },
     {
       "kind" : "text",
-      "text" : " "
+      "text" : "<"
     },
     {
-      "kind" : "identifier",
-      "text" : "ThrowingPendableSpy"
-    }
-  ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingPendableSpy",
-  "kind" : "symbol",
-  "navigatorTitle" : [
+      "kind" : "genericParameter",
+      "text" : "Success"
+    },
     {
-      "kind" : "identifier",
-      "text" : "ThrowingPendableSpy"
+      "kind" : "text",
+      "text" : ">()"
     }
   ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubPendingFailure()",
+  "kind" : "symbol",
   "role" : "symbol",
-  "title" : "ThrowingPendableSpy",
+  "title" : "stubPendingFailure()",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/throwingpendablespy"
+  "url" : "\/documentation\/fakes\/spy\/stubpendingfailure()"
 }
 }
 }

@@ -8,11 +8,11 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingPendableSpy"
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingPendable"
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:5Fakes19ThrowingPendableSpya",
+    "externalID" : "s:5Fakes16ThrowingPendablea",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -24,7 +24,7 @@
       },
       {
         "kind" : "identifier",
-        "text" : "ThrowingPendableSpy"
+        "text" : "ThrowingPendable"
       }
     ],
     "modules" : [
@@ -35,13 +35,13 @@
     "navigatorTitle" : [
       {
         "kind" : "identifier",
-        "text" : "ThrowingPendableSpy"
+        "text" : "ThrowingPendable"
       }
     ],
     "role" : "symbol",
     "roleHeading" : "Type Alias",
     "symbolKind" : "typealias",
-    "title" : "ThrowingPendableSpy"
+    "title" : "ThrowingPendable"
   },
   "primaryContentSections" : [
     {
@@ -64,19 +64,11 @@
             },
             {
               "kind" : "identifier",
-              "text" : "ThrowingPendableSpy"
+              "text" : "ThrowingPendable"
             },
             {
               "kind" : "text",
               "text" : "<"
-            },
-            {
-              "kind" : "genericParameter",
-              "text" : "Arguments"
-            },
-            {
-              "kind" : "text",
-              "text" : ", "
             },
             {
               "kind" : "genericParameter",
@@ -95,10 +87,10 @@
               "text" : "> = "
             },
             {
-              "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
+              "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:5Fakes3SpyC",
-              "text" : "Spy"
+              "preciseIdentifier" : "s:5Fakes8PendableC",
+              "text" : "Pendable"
             },
             {
               "kind" : "text",
@@ -106,17 +98,8 @@
             },
             {
               "kind" : "typeIdentifier",
-              "text" : "Arguments"
-            },
-            {
-              "kind" : "text",
-              "text" : ", "
-            },
-            {
-              "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingPendable",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:5Fakes16ThrowingPendablea",
-              "text" : "ThrowingPendable"
+              "preciseIdentifier" : "s:s6ResultO",
+              "text" : "Result"
             },
             {
               "kind" : "text",
@@ -176,7 +159,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/fakes\/throwingpendablespy"
+        "\/documentation\/fakes\/throwingpendable"
       ],
       "traits" : [
         {
@@ -210,10 +193,10 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes"
 },
-"doc://Fakes/documentation/Fakes/Spy": {
+"doc://Fakes/documentation/Fakes/Pendable": {
   "abstract" : [
     {
-      "text" : "A Spy is a test double for recording calls to methods, and returning stubbed results.",
+      "text" : "Pendable is a safe way to represent the 2 states that an asynchronous call can be in",
       "type" : "text"
     }
   ],
@@ -228,21 +211,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "Spy"
+      "text" : "Pendable"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "Spy"
+      "text" : "Pendable"
     }
   ],
   "role" : "symbol",
-  "title" : "Spy",
+  "title" : "Pendable",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy"
+  "url" : "\/documentation\/fakes\/pendable"
 },
 "doc://Fakes/documentation/Fakes/ThrowingPendable": {
   "abstract" : [
@@ -274,37 +257,6 @@
   "title" : "ThrowingPendable",
   "type" : "topic",
   "url" : "\/documentation\/fakes\/throwingpendable"
-},
-"doc://Fakes/documentation/Fakes/ThrowingPendableSpy": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "typealias"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "ThrowingPendableSpy"
-    }
-  ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingPendableSpy",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "ThrowingPendableSpy"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "ThrowingPendableSpy",
-  "type" : "topic",
-  "url" : "\/documentation\/fakes\/throwingpendablespy"
 }
 }
 }

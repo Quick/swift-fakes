@@ -2,21 +2,23 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/Fakes\/documentation\/Fakes"
+        "doc:\/\/Fakes\/documentation\/Fakes",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy"
       ]
     ]
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingPendableSpy"
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/record(_:)"
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:5Fakes19ThrowingPendableSpya",
+    "extendedModule" : "Fakes",
+    "externalID" : "s:5Fakes3SpyC6recordyyqd__Yas6ResultOy7ElementQyd__s5Error_pGRszytRs_SciRd__lF",
     "fragments" : [
       {
         "kind" : "keyword",
-        "text" : "typealias"
+        "text" : "func"
       },
       {
         "kind" : "text",
@@ -24,7 +26,31 @@
       },
       {
         "kind" : "identifier",
-        "text" : "ThrowingPendableSpy"
+        "text" : "record"
+      },
+      {
+        "kind" : "text",
+        "text" : "<"
+      },
+      {
+        "kind" : "genericParameter",
+        "text" : "AS"
+      },
+      {
+        "kind" : "text",
+        "text" : ">("
+      },
+      {
+        "kind" : "typeIdentifier",
+        "text" : "AS"
+      },
+      {
+        "kind" : "text",
+        "text" : ") "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "async"
       }
     ],
     "modules" : [
@@ -32,16 +58,10 @@
         "name" : "Fakes"
       }
     ],
-    "navigatorTitle" : [
-      {
-        "kind" : "identifier",
-        "text" : "ThrowingPendableSpy"
-      }
-    ],
     "role" : "symbol",
-    "roleHeading" : "Type Alias",
-    "symbolKind" : "typealias",
-    "title" : "ThrowingPendableSpy"
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "record(_:)"
   },
   "primaryContentSections" : [
     {
@@ -56,7 +76,7 @@
           "tokens" : [
             {
               "kind" : "keyword",
-              "text" : "typealias"
+              "text" : "func"
             },
             {
               "kind" : "text",
@@ -64,7 +84,7 @@
             },
             {
               "kind" : "identifier",
-              "text" : "ThrowingPendableSpy"
+              "text" : "record"
             },
             {
               "kind" : "text",
@@ -72,71 +92,43 @@
             },
             {
               "kind" : "genericParameter",
-              "text" : "Arguments"
+              "text" : "AS"
             },
             {
               "kind" : "text",
-              "text" : ", "
+              "text" : ">("
             },
             {
-              "kind" : "genericParameter",
-              "text" : "Success"
-            },
-            {
-              "kind" : "text",
-              "text" : ", "
-            },
-            {
-              "kind" : "genericParameter",
-              "text" : "Failure"
+              "kind" : "externalParam",
+              "text" : "_"
             },
             {
               "kind" : "text",
-              "text" : "> = "
+              "text" : " "
             },
             {
-              "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:5Fakes3SpyC",
-              "text" : "Spy"
+              "kind" : "internalParam",
+              "text" : "sequence"
             },
             {
               "kind" : "text",
-              "text" : "<"
+              "text" : ": "
             },
             {
               "kind" : "typeIdentifier",
-              "text" : "Arguments"
+              "text" : "AS"
             },
             {
               "kind" : "text",
-              "text" : ", "
+              "text" : ") "
             },
             {
-              "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingPendable",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:5Fakes16ThrowingPendablea",
-              "text" : "ThrowingPendable"
-            },
-            {
-              "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Success"
+              "kind" : "keyword",
+              "text" : "async"
             },
             {
               "kind" : "text",
-              "text" : ", "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Failure"
-            },
-            {
-              "kind" : "text",
-              "text" : ">> "
+              "text" : " "
             },
             {
               "kind" : "keyword",
@@ -148,7 +140,58 @@
             },
             {
               "kind" : "typeIdentifier",
-              "text" : "Failure"
+              "text" : "Arguments"
+            },
+            {
+              "kind" : "text",
+              "text" : " == "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s6ResultO",
+              "text" : "Result"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "AS"
+            },
+            {
+              "kind" : "text",
+              "text" : "."
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Sci7ElementQa",
+              "text" : "Element"
+            },
+            {
+              "kind" : "text",
+              "text" : ", any "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s5ErrorP",
+              "text" : "Error"
+            },
+            {
+              "kind" : "text",
+              "text" : ">, "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Returning"
+            },
+            {
+              "kind" : "text",
+              "text" : " == (), "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "AS"
             },
             {
               "kind" : "text",
@@ -156,8 +199,8 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:s5ErrorP",
-              "text" : "Error"
+              "preciseIdentifier" : "s:Sci",
+              "text" : "AsyncSequence"
             }
           ]
         }
@@ -176,7 +219,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/fakes\/throwingpendablespy"
+        "\/documentation\/fakes\/spy\/record(_:)"
       ],
       "traits" : [
         {
@@ -244,14 +287,14 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy"
 },
-"doc://Fakes/documentation/Fakes/ThrowingPendable": {
+"doc://Fakes/documentation/Fakes/Spy/record(_:)": {
   "abstract" : [
 
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "typealias"
+      "text" : "func"
     },
     {
       "kind" : "text",
@@ -259,52 +302,39 @@
     },
     {
       "kind" : "identifier",
-      "text" : "ThrowingPendable"
-    }
-  ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingPendable",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "ThrowingPendable"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "ThrowingPendable",
-  "type" : "topic",
-  "url" : "\/documentation\/fakes\/throwingpendable"
-},
-"doc://Fakes/documentation/Fakes/ThrowingPendableSpy": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "typealias"
+      "text" : "record"
     },
     {
       "kind" : "text",
-      "text" : " "
+      "text" : "<"
     },
     {
-      "kind" : "identifier",
-      "text" : "ThrowingPendableSpy"
-    }
-  ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingPendableSpy",
-  "kind" : "symbol",
-  "navigatorTitle" : [
+      "kind" : "genericParameter",
+      "text" : "AS"
+    },
     {
-      "kind" : "identifier",
-      "text" : "ThrowingPendableSpy"
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "AS"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
     }
   ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/record(_:)",
+  "kind" : "symbol",
   "role" : "symbol",
-  "title" : "ThrowingPendableSpy",
+  "title" : "record(_:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/throwingpendablespy"
+  "url" : "\/documentation\/fakes\/spy\/record(_:)"
 }
 }
 }

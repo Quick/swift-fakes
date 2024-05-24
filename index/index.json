@@ -102,6 +102,11 @@
                 "type" : "method"
               },
               {
+                "path" : "\/documentation\/fakes\/pendable\/pending()-4kz6d",
+                "title" : "static func pending<Success>() -> Pendable<Value>",
+                "type" : "method"
+              },
+              {
                 "path" : "\/documentation\/fakes\/pendable\/pending()-r0sx",
                 "title" : "static func pending() -> Pendable<Value>",
                 "type" : "method"
@@ -290,6 +295,11 @@
                 "type" : "method"
               },
               {
+                "path" : "\/documentation\/fakes\/spy\/record(_:)",
+                "title" : "func record<AS>(AS) async",
+                "type" : "method"
+              },
+              {
                 "path" : "\/documentation\/fakes\/spy\/resolvestub()",
                 "title" : "func resolveStub()",
                 "type" : "method"
@@ -360,6 +370,11 @@
                 "type" : "method"
               },
               {
+                "path" : "\/documentation\/fakes\/spy\/stubfailure()",
+                "title" : "func stubFailure<Success>()",
+                "type" : "method"
+              },
+              {
                 "path" : "\/documentation\/fakes\/spy\/stubfinished()",
                 "title" : "func stubFinished()",
                 "type" : "method"
@@ -372,6 +387,11 @@
               {
                 "path" : "\/documentation\/fakes\/spy\/stubpending()-7ahk8",
                 "title" : "func stubPending()",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/stubpendingfailure()",
+                "title" : "func stubPendingFailure<Success>()",
                 "type" : "method"
               },
               {
@@ -398,6 +418,57 @@
             "path" : "\/documentation\/fakes\/spy",
             "title" : "Spy",
             "type" : "class"
+          },
+          {
+            "title" : "Protocols",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fakes\/resolvablewithfallback\/resolvewithfallback()",
+                "title" : "func resolveWithFallback()",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/fakes\/resolvablewithfallback",
+            "title" : "ResolvableWithFallback",
+            "type" : "protocol"
+          },
+          {
+            "title" : "Structures",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/fakes\/pendabledefaulterror\/localizeddescription",
+                    "title" : "var localizedDescription: String",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/fakes\/pendabledefaulterror\/error-implementations",
+                "title" : "Error Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/fakes\/pendabledefaulterror",
+            "title" : "PendableDefaultError",
+            "type" : "struct"
           },
           {
             "title" : "Functions",
@@ -445,6 +516,11 @@
           {
             "path" : "\/documentation\/fakes\/throwingdynamicpendable",
             "title" : "ThrowingDynamicPendable",
+            "type" : "typealias"
+          },
+          {
+            "path" : "\/documentation\/fakes\/throwingpendable",
+            "title" : "ThrowingPendable",
             "type" : "typealias"
           },
           {

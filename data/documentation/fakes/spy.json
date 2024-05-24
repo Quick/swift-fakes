@@ -190,6 +190,7 @@
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(fallbackDelay:)-6a8i9",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(fallbackDelay:)-vtvc",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/clearCalls()",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/record(_:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/resolveStub()",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/resolveStub(failure:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/resolveStub(success:)",
@@ -204,9 +205,11 @@
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(pendingSuccess:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(success:)-3l3ax",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(success:)-4ll6u",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubFailure()",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubFinished()",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubPending()-1vapx",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubPending()-7ahk8"
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubPending()-7ahk8",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubPendingFailure()"
       ],
       "title" : "Instance Methods"
     },
@@ -1766,6 +1769,55 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/init(success:)-77rd4"
 },
+"doc://Fakes/documentation/Fakes/Spy/record(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "record"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "AS"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "AS"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/record(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "record(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/record(_:)"
+},
 "doc://Fakes/documentation/Fakes/Spy/resolveStub()": {
   "abstract" : [
     {
@@ -2555,6 +2607,46 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/stub(success:)-4ll6u"
 },
+"doc://Fakes/documentation/Fakes/Spy/stubFailure()": {
+  "abstract" : [
+    {
+      "text" : "Update the throwing pendable Spy’s stub to throw an error.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "stubFailure"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ">()"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubFailure()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "stubFailure()",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/stubfailure()"
+},
 "doc://Fakes/documentation/Fakes/Spy/stubFinished()": {
   "abstract" : [
     {
@@ -2658,6 +2750,46 @@
   "title" : "stubPending()",
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/stubpending()-7ahk8"
+},
+"doc://Fakes/documentation/Fakes/Spy/stubPendingFailure()": {
+  "abstract" : [
+    {
+      "text" : "Update the pendable Spy’s stub to be in a pending state with a default failure value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "stubPendingFailure"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ">()"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubPendingFailure()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "stubPendingFailure()",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/stubpendingfailure()"
 },
 "doc://Fakes/s28CustomDebugStringConvertibleP": {
   "identifier" : "doc:\/\/Fakes\/s28CustomDebugStringConvertibleP",
