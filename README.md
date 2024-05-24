@@ -11,7 +11,7 @@ To use the `Fakes` library in a SwiftPM project, add the following line to the
 dependencies in your `Package.swift` file:
 
 ```swift
-.package(url: "https://github.com/Quick/swift-fakes", from: "0.0.1"),
+.package(url: "https://github.com/Quick/swift-fakes", from: "0.1.1"),
 ```
 
 Include `"Fakes"` as a dependency for your test target:
