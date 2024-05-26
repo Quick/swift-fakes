@@ -184,9 +184,6 @@ extension Pendable {
 
     /// Creatse a new pending `Pendable` with a fallback value of an error.
     public static func pending<Success>() -> Pendable<Value> where Value == Result<Success, Error> {
-        Pendable(fallbackValue: Result<Success, Error>.failure(PendableDefaultError()))
+        Pendable(fallbackValue: Result<Success, Error>.failure(EmptyError()))
     }
 }
-
-/// An error that can be used as a default error for ``Pendable`` when returning a `Result<..., Error>`.
-public struct PendableDefaultError: Error, Sendable {}

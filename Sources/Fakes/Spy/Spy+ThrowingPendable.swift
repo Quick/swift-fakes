@@ -18,6 +18,11 @@ extension Spy {
         self.init(.pending(fallback: .failure(pendingFailure)))
     }
 
+    /// Create a throwing pendable Spy that is pre-stubbed to return a pending that will block for a bit before throwing an error
+    public convenience init<Success: Sendable>() where Returning == ThrowingPendable<Success, Error> {
+        self.init(.pending(fallback: .failure(EmptyError())))
+    }
+
     /// Create a throwing pendable Spy that is pre-stubbed to return a finished & successful value.
     public convenience init<Success: Sendable, Failure: Error>(success: Success) where Returning == ThrowingPendable<Success, Failure> {
         self.init(.finished(.success(success)))
@@ -54,7 +59,7 @@ extension Spy {
 
     /// Update the pendable Spy's stub to be in a pending state with a default failure value.
     public func stubPendingFailure<Success: Sendable>() where Returning == ThrowingPendable<Success, Error> {
-        self.stub(pendingFailure: PendableDefaultError())
+        self.stub(pendingFailure: EmptyError())
     }
 
     /// Update the throwing pendable Spy's stub to be successful, with the given value.
@@ -73,7 +78,7 @@ extension Spy {
 
     /// Update the throwing pendable Spy's stub to throw an error.
     public func stubFailure<Success: Sendable>() where Returning == ThrowingPendable<Success, Error> {
-        self.stub(failure: PendableDefaultError())
+        self.stub(failure: EmptyError())
     }
 }
 

@@ -15,6 +15,10 @@ extension Spy {
     public convenience init<Success, Failure: Error>(failure: Failure) where Returning == Result<Success, Failure> {
         self.init(.failure(failure))
     }
+
+    public convenience init<Success>() where Returning == Result<Success, Error> {
+        self.init(.failure(EmptyError()))
+    }
 }
 
 extension Spy {
