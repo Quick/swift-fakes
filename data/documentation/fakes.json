@@ -232,7 +232,7 @@
     },
     {
       "identifiers" : [
-        "doc:\/\/Fakes\/documentation\/Fakes\/PendableDefaultError"
+        "doc:\/\/Fakes\/documentation\/Fakes\/EmptyError"
       ],
       "title" : "Structures"
     },
@@ -309,6 +309,40 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/dependencyinjection"
 },
+"doc://Fakes/documentation/Fakes/EmptyError": {
+  "abstract" : [
+    {
+      "text" : "An error that can be used as a default error in tests",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "EmptyError"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/EmptyError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "EmptyError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "EmptyError",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/emptyerror"
+},
 "doc://Fakes/documentation/Fakes/NimbleIntegration": {
   "abstract" : [
     {
@@ -365,57 +399,6 @@
   "title" : "Pendable",
   "type" : "topic",
   "url" : "\/documentation\/fakes\/pendable"
-},
-"doc://Fakes/documentation/Fakes/PendableDefaultError": {
-  "abstract" : [
-    {
-      "text" : "An error that can be used as a default error for ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : " when returning a ",
-      "type" : "text"
-    },
-    {
-      "code" : "Result<..., Error>",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "PendableDefaultError"
-    }
-  ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/PendableDefaultError",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "PendableDefaultError"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "PendableDefaultError",
-  "type" : "topic",
-  "url" : "\/documentation\/fakes\/pendabledefaulterror"
 },
 "doc://Fakes/documentation/Fakes/PendableDefaults": {
   "abstract" : [

@@ -1,24 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "An error that can be used as a default error for ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : " when returning a ",
-      "type" : "text"
-    },
-    {
-      "code" : "Result<..., Error>",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "An error that can be used as a default error in tests",
       "type" : "text"
     }
   ],
@@ -31,11 +14,11 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/PendableDefaultError"
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/EmptyError"
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:5Fakes20PendableDefaultErrorV",
+    "externalID" : "s:5Fakes10EmptyErrorV",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -47,7 +30,7 @@
       },
       {
         "kind" : "identifier",
-        "text" : "PendableDefaultError"
+        "text" : "EmptyError"
       }
     ],
     "modules" : [
@@ -58,13 +41,13 @@
     "navigatorTitle" : [
       {
         "kind" : "identifier",
-        "text" : "PendableDefaultError"
+        "text" : "EmptyError"
       }
     ],
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
-    "title" : "PendableDefaultError"
+    "title" : "EmptyError"
   },
   "primaryContentSections" : [
     {
@@ -87,7 +70,7 @@
             },
             {
               "kind" : "identifier",
-              "text" : "PendableDefaultError"
+              "text" : "EmptyError"
             }
           ]
         }
@@ -116,9 +99,15 @@
   ],
   "topicSections" : [
     {
+      "identifiers" : [
+        "doc:\/\/Fakes\/documentation\/Fakes\/EmptyError\/init()"
+      ],
+      "title" : "Initializers"
+    },
+    {
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/Fakes\/documentation\/Fakes\/PendableDefaultError\/Error-Implementations"
+        "doc:\/\/Fakes\/documentation\/Fakes\/EmptyError\/Error-Implementations"
       ],
       "title" : "Default Implementations"
     }
@@ -126,7 +115,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/fakes\/pendabledefaulterror"
+        "\/documentation\/fakes\/emptyerror"
       ],
       "traits" : [
         {
@@ -160,61 +149,10 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes"
 },
-"doc://Fakes/documentation/Fakes/Pendable": {
+"doc://Fakes/documentation/Fakes/EmptyError": {
   "abstract" : [
     {
-      "text" : "Pendable is a safe way to represent the 2 states that an asynchronous call can be in",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "class"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Pendable"
-    }
-  ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Pendable"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Pendable",
-  "type" : "topic",
-  "url" : "\/documentation\/fakes\/pendable"
-},
-"doc://Fakes/documentation/Fakes/PendableDefaultError": {
-  "abstract" : [
-    {
-      "text" : "An error that can be used as a default error for ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : " when returning a ",
-      "type" : "text"
-    },
-    {
-      "code" : "Result<..., Error>",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "An error that can be used as a default error in tests",
       "type" : "text"
     }
   ],
@@ -229,32 +167,53 @@
     },
     {
       "kind" : "identifier",
-      "text" : "PendableDefaultError"
+      "text" : "EmptyError"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/PendableDefaultError",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/EmptyError",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "PendableDefaultError"
+      "text" : "EmptyError"
     }
   ],
   "role" : "symbol",
-  "title" : "PendableDefaultError",
+  "title" : "EmptyError",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/pendabledefaulterror"
+  "url" : "\/documentation\/fakes\/emptyerror"
 },
-"doc://Fakes/documentation/Fakes/PendableDefaultError/Error-Implementations": {
+"doc://Fakes/documentation/Fakes/EmptyError/Error-Implementations": {
   "abstract" : [
 
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/PendableDefaultError\/Error-Implementations",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/EmptyError\/Error-Implementations",
   "kind" : "article",
   "role" : "collectionGroup",
   "title" : "Error Implementations",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/pendabledefaulterror\/error-implementations"
+  "url" : "\/documentation\/fakes\/emptyerror\/error-implementations"
+},
+"doc://Fakes/documentation/Fakes/EmptyError/init()": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/EmptyError\/init()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init()",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/emptyerror\/init()"
 },
 "doc://Fakes/s5ErrorP": {
   "identifier" : "doc:\/\/Fakes\/s5ErrorP",

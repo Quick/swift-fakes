@@ -167,6 +167,11 @@
                 "type" : "groupMarker"
               },
               {
+                "path" : "\/documentation\/fakes\/spy\/init()-1aex8",
+                "title" : "convenience init<Success>()",
+                "type" : "init"
+              },
+              {
                 "path" : "\/documentation\/fakes\/spy\/init()-1ubn6",
                 "title" : "convenience init<Wrapped>()",
                 "type" : "init"
@@ -189,6 +194,11 @@
               {
                 "path" : "\/documentation\/fakes\/spy\/init()-7qiku",
                 "title" : "convenience init<Failure>()",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/init()-8syro",
+                "title" : "convenience init<Success>()",
                 "type" : "init"
               },
               {
@@ -446,6 +456,15 @@
           {
             "children" : [
               {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fakes\/emptyerror\/init()",
+                "title" : "init()",
+                "type" : "init"
+              },
+              {
                 "title" : "Default Implementations",
                 "type" : "groupMarker"
               },
@@ -456,18 +475,18 @@
                     "type" : "groupMarker"
                   },
                   {
-                    "path" : "\/documentation\/fakes\/pendabledefaulterror\/localizeddescription",
+                    "path" : "\/documentation\/fakes\/emptyerror\/localizeddescription",
                     "title" : "var localizedDescription: String",
                     "type" : "property"
                   }
                 ],
-                "path" : "\/documentation\/fakes\/pendabledefaulterror\/error-implementations",
+                "path" : "\/documentation\/fakes\/emptyerror\/error-implementations",
                 "title" : "Error Implementations",
                 "type" : "symbol"
               }
             ],
-            "path" : "\/documentation\/fakes\/pendabledefaulterror",
-            "title" : "PendableDefaultError",
+            "path" : "\/documentation\/fakes\/emptyerror",
+            "title" : "EmptyError",
             "type" : "struct"
           },
           {

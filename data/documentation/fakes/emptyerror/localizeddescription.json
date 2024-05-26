@@ -17,19 +17,19 @@
     "paths" : [
       [
         "doc:\/\/Fakes\/documentation\/Fakes",
-        "doc:\/\/Fakes\/documentation\/Fakes\/PendableDefaultError",
-        "doc:\/\/Fakes\/documentation\/Fakes\/PendableDefaultError\/Error-Implementations"
+        "doc:\/\/Fakes\/documentation\/Fakes\/EmptyError",
+        "doc:\/\/Fakes\/documentation\/Fakes\/EmptyError\/Error-Implementations"
       ]
     ]
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/PendableDefaultError\/localizedDescription"
+    "url" : "doc:\/\/Fakes\/documentation\/Fakes\/EmptyError\/localizedDescription"
   },
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "Swift",
-    "externalID" : "s:s5ErrorP10FoundationE20localizedDescriptionSSvp::SYNTHESIZED::s:5Fakes20PendableDefaultErrorV",
+    "externalID" : "s:s5ErrorP10FoundationE20localizedDescriptionSSvp::SYNTHESIZED::s:5Fakes10EmptyErrorV",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -127,7 +127,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/fakes\/pendabledefaulterror\/localizeddescription"
+        "\/documentation\/fakes\/emptyerror\/localizeddescription"
       ],
       "traits" : [
         {
@@ -161,61 +161,10 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes"
 },
-"doc://Fakes/documentation/Fakes/Pendable": {
+"doc://Fakes/documentation/Fakes/EmptyError": {
   "abstract" : [
     {
-      "text" : "Pendable is a safe way to represent the 2 states that an asynchronous call can be in",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "class"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Pendable"
-    }
-  ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Pendable"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Pendable",
-  "type" : "topic",
-  "url" : "\/documentation\/fakes\/pendable"
-},
-"doc://Fakes/documentation/Fakes/PendableDefaultError": {
-  "abstract" : [
-    {
-      "text" : "An error that can be used as a default error for ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : " when returning a ",
-      "type" : "text"
-    },
-    {
-      "code" : "Result<..., Error>",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "An error that can be used as a default error in tests",
       "type" : "text"
     }
   ],
@@ -230,34 +179,34 @@
     },
     {
       "kind" : "identifier",
-      "text" : "PendableDefaultError"
+      "text" : "EmptyError"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/PendableDefaultError",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/EmptyError",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "PendableDefaultError"
+      "text" : "EmptyError"
     }
   ],
   "role" : "symbol",
-  "title" : "PendableDefaultError",
+  "title" : "EmptyError",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/pendabledefaulterror"
+  "url" : "\/documentation\/fakes\/emptyerror"
 },
-"doc://Fakes/documentation/Fakes/PendableDefaultError/Error-Implementations": {
+"doc://Fakes/documentation/Fakes/EmptyError/Error-Implementations": {
   "abstract" : [
 
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/PendableDefaultError\/Error-Implementations",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/EmptyError\/Error-Implementations",
   "kind" : "article",
   "role" : "collectionGroup",
   "title" : "Error Implementations",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/pendabledefaulterror\/error-implementations"
+  "url" : "\/documentation\/fakes\/emptyerror\/error-implementations"
 },
-"doc://Fakes/documentation/Fakes/PendableDefaultError/localizedDescription": {
+"doc://Fakes/documentation/Fakes/EmptyError/localizedDescription": {
   "abstract" : [
 
   ],
@@ -284,12 +233,12 @@
       "text" : "String"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/PendableDefaultError\/localizedDescription",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/EmptyError\/localizedDescription",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "localizedDescription",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/pendabledefaulterror\/localizeddescription"
+  "url" : "\/documentation\/fakes\/emptyerror\/localizeddescription"
 }
 }
 }

@@ -156,11 +156,13 @@
   "topicSections" : [
     {
       "identifiers" : [
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-1aex8",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-1ubn6",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-3nayo",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-5261",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-5sj5u",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-7qiku",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-8syro",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(_:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(failure:)-2ukew",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(failure:)-3fdug",
@@ -1057,6 +1059,43 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/clearcalls()"
 },
+"doc://Fakes/documentation/Fakes/Spy/init()-1aex8": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "convenience"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ">()"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-1aex8",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init()",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/init()-1aex8"
+},
 "doc://Fakes/documentation/Fakes/Spy/init()-1ubn6": {
   "abstract" : [
     {
@@ -1240,6 +1279,46 @@
   "title" : "init()",
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/init()-7qiku"
+},
+"doc://Fakes/documentation/Fakes/Spy/init()-8syro": {
+  "abstract" : [
+    {
+      "text" : "Create a throwing pendable Spy that is pre-stubbed to return a pending that will block for a bit before throwing an error",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "convenience"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ">()"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-8syro",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init()",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/init()-8syro"
 },
 "doc://Fakes/documentation/Fakes/Spy/init(_:)": {
   "abstract" : [
