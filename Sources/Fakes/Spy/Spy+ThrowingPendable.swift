@@ -1,6 +1,18 @@
 import Foundation
 
-public typealias ThrowingPendableSpy<Arguments, Success, Failure: Error> = Spy<Arguments, ThrowingPendable<Success, Failure>>
+public typealias ThrowingPendableSpy<
+    Arguments,
+    Success,
+    Failure: Error
+> = Spy<
+    Arguments,
+    Pendable<
+        Result<
+            Success,
+            Failure
+        >
+    >
+>
 
 extension Spy {
     /// Create a throwing pendable Spy that is pre-stubbed to return a pending that will block for a bit before returning success.
