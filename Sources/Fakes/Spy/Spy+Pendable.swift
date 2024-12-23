@@ -1,6 +1,12 @@
 import Foundation
 
-public typealias PendableSpy<Arguments, Value> = Spy<Arguments, Pendable<Value>>
+public typealias PendableSpy<
+    Arguments,
+    Value
+> = Spy<
+    Arguments,
+    Pendable<Value>
+>
 
 extension Spy {
     /// Create a pendable Spy that is pre-stubbed to return return a a pending that will block for a bit before returning the fallback value.

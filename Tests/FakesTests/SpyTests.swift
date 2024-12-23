@@ -39,6 +39,44 @@ final class SpyTests: XCTestCase {
         }.to(equal(456))
     }
 
+    func testMultipleStubs() {
+        let subject = Spy<Void, Int>(1, 2, 3)
+
+        expect(subject()).to(equal(1))
+        expect(subject()).to(equal(2))
+        expect(subject()).to(equal(3))
+        expect(subject()).to(equal(3))
+    }
+
+    func testClosureStubs() {
+        let subject = Spy<Int, Int> { $0 }
+
+        expect(subject(1)).to(equal(1))
+        expect(subject(2)).to(equal(2))
+        expect(subject(3)).to(equal(3))
+        expect(subject(10)).to(equal(10))
+    }
+
+    func testReplacingStubs() {
+        let subject = Spy<Void, Int>(5)
+        subject.stub(1, 2, 3)
+
+        expect(subject()).to(equal(1))
+        expect(subject()).to(equal(2))
+        expect(subject()).to(equal(3))
+        expect(subject()).to(equal(3))
+    }
+
+    func testReplacingClosures() {
+        let subject = Spy<Int, Int>(5)
+        subject.stub { $0 }
+
+        expect(subject(1)).to(equal(1))
+        expect(subject(2)).to(equal(2))
+        expect(subject(3)).to(equal(3))
+        expect(subject(10)).to(equal(10))
+    }
+
     func testResult() {
         let subject = Spy<Void, Result<Int, TestError>>(.failure(TestError.uhOh))
 
