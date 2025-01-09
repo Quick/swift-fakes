@@ -57,3 +57,12 @@ jobs:
         if: ${{ needs.filter.outputs.should_skip != 'true' }}
       - run: swift test
         if: ${{ needs.filter.outputs.should_skip != 'true' }}
+
+  swiftpm_android:
+    name: SwiftPM, Android
+    needs: filter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: skiptools/swift-android-action@v2
+
