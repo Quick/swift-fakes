@@ -208,6 +208,7 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Articles",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/Fakes\/documentation\/Fakes\/DependencyInjection",
@@ -217,7 +218,10 @@
       "title" : "Articles"
     },
     {
+      "anchor" : "Classes",
+      "generated" : true,
       "identifiers" : [
+        "doc:\/\/Fakes\/documentation\/Fakes\/DynamicResult",
         "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
         "doc:\/\/Fakes\/documentation\/Fakes\/PendableDefaults",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy"
@@ -225,18 +229,26 @@
       "title" : "Classes"
     },
     {
+      "anchor" : "Protocols",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/Fakes\/documentation\/Fakes\/ResolvableWithFallback"
       ],
       "title" : "Protocols"
     },
     {
+      "anchor" : "Structures",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/Fakes\/documentation\/Fakes\/EmptyError"
+        "doc:\/\/Fakes\/documentation\/Fakes\/EmptyError",
+        "doc:\/\/Fakes\/documentation\/Fakes\/PropertySpy",
+        "doc:\/\/Fakes\/documentation\/Fakes\/SettablePropertySpy"
       ],
       "title" : "Structures"
     },
     {
+      "anchor" : "Functions",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/Fakes\/documentation\/Fakes\/beCalled(_:)-7sn1o",
         "doc:\/\/Fakes\/documentation\/Fakes\/beCalled(_:)-82qlg",
@@ -248,6 +260,8 @@
       "title" : "Functions"
     },
     {
+      "anchor" : "Type-Aliases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/Fakes\/documentation\/Fakes\/PendableSpy",
         "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingDynamicPendable",
@@ -308,6 +322,40 @@
   "title" : "Dependency Injection",
   "type" : "topic",
   "url" : "\/documentation\/fakes\/dependencyinjection"
+},
+"doc://Fakes/documentation/Fakes/DynamicResult": {
+  "abstract" : [
+    {
+      "text" : "A DynamicResult is specifically for mocking out when multiple results for a call can happen.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "DynamicResult"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/DynamicResult",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "DynamicResult"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "DynamicResult",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/dynamicresult"
 },
 "doc://Fakes/documentation/Fakes/EmptyError": {
   "abstract" : [
@@ -465,6 +513,40 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/pendablespy"
 },
+"doc://Fakes/documentation/Fakes/PropertySpy": {
+  "abstract" : [
+    {
+      "text" : "An immutable property spy.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PropertySpy"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/PropertySpy",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PropertySpy"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PropertySpy",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/propertyspy"
+},
 "doc://Fakes/documentation/Fakes/ResolvableWithFallback": {
   "abstract" : [
     {
@@ -498,6 +580,40 @@
   "title" : "ResolvableWithFallback",
   "type" : "topic",
   "url" : "\/documentation\/fakes\/resolvablewithfallback"
+},
+"doc://Fakes/documentation/Fakes/SettablePropertySpy": {
+  "abstract" : [
+    {
+      "text" : "A mutable property spy.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SettablePropertySpy"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/SettablePropertySpy",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SettablePropertySpy"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SettablePropertySpy",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/settablepropertyspy"
 },
 "doc://Fakes/documentation/Fakes/Spy": {
   "abstract" : [

@@ -17,8 +17,7 @@
     "paths" : [
       [
         "doc:\/\/Fakes\/documentation\/Fakes",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/CustomDebugStringConvertible-Implementations"
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy"
       ]
     ]
   },
@@ -191,17 +190,6 @@
   "title" : "Spy",
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy"
-},
-"doc://Fakes/documentation/Fakes/Spy/CustomDebugStringConvertible-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/CustomDebugStringConvertible-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "CustomDebugStringConvertible Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/customdebugstringconvertible-implementations"
 },
 "doc://Fakes/documentation/Fakes/Spy/debugDescription": {
   "abstract" : [

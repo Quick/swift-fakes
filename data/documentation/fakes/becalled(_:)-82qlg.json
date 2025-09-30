@@ -259,6 +259,12 @@
       ]
     },
     {
+      "kind" : "mentions",
+      "mentions" : [
+        "doc:\/\/Fakes\/documentation\/Fakes\/NimbleIntegration"
+      ]
+    },
+    {
       "content" : [
         {
           "anchor" : "discussion",
@@ -444,6 +450,29 @@
   "title" : "Fakes",
   "type" : "topic",
   "url" : "\/documentation\/fakes"
+},
+"doc://Fakes/documentation/Fakes/NimbleIntegration": {
+  "abstract" : [
+    {
+      "text" : "Nimble Matchers to make asserting on ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " significantly nicer.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/NimbleIntegration",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Nimble Integration",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/nimbleintegration"
 },
 "doc://Fakes/documentation/Fakes/Spy": {
   "abstract" : [

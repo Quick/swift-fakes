@@ -278,7 +278,8 @@
     {
       "identifiers" : [
         "doc:\/\/Fakes\/documentation\/Fakes\/ResolvableWithFallback",
-        "doc:\/\/Fakes\/s8SendableP"
+        "doc:\/\/Fakes\/s8SendableP",
+        "doc:\/\/Fakes\/s16SendableMetatypeP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -295,12 +296,16 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/init(fallbackValue:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/call(fallbackDelay:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/call(resolveDelay:)",
@@ -311,6 +316,8 @@
       "title" : "Instance Methods"
     },
     {
+      "anchor" : "Type-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/finished()",
         "doc:\/\/Fakes\/documentation\/Fakes\/Pendable\/finished(_:)",
@@ -1434,6 +1441,11 @@
   "title" : "ResolvableWithFallback",
   "type" : "topic",
   "url" : "\/documentation\/fakes\/resolvablewithfallback"
+},
+"doc://Fakes/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/Fakes\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
 },
 "doc://Fakes/s8SendableP": {
   "identifier" : "doc:\/\/Fakes\/s8SendableP",

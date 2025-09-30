@@ -82,7 +82,8 @@
     {
       "identifiers" : [
         "doc:\/\/Fakes\/s5ErrorP",
-        "doc:\/\/Fakes\/s8SendableP"
+        "doc:\/\/Fakes\/s8SendableP",
+        "doc:\/\/Fakes\/s16SendableMetatypeP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -99,12 +100,15 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/Fakes\/documentation\/Fakes\/EmptyError\/init()"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/Fakes\/documentation\/Fakes\/EmptyError\/Error-Implementations"
@@ -214,6 +218,11 @@
   "title" : "init()",
   "type" : "topic",
   "url" : "\/documentation\/fakes\/emptyerror\/init()"
+},
+"doc://Fakes/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/Fakes\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
 },
 "doc://Fakes/s5ErrorP": {
   "identifier" : "doc:\/\/Fakes\/s5ErrorP",

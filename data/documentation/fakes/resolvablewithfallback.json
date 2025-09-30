@@ -127,6 +127,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/Fakes\/documentation\/Fakes\/ResolvableWithFallback\/resolveWithFallback()"
       ],

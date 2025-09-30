@@ -113,10 +113,19 @@
               "text" : ", "
             },
             {
-              "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingPendable",
+              "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:5Fakes16ThrowingPendablea",
-              "text" : "ThrowingPendable"
+              "preciseIdentifier" : "s:5Fakes8PendableC",
+              "text" : "Pendable"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s6ResultO",
+              "text" : "Result"
             },
             {
               "kind" : "text",
@@ -136,7 +145,7 @@
             },
             {
               "kind" : "text",
-              "text" : ">> "
+              "text" : ">>> "
             },
             {
               "kind" : "keyword",
@@ -210,6 +219,40 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes"
 },
+"doc://Fakes/documentation/Fakes/Pendable": {
+  "abstract" : [
+    {
+      "text" : "Pendable is a safe way to represent the 2 states that an asynchronous call can be in",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Pendable"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Pendable",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Pendable"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Pendable",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/pendable"
+},
 "doc://Fakes/documentation/Fakes/Spy": {
   "abstract" : [
     {
@@ -243,37 +286,6 @@
   "title" : "Spy",
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy"
-},
-"doc://Fakes/documentation/Fakes/ThrowingPendable": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "typealias"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "ThrowingPendable"
-    }
-  ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/ThrowingPendable",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "ThrowingPendable"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "ThrowingPendable",
-  "type" : "topic",
-  "url" : "\/documentation\/fakes\/throwingpendable"
 },
 "doc://Fakes/documentation/Fakes/ThrowingPendableSpy": {
   "abstract" : [

@@ -142,33 +142,6 @@
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "kind" : "parameters",
-      "parameters" : [
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "The success state to set the stub to, returned when ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "callAsFunction",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : " is called.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "success"
-        }
-      ]
     }
   ],
   "schemaVersion" : {

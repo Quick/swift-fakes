@@ -89,7 +89,8 @@
   "relationshipsSections" : [
     {
       "identifiers" : [
-        "doc:\/\/Fakes\/s8SendableP"
+        "doc:\/\/Fakes\/s8SendableP",
+        "doc:\/\/Fakes\/s16SendableMetatypeP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -106,18 +107,24 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/Fakes\/documentation\/Fakes\/PendableDefaults\/init()"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/Fakes\/documentation\/Fakes\/PendableDefaults\/delay-swift.property"
       ],
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Type-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/Fakes\/documentation\/Fakes\/PendableDefaults\/delay-swift.type.property",
         "doc:\/\/Fakes\/documentation\/Fakes\/PendableDefaults\/shared"
@@ -361,6 +368,11 @@
   "title" : "shared",
   "type" : "topic",
   "url" : "\/documentation\/fakes\/pendabledefaults\/shared"
+},
+"doc://Fakes/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/Fakes\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
 },
 "doc://Fakes/s8SendableP": {
   "identifier" : "doc:\/\/Fakes\/s8SendableP",

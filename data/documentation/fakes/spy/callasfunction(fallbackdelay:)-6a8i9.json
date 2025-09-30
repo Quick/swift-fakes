@@ -304,57 +304,6 @@
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "kind" : "parameters",
-      "parameters" : [
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "The amount of seconds to delay if the ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "Pendable",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : " is .pending before",
-                  "type" : "text"
-                },
-                {
-                  "text" : " ",
-                  "type" : "text"
-                },
-                {
-                  "text" : "throwing a ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "PendableInProgressError",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : ". If the ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "Pendable",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : " is .finished, then this value is ignored.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "pendingDelay"
-        }
-      ]
     }
   ],
   "schemaVersion" : {

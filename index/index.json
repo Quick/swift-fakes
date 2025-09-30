@@ -1,4 +1,7 @@
 {
+  "includedArchiveIdentifiers" : [
+    "Fakes"
+  ],
   "interfaceLanguages" : {
     "swift" : [
       {
@@ -41,6 +44,101 @@
           {
             "title" : "Classes",
             "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fakes\/dynamicresult\/init(_:)",
+                "title" : "init((Arguments) -> Returning)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/fakes\/dynamicresult\/init(_:_:)-21oac",
+                "title" : "init(Returning, Returning...)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/fakes\/dynamicresult\/init(_:_:)-9v407",
+                "title" : "init(DynamicResult<Arguments, Returning>.Stub, DynamicResult<Arguments, Returning>.Stub...)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fakes\/dynamicresult\/append(_:)",
+                "title" : "func append((Arguments) -> Returning)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/dynamicresult\/append(_:_:)-1yl8n",
+                "title" : "func append(DynamicResult<Arguments, Returning>.Stub, DynamicResult<Arguments, Returning>.Stub...)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/dynamicresult\/append(_:_:)-9hfgn",
+                "title" : "func append(Returning, Returning...)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/dynamicresult\/call()",
+                "title" : "func call() -> Returning",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/dynamicresult\/call(_:)",
+                "title" : "func call(Arguments) -> Returning",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/dynamicresult\/replace(_:)",
+                "title" : "func replace((Arguments) -> Returning)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/dynamicresult\/replace(_:_:)-1n2jf",
+                "title" : "func replace(Returning, Returning...)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/dynamicresult\/replace(_:_:)-6q607",
+                "title" : "func replace(DynamicResult<Arguments, Returning>.Stub, DynamicResult<Arguments, Returning>.Stub...)",
+                "type" : "method"
+              },
+              {
+                "title" : "Enumerations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Enumeration Cases",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/fakes\/dynamicresult\/stub\/closure(_:)",
+                    "title" : "case closure((Arguments) -> Returning)",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/fakes\/dynamicresult\/stub\/value(_:)",
+                    "title" : "case value(Returning)",
+                    "type" : "case"
+                  }
+                ],
+                "path" : "\/documentation\/fakes\/dynamicresult\/stub",
+                "title" : "DynamicResult.Stub",
+                "type" : "enum"
+              }
+            ],
+            "path" : "\/documentation\/fakes\/dynamicresult",
+            "title" : "DynamicResult",
+            "type" : "class"
           },
           {
             "children" : [
@@ -202,8 +300,23 @@
                 "type" : "init"
               },
               {
-                "path" : "\/documentation\/fakes\/spy\/init(_:)",
-                "title" : "init(Returning)",
+                "path" : "\/documentation\/fakes\/spy\/init(_:)-280o0",
+                "title" : "convenience init<Success, Failure>((Arguments) throws(Failure) -> Success)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/init(_:)-64iyg",
+                "title" : "init((Arguments) -> Returning)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/init(_:_:)-4e8b2",
+                "title" : "init(Returning, Returning...)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/init(_:_:)-9xk14",
+                "title" : "init(Spy<Arguments, Returning>.Stub, Spy<Arguments, Returning>.Stub...)",
                 "type" : "init"
               },
               {
@@ -237,13 +350,13 @@
                 "type" : "init"
               },
               {
-                "path" : "\/documentation\/fakes\/spy\/init(success:)-152xf",
+                "path" : "\/documentation\/fakes\/spy\/init(success:)",
                 "title" : "convenience init<Success, Failure>(success: Success)",
                 "type" : "init"
               },
               {
-                "path" : "\/documentation\/fakes\/spy\/init(success:)-77rd4",
-                "title" : "convenience init<Success, Failure>(success: Success)",
+                "path" : "\/documentation\/fakes\/spy\/init(success:_:)",
+                "title" : "convenience init<Success, Failure>(success: Success, Success...)",
                 "type" : "init"
               },
               {
@@ -256,8 +369,33 @@
                 "type" : "property"
               },
               {
+                "path" : "\/documentation\/fakes\/spy\/wascalled",
+                "title" : "var wasCalled: Bool",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/wasnotcalled",
+                "title" : "var wasNotCalled: Bool",
+                "type" : "property"
+              },
+              {
                 "title" : "Instance Methods",
                 "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/append(_:)",
+                "title" : "func append((Arguments) -> Returning)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/append(_:_:)-5tygp",
+                "title" : "func append(Returning, Returning...)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/append(_:_:)-wxcb",
+                "title" : "func append(Spy<Arguments, Returning>.Stub, Spy<Arguments, Returning>.Stub...)",
+                "type" : "method"
               },
               {
                 "path" : "\/documentation\/fakes\/spy\/callasfunction()-4u31k",
@@ -310,6 +448,11 @@
                 "type" : "method"
               },
               {
+                "path" : "\/documentation\/fakes\/spy\/replace(_:_:)",
+                "title" : "func replace(Spy<Arguments, Returning>.Stub, Spy<Arguments, Returning>.Stub...)",
+                "type" : "method"
+              },
+              {
                 "path" : "\/documentation\/fakes\/spy\/resolvestub()",
                 "title" : "func resolveStub()",
                 "type" : "method"
@@ -335,8 +478,18 @@
                 "type" : "method"
               },
               {
-                "path" : "\/documentation\/fakes\/spy\/stub(_:)",
-                "title" : "func stub(Returning)",
+                "path" : "\/documentation\/fakes\/spy\/stub(_:)-8wmqy",
+                "title" : "func stub((Arguments) -> Returning)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/stub(_:)-8ziej",
+                "title" : "func stub<Success, Failure>((Arguments) throws(Failure) -> Success)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/stub(_:_:)",
+                "title" : "func stub(Returning, Returning...)",
                 "type" : "method"
               },
               {
@@ -370,13 +523,13 @@
                 "type" : "method"
               },
               {
-                "path" : "\/documentation\/fakes\/spy\/stub(success:)-3l3ax",
+                "path" : "\/documentation\/fakes\/spy\/stub(success:)",
                 "title" : "func stub<Success, Failure>(success: Success)",
                 "type" : "method"
               },
               {
-                "path" : "\/documentation\/fakes\/spy\/stub(success:)-4ll6u",
-                "title" : "func stub<Success, Failure>(success: Success)",
+                "path" : "\/documentation\/fakes\/spy\/stub(success:_:)",
+                "title" : "func stub<Success, Failure>(success: Success, Success...)",
                 "type" : "method"
               },
               {
@@ -403,6 +556,50 @@
                 "path" : "\/documentation\/fakes\/spy\/stubpendingfailure()",
                 "title" : "func stubPendingFailure<Success>()",
                 "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/wascalled(matching:)-3c36r",
+                "title" : "func wasCalled(matching: (Arguments) -> Bool) -> Bool",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/wascalled(matching:)-qb1l",
+                "title" : "func wasCalled(matching: [(Arguments) -> Bool]) -> Bool",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/wascalled(times:)",
+                "title" : "func wasCalled(times: Int) -> Bool",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/wascalled(with:)-6elye",
+                "title" : "func wasCalled(with: Arguments) -> Bool",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/wascalled(with:)-94pq2",
+                "title" : "func wasCalled(with: [Arguments]) -> Bool",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/wasmostrecentlycalled(matching:)",
+                "title" : "func wasMostRecentlyCalled(matching: (Arguments) -> Bool) -> Bool",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/wasmostrecentlycalled(with:)",
+                "title" : "func wasMostRecentlyCalled(with: Arguments) -> Bool",
+                "type" : "method"
+              },
+              {
+                "title" : "Type Aliases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fakes\/spy\/stub",
+                "title" : "Spy.Stub",
+                "type" : "typealias"
               },
               {
                 "title" : "Default Implementations",
@@ -490,6 +687,116 @@
             "type" : "struct"
           },
           {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fakes\/propertyspy\/init(_:)",
+                "title" : "init(T)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/fakes\/propertyspy\/init(_:as:)",
+                "title" : "init(T, as: (T) -> U)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fakes\/propertyspy\/mapping",
+                "title" : "let mapping: (T) -> U",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/fakes\/propertyspy\/projectedvalue",
+                "title" : "let projectedValue: Spy<Void, T>",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/fakes\/propertyspy\/wrappedvalue",
+                "title" : "var wrappedValue: U",
+                "type" : "property"
+              }
+            ],
+            "path" : "\/documentation\/fakes\/propertyspy",
+            "title" : "PropertySpy",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Structures",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/fakes\/settablepropertyspy\/projectedvalue-swift.struct\/getter",
+                    "title" : "let getter: Spy<Void, T>",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/fakes\/settablepropertyspy\/projectedvalue-swift.struct\/setter",
+                    "title" : "let setter: Spy<U, Void>",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/fakes\/settablepropertyspy\/projectedvalue-swift.struct",
+                "title" : "SettablePropertySpy.ProjectedValue",
+                "type" : "struct"
+              },
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fakes\/settablepropertyspy\/init(_:)",
+                "title" : "init(T)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/fakes\/settablepropertyspy\/init(_:getmapping:setmapping:)",
+                "title" : "init(T, getMapping: (T) -> U, setMapping: (U) -> T)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/fakes\/settablepropertyspy\/getmapping",
+                "title" : "let getMapping: (T) -> U",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/fakes\/settablepropertyspy\/projectedvalue-swift.property",
+                "title" : "let projectedValue: SettablePropertySpy<T, U>.ProjectedValue",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/fakes\/settablepropertyspy\/setmapping",
+                "title" : "let setMapping: (U) -> T",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/fakes\/settablepropertyspy\/wrappedvalue",
+                "title" : "var wrappedValue: U",
+                "type" : "property"
+              }
+            ],
+            "path" : "\/documentation\/fakes\/settablepropertyspy",
+            "title" : "SettablePropertySpy",
+            "type" : "struct"
+          },
+          {
             "title" : "Functions",
             "type" : "groupMarker"
           },
@@ -562,6 +869,6 @@
   "schemaVersion" : {
     "major" : 0,
     "minor" : 1,
-    "patch" : 1
+    "patch" : 2
   }
 }

@@ -106,6 +106,14 @@
       "kind" : "declarations"
     },
     {
+      "kind" : "mentions",
+      "mentions" : [
+        "doc:\/\/Fakes\/documentation\/Fakes\/VerifyingCallbacks",
+        "doc:\/\/Fakes\/documentation\/Fakes\/NimbleIntegration",
+        "doc:\/\/Fakes\/documentation\/Fakes\/DependencyInjection"
+      ]
+    },
+    {
       "content" : [
         {
           "anchor" : "overview",
@@ -137,8 +145,10 @@
   "relationshipsSections" : [
     {
       "identifiers" : [
+        "doc:\/\/Fakes\/s8CopyableP",
         "doc:\/\/Fakes\/s28CustomDebugStringConvertibleP",
-        "doc:\/\/Fakes\/s8SendableP"
+        "doc:\/\/Fakes\/s8SendableP",
+        "doc:\/\/Fakes\/s16SendableMetatypeP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -155,6 +165,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-1aex8",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-1ubn6",
@@ -163,26 +175,38 @@
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-5sj5u",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-7qiku",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init()-8syro",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(_:)",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(_:)-280o0",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(_:)-64iyg",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(_:_:)-4e8b2",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(_:_:)-9xk14",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(failure:)-2ukew",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(failure:)-3fdug",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(finished:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(pendingFailure:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(pendingFallback:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(pendingSuccess:)",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(success:)-152xf",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(success:)-77rd4"
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(success:)",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(success:_:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/calls"
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/calls",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/wasCalled",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/wasNotCalled"
       ],
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/append(_:)",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/append(_:_:)-5tygp",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/append(_:_:)-wxcb",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction()-4u31k",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction()-kn0o",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(_:)-5bfrl",
@@ -193,29 +217,48 @@
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(fallbackDelay:)-vtvc",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/clearCalls()",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/record(_:)",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/replace(_:_:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/resolveStub()",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/resolveStub(failure:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/resolveStub(success:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/resolveStub(with:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub()",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(_:)",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(_:)-8wmqy",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(_:)-8ziej",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(_:_:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(failure:)-1xoml",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(failure:)-6hm74",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(finished:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(pendingFailure:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(pendingFallback:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(pendingSuccess:)",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(success:)-3l3ax",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(success:)-4ll6u",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(success:)",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(success:_:)",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubFailure()",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubFinished()",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubPending()-1vapx",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubPending()-7ahk8",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubPendingFailure()"
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stubPendingFailure()",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/wasCalled(matching:)-3c36r",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/wasCalled(matching:)-qb1l",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/wasCalled(times:)",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/wasCalled(with:)-6elye",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/wasCalled(with:)-94pq2",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/wasMostRecentlyCalled(matching:)",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/wasMostRecentlyCalled(with:)"
       ],
       "title" : "Instance Methods"
     },
     {
+      "anchor" : "Type-Aliases",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/Stub"
+      ],
+      "title" : "Type Aliases"
+    },
+    {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/CustomDebugStringConvertible-Implementations"
@@ -259,6 +302,43 @@
   "title" : "Fakes",
   "type" : "topic",
   "url" : "\/documentation\/fakes"
+},
+"doc://Fakes/documentation/Fakes/DependencyInjection": {
+  "abstract" : [
+    {
+      "text" : "Providing dependencies instead of reaching out to them.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/DependencyInjection",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Dependency Injection",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/dependencyinjection"
+},
+"doc://Fakes/documentation/Fakes/NimbleIntegration": {
+  "abstract" : [
+    {
+      "text" : "Nimble Matchers to make asserting on ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " significantly nicer.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/NimbleIntegration",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Nimble Integration",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/nimbleintegration"
 },
 "doc://Fakes/documentation/Fakes/Pendable/call(fallbackDelay:)": {
   "abstract" : [
@@ -373,6 +453,233 @@
   "title" : "CustomDebugStringConvertible Implementations",
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/customdebugstringconvertible-implementations"
+},
+"doc://Fakes/documentation/Fakes/Spy/Stub": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Stub"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/Stub",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Stub"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Spy.Stub",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/stub"
+},
+"doc://Fakes/documentation/Fakes/Spy/append(_:)": {
+  "abstract" : [
+    {
+      "text" : "Append the closure to the list of Spy’s stubs",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "append"
+    },
+    {
+      "kind" : "text",
+      "text" : "(("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Returning"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/append(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "append(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/append(_:)"
+},
+"doc://Fakes/documentation/Fakes/Spy/append(_:_:)-5tygp": {
+  "abstract" : [
+    {
+      "text" : "Append the values to the Spy’s stubs",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "append"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Returning"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Returning"
+    },
+    {
+      "kind" : "text",
+      "text" : "...)"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/append(_:_:)-5tygp",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "append(_:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/append(_:_:)-5tygp"
+},
+"doc://Fakes/documentation/Fakes/Spy/append(_:_:)-wxcb": {
+  "abstract" : [
+    {
+      "text" : "Append the stubs to the list of stubs.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "append"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Fakes3SpyC",
+      "text" : "Spy"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Returning"
+    },
+    {
+      "kind" : "text",
+      "text" : ">."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Fakes3SpyC4Stuba",
+      "text" : "Stub"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Fakes3SpyC",
+      "text" : "Spy"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Returning"
+    },
+    {
+      "kind" : "text",
+      "text" : ">."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Fakes3SpyC4Stuba",
+      "text" : "Stub"
+    },
+    {
+      "kind" : "text",
+      "text" : "...)"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/append(_:_:)-wxcb",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "append(_:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/append(_:_:)-wxcb"
 },
 "doc://Fakes/documentation/Fakes/Spy/callAsFunction()-4u31k": {
   "abstract" : [
@@ -1320,10 +1627,124 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/init()-8syro"
 },
-"doc://Fakes/documentation/Fakes/Spy/init(_:)": {
+"doc://Fakes/documentation/Fakes/Spy/init(_:)-280o0": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "convenience"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Failure"
+    },
+    {
+      "kind" : "text",
+      "text" : ">(("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Failure"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(_:)-280o0",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/init(_:)-280o0"
+},
+"doc://Fakes/documentation/Fakes/Spy/init(_:)-64iyg": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "(("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Returning"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(_:)-64iyg",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/init(_:)-64iyg"
+},
+"doc://Fakes/documentation/Fakes/Spy/init(_:_:)-4e8b2": {
   "abstract" : [
     {
-      "text" : "Create a Spy with the given stubbed value.",
+      "text" : "Create a Spy with the given stubbed values.",
       "type" : "text"
     }
   ],
@@ -1342,15 +1763,112 @@
     },
     {
       "kind" : "text",
-      "text" : ")"
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Returning"
+    },
+    {
+      "kind" : "text",
+      "text" : "...)"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(_:)",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(_:_:)-4e8b2",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "init(_:)",
+  "title" : "init(_:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/init(_:)"
+  "url" : "\/documentation\/fakes\/spy\/init(_:_:)-4e8b2"
+},
+"doc://Fakes/documentation/Fakes/Spy/init(_:_:)-9xk14": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Fakes3SpyC",
+      "text" : "Spy"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Returning"
+    },
+    {
+      "kind" : "text",
+      "text" : ">."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Fakes3SpyC4Stuba",
+      "text" : "Stub"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Fakes3SpyC",
+      "text" : "Spy"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Returning"
+    },
+    {
+      "kind" : "text",
+      "text" : ">."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Fakes3SpyC4Stuba",
+      "text" : "Stub"
+    },
+    {
+      "kind" : "text",
+      "text" : "...)"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(_:_:)-9xk14",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(_:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/init(_:_:)-9xk14"
 },
 "doc://Fakes/documentation/Fakes/Spy/init(failure:)-2ukew": {
   "abstract" : [
@@ -1720,7 +2238,7 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/init(pendingsuccess:)"
 },
-"doc://Fakes/documentation/Fakes/Spy/init(success:)-152xf": {
+"doc://Fakes/documentation/Fakes/Spy/init(success:)": {
   "abstract" : [
     {
       "text" : "Create a throwing pendable Spy that is pre-stubbed to return a finished & successful value.",
@@ -1777,17 +2295,17 @@
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(success:)-152xf",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(success:)",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "init(success:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/init(success:)-152xf"
+  "url" : "\/documentation\/fakes\/spy\/init(success:)"
 },
-"doc://Fakes/documentation/Fakes/Spy/init(success:)-77rd4": {
+"doc://Fakes/documentation/Fakes/Spy/init(success:_:)": {
   "abstract" : [
     {
-      "text" : "Create a throwing Spy that is pre-stubbed with some Success value.",
+      "text" : "Create a throwing Spy that is pre-stubbed with some Success values.",
       "type" : "text"
     }
   ],
@@ -1838,15 +2356,23 @@
     },
     {
       "kind" : "text",
-      "text" : ")"
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : "...)"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(success:)-77rd4",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/init(success:_:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "init(success:)",
+  "title" : "init(success:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/init(success:)-77rd4"
+  "url" : "\/documentation\/fakes\/spy\/init(success:_:)"
 },
 "doc://Fakes/documentation/Fakes/Spy/record(_:)": {
   "abstract" : [
@@ -1896,6 +2422,106 @@
   "title" : "record(_:)",
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/record(_:)"
+},
+"doc://Fakes/documentation/Fakes/Spy/replace(_:_:)": {
+  "abstract" : [
+    {
+      "text" : "Replace the Spy’s stubs with the new list of stubs",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "replace"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Fakes3SpyC",
+      "text" : "Spy"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Returning"
+    },
+    {
+      "kind" : "text",
+      "text" : ">."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Fakes3SpyC4Stuba",
+      "text" : "Stub"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Fakes3SpyC",
+      "text" : "Spy"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Returning"
+    },
+    {
+      "kind" : "text",
+      "text" : ">."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:5Fakes3SpyC4Stuba",
+      "text" : "Stub"
+    },
+    {
+      "kind" : "text",
+      "text" : "...)"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/replace(_:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "replace(_:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/replace(_:_:)"
 },
 "doc://Fakes/documentation/Fakes/Spy/resolveStub()": {
   "abstract" : [
@@ -2150,10 +2776,135 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/stub()"
 },
-"doc://Fakes/documentation/Fakes/Spy/stub(_:)": {
+"doc://Fakes/documentation/Fakes/Spy/stub(_:)-8wmqy": {
   "abstract" : [
     {
-      "text" : "Update the Spy’s stub to return the given value.",
+      "text" : "Replaces the Spy’s stubs with the given closure.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "stub"
+    },
+    {
+      "kind" : "text",
+      "text" : "(("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Returning"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(_:)-8wmqy",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "stub(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/stub(_:)-8wmqy"
+},
+"doc://Fakes/documentation/Fakes/Spy/stub(_:)-8ziej": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "stub"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "Failure"
+    },
+    {
+      "kind" : "text",
+      "text" : ">(("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Failure"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(_:)-8ziej",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "stub(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/stub(_:)-8ziej"
+},
+"doc://Fakes/documentation/Fakes/Spy/stub(_:_:)": {
+  "abstract" : [
+    {
+      "text" : "Replaces the Spy’s stubs with the given values.",
       "type" : "text"
     }
   ],
@@ -2180,15 +2931,23 @@
     },
     {
       "kind" : "text",
-      "text" : ")"
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Returning"
+    },
+    {
+      "kind" : "text",
+      "text" : "...)"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(_:)",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(_:_:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "stub(_:)",
+  "title" : "stub(_:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/stub(_:)"
+  "url" : "\/documentation\/fakes\/spy\/stub(_:_:)"
 },
 "doc://Fakes/documentation/Fakes/Spy/stub(failure:)-1xoml": {
   "abstract" : [
@@ -2558,7 +3317,7 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/stub(pendingsuccess:)"
 },
-"doc://Fakes/documentation/Fakes/Spy/stub(success:)-3l3ax": {
+"doc://Fakes/documentation/Fakes/Spy/stub(success:)": {
   "abstract" : [
     {
       "text" : "Update the throwing pendable Spy’s stub to be successful, with the given value.",
@@ -2615,14 +3374,14 @@
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(success:)-3l3ax",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(success:)",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "stub(success:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/stub(success:)-3l3ax"
+  "url" : "\/documentation\/fakes\/spy\/stub(success:)"
 },
-"doc://Fakes/documentation/Fakes/Spy/stub(success:)-4ll6u": {
+"doc://Fakes/documentation/Fakes/Spy/stub(success:_:)": {
   "abstract" : [
     {
       "text" : "Update the throwing Spy’s stub to be successful, with the given value.",
@@ -2676,15 +3435,23 @@
     },
     {
       "kind" : "text",
-      "text" : ")"
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Success"
+    },
+    {
+      "kind" : "text",
+      "text" : "...)"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(success:)-4ll6u",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(success:_:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "stub(success:)",
+  "title" : "stub(success:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/stub(success:)-4ll6u"
+  "url" : "\/documentation\/fakes\/spy\/stub(success:_:)"
 },
 "doc://Fakes/documentation/Fakes/Spy/stubFailure()": {
   "abstract" : [
@@ -2870,9 +3637,514 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/stubpendingfailure()"
 },
+"doc://Fakes/documentation/Fakes/Spy/wasCalled": {
+  "abstract" : [
+    {
+      "text" : "Returns true if this spy has been called at least once.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "wasCalled"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/wasCalled",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "wasCalled",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/wascalled"
+},
+"doc://Fakes/documentation/Fakes/Spy/wasCalled(matching:)-3c36r": {
+  "abstract" : [
+    {
+      "text" : "Returns whether this spy was called at any time with a value that matches the given closure.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "wasCalled"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "matching"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/wasCalled(matching:)-3c36r",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "wasCalled(matching:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/wascalled(matching:)-3c36r"
+},
+"doc://Fakes/documentation/Fakes/Spy/wasCalled(matching:)-qb1l": {
+  "abstract" : [
+    {
+      "text" : "Returns whether this spy was called with values that correspond to the order of closures given.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "wasCalled"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "matching"
+    },
+    {
+      "kind" : "text",
+      "text" : ": [("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : "]) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/wasCalled(matching:)-qb1l",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "wasCalled(matching:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/wascalled(matching:)-qb1l"
+},
+"doc://Fakes/documentation/Fakes/Spy/wasCalled(times:)": {
+  "abstract" : [
+    {
+      "text" : "Returns true if this spy has been called exactly as many times as specified.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "wasCalled"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "times"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/wasCalled(times:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "wasCalled(times:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/wascalled(times:)"
+},
+"doc://Fakes/documentation/Fakes/Spy/wasCalled(with:)-6elye": {
+  "abstract" : [
+    {
+      "text" : "Returns whether this spy called at any time with the given value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "wasCalled"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "with"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/wasCalled(with:)-6elye",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "wasCalled(with:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/wascalled(with:)-6elye"
+},
+"doc://Fakes/documentation/Fakes/Spy/wasCalled(with:)-94pq2": {
+  "abstract" : [
+    {
+      "text" : "Returns whether this spy called with precisely these values, in this order.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "wasCalled"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "with"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : "]) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/wasCalled(with:)-94pq2",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "wasCalled(with:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/wascalled(with:)-94pq2"
+},
+"doc://Fakes/documentation/Fakes/Spy/wasMostRecentlyCalled(matching:)": {
+  "abstract" : [
+    {
+      "text" : "Returns whether the most recent call to the spy matches the given closure.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "wasMostRecentlyCalled"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "matching"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/wasMostRecentlyCalled(matching:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "wasMostRecentlyCalled(matching:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/wasmostrecentlycalled(matching:)"
+},
+"doc://Fakes/documentation/Fakes/Spy/wasMostRecentlyCalled(with:)": {
+  "abstract" : [
+    {
+      "text" : "Returns whether the most recent call to the spy equals the given value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "wasMostRecentlyCalled"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "with"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Arguments"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/wasMostRecentlyCalled(with:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "wasMostRecentlyCalled(with:)",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/wasmostrecentlycalled(with:)"
+},
+"doc://Fakes/documentation/Fakes/Spy/wasNotCalled": {
+  "abstract" : [
+    {
+      "text" : "Returns true if this spy has not been called.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "wasNotCalled"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/wasNotCalled",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "wasNotCalled",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/spy\/wasnotcalled"
+},
+"doc://Fakes/documentation/Fakes/VerifyingCallbacks": {
+  "abstract" : [
+    {
+      "text" : "When testing a method that calls a callback, how do you verify that the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "callback actually works?",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/VerifyingCallbacks",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Verifying Callbacks and Faking DispatchQueue",
+  "type" : "topic",
+  "url" : "\/documentation\/fakes\/verifyingcallbacks"
+},
+"doc://Fakes/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/Fakes\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
+},
 "doc://Fakes/s28CustomDebugStringConvertibleP": {
   "identifier" : "doc:\/\/Fakes\/s28CustomDebugStringConvertibleP",
   "title" : "Swift.CustomDebugStringConvertible",
+  "type" : "unresolvable"
+},
+"doc://Fakes/s8CopyableP": {
+  "identifier" : "doc:\/\/Fakes\/s8CopyableP",
+  "title" : "Swift.Copyable",
   "type" : "unresolvable"
 },
 "doc://Fakes/s8SendableP": {

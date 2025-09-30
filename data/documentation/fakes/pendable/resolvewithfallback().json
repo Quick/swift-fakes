@@ -129,9 +129,8 @@
                   "type" : "text"
                 },
                 {
-                  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(_:)",
-                  "isActive" : true,
-                  "type" : "reference"
+                  "code" : "Spy\/stub(_:)",
+                  "type" : "codeVoice"
                 }
               ],
               "type" : "paragraph"
@@ -263,46 +262,6 @@
   "title" : "resolveWithFallback()",
   "type" : "topic",
   "url" : "\/documentation\/fakes\/pendable\/resolvewithfallback()"
-},
-"doc://Fakes/documentation/Fakes/Spy/stub(_:)": {
-  "abstract" : [
-    {
-      "text" : "Update the Spy’s stub to return the given value.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "stub"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Returning"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
-    }
-  ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/stub(_:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "stub(_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/stub(_:)"
 }
 }
 }

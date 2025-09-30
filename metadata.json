@@ -1,6 +1,6 @@
 {
   "bundleDisplayName" : "Fakes",
-  "bundleIdentifier" : "Fakes",
+  "bundleID" : "Fakes",
   "schemaVersion" : {
     "major" : 0,
     "minor" : 1,

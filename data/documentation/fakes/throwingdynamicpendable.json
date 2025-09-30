@@ -39,7 +39,12 @@
       }
     ],
     "platforms" : [
-
+      {
+        "beta" : false,
+        "deprecated" : true,
+        "renamed" : "ThrowingPendable",
+        "unavailable" : false
+      }
     ],
     "role" : "symbol",
     "roleHeading" : "Type Alias",
