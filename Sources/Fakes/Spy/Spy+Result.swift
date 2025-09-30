@@ -20,27 +20,17 @@ extension Spy {
         self.init(.failure(EmptyError()))
     }
 
-#if swift(>=6.0)
     public convenience init<Success, Failure: Error>(_ closure: @escaping @Sendable (Arguments) throws(Failure) -> Success) where Returning == Result<Success, Failure> {
         self.init { args in
             do {
                 return .success(try closure(args))
-            } catch let error {
+            } catch let error as Failure {
                 return .failure(error)
+            } catch let error {
+                fatalError("closure was typed to throw only errors of type \(Failure.self), got \(error). This shouldn't happen.")
             }
         }
     }
-#else
-    public convenience init<Success>(_ closure: @escaping @Sendable (Arguments) throws -> Success) where Returning == Result<Success, Swift.Error> {
-        self.init { args in
-            do {
-                return .success(try closure(args))
-            } catch let error {
-                return .failure(error)
-            }
-        }
-    }
-#endif
 }
 
 extension Spy {
@@ -65,27 +55,17 @@ extension Spy {
         self.stub(.failure(failure))
     }
 
-#if swift(>=6.0)
     public func stub<Success, Failure: Error>(_ closure: @escaping @Sendable (Arguments) throws(Failure) -> Success) where Returning == Result<Success, Failure> {
         self.stub { args in
             do {
                 return .success(try closure(args))
-            } catch let error {
+            } catch let error as Failure {
                 return .failure(error)
+            } catch let error {
+                fatalError("closure was typed to throw only errors of type \(Failure.self), got \(error). This shouldn't happen.")
             }
         }
     }
-#else
-    public func stub<Success>(_ closure: @escaping @Sendable (Arguments) throws -> Success) where Returning == Result<Success, Swift.Error> {
-        self.stub { args in
-            do {
-                return .success(try closure(args))
-            } catch let error {
-                return .failure(error)
-            }
-        }
-    }
-#endif
 }
 
 extension Spy {
