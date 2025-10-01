@@ -65,7 +65,7 @@ extension Spy {
     }
 
     /// Returns whether the most recent call to the spy matches the given closure.
-    public func wasMostRecentlyCalled(matching matcher: (Arguments) -> Bool) -> Bool where Arguments: Equatable {
+    public func wasMostRecentlyCalled(matching matcher: (Arguments) -> Bool) -> Bool {
         guard let lastCall = calls.last else { return false }
         return matcher(lastCall)
     }
