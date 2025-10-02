@@ -20,20 +20,29 @@ struct SpyTestHelpersTest {
 
     @Test func wasCalledWithArguments() {
         let spy = Spy<Int, Void>()
+        let otherSpy = Spy<ANonEquatable, Void>()
 
         spy(3)
+        otherSpy(ANonEquatable(value: 3))
         #expect(spy.wasCalled(with: 3))
         #expect(spy.wasCalled(with: 2) == false)
 
         #expect(spy.wasCalled(matching: { $0 == 3 }))
         #expect(spy.wasCalled(matching: { $0 == 2 }) == false)
 
+        #expect(otherSpy.wasCalled(matching: { $0.value == 3 }))
+        #expect(otherSpy.wasCalled(matching: { $0.value == 2 }) == false)
+
         spy(4)
+        otherSpy(ANonEquatable(value: 4))
         #expect(spy.wasCalled(with: 3))
         #expect(spy.wasCalled(matching: { $0 == 3 }))
 
         #expect(spy.wasCalled(with: 4))
         #expect(spy.wasCalled(matching: { $0 == 4 }))
+
+        #expect(otherSpy.wasCalled(matching: { $0.value == 4 }))
+        #expect(otherSpy.wasCalled(matching: { $0.value == 3 }))
     }
 
     @Test func wasCalledWithTimes() {
@@ -56,16 +65,19 @@ struct SpyTestHelpersTest {
 
     @Test func wasCalledWithMultipleArgumentsAndTimes() {
         let spy = Spy<Int, Void>()
+        let otherSpy = Spy<ANonEquatable, Void>()
 
         spy(1)
+        otherSpy(ANonEquatable(value: 1))
         spy(3)
+        otherSpy(ANonEquatable(value: 3))
 
         #expect(spy.wasCalled(with: [1, 3]))
         #expect(spy.wasCalled(with: [3, 1]) == false) // order matters
 
         #expect(spy.wasCalled(
             matching: [
-                { $0 == 1},
+                { $0 == 1 },
                 { $0 == 3 }
             ]
         ))
@@ -75,24 +87,49 @@ struct SpyTestHelpersTest {
                 { $0 == 1 }
             ]
         ) == false)
+
+        #expect(otherSpy.wasCalled(
+            matching: [
+                { $0.value == 1 },
+                { $0.value == 3 }
+            ]
+        ))
+        #expect(otherSpy.wasCalled(
+            matching: [
+                { $0.value == 3 },
+                { $0.value == 1 }
+            ]
+        ) == false)
     }
 
     @Test func testMostRecentlyBeCalled() {
         let spy = Spy<Int, Void>()
+        let otherSpy = Spy<ANonEquatable, Void>()
 
         spy(1)
+        otherSpy(ANonEquatable(value: 1))
         #expect(spy.wasMostRecentlyCalled(with: 1))
         #expect(spy.wasMostRecentlyCalled(with: 2) == false)
 
         #expect(spy.wasMostRecentlyCalled(matching: { $0 == 1}))
         #expect(spy.wasMostRecentlyCalled(matching: { $0 == 2}) == false)
 
+        #expect(otherSpy.wasMostRecentlyCalled(matching: { $0.value == 1}))
+        #expect(otherSpy.wasMostRecentlyCalled(matching: { $0.value == 2}) == false)
+
         spy(2)
+        otherSpy(ANonEquatable(value: 2))
         #expect(spy.wasMostRecentlyCalled(with: 1) == false)
         #expect(spy.wasMostRecentlyCalled(with: 2))
 
         #expect(spy.wasMostRecentlyCalled(matching: { $0 == 1}) == false)
         #expect(spy.wasMostRecentlyCalled(matching: { $0 == 2}))
+
+        #expect(otherSpy.wasMostRecentlyCalled(matching: { $0.value == 1}) == false)
+        #expect(otherSpy.wasMostRecentlyCalled(matching: { $0.value == 2}))
     }
 }
 
+struct ANonEquatable {
+    let value: Int
+}
