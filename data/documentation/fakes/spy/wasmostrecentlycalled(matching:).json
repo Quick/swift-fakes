@@ -20,7 +20,7 @@
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "Fakes",
-    "externalID" : "s:5Fakes3SpyC21wasMostRecentlyCalled8matchingS2bxXE_tSQRzrlF",
+    "externalID" : "s:5Fakes3SpyC21wasMostRecentlyCalled8matchingS2bxXE_tF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -143,31 +143,6 @@
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:Sb",
               "text" : "Bool"
-            },
-            {
-              "kind" : "text",
-              "text" : " "
-            },
-            {
-              "kind" : "keyword",
-              "text" : "where"
-            },
-            {
-              "kind" : "text",
-              "text" : " "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Arguments"
-            },
-            {
-              "kind" : "text",
-              "text" : " : "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:SQ",
-              "text" : "Equatable"
             }
           ]
         }
