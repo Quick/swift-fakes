@@ -216,7 +216,7 @@ that, because it now has logic in it, we have to [write tests for that logic](ht
 Otherwise, we have no idea if a test failure is caused by something
 in the production code, or something in `FakeDispatchQueue`.
 
-Some tests that verify thet entire API for `FakeDispatchQueue` look like this:
+Some tests that verify the entire API for `FakeDispatchQueue` look like this:
 
 ```swift
 final class FakeDispatchQueueTests: XCTestCase {

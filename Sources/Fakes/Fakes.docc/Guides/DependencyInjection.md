@@ -199,7 +199,7 @@ final class GreetingForTimeOfDayTests: XCTestCase {
 }
 ```
 
-> Note: Annoyed at the setup and act repitition? Check out
+> Note: Annoyed at the setup and act repetition? Check out
 [Quick](https://github.com/Quick/Quick/)! It provides a simple DSL enabling
 powerful test simplifications.
 
