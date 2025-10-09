@@ -18,14 +18,14 @@
                 This is a protocol for a `URLSession`-like object that can make
                 various network requests.
                                 
-                @Code(name: "NetworkInterface", file: "NetworkInterface-01.swift")
+                @Code(name: "NetworkInterface.swift", file: "NetworkInterface-01.swift")
             }
             
             @Step {
                 Given this `NetworkInterface`, you might write `RecipeService`
                 like so:
                 
-                @Code(name: "RecipeService", file: "RecipeService-01.swift")
+                @Code(name: "RecipeService.swift", file: "RecipeService-01.swift")
             }
             
             @Step {
@@ -41,7 +41,7 @@
                 <doc:DependencyInjection>) to your Subject. You decide to come up with this
                 first attempt at `FakeNetworkInterface`.
                 
-                @Code(name: "FakeNetworkInterface", file: "FakeNetworkInterface-01.swift")
+                @Code(name: "FakeNetworkInterface.swift", file: "FakeNetworkInterface-01.swift")
             }
             
             @Step {
@@ -50,14 +50,14 @@
                 used. This is where ``Spy`` comes in. Let's rewrite `FakeNetworkInterface` using
                 ``Spy``.
                 
-                @Code(name: "FakeNetworkInterface", file: "FakeNetworkInterface-02.swift")
+                @Code(name: "FakeNetworkInterface.swift", file: "FakeNetworkInterface-02.swift")
             }
             
             @Step {
                 This is the start of everything we need to write tests for
                 `RecipeService`, so let's do just that.
                 
-                @Code(name: "RecipeServiceTests", file: "RecipeServiceTests-01.swift")
+                @Code(name: "RecipeServiceTests.swift", file: "RecipeServiceTests-01.swift")
             }
         }
     }
@@ -74,7 +74,7 @@
             @Step {
                 First, let's start with updating `NetworkInterface`.
                 
-                @Code(name: "NetworkInterface", file: "NetworkInterface-02.swift")
+                @Code(name: "NetworkInterface.swift", file: "NetworkInterface-02.swift")
             }
             
             @Step {
@@ -82,7 +82,7 @@
                 `RecipeService` to handle these new errors. For our purposes,
                 let's just rethrow the errors and not do anything.
                 
-                @Code(name: "RecipeService", file: "RecipeService-02.swift")
+                @Code(name: "RecipeService.swift", file: "RecipeService-02.swift")
             }
             
             @Step {
@@ -94,7 +94,7 @@
                 `ThrowingSpy` is less boilerplate, and therefore easier to
                 understand, so we'll go with that.
                 
-                @Code(name: "FakeNetworkInterface", file: "FakeNetworkInterface-03.swift")
+                @Code(name: "FakeNetworkInterface.swift", file: "FakeNetworkInterface-03.swift")
             }
             
             @Step {
@@ -104,7 +104,7 @@
                 that we're not crashing on errors. A downstream object might
                 take the error and present an alert with a retry option.
                 
-                @Code(name: "RecipeServiceTests", file: "RecipeServiceTests-02.swift")
+                @Code(name: "RecipeServiceTests.swift", file: "RecipeServiceTests-02.swift")
             }
         }
     }
@@ -125,7 +125,7 @@
                 As with before, let's start with `NetworkInterface`, making use
                 of Swift Concurrency for this.
                 
-                @Code(name: "NetworkInterface", file: "NetworkInterface-03.swift")
+                @Code(name: "NetworkInterface.swift", file: "NetworkInterface-03.swift")
             }
             
             @Step {
@@ -133,7 +133,7 @@
                 to update `RecipeService` to work with the asynchronous
                 `NetworkInterface`.
                 
-                @Code(name: "RecipeService", file: "RecipeService-03.swift")
+                @Code(name: "RecipeService.swift", file: "RecipeService-03.swift")
             }
             
             @Step {
@@ -146,14 +146,14 @@
                 let's use the one that flattens the generics as much as
                 possible: `ThrowingPendableSpy`.
                 
-                @Code(name: "FakeNetworkInterface", file: "FakeNetworkInterface-04.swift")
+                @Code(name: "FakeNetworkInterface.swift", file: "FakeNetworkInterface-04.swift")
             }
             
             @Step {
                 Finally, we need to update the tests to work with all these
                 async calls.
                 
-                @Code(name: "RecipeServiceTests", file: "RecipeServiceTests-03.swift")
+                @Code(name: "RecipeServiceTests.swift", file: "RecipeServiceTests-03.swift")
             }
         }
     }
