@@ -1,134 +1,130 @@
+#if Include_Nimble
 import Nimble
-import XCTest
+#endif
+import Testing
 @testable import Fakes
 
-final class SpyTests: XCTestCase {
-    func testVoid() {
+struct SpyTests {
+    @Test func testVoid() {
         let subject = Spy<Void, Void>()
 
         // it returns the returning argument as the result, without stubbing.
-        expect {
+        #expect(throws: Never.self) {
             subject(())
-        }.to(beVoid())
+        }
 
         // it records the call
-        expect(subject.calls).to(haveCount(1))
-        expect(subject.calls.first).to(beVoid())
+        #expect(subject.calls.count == 1)
+        #expect(subject.calls.first! == ())
 
         // allows Void arguments to be called without passing in a void
-        expect {
+        #expect(throws: Never.self) {
             subject()
-        }.to(beVoid())
+        }
 
         // it records the call.
-        expect(subject.calls).to(haveCount(2))
-        expect(subject.calls.last).to(beVoid())
+        #expect(subject.calls.count == 2)
+        #expect(subject.calls.last! == ())
     }
 
-    func testStubbing() {
+    @Test func testStubbing() {
         let subject = Spy<Void, Int>(123)
 
-        expect {
-            subject()
-        }.to(equal(123))
+        #expect(subject() == 123)
 
         subject.stub(456)
 
-        expect {
-            subject()
-        }.to(equal(456))
+        #expect(subject() == 456)
     }
 
-    func testMultipleStubs() {
+    @Test func testMultipleStubs() {
         let subject = Spy<Void, Int>(1, 2, 3)
 
-        expect(subject()).to(equal(1))
-        expect(subject()).to(equal(2))
-        expect(subject()).to(equal(3))
-        expect(subject()).to(equal(3))
+        #expect(subject() == 1)
+        #expect(subject() == 2)
+        #expect(subject() == 3)
+        #expect(subject() == 3)
     }
 
-    func testClosureStubs() {
+    @Test func testClosureStubs() {
         let subject = Spy<Int, Int> { $0 }
 
-        expect(subject(1)).to(equal(1))
-        expect(subject(2)).to(equal(2))
-        expect(subject(3)).to(equal(3))
-        expect(subject(10)).to(equal(10))
+        #expect(subject(1) == 1)
+        #expect(subject(2) == 2)
+        #expect(subject(3) == 3)
+        #expect(subject(10) == 10)
     }
 
-    func testReplacingStubs() {
+    @Test func testReplacingStubs() {
         let subject = Spy<Void, Int>(5)
         subject.stub(1, 2, 3)
 
-        expect(subject()).to(equal(1))
-        expect(subject()).to(equal(2))
-        expect(subject()).to(equal(3))
-        expect(subject()).to(equal(3))
+        #expect(subject() == 1)
+        #expect(subject() == 2)
+        #expect(subject() == 3)
+        #expect(subject() == 3)
     }
 
-    func testReplacingClosures() {
+    @Test func testReplacingClosures() {
         let subject = Spy<Int, Int>(5)
         subject.stub { $0 }
 
-        expect(subject(1)).to(equal(1))
-        expect(subject(2)).to(equal(2))
-        expect(subject(3)).to(equal(3))
-        expect(subject(10)).to(equal(10))
+        #expect(subject(1) == 1)
+        #expect(subject(2) == 2)
+        #expect(subject(3) == 3)
+        #expect(subject(10) == 10)
     }
 
-    func testResult() {
+    @Test func testResult() throws {
         let subject = Spy<Void, Result<Int, TestError>>(.failure(TestError.uhOh))
 
-        expect {
+        #expect(throws: TestError.uhOh) {
             try subject() as Int
-        }.to(throwError(TestError.uhOh))
+        }
 
-        expect {
+        #expect(throws: TestError.uhOh) {
             try subject(()) as Int
-        }.to(throwError(TestError.uhOh))
+        }
 
         // stub(success:)
 
         subject.stub(success: 2)
 
-        expect {
-            try subject()
-        }.to(equal(2))
+        #expect(try subject() == 2)
 
         // stub(failure:)
 
         subject.stub(failure: .ohNo)
 
-        expect {
+        #expect(throws: TestError.ohNo) {
             try subject() as Int
-        }.to(throwError(TestError.ohNo))
+        }
     }
 
-    func testResultInitializers() {
+    @Test func testResultInitializers() throws {
         let subject = ThrowingSpy<Void, Int, TestError>(failure: .ohNo)
 
-        expect {
+        #expect(throws: TestError.ohNo) {
             try subject() as Int
-        }.to(throwError(TestError.ohNo))
+        }
 
         let subject2 = ThrowingSpy<Void, Int, TestError>(success: 3)
-        expect {
-            try subject2()
-        }.to(equal(3))
+        #expect(try subject2() == 3)
     }
 
-    func testResultTakesNonVoidArguments() {
+    @Test func testResultTakesNonVoidArguments() {
         let intSpy = Spy<Int, Void>()
 
         intSpy(1)
 
-        expect(intSpy.calls).to(equal([1]))
+        #expect(intSpy.calls == [1])
 
         intSpy(1)
     }
 
-    func testPendable() async {
+#if Include_Nimble
+    // TODO: Reimplement this using polling confirmations once they're a thing.
+    @Test func testPendable() async {
         let subject = PendableSpy<Void, Int>(pendingFallback: 1)
 
         await expect {
@@ -141,16 +137,19 @@ final class SpyTests: XCTestCase {
             await subject(fallbackDelay: 0)
         }.toEventually(equal(4))
     }
+#endif
 
-    func testPendableTakesNonVoidArguments() async throws {
+    @Test func testPendableTakesNonVoidArguments() async throws {
         let subject = PendableSpy<Int, Void>(finished: ())
 
         await subject(3, fallbackDelay: 0)
 
-        expect(subject.calls).to(equal([3]))
+        #expect(subject.calls == [3])
     }
 
-    func testThrowingPendable() async {
+#if Include_Nimble
+    // TODO: Reimplement this using polling confirmations once they're a thing.
+    @Test func testThrowingPendable() async {
         let subject = ThrowingPendableSpy<Void, Int, TestError>(pendingSuccess: 0)
 
         await expect {
@@ -168,26 +167,29 @@ final class SpyTests: XCTestCase {
             try await subject(fallbackDelay: 0)
         }.toEventually(throwError(TestError.uhOh))
     }
+#endif
 
-    func testThrowingPendableTakesNonVoidArguments() async throws {
+    @Test func testThrowingPendableTakesNonVoidArguments() async throws {
         let subject = ThrowingPendableSpy<Int, Void, TestError>(success: ())
 
         try await subject(8, fallbackDelay: 0)
 
-        expect(subject.calls).to(equal([8]))
+        #expect(subject.calls == [8])
     }
 
-    func testClearCalls() {
+    @Test func testClearCalls() {
         let subject = Spy<Int, Void>()
 
         subject(1)
         subject(2)
 
         subject.clearCalls()
-        expect(subject.calls).to(beEmpty())
+        #expect(subject.calls == [])
     }
 
-    func testDynamicPendable() async {
+#if Include_Nimble
+    // TODO: Reimplement this using polling confirmations once they're a thing.
+    @Test func testDynamicPendable() async {
         let subject = Spy<Void, Pendable<Void>>()
 
         let managedTask = await ManagedTask<Void, Never>.running {
@@ -201,7 +203,7 @@ final class SpyTests: XCTestCase {
         await expect { await managedTask.isFinished }.toEventually(beTrue())
     }
 
-    func testDynamicPendableDeinit() async {
+    @Test func testDynamicPendableDeinit() async {
         let subject = Spy<Void, Pendable<Void>>()
 
         let managedTask = await ManagedTask<Void, Never>.running {
@@ -215,6 +217,7 @@ final class SpyTests: XCTestCase {
 
         await expect { await managedTask.isFinished }.toEventually(beTrue())
     }
+#endif
 }
 
 actor ManagedTask<Success: Sendable, Failure: Error> {
