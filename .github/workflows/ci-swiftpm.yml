@@ -31,7 +31,7 @@ jobs:
     env:
       DEVELOPER_DIR: "/Applications/Xcode_${{ matrix.xcode }}.app"
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         if: ${{ needs.filter.outputs.should_skip != 'true' }}
       - run: swift build
         if: ${{ needs.filter.outputs.should_skip != 'true' }}
@@ -49,7 +49,7 @@ jobs:
     env:
       DEVELOPER_DIR: "/Applications/Xcode_${{ matrix.xcode }}.app"
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         if: ${{ needs.filter.outputs.should_skip != 'true' }}
       - run: swift build
         if: ${{ needs.filter.outputs.should_skip != 'true' }}
@@ -69,7 +69,7 @@ jobs:
       fail-fast: false
     container: ${{ matrix.container }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         if: ${{ needs.filter.outputs.should_skip != 'true' }}
       - run: swift build
         if: ${{ needs.filter.outputs.should_skip != 'true' }}
@@ -81,6 +81,6 @@ jobs:
     needs: filter
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: skiptools/swift-android-action@v2
 
