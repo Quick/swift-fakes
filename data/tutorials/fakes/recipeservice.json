@@ -1046,13 +1046,13 @@
     "    func post(data: Data, to url: URL) {}",
     "}"
   ],
-  "fileName" : "FakeNetworkInterface",
-  "fileType" : "",
+  "fileName" : "FakeNetworkInterface.swift",
+  "fileType" : "swift",
   "highlights" : [
 
   ],
   "identifier" : "FakeNetworkInterface-01.swift",
-  "syntax" : "",
+  "syntax" : "swift",
   "type" : "file"
 },
 "FakeNetworkInterface-02.swift": {
@@ -1076,8 +1076,8 @@
     "    }",
     "}"
   ],
-  "fileName" : "FakeNetworkInterface",
-  "fileType" : "",
+  "fileName" : "FakeNetworkInterface.swift",
+  "fileType" : "swift",
   "highlights" : [
     {
       "line" : 2
@@ -1120,7 +1120,7 @@
     }
   ],
   "identifier" : "FakeNetworkInterface-02.swift",
-  "syntax" : "",
+  "syntax" : "swift",
   "type" : "file"
 },
 "FakeNetworkInterface-03.swift": {
@@ -1141,13 +1141,13 @@
     "    }",
     "}"
   ],
-  "fileName" : "FakeNetworkInterface",
-  "fileType" : "",
+  "fileName" : "FakeNetworkInterface.swift",
+  "fileType" : "swift",
   "highlights" : [
 
   ],
   "identifier" : "FakeNetworkInterface-03.swift",
-  "syntax" : "",
+  "syntax" : "swift",
   "type" : "file"
 },
 "FakeNetworkInterface-04.swift": {
@@ -1167,13 +1167,13 @@
     "    }",
     "}"
   ],
-  "fileName" : "FakeNetworkInterface",
-  "fileType" : "",
+  "fileName" : "FakeNetworkInterface.swift",
+  "fileType" : "swift",
   "highlights" : [
 
   ],
   "identifier" : "FakeNetworkInterface-04.swift",
-  "syntax" : "",
+  "syntax" : "swift",
   "type" : "file"
 },
 "NetworkInterface-01.swift": {
@@ -1183,13 +1183,13 @@
     "    func post(data: Data, to url: URL)",
     "}"
   ],
-  "fileName" : "NetworkInterface",
-  "fileType" : "",
+  "fileName" : "NetworkInterface.swift",
+  "fileType" : "swift",
   "highlights" : [
 
   ],
   "identifier" : "NetworkInterface-01.swift",
-  "syntax" : "",
+  "syntax" : "swift",
   "type" : "file"
 },
 "NetworkInterface-02.swift": {
@@ -1199,13 +1199,13 @@
     "    func post(data: Data, to url: URL) throws",
     "}"
   ],
-  "fileName" : "NetworkInterface",
-  "fileType" : "",
+  "fileName" : "NetworkInterface.swift",
+  "fileType" : "swift",
   "highlights" : [
 
   ],
   "identifier" : "NetworkInterface-02.swift",
-  "syntax" : "",
+  "syntax" : "swift",
   "type" : "file"
 },
 "NetworkInterface-03.swift": {
@@ -1215,13 +1215,13 @@
     "    func post(data: Data, to url: URL) async throws",
     "}"
   ],
-  "fileName" : "NetworkInterface",
-  "fileType" : "",
+  "fileName" : "NetworkInterface.swift",
+  "fileType" : "swift",
   "highlights" : [
 
   ],
   "identifier" : "NetworkInterface-03.swift",
-  "syntax" : "",
+  "syntax" : "swift",
   "type" : "file"
 },
 "RecipeService-01.swift": {
@@ -1248,13 +1248,13 @@
     "    }",
     "}"
   ],
-  "fileName" : "RecipeService",
-  "fileType" : "",
+  "fileName" : "RecipeService.swift",
+  "fileType" : "swift",
   "highlights" : [
 
   ],
   "identifier" : "RecipeService-01.swift",
-  "syntax" : "",
+  "syntax" : "swift",
   "type" : "file"
 },
 "RecipeService-02.swift": {
@@ -1281,13 +1281,13 @@
     "    }",
     "}"
   ],
-  "fileName" : "RecipeService",
-  "fileType" : "",
+  "fileName" : "RecipeService.swift",
+  "fileType" : "swift",
   "highlights" : [
 
   ],
   "identifier" : "RecipeService-02.swift",
-  "syntax" : "",
+  "syntax" : "swift",
   "type" : "file"
 },
 "RecipeService-03.swift": {
@@ -1314,13 +1314,13 @@
     "    }",
     "}"
   ],
-  "fileName" : "RecipeService",
-  "fileType" : "",
+  "fileName" : "RecipeService.swift",
+  "fileType" : "swift",
   "highlights" : [
 
   ],
   "identifier" : "RecipeService-03.swift",
-  "syntax" : "",
+  "syntax" : "swift",
   "type" : "file"
 },
 "RecipeServiceTests-01.swift": {
@@ -1395,13 +1395,13 @@
     "    }",
     "}"
   ],
-  "fileName" : "RecipeServiceTests",
-  "fileType" : "",
+  "fileName" : "RecipeServiceTests.swift",
+  "fileType" : "swift",
   "highlights" : [
 
   ],
   "identifier" : "RecipeServiceTests-01.swift",
-  "syntax" : "",
+  "syntax" : "swift",
   "type" : "file"
 },
 "RecipeServiceTests-02.swift": {
@@ -1478,13 +1478,13 @@
     "    }",
     "}"
   ],
-  "fileName" : "RecipeServiceTests",
-  "fileType" : "",
+  "fileName" : "RecipeServiceTests.swift",
+  "fileType" : "swift",
   "highlights" : [
 
   ],
   "identifier" : "RecipeServiceTests-02.swift",
-  "syntax" : "",
+  "syntax" : "swift",
   "type" : "file"
 },
 "RecipeServiceTests-03.swift": {
@@ -1548,13 +1548,13 @@
     "    }",
     "}"
   ],
-  "fileName" : "RecipeServiceTests",
-  "fileType" : "",
+  "fileName" : "RecipeServiceTests.swift",
+  "fileType" : "swift",
   "highlights" : [
 
   ],
   "identifier" : "RecipeServiceTests-03.swift",
-  "syntax" : "",
+  "syntax" : "swift",
   "type" : "file"
 },
 "doc://Fakes/documentation/Fakes/DependencyInjection": {
