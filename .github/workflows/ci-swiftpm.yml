@@ -37,6 +37,8 @@ jobs:
         if: ${{ needs.filter.outputs.should_skip != 'true' }}
       - run: swift test
         if: ${{ needs.filter.outputs.should_skip != 'true' }}
+      - run: swift test --traits Include_Nimble
+        if: ${{ needs.filter.outputs.should_skip != 'true' }}
 
   swiftpm_darwin_15:
     name: SwiftPM, Darwin 15, Xcode ${{ matrix.xcode }}
@@ -54,6 +56,8 @@ jobs:
       - run: swift build
         if: ${{ needs.filter.outputs.should_skip != 'true' }}
       - run: swift test
+        if: ${{ needs.filter.outputs.should_skip != 'true' }}
+      - run: swift test --traits Include_Nimble
         if: ${{ needs.filter.outputs.should_skip != 'true' }}
 
   swiftpm_linux:
@@ -74,6 +78,8 @@ jobs:
       - run: swift build
         if: ${{ needs.filter.outputs.should_skip != 'true' }}
       - run: swift test
+        if: ${{ needs.filter.outputs.should_skip != 'true' }}
+      - run: swift test --traits Include_Nimble
         if: ${{ needs.filter.outputs.should_skip != 'true' }}
 
   swiftpm_android:

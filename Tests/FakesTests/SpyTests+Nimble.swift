@@ -1,9 +1,10 @@
+#if Include_Nimble
 import Nimble
-import XCTest
+import Testing
 import Fakes
 
-final class SpyNimbleMatchersTest: XCTestCase {
-    func testBeCalledWithoutArguments() {
+struct SpyNimbleMatchersTest {
+    @Test func testBeCalledWithoutArguments() {
         let spy = Spy<Int, Void>()
 
         // beCalled should match if spy has been called any number of times.
@@ -16,7 +17,7 @@ final class SpyNimbleMatchersTest: XCTestCase {
         expect(spy).to(beCalled())
     }
 
-    func testBeCalledWithArguments() {
+    @Test func testBeCalledWithArguments() {
         let spy = Spy<Int, Void>()
 
         expect(spy).toNot(beCalled())
@@ -30,7 +31,7 @@ final class SpyNimbleMatchersTest: XCTestCase {
         expect(spy).to(beCalled(3))
     }
 
-    func testBeCalledWithMultipleArguments() {
+    @Test func testBeCalledWithMultipleArguments() {
         let spy = Spy<Int, Void>()
 
         spy(3)
@@ -44,7 +45,7 @@ final class SpyNimbleMatchersTest: XCTestCase {
         ))
     }
 
-    func testBeCalledWithTimes() {
+    @Test func testBeCalledWithTimes() {
         let spy = Spy<Int, Void>()
 
         expect(spy).to(beCalled(times: 0))
@@ -62,7 +63,7 @@ final class SpyNimbleMatchersTest: XCTestCase {
         expect(spy).toNot(beCalled(times: 1))
     }
 
-    func testBeCalledWithArgumentsAndTimes() {
+    @Test func testBeCalledWithArgumentsAndTimes() {
         let spy = Spy<Int, Void>()
 
         spy(1)
@@ -80,7 +81,7 @@ final class SpyNimbleMatchersTest: XCTestCase {
         expect(spy).to(beCalled(3, times: 2))
     }
 
-    func testBeCalledWithMultipleArgumentsAndTimes() {
+    @Test func testBeCalledWithMultipleArgumentsAndTimes() {
         let spy = Spy<Int, Void>()
 
         spy(1)
@@ -93,7 +94,7 @@ final class SpyNimbleMatchersTest: XCTestCase {
         expect(spy).to(beCalled(equal(3), beLessThan(4), times: 2))
     }
 
-    func testMostRecentlyBeCalled() {
+    @Test func testMostRecentlyBeCalled() {
         let spy = Spy<Int, Void>()
 
         spy(1)
@@ -110,7 +111,7 @@ final class SpyNimbleMatchersTest: XCTestCase {
         expect(spy).to(mostRecentlyBeCalled(2))
     }
 
-    func testMostRecentlyBeCalledWithMultipleArguments() {
+    @Test func testMostRecentlyBeCalledWithMultipleArguments() {
         let spy = Spy<Int, Void>()
 
         spy(1)
@@ -134,3 +135,4 @@ final class SpyNimbleMatchersTest: XCTestCase {
         ))
     }
 }
+#endif

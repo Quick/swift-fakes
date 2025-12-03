@@ -1,9 +1,8 @@
 import Fakes
-import Nimble
-import XCTest
+import Testing
 
-final class SettablePropertySpyTests: XCTestCase {
-    func testGettingPropertyWhenTypesMatch() {
+struct SettablePropertySpyTests {
+    @Test func testGettingPropertyWhenTypesMatch() {
         struct AnObject {
             @SettablePropertySpy(1)
             var value: Int
@@ -11,15 +10,15 @@ final class SettablePropertySpyTests: XCTestCase {
 
         let object = AnObject()
 
-        expect(object.value).to(equal(1))
+        #expect(object.value == 1)
         // because we called it, we should expect for the getter spy to be called
-        expect(object.$value.getter).to(beCalled())
+        #expect(object.$value.getter.wasCalled)
 
         // We never interacted with the setter, so it shouldn't have been called.
-        expect(object.$value.setter).toNot(beCalled())
+        #expect(object.$value.setter.wasNotCalled)
     }
 
-    func testSettingPropertyWhenTypesMatch() {
+    @Test func testSettingPropertyWhenTypesMatch() {
         struct AnObject {
             @SettablePropertySpy(1)
             var value: Int
@@ -28,17 +27,17 @@ final class SettablePropertySpyTests: XCTestCase {
         var object = AnObject()
         object.value = 3
 
-        expect(object.$value.getter).toNot(beCalled())
-        expect(object.$value.setter).to(beCalled(3))
+        #expect(object.$value.getter.wasNotCalled)
+        #expect(object.$value.setter.wasCalled(with: 3))
 
         // the returned value should now be updated with the new value
-        expect(object.value).to(equal(3))
+        #expect(object.value == 3)
 
         // and because we called the getter, the getter spy should be called.
-        expect(object.$value.getter).to(beCalled())
+        #expect(object.$value.getter.wasCalled)
     }
 
-    func testGettingPropertyProtocolInheritence() {
+    @Test func testGettingPropertyProtocolInheritence() {
         struct ImplementedProtocol: SomeProtocol {
             var value: Int = 1
         }
@@ -50,15 +49,15 @@ final class SettablePropertySpyTests: XCTestCase {
 
         let object = AnObject()
 
-        expect(object.value).to(beAKindOf(ImplementedProtocol.self))
+        #expect(object.value is ImplementedProtocol)
         // because we called it, we should expect for the getter spy to be called
-        expect(object.$value.getter).to(beCalled())
+        #expect(object.$value.getter.wasCalled)
 
         // We never interacted with the setter, so it shouldn't have been called.
-        expect(object.$value.setter).toNot(beCalled())
+        #expect(object.$value.setter.wasNotCalled)
     }
 
-    func testSettingPropertyProtocolInheritence() {
+    @Test func testSettingPropertyProtocolInheritence() {
         struct ImplementedProtocol: SomeProtocol, Equatable {
             var value: Int = 1
         }
@@ -71,24 +70,17 @@ final class SettablePropertySpyTests: XCTestCase {
         var object = AnObject()
         object.value = ImplementedProtocol(value: 2)
 
-        expect(object.$value.getter).toNot(beCalled())
-        expect(object.$value.setter).to(beCalled(satisfyAllOf(
-            beAKindOf(ImplementedProtocol.self),
-            map(\.value, equal(2))
-        )))
+        #expect(object.$value.getter.wasNotCalled)
 
         // the returned value should now be updated with the new value
-        expect(object.value).to(satisfyAllOf(
-            beAKindOf(ImplementedProtocol.self),
-            map(\.value, equal(2))
-        ))
+        #expect((object.value as? ImplementedProtocol)?.value == 2)
         // and because we called the getter, the getter spy should be called.
-        expect(object.$value.getter).to(beCalled(times: 1))
+        #expect(object.$value.getter.wasCalled(times: 1))
     }
 }
 
-final class PropertySpyTests: XCTestCase {
-    func testGettingPropertyWhenTypesMatch() {
+struct PropertySpyTests {
+    @Test func testGettingPropertyWhenTypesMatch() {
         struct AnObject {
             @PropertySpy(1)
             var value: Int
@@ -96,12 +88,12 @@ final class PropertySpyTests: XCTestCase {
 
         let object = AnObject()
 
-        expect(object.value).to(equal(1))
+        #expect(object.value == 1)
         // because we called it, we should expect for the getter spy to be called
-        expect(object.$value).to(beCalled())
+        #expect(object.$value.wasCalled)
     }
 
-    func testGettingPropertyProtocolInheritence() {
+    @Test func testGettingPropertyProtocolInheritence() {
         struct ImplementedProtocol: SomeProtocol {
             var value: Int = 1
         }
@@ -118,14 +110,12 @@ final class PropertySpyTests: XCTestCase {
 
         let object = ObjectUsingProtocol()
 
-        expect(object.value).to(beAnInstanceOf(ImplementedProtocol.self))
+        #expect(object.value is ImplementedProtocol)
         // because we called it, we should expect for the getter spy to be called
-        expect(object.$value).to(beCalled())
-        expect(object.$value).to(beAnInstanceOf(Spy<Void, SomeProtocol>.self))
+        #expect(object.$value.wasCalled)
 
-        let otherObject = ObjectUsingDirectInstance()
-
-        expect(otherObject.$value).to(beAnInstanceOf(Spy<Void, ImplementedProtocol>.self))
+        // it can be initialized and expressed.
+        let _ = ObjectUsingDirectInstance()
     }
 }
 

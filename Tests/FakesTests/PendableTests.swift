@@ -1,9 +1,8 @@
 import Fakes
-import Nimble
-import XCTest
+import Testing
 
-final class PendableTests: XCTestCase {
-    func testSingleCall() async throws {
+struct PendableTests {
+    @Test func testSingleCall() async throws {
         let subject = Pendable<Int>.pending(fallback: 0)
 
         async let result = subject.call()
@@ -13,10 +12,10 @@ final class PendableTests: XCTestCase {
         subject.resolve(with: 2)
 
         let value = await result
-        expect(value).to(equal(2))
+        #expect(value == 2)
     }
 
-    func testMultipleCalls() async throws {
+    @Test func testMultipleCalls() async throws {
         let subject = Pendable<Int>.pending(fallback: 0)
 
         async let result = withTaskGroup(of: Int.self, returning: [Int].self) { taskGroup in
@@ -36,17 +35,20 @@ final class PendableTests: XCTestCase {
         subject.resolve(with: 3)
 
         let value = await result
-        expect(value).to(equal(Array(repeating: 3, count: 100)))
+        #expect(value == Array(repeating: 3, count: 100))
     }
 
-    func testAutoresolve() async {
+    @Test func testAutoresolve() async throws {
         let subject = Pendable<Int>.pending(fallback: 3)
+        let spy = Spy<Int, Void>()
 
-        await waitUntil(timeout: .milliseconds(500)) { done in
-            Task<Void, Never> {
-                _ = await subject.call(fallbackDelay: 0.1)
-                done()
-            }
+        Task<Void, Never> {
+            let value = await subject.call(fallbackDelay: 0.1)
+            spy(value)
         }
+
+        try await Task.sleep(for: .milliseconds(500))
+
+        #expect(spy.wasCalled(with: 3))
     }
 }
