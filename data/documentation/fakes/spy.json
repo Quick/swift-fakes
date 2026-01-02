@@ -208,12 +208,12 @@
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/append(_:_:)-5tygp",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/append(_:_:)-wxcb",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction()-4u31k",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction()-kn0o",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction()-v98d",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(_:)-5bfrl",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(_:)-9r3zi",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(_:fallbackDelay:)-7tk8j",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(_:)-7a0dj",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(_:fallbackDelay:)-4ddii",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(_:fallbackDelay:)-7z4dh",
-        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(fallbackDelay:)-6a8i9",
+        "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(fallbackDelay:)-4q0yg",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(fallbackDelay:)-vtvc",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/clearCalls()",
         "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/record(_:)",
@@ -725,7 +725,7 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/callasfunction()-4u31k"
 },
-"doc://Fakes/documentation/Fakes/Spy/callAsFunction()-kn0o": {
+"doc://Fakes/documentation/Fakes/Spy/callAsFunction()-v98d": {
   "abstract" : [
     {
       "text" : "Records that a call was made and returns the success (or throws an error), as defined by the current stub.",
@@ -771,19 +771,27 @@
     },
     {
       "kind" : "text",
-      "text" : " -> "
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Failure"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
     },
     {
       "kind" : "typeIdentifier",
       "text" : "Success"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction()-kn0o",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction()-v98d",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "callAsFunction()",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/callasfunction()-kn0o"
+  "url" : "\/documentation\/fakes\/spy\/callasfunction()-v98d"
 },
 "doc://Fakes/documentation/Fakes/Spy/callAsFunction(_:)-5bfrl": {
   "abstract" : [
@@ -837,7 +845,7 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/callasfunction(_:)-5bfrl"
 },
-"doc://Fakes/documentation/Fakes/Spy/callAsFunction(_:)-9r3zi": {
+"doc://Fakes/documentation/Fakes/Spy/callAsFunction(_:)-7a0dj": {
   "abstract" : [
     {
       "text" : "Records the arguments and returns the success (or throws an error), as defined by the current stub.",
@@ -891,21 +899,29 @@
     },
     {
       "kind" : "text",
-      "text" : " -> "
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Failure"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
     },
     {
       "kind" : "typeIdentifier",
       "text" : "Success"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(_:)-9r3zi",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(_:)-7a0dj",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "callAsFunction(_:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/callasfunction(_:)-9r3zi"
+  "url" : "\/documentation\/fakes\/spy\/callasfunction(_:)-7a0dj"
 },
-"doc://Fakes/documentation/Fakes/Spy/callAsFunction(_:fallbackDelay:)-7tk8j": {
+"doc://Fakes/documentation/Fakes/Spy/callAsFunction(_:fallbackDelay:)-4ddii": {
   "abstract" : [
     {
       "text" : "Records the arguments and handles the result according to ",
@@ -1009,19 +1025,27 @@
     },
     {
       "kind" : "text",
-      "text" : " -> "
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Failure"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
     },
     {
       "kind" : "typeIdentifier",
       "text" : "Success"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(_:fallbackDelay:)-7tk8j",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(_:fallbackDelay:)-4ddii",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "callAsFunction(_:fallbackDelay:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/callasfunction(_:fallbackdelay:)-7tk8j"
+  "url" : "\/documentation\/fakes\/spy\/callasfunction(_:fallbackdelay:)-4ddii"
 },
 "doc://Fakes/documentation/Fakes/Spy/callAsFunction(_:fallbackDelay:)-7z4dh": {
   "abstract" : [
@@ -1109,7 +1133,7 @@
   "type" : "topic",
   "url" : "\/documentation\/fakes\/spy\/callasfunction(_:fallbackdelay:)-7z4dh"
 },
-"doc://Fakes/documentation/Fakes/Spy/callAsFunction(fallbackDelay:)-6a8i9": {
+"doc://Fakes/documentation/Fakes/Spy/callAsFunction(fallbackDelay:)-4q0yg": {
   "abstract" : [
     {
       "text" : "Records that a call was made and handles the result according to ",
@@ -1205,19 +1229,27 @@
     },
     {
       "kind" : "text",
-      "text" : " -> "
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Failure"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
     },
     {
       "kind" : "typeIdentifier",
       "text" : "Success"
     }
   ],
-  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(fallbackDelay:)-6a8i9",
+  "identifier" : "doc:\/\/Fakes\/documentation\/Fakes\/Spy\/callAsFunction(fallbackDelay:)-4q0yg",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "callAsFunction(fallbackDelay:)",
   "type" : "topic",
-  "url" : "\/documentation\/fakes\/spy\/callasfunction(fallbackdelay:)-6a8i9"
+  "url" : "\/documentation\/fakes\/spy\/callasfunction(fallbackdelay:)-4q0yg"
 },
 "doc://Fakes/documentation/Fakes/Spy/callAsFunction(fallbackDelay:)-vtvc": {
   "abstract" : [

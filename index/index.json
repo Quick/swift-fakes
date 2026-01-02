@@ -162,7 +162,7 @@
               },
               {
                 "path" : "\/documentation\/fakes\/pendable\/call(resolvedelay:)",
-                "title" : "func call<Success, Failure>(resolveDelay: TimeInterval) async throws -> Success",
+                "title" : "func call<Success, Failure>(resolveDelay: TimeInterval) async throws(Failure) -> Success",
                 "type" : "method"
               },
               {
@@ -403,8 +403,8 @@
                 "type" : "method"
               },
               {
-                "path" : "\/documentation\/fakes\/spy\/callasfunction()-kn0o",
-                "title" : "func callAsFunction<Success, Failure>() throws -> Success",
+                "path" : "\/documentation\/fakes\/spy\/callasfunction()-v98d",
+                "title" : "func callAsFunction<Success, Failure>() throws(Failure) -> Success",
                 "type" : "method"
               },
               {
@@ -413,13 +413,13 @@
                 "type" : "method"
               },
               {
-                "path" : "\/documentation\/fakes\/spy\/callasfunction(_:)-9r3zi",
-                "title" : "func callAsFunction<Success, Failure>(Arguments) throws -> Success",
+                "path" : "\/documentation\/fakes\/spy\/callasfunction(_:)-7a0dj",
+                "title" : "func callAsFunction<Success, Failure>(Arguments) throws(Failure) -> Success",
                 "type" : "method"
               },
               {
-                "path" : "\/documentation\/fakes\/spy\/callasfunction(_:fallbackdelay:)-7tk8j",
-                "title" : "func callAsFunction<Success, Failure>(Arguments, fallbackDelay: TimeInterval) async throws -> Success",
+                "path" : "\/documentation\/fakes\/spy\/callasfunction(_:fallbackdelay:)-4ddii",
+                "title" : "func callAsFunction<Success, Failure>(Arguments, fallbackDelay: TimeInterval) async throws(Failure) -> Success",
                 "type" : "method"
               },
               {
@@ -428,8 +428,8 @@
                 "type" : "method"
               },
               {
-                "path" : "\/documentation\/fakes\/spy\/callasfunction(fallbackdelay:)-6a8i9",
-                "title" : "func callAsFunction<Success, Failure>(fallbackDelay: TimeInterval) async throws -> Success",
+                "path" : "\/documentation\/fakes\/spy\/callasfunction(fallbackdelay:)-4q0yg",
+                "title" : "func callAsFunction<Success, Failure>(fallbackDelay: TimeInterval) async throws(Failure) -> Success",
                 "type" : "method"
               },
               {
