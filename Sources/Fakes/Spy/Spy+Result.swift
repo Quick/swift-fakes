@@ -70,12 +70,12 @@ extension Spy {
 
 extension Spy {
     /// Records the arguments and returns the success (or throws an error), as defined by the current stub.
-    public func callAsFunction<Success, Failure: Error>(_ arguments: Arguments) throws -> Success where Returning == Result<Success, Failure> {
+    public func callAsFunction<Success, Failure: Error>(_ arguments: Arguments) throws(Failure) -> Success where Returning == Result<Success, Failure> {
         return try call(arguments).get()
     }
 
     /// Records that a call was made and returns the success (or throws an error), as defined by the current stub.
-    public func callAsFunction<Success, Failure: Error>() throws -> Success where Arguments == Void, Returning == Result<Success, Failure> {
+    public func callAsFunction<Success, Failure: Error>() throws(Failure) -> Success where Arguments == Void, Returning == Result<Success, Failure> {
         return try call(()).get()
     }
 }

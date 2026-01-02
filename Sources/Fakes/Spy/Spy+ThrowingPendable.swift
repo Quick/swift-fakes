@@ -105,7 +105,7 @@ extension Spy {
     public func callAsFunction<Success: Sendable, Failure: Error>(
         _ arguments: Arguments,
         fallbackDelay: TimeInterval = PendableDefaults.delay
-    ) async throws -> Success where Returning == ThrowingPendable<Success, Failure> {
+    ) async throws(Failure) -> Success where Returning == ThrowingPendable<Success, Failure> {
         return try await call(arguments).call(fallbackDelay: fallbackDelay).get()
     }
 
@@ -116,7 +116,7 @@ extension Spy {
     /// throwing a `PendableInProgressError`. If the `Pendable` is .finished, then this value is ignored.
     public func callAsFunction<Success: Sendable, Failure: Error>(
         fallbackDelay: TimeInterval = PendableDefaults.delay
-    ) async throws -> Success where Arguments == Void, Returning == ThrowingPendable<Success, Failure> {
+    ) async throws(Failure) -> Success where Arguments == Void, Returning == ThrowingPendable<Success, Failure> {
         return try await call(()).call(fallbackDelay: fallbackDelay).get()
     }
 }

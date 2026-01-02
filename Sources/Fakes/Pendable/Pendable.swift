@@ -146,7 +146,7 @@ extension Pendable {
     /// the fallback value. This is only  used when the `Pendable` is in a pending state.
     public func call<Success, Failure: Error>(
         resolveDelay: TimeInterval = PendableDefaults.delay
-    ) async throws -> Success where Value == Result<Success, Failure> {
+    ) async throws(Failure) -> Success where Value == Result<Success, Failure> {
         try await call(fallbackDelay: resolveDelay).get()
     }
 }
