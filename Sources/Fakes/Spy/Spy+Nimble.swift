@@ -1,3 +1,4 @@
+#if Include_Nimble
 import Nimble
 
 // MARK: - Verifying any calls to the Spy.
@@ -303,3 +304,4 @@ private func _mostRecentlyBeCalled<Arguments, Returning>(
         )
     }
 }
+#endif
