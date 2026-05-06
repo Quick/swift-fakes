@@ -22,6 +22,14 @@ Include `"Fakes"` as a dependency for your test target:
 ]),
 ```
 
+### Nimble integration
+
+By default, `Fakes` depends on [Nimble](https://github.com/Quick/Nimble) and provides its extensions. If you don't use Nimble, you can opt out by disabling the `Nimble` trait:
+
+```swift
+.package(url: "https://github.com/Quick/swift-fakes", from: "0.1.1", traits: []),
+```
+
 ## Motivation
 
 When writing tests, we want to write one thing at a time. This is best done by

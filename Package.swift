@@ -1,4 +1,4 @@
-// swift-tools-version: 6.0
+// swift-tools-version: 6.3
 
 import PackageDescription
 
@@ -13,14 +13,24 @@ let package = Package(
             targets: ["Fakes"]
         ),
     ],
+    traits: [
+        "Nimble",
+        .default(enabledTraits: ["Nimble"]),
+    ],
     dependencies: [
-        .package(url:  "https://github.com/Quick/Nimble.git", from: "14.0.0"),
+        .package(url: "https://github.com/Quick/Nimble.git", from: "14.0.0"),
         .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.0.0"),
     ],
     targets: [
         .target(
             name: "Fakes",
-            dependencies: ["Nimble"],
+            dependencies: [
+                .product(
+                    name: "Nimble",
+                    package: "Nimble",
+                    condition: .when(traits: ["Nimble"])
+                ),
+            ],
             resources: [
                 .copy("PrivacyInfo.xcprivacy")
             ]
