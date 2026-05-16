@@ -194,7 +194,9 @@ final class SpyTests: XCTestCase {
             await subject()
         }
 
-        await expect { await managedTask.isFinished }.toNever(beTrue())
+        await expect { await managedTask.hasStarted }.toEventually(beTrue())
+        await expect { subject.calls }.toEventually(haveCount(1))
+        await expect { await managedTask.isFinished }.to(beFalse())
 
         subject.resolveStub(with: ())
 
